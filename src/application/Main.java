@@ -23,8 +23,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		Group root = new Group();
-		Scene s = new Scene(root,500,500);
-		GameScreen gs = new GameScreen(500, 500);
+		Scene s = new Scene(root,1000,750);
+		GameScreen gs = new GameScreen(1000, 750);
 		root.getChildren().add(gs);
 		GameManager gm = new GameManager();
 		
@@ -46,12 +46,13 @@ public class Main extends Application {
 				// TODO Auto-generated method stub
 				if(start==0l)start=now;
 				long diff = now-start;
-				if(diff>=100000000l){ //100000000l = 100ms.
+				if(diff>=30000000l){ //30000000l = 30ms. = 30 fps
 					//Fill in here
 					gm.update();
 					gs.paintComponents();
 					start = now;
 				}
+				
 			}
 		}.start();
 		

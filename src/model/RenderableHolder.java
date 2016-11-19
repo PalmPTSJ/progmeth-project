@@ -11,6 +11,8 @@ public class RenderableHolder {
 	private Comparator<IRenderable> comparator;
 	public static Image tile_ground_img;
 	public static Image tile_stone_img;
+	public static Image tileObject_tree_img;
+	public static Image tileObject_stone_img;
 	public final static RenderableHolder instance;
 	
 	public RenderableHolder(){
@@ -34,6 +36,8 @@ public class RenderableHolder {
 	private static void loadResource() {
 		tile_ground_img = new Image(ClassLoader.getSystemResource("img/tile/ground.png").toString());
 		tile_stone_img = new Image(ClassLoader.getSystemResource("img/tile/mountain.png").toString());
+		tileObject_tree_img = new Image(ClassLoader.getSystemResource("img/object/tree.png").toString());
+		tileObject_stone_img = new Image(ClassLoader.getSystemResource("img/object/rock.png").toString());
 	}
 	public synchronized void remove(int index){
 		instance.entities.remove(index);

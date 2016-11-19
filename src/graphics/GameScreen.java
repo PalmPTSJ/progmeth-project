@@ -29,12 +29,12 @@ public class GameScreen extends Canvas {
 	}
 	
 	public void drawScore(GraphicsContext gc){
-		String score = ""+GameManager.score;
+		/*String score = ""+GameManager.score;
 		while(score.length() < 3) score = "0"+score;
 		gc.setFont(Font.font("Times New Roman",FontWeight.BOLD,50));
 		gc.setFill(Color.BLUE);
 		gc.fillText(score, 350, 50);
 		gc.setStroke(Color.WHITE);
-		gc.strokeText(score, 350, 50);
+		gc.strokeText(score, 350, 50);*/
 	}
 }

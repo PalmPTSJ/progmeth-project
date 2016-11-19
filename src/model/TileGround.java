@@ -7,11 +7,4 @@ public class TileGround extends Tile {
 		super(x,y);
 		this.img = RenderableHolder.tile_ground_img;
 	}
-
-	@Override
-	public int getZ() {
-		// TODO Auto-generated method stub
-		return -10;
-	}
-	
 }

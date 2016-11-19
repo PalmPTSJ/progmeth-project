@@ -9,10 +9,9 @@ import model.*;
 public class GameManager {
 	private int timer=0;
 	public static int score=0;
-	public TileHolder tileHolder;
+	public TileManager tileHolder;
 	public GameManager(){
-		tileHolder = new TileHolder();
-		RenderableHolder.getInstance().add(tileHolder);
+		tileHolder = new TileManager();
 	}
 
 	private void addEntity(IRenderable entity) {
