@@ -10,11 +10,11 @@ public abstract class Entity implements IRenderable {
 	protected int x,y;
 	protected boolean destroyed;
 	protected int hp;
-	public Entity(int x,int y,int hp) {
+	public Entity(int x,int y) {
 		this.destroyed = false;
 		this.x = x;
 		this.y = y;
-		this.hp = hp;
+		this.hp = 100; // default
 	}
 	
 	public void update() {

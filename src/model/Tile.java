@@ -4,10 +4,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
 public abstract class Tile implements IRenderable {
-	protected Image img = null;
 	public TileObject tileObject = null; // object on this tile
 	public static final int tileSize = 50;
-	private int x,y;
+	protected int x,y;
 	private boolean destroyed = false;
 	
 	public Tile(int x,int y) {
@@ -33,11 +32,6 @@ public abstract class Tile implements IRenderable {
 	public int getZ() {
 		// TODO Auto-generated method stub
 		return 0;
-	}
-	
-	@Override
-	public void draw(GraphicsContext gc) {
-		gc.drawImage(img, x, y);
 	}
 	
 	@Override

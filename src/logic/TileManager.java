@@ -37,7 +37,7 @@ public class TileManager {
 		for(Tile t : tileList) {
 			RenderableHolder.getInstance().add(t);
 		}
-		// add some tree
+		// add some tree & stone
 		for(Tile t : tileList) {
 			if(t instanceof TileGround) {
 				if(random.nextInt(100) < 40) {

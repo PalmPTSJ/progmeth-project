@@ -4,8 +4,8 @@ public abstract class TileObject extends Entity {
 	
 	protected Tile tile;
 	
-	public TileObject(int x,int y,int hp,Tile tile) { 
-		super(x,y,hp);
+	public TileObject(Tile tile) { 
+		super(tile.getX(),tile.getY());
 		this.tile = tile;
 		this.tile.tileObject = this;
 	}

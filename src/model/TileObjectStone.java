@@ -5,7 +5,8 @@ import javafx.scene.canvas.GraphicsContext;
 public class TileObjectStone extends TileObject {
 
 	public TileObjectStone(Tile tile) {
-		super(tile.getX(), tile.getY(), 250, tile);
+		super(tile);
+		this.hp = 250;
 	}
 
 	@Override

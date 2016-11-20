@@ -36,8 +36,8 @@ public class RenderableHolder {
 	private static void loadResource() {
 		tile_ground_img = new Image(ClassLoader.getSystemResource("img/tile/ground.png").toString());
 		tile_stone_img = new Image(ClassLoader.getSystemResource("img/tile/mountain.png").toString());
-		tileObject_tree_img = new Image(ClassLoader.getSystemResource("img/object/tree.png").toString());
-		tileObject_stone_img = new Image(ClassLoader.getSystemResource("img/object/rock.png").toString());
+		tileObject_tree_img = new Image(ClassLoader.getSystemResource("img/tileObject/tree.png").toString());
+		tileObject_stone_img = new Image(ClassLoader.getSystemResource("img/tileObject/stone.png").toString());
 	}
 	public synchronized void remove(int index){
 		instance.entities.remove(index);

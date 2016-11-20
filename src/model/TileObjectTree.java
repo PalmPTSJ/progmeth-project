@@ -5,8 +5,7 @@ import javafx.scene.canvas.GraphicsContext;
 public class TileObjectTree extends TileObject {
 
 	public TileObjectTree(Tile tile) {
-		super(tile.getX(), tile.getY(), 100, tile);
-		
+		super(tile);
 	}
 
 	@Override
