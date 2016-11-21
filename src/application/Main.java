@@ -13,7 +13,10 @@ import javafx.stage.Stage;
 import logic.GameManager;
 
 public class Main extends Application {
-
+	
+	public final int screenWidth = 750;
+	public final int screenHeight = 500;
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		launch(args);
@@ -23,8 +26,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		Group root = new Group();
-		Scene s = new Scene(root,1000,750);
-		GameScreen gs = new GameScreen(1000, 750);
+		Scene s = new Scene(root,screenWidth, screenHeight);
+		GameScreen gs = new GameScreen(screenWidth, screenHeight);
 		root.getChildren().add(gs);
 		GameManager gm = new GameManager();
 		

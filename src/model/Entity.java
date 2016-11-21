@@ -17,6 +17,7 @@ public abstract class Entity implements IRenderable {
 		this.hp = 100; // default
 	}
 	
+	
 	public void update() {
 		if(this.hp <= 0) {
 			this.destroyed = true;

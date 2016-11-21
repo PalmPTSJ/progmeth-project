@@ -2,16 +2,27 @@ package model;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import logic.TileManager;
 
 public abstract class Tile implements IRenderable {
-	public TileObject tileObject = null; // object on this tile
-	public static final int tileSize = 50;
+	public TileObject tileObject; // object on this tile
 	protected int x,y;
+	protected int tileX,tileY; // x,y in tile grid
 	private boolean destroyed = false;
 	
-	public Tile(int x,int y) {
-		this.x = x;
-		this.y = y;
+	public Tile(int tileX,int tileY) {
+		this.tileX = tileX;
+		this.tileY = tileY;
+		this.x = tileX*TileManager.tileSize;
+		this.y = tileY*TileManager.tileSize;
+		this.tileObject = null;
+	}
+	
+	public int getTileX() {
+		return this.tileX;
+	}
+	public int getTileY() {
+		return this.tileY;
 	}
 	
 	public int getX() {
@@ -37,6 +48,10 @@ public abstract class Tile implements IRenderable {
 	@Override
 	public boolean isDestroy() {
 		return destroyed;
+	}
+
+	public void setTileObject(TileObject tileObject) {
+		this.tileObject = tileObject;
 	}
 	
 	
