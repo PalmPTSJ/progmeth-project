@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import graphics.GameScreen;
+import javafx.scene.canvas.GraphicsContext;
 import model.RenderableHolder;
 import model.Tile;
 import model.TileGround;
@@ -16,10 +18,12 @@ public class TileManager {
 	
 	public static final int tileCountX = 30;
 	public static final int tileCountY = 20;
-	public static final int tileSize = 25;
+	public static final double tileSizeDefault = 30;
+	public static double tileSize = 30;
 	public static List<Tile> tileList;
 	public static Tile[][] tileArray; // Use X,Y coordinate system
 	public TileManager() {
+		tileSize = tileSizeDefault*GameScreen.scale;
 		tileList = new ArrayList<Tile>();
 		tileArray = new Tile[tileCountX][tileCountY];
 		generateMap(555);
@@ -75,17 +79,17 @@ public class TileManager {
 			if(t instanceof TileGround) {
 				if(random.nextInt(100) < 40) {
 					TileObjectTree tree = new TileObjectTree(t);
-					if(canPlaceTileObjectOnTile(t, tree)) {
+					/*if(canPlaceTileObjectOnTile(t, tree)) {
 						placeTileObjectOnTile(t, tree);
-					}
+					}*/
 				}
 			}
 			else if(t instanceof TileStone) {
 				if(random.nextInt(100) < 20) {
 					TileObjectStone stone = new TileObjectStone(t);
-					if(canPlaceTileObjectOnTile(t, stone)) {
+					/*if(canPlaceTileObjectOnTile(t, stone)) {
 						placeTileObjectOnTile(t, stone);
-					}
+					}*/
 				}
 			}
 		}

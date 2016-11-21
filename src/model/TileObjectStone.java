@@ -1,11 +1,13 @@
 package model;
 
+import graphics.GameScreen;
+import graphics.GraphicUtility;
 import javafx.scene.canvas.GraphicsContext;
 
 public class TileObjectStone extends TileObject {
 
 	public TileObjectStone(Tile tile) {
-		super(tile,1,1); // 1x1
+		super(tile,2,2); // 1x1
 		this.hp = 250;
 	}
 

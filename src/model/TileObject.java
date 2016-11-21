@@ -1,5 +1,7 @@
 package model;
 
+import graphics.GameScreen;
+import graphics.GraphicUtility;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import logic.TileManager;
@@ -34,6 +36,6 @@ public abstract class TileObject extends Entity {
 	
 	// default draw function for all tileObject
 	public void draw(GraphicsContext gc,Image img) {
-		gc.drawImage(img, x, y, TileManager.tileSize*sizeX, TileManager.tileSize*sizeY);
+		GraphicUtility.drawScale(gc,img, x, y,TileManager.tileSize*sizeX,TileManager.tileSize*sizeY,GameScreen.scale);
 	}
 }

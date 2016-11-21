@@ -1,5 +1,7 @@
 package model;
 
+import graphics.GameScreen;
+import graphics.GraphicUtility;
 import javafx.scene.canvas.GraphicsContext;
 
 public class TileObjectTree extends TileObject {
