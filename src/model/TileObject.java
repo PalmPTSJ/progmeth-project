@@ -36,6 +36,6 @@ public abstract class TileObject extends Entity {
 	
 	// default draw function for all tileObject
 	public void draw(GraphicsContext gc,Image img) {
-		GraphicUtility.drawScale(gc,img, x, y,TileManager.tileSize*sizeX,TileManager.tileSize*sizeY,GameScreen.scale);
+		gc.drawImage(img,x,y,TileManager.tileSize*sizeX,TileManager.tileSize*sizeY);
 	}
 }
