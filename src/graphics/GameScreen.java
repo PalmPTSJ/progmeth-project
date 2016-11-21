@@ -11,11 +11,12 @@ import model.RenderableHolder;
 
 public class GameScreen extends Canvas {
 	public static int screen_width, screen_height;
-	
-	public GameScreen(int width,int height){
+	public static double scale;
+	public GameScreen(int width,int height,double _scale){
 		super(width,height);
 		screen_width = width;
 		screen_height = height;
+		scale=_scale;
 	}
 	
 	public void paintComponents(){

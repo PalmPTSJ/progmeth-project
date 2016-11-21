@@ -1,13 +1,15 @@
 package model;
 
+import graphics.GameScreen;
+import graphics.GraphicUtility;
 import javafx.scene.canvas.GraphicsContext;
 
 public class TileStone extends Tile {
-	public TileStone(int x,int y) {
+	public TileStone(double x,double y) {
 		super(x,y);
 	}
 	@Override
 	public void draw(GraphicsContext gc) {
-		gc.drawImage(RenderableHolder.tile_stone_img, x, y);
+		GraphicUtility.drawScale(gc,RenderableHolder.tile_stone_img, x, y,GameScreen.scale);
 	}
 }

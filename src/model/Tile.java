@@ -6,25 +6,25 @@ import javafx.scene.image.Image;
 public abstract class Tile implements IRenderable {
 	public TileObject tileObject = null; // object on this tile
 	public static final int tileSize = 50;
-	protected int x,y;
+	protected double x,y;
 	private boolean destroyed = false;
 	
-	public Tile(int x,int y) {
+	public Tile(double x,double y) {
 		this.x = x;
 		this.y = y;
 	}
 	
-	public int getX() {
+	public double getX() {
 		return this.x;
 	}
-	public int getY() {
+	public double getY() {
 		return this.y;
 	}
 	
-	public void setX(int x) {
+	public void setX(double x) {
 		this.x = x;
 	}
-	public void setY(int y) {
+	public void setY(double y) {
 		this.y = y;
 	}
 	

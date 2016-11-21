@@ -24,7 +24,7 @@ public class Main extends Application {
 		// TODO Auto-generated method stub
 		Group root = new Group();
 		Scene s = new Scene(root,1000,750);
-		GameScreen gs = new GameScreen(1000, 750);
+		GameScreen gs = new GameScreen(1000, 750,0.6);
 		root.getChildren().add(gs);
 		GameManager gm = new GameManager();
 		

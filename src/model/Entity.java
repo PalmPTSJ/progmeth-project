@@ -7,10 +7,10 @@ package model;
  */
 
 public abstract class Entity implements IRenderable {
-	protected int x,y;
+	protected double x,y;
 	protected boolean destroyed;
 	protected int hp;
-	public Entity(int x,int y) {
+	public Entity(double x,double y) {
 		this.destroyed = false;
 		this.x = x;
 		this.y = y;

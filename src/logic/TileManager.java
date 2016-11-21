@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import graphics.GameScreen;
 import javafx.scene.canvas.GraphicsContext;
 import model.RenderableHolder;
 import model.Tile;
@@ -28,9 +29,9 @@ public class TileManager {
 		for(int i = 0;i < tileCountY;i++) {
 			for(int j = 0;j < tileCountX;j++) {
 				if(random.nextInt(2) == 1)
-					tileList.add(new TileGround(j*50,i*50));
+					tileList.add(new TileGround(j*50*GameScreen.scale,i*50*GameScreen.scale));
 				else 
-					tileList.add(new TileStone(j*50,i*50));
+					tileList.add(new TileStone(j*50*GameScreen.scale,i*50*GameScreen.scale));
 			}
 		}
 		// push every tile to renderableHolder

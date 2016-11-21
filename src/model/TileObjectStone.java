@@ -1,5 +1,7 @@
 package model;
 
+import graphics.GameScreen;
+import graphics.GraphicUtility;
 import javafx.scene.canvas.GraphicsContext;
 
 public class TileObjectStone extends TileObject {
@@ -11,7 +13,7 @@ public class TileObjectStone extends TileObject {
 
 	@Override
 	public void draw(GraphicsContext gc) {
-		gc.drawImage(RenderableHolder.tileObject_stone_img, x, y);
+		GraphicUtility.drawScale(gc,RenderableHolder.tileObject_stone_img, x, y,GameScreen.scale);
 	}
 
 }
