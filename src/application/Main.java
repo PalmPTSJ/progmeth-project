@@ -27,9 +27,6 @@ public class Main extends Application {
 		Menu menu=new Menu();
 		Scene s = new Scene(root,screenWidth+200, screenHeight);
 		GameScreen gs = new GameScreen(screenWidth, screenHeight,screenScale);
-		gs.setOnDragDropped(e->{
-			System.out.println("GEZ");
-		});
 		root.getChildren().add(gs);
 		root.getChildren().add(menu);
 		GameManager gm = new GameManager();
