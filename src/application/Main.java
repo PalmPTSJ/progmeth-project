@@ -1,16 +1,14 @@
 package application;
-
 import graphics.GameScreen;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.EventHandler;
-import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import logic.GameManager;
+import ui.Menu;
 
 public class Main extends Application {
 	
@@ -25,12 +23,16 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
-		Group root = new Group();
-		Scene s = new Scene(root,screenWidth, screenHeight);
+		HBox root = new HBox();
+		Menu menu=new Menu();
+		Scene s = new Scene(root,screenWidth+200, screenHeight);
 		GameScreen gs = new GameScreen(screenWidth, screenHeight,screenScale);
+		gs.setOnDragDropped(e->{
+			System.out.println("GEZ");
+		});
 		root.getChildren().add(gs);
+		root.getChildren().add(menu);
 		GameManager gm = new GameManager();
-		
 		s.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent ke) {
 				gm.receiveKey(ke.getCode());
