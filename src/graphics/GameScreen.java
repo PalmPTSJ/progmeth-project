@@ -21,14 +21,19 @@ public class GameScreen extends Canvas {
 	
 	public void paintComponents(){
 		GraphicsContext gc = this.getGraphicsContext2D();
+		drawBackground(gc);
+		drawEntities(gc);
+		drawScore(gc);
+	}
+	public void drawBackground(GraphicsContext gc){
 		gc.setFill(Color.BLACK);
 		gc.fillRect(0,0, screen_width,screen_height);
+	}
+	public void drawEntities(GraphicsContext gc){
 		for(IRenderable o : RenderableHolder.getInstance().getEntities()) {
 			o.draw(gc);
 		}
-		drawScore(gc);
 	}
-	
 	public void drawScore(GraphicsContext gc){
 		/*String score = ""+GameManager.score;
 		while(score.length() < 3) score = "0"+score;
