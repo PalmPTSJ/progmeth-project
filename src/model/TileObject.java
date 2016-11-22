@@ -40,22 +40,6 @@ public abstract class TileObject extends Entity {
 		gc.drawImage(img,x,y,TileManager.tileSize*sizeX,TileManager.tileSize*sizeY);
 	}
 	
-	public static boolean canPlace(Tile tile,int sizeX,int sizeY) {
-		for(int dx = 0; dx < sizeX; dx++) {
-			for(int dy = 0; dy < sizeY; dy++) {
-				int x = tile.getTileX() + dx;
-				int y = tile.getTileY() + dy;
-				if(x < 0 || y < 0 || x >= TileManager.tileCountX || y >= TileManager.tileCountY) {
-					return false;
-				}
-				if(TileManager.tileArray[x][y].tileObject != null) {
-					return false; // already have object
-				}
-			}
-		}
-		return true;
-	}
-	
 	public void place(Tile tile) {
 		System.out.println(this + " " + this.sizeX + " "+this.sizeY);
 		for(int dx = 0; dx < this.sizeX; dx++) {

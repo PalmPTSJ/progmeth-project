@@ -3,6 +3,7 @@ package model;
 import graphics.GameScreen;
 import graphics.GraphicUtility;
 import javafx.scene.canvas.GraphicsContext;
+import logic.TileManager;
 
 public class TileObjectTree extends TileObject {
 	public static int sizeX = 1;
@@ -12,7 +13,7 @@ public class TileObjectTree extends TileObject {
 	}
 	
 	public static boolean canPlace(Tile tile) {
-		return TileObject.canPlace(tile,sizeX,sizeY);
+		return TileManager.canPlace(tile,sizeX,sizeY);
 	}
 	
 	@Override

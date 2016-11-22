@@ -28,7 +28,21 @@ public class TileManager {
 		tileArray = new Tile[tileCountX][tileCountY];
 		generateMap(5555);
 	}
-	
+	public static boolean canPlace(Tile tile,int sizeX,int sizeY) {
+		for(int dx = 0; dx < sizeX; dx++) {
+			for(int dy = 0; dy < sizeY; dy++) {
+				int x = tile.getTileX() + dx;
+				int y = tile.getTileY() + dy;
+				if(x < 0 || y < 0 || x >= TileManager.tileCountX || y >= TileManager.tileCountY) {
+					return false;
+				}
+				if(TileManager.tileArray[x][y].tileObject != null) {
+					return false; // already have object
+				}
+			}
+		}
+		return true;
+	}
 	private void generateMap(int seed) {
 		Random random = new Random(seed);
 		for(int x = 0;x < tileCountX;x++) {
