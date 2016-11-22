@@ -14,7 +14,7 @@ public class Main extends Application {
 	
 	public final int screenWidth = 900;
 	public final int screenHeight = 600;
-	public final double screenScale = 0.75;
+	public final double screenScale = 1;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		launch(args);

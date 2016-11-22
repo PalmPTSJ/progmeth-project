@@ -5,10 +5,15 @@ import graphics.GraphicUtility;
 import javafx.scene.canvas.GraphicsContext;
 
 public class TileObjectStone extends TileObject {
-
+	public static int sizeX = 2;
+	public static int sizeY = 2;
 	public TileObjectStone(Tile tile) {
-		super(tile,2,2); // 1x1
+		super(tile,sizeX,sizeY); // 2x2
 		this.hp = 250;
+	}
+	
+	public static boolean canPlace(Tile tile) {
+		return TileObject.canPlace(tile,sizeX,sizeY);
 	}
 
 	@Override

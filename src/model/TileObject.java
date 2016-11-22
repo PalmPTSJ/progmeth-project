@@ -10,13 +10,14 @@ import logic.TileManager;
 public abstract class TileObject extends Entity {
 	
 	protected Tile[] tile; // can take multiple tile
-	public int sizeX,sizeY;
+	public int sizeX = 1;
+	public int sizeY = 1;
 	
-	public TileObject(Tile tile,int sizeX,int sizeY) { 
+	public TileObject(Tile tile,int sizeX,int sizeY) {
 		super(tile.getX(),tile.getY());
 		this.sizeX = sizeX;
 		this.sizeY = sizeY;
-		TileManager.placeTileObjectOnTile(tile,this);
+		this.place(tile);
 	}
 	
 	public void update() {
@@ -37,5 +38,33 @@ public abstract class TileObject extends Entity {
 	// default draw function for all tileObject
 	public void draw(GraphicsContext gc,Image img) {
 		gc.drawImage(img,x,y,TileManager.tileSize*sizeX,TileManager.tileSize*sizeY);
+	}
+	
+	public static boolean canPlace(Tile tile,int sizeX,int sizeY) {
+		for(int dx = 0; dx < sizeX; dx++) {
+			for(int dy = 0; dy < sizeY; dy++) {
+				int x = tile.getTileX() + dx;
+				int y = tile.getTileY() + dy;
+				if(x < 0 || y < 0 || x >= TileManager.tileCountX || y >= TileManager.tileCountY) {
+					return false;
+				}
+				if(TileManager.tileArray[x][y].tileObject != null) {
+					return false; // already have object
+				}
+			}
+		}
+		return true;
+	}
+	
+	public void place(Tile tile) {
+		System.out.println(this + " " + this.sizeX + " "+this.sizeY);
+		for(int dx = 0; dx < this.sizeX; dx++) {
+			for(int dy = 0; dy < this.sizeY; dy++) {
+				int x = tile.getTileX() + dx;
+				int y = tile.getTileY() + dy;
+				TileManager.tileArray[x][y].setTileObject(this);
+			}
+		}
+		RenderableHolder.getInstance().add(this);
 	}
 }
