@@ -14,7 +14,7 @@ public abstract class TileObject extends Entity {
 	public int sizeY = 1;
 	
 	public TileObject(Tile tile,int sizeX,int sizeY) {
-		super(tile.getX(),tile.getY());
+		super(tile.getX(),tile.getY(),TileManager.tileSize,TileManager.tileSize);
 		this.sizeX = sizeX;
 		this.sizeY = sizeY;
 		this.place(tile);

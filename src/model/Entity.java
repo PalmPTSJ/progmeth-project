@@ -8,15 +8,17 @@ package model;
 
 public abstract class Entity implements IRenderable {
 	protected double x,y;
+	protected double width,height;
 	protected boolean destroyed;
 	protected int hp;
-	public Entity(double x,double y) {
+	public Entity(double x,double y,double width,double height) {
 		this.destroyed = false;
 		this.x = x;
 		this.y = y;
+		this.width = width;
+		this.height = height;
 		this.hp = 100; // default
 	}
-	
 	
 	public void update() {
 		if(this.hp <= 0) {
@@ -29,6 +31,10 @@ public abstract class Entity implements IRenderable {
 	}
 	public int getHp() {
 		return this.hp;
+	}
+	
+	public void onCollision(Entity entity) {
+		
 	}
 	
 	@Override
