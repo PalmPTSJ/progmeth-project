@@ -1,5 +1,6 @@
 package logic;
 
+import javafx.beans.value.ObservableValue;
 import javafx.scene.input.KeyCode;
 import model.*;
 public class GameManager {
@@ -7,7 +8,8 @@ public class GameManager {
 	public static int score=0;
 	private Player player;
 	private TileManager tileHolder;
-	public static int fps = 0;
+	public static int fps;
+	public static boolean isOverlayMode;
 	public GameManager(){
 		tileHolder = new TileManager();
 		player = new Player(10,10);

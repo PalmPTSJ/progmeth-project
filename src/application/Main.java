@@ -53,12 +53,13 @@ public class Main extends Application {
 				if(diff>=10000000l) { // Full speed (60fps)
 					gm.update();
 					gs.paintComponents();
+					menu.update();
 					start = now;
 				}
 				
 			}
 		}.start();
-		
+		primaryStage.setResizable(false);
 		primaryStage.setScene(s);
 		primaryStage.show();
 		

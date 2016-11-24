@@ -55,5 +55,4 @@ public abstract class Tile implements IRenderable {
 	public void draw(GraphicsContext gc, Image img) {
 		gc.drawImage(img,x,y,TileManager.tileSize,TileManager.tileSize);
 	}
-	
 }
