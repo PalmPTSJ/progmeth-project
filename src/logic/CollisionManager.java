@@ -16,10 +16,11 @@ public class CollisionManager {
 	
 	public static void checkCollision() {
 		for(int i = 0;i < RenderableHolder.getInstance().getEntities().size();i++) {
+			IRenderable e1 = RenderableHolder.getInstance().getEntities().get(i);
+			if(!(e1 instanceof ICollidable)) continue;
 			for(int j = i+1;j < RenderableHolder.getInstance().getEntities().size();j++) {
-				IRenderable e1 = RenderableHolder.getInstance().getEntities().get(i);
 				IRenderable e2 = RenderableHolder.getInstance().getEntities().get(j);
-				if(e1 instanceof ICollidable && e2 instanceof ICollidable) {
+				if(e2 instanceof ICollidable) {
 					ICollidable o1 = (ICollidable) e1;
 					ICollidable o2 = (ICollidable) e2;
 					// check hit

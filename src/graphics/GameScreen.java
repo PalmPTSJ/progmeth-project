@@ -3,6 +3,9 @@ package graphics;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import logic.GameManager;
 import model.IRenderable;
 import model.RenderableHolder;
 
@@ -32,12 +35,11 @@ public class GameScreen extends Canvas {
 		}
 	}
 	public void drawScore(GraphicsContext gc){
-		/*String score = ""+GameManager.score;
-		while(score.length() < 3) score = "0"+score;
+		String score = ""+GameManager.fps;
 		gc.setFont(Font.font("Times New Roman",FontWeight.BOLD,50));
 		gc.setFill(Color.BLUE);
 		gc.fillText(score, 350, 50);
 		gc.setStroke(Color.WHITE);
-		gc.strokeText(score, 350, 50);*/
+		gc.strokeText(score, 350, 50);
 	}
 }
