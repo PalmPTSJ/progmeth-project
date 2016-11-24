@@ -35,6 +35,7 @@ public class GameManager {
 		}
 		CollisionManager.checkCollision();
 		removeDestroyEntity();
+		//timer++;
 	}
 
 	private void removeDestroyEntity() {

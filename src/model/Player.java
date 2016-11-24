@@ -26,7 +26,7 @@ public class Player extends MovableEntity implements IBlockable {
 
 	@Override
 	public int getZ() {
-		return 100;
+		return 0;
 	}
 
 	@Override

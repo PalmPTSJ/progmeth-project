@@ -13,6 +13,8 @@ import model.TileObject;
 import model.TileObjectStone;
 import model.TileObjectTree;
 import model.TileStone;
+import model.VoidTile;
+import model.VoidTileObject;
 
 public class TileManager {
 	
@@ -45,14 +47,21 @@ public class TileManager {
 	}
 	private void generateMap(int seed) {
 		Random random = new Random(seed);
-		for(int x = 0;x < tileCountX;x++) {
-			for(int y = 0;y < tileCountY;y++) {
-				if(random.nextInt(2) == 1)
-					tileArray[x][y] = new TileGround(x,y);
-				else 
-					tileArray[x][y] = new TileStone(x,y);
-				
-				tileList.add(tileArray[x][y]);
+		for(int x = -1;x <= tileCountX;x++) {
+			for(int y = -1;y <= tileCountY;y++) {
+				if(x == -1 || y == -1 || x == tileCountX || y == tileCountY) {
+					VoidTile vt = new VoidTile(x,y);
+					VoidTileObject vtObject = new VoidTileObject(vt);
+					tileList.add(vt);
+				}
+				else {
+					if(random.nextInt(2) == 1)
+						tileArray[x][y] = new TileGround(x,y);
+					else 
+						tileArray[x][y] = new TileStone(x,y);
+					
+					tileList.add(tileArray[x][y]);
+				}
 			}
 		}
 		// push every tile to renderableHolder
@@ -62,14 +71,14 @@ public class TileManager {
 		// add some tree & stone
 		for(Tile t : tileList) {
 			if(t instanceof TileGround) {
-				if(random.nextInt(100) < 30) {
+				if(random.nextInt(100) < 10) {
 					if(TileObjectTree.canPlace(t)) {
 						TileObjectTree tree = new TileObjectTree(t);
 					}
 				}
 			}
 			else if(t instanceof TileStone) {
-				if(random.nextInt(100) < 15) {
+				if(random.nextInt(100) < 5) {
 					if(TileObjectStone.canPlace(t)) {
 						TileObjectStone stone = new TileObjectStone(t);
 					}

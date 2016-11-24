@@ -1,5 +1,6 @@
 package model;
 
+import logic.CollisionManager;
 import logic.IMovable;
 
 public abstract class MovableEntity extends Entity implements IMovable {
@@ -11,12 +12,15 @@ public abstract class MovableEntity extends Entity implements IMovable {
 		this.speed = speed;
 		velX = velY = 0;
 	}
+	
 	public void move() {
 		// move
 		lastX = x;
 		lastY = y;
 		x += velX * speed;
+		if(CollisionManager.isBlocked(this)) x = lastX;
 		y += velY * speed;
+		if(CollisionManager.isBlocked(this)) y = lastY;
 	}
 	public double getSpeed() {
 		return speed;
