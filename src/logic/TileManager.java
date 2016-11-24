@@ -62,14 +62,14 @@ public class TileManager {
 		// add some tree & stone
 		for(Tile t : tileList) {
 			if(t instanceof TileGround) {
-				if(random.nextInt(100) < 40) {
+				if(random.nextInt(100) < 10) {
 					if(TileObjectTree.canPlace(t)) {
 						TileObjectTree tree = new TileObjectTree(t);
 					}
 				}
 			}
 			else if(t instanceof TileStone) {
-				if(random.nextInt(100) < 20) {
+				if(random.nextInt(100) < 5) {
 					if(TileObjectStone.canPlace(t)) {
 						TileObjectStone stone = new TileObjectStone(t);
 					}

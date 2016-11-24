@@ -1,7 +1,5 @@
 package model;
 
-import graphics.GameScreen;
-import graphics.GraphicUtility;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import logic.TileManager;

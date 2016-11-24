@@ -13,6 +13,7 @@ public class RenderableHolder {
 	public static Image tile_stone_img;
 	public static Image tileObject_tree_img;
 	public static Image tileObject_stone_img;
+	public static Image player_img;
 	public final static RenderableHolder instance;
 	
 	public RenderableHolder(){
@@ -33,11 +34,15 @@ public class RenderableHolder {
 		instance.entities.add(entity);
 		instance.entities.sort(comparator);
 	}
+	private static Image getRes(String path) {
+		return new Image(ClassLoader.getSystemResource(path).toString());
+	}
 	private static void loadResource() {
-		tile_ground_img = new Image(ClassLoader.getSystemResource("img/tile/ground.png").toString());
-		tile_stone_img = new Image(ClassLoader.getSystemResource("img/tile/mountain.png").toString());
-		tileObject_tree_img = new Image(ClassLoader.getSystemResource("img/tileObject/tree.png").toString());
-		tileObject_stone_img = new Image(ClassLoader.getSystemResource("img/tileObject/stone.png").toString());
+		tile_ground_img = getRes("img/tile/ground.png");
+		tile_stone_img = getRes("img/tile/mountain.png");
+		tileObject_tree_img = getRes("img/tileObject/tree.png");
+		tileObject_stone_img = getRes("img/tileObject/stone.png");
+		player_img = getRes("img/player.png");
 	}
 	public synchronized void remove(int index){
 		instance.entities.remove(index);

@@ -1,25 +1,39 @@
 package logic;
 
-import java.util.Random;
-
-import graphics.GameScreen;
 import javafx.scene.input.KeyCode;
 import model.*;
-@SuppressWarnings("static-access")
 public class GameManager {
 	private int timer=0;
 	public static int score=0;
-	public TileManager tileHolder;
+	private Player player;
+	private TileManager tileHolder;
 	public GameManager(){
 		tileHolder = new TileManager();
+		player = new Player(10,10);
+		addEntity(player);
+		System.out.println(player);
 	}
 
 	private void addEntity(IRenderable entity) {
 		RenderableHolder.getInstance().add(entity);
 	}
 
+	private void updatePlayer() {
+		if(CodeUtility.keyPressed.contains(KeyCode.A)) player.setVelX(-1);
+		if(CodeUtility.keyPressed.contains(KeyCode.D)) player.setVelX(1);
+		if(CodeUtility.keyPressed.contains(KeyCode.W)) player.setVelY(-1);
+		if(CodeUtility.keyPressed.contains(KeyCode.S)) player.setVelY(1);
+	}
+	
 	public void update() {
-		
+		updatePlayer();
+		for(IRenderable ir : RenderableHolder.getInstance().getEntities()) {
+			if(ir instanceof IMovable) {
+				((IMovable) ir).move();
+			}
+		}
+		CollisionManager.checkCollision();
+		removeDestroyEntity();
 	}
 
 	private void removeDestroyEntity() {

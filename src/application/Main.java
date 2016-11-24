@@ -48,7 +48,7 @@ public class Main extends Application {
 				// TODO Auto-generated method stub
 				if(start==0l)start=now;
 				long diff = now-start;
-				if(diff>=30000000l){ //30000000l = 30ms. = 30 fps
+				if(diff>=20000000l){ //20000000l = 20ms. = 50 fps
 					//Fill in here
 					gm.update();
 					gs.paintComponents();
