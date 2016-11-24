@@ -13,8 +13,8 @@ import model.TileObject;
 import model.TileObjectStone;
 import model.TileObjectTree;
 import model.TileStone;
-import model.VoidTile;
-import model.VoidTileObject;
+import model.TileVoid;
+import model.TileObjectVoid;
 
 public class TileManager {
 	
@@ -50,8 +50,8 @@ public class TileManager {
 		for(int x = -1;x <= tileCountX;x++) {
 			for(int y = -1;y <= tileCountY;y++) {
 				if(x == -1 || y == -1 || x == tileCountX || y == tileCountY) {
-					VoidTile vt = new VoidTile(x,y);
-					VoidTileObject vtObject = new VoidTileObject(vt);
+					TileVoid vt = new TileVoid(x,y);
+					TileObjectVoid vtObject = new TileObjectVoid(vt);
 					tileList.add(vt);
 				}
 				else {

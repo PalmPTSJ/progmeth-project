@@ -48,7 +48,7 @@ public class GameScreen extends Canvas {
 				ok=TileObjectStone.canPlace(t);
 			}
 			if(ok){
-				gc.fillRect(t.getX(), t.getY(), Tile.tileSize, Tile.tileSize);
+				gc.fillRect(t.getX(), t.getY(), TileManager.tileSize, TileManager.tileSize);
 			}
 		}
 		gc.setGlobalAlpha(1);

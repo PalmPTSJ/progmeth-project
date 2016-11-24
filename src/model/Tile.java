@@ -6,7 +6,6 @@ import logic.TileManager;
 
 public abstract class Tile implements IRenderable {
 	public TileObject tileObject = null; // object on this tile
-	public static final int tileSize = 50;
 	protected double x,y;
 	protected int tileX,tileY; // x,y in tile grid
 	private boolean destroyed = false;
@@ -39,7 +38,6 @@ public abstract class Tile implements IRenderable {
 	
 	@Override
 	public int getZ() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	

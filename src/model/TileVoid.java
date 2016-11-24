@@ -2,9 +2,9 @@ package model;
 
 import javafx.scene.canvas.GraphicsContext;
 
-public class VoidTile extends Tile {
+public class TileVoid extends Tile {
 
-	public VoidTile(int tileX, int tileY) {
+	public TileVoid(int tileX, int tileY) {
 		super(tileX, tileY);
 	}
 
