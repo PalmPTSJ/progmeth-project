@@ -1,7 +1,8 @@
 package logic;
 
-import javafx.beans.value.ObservableValue;
+
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseEvent;
 import model.*;
 public class GameManager {
 	private int timer=0;
@@ -20,19 +21,26 @@ public class GameManager {
 	private void addEntity(IRenderable entity) {
 		RenderableHolder.getInstance().add(entity);
 	}
+	
+	public void mouseClick(MouseEvent me) {
+		ProjectileArrow arrow = new ProjectileArrow(player.getX(), player.getY(), me.getSceneX(),me.getSceneY());
+		RenderableHolder.getInstance().add(arrow);
+		System.out.println("Shoot");
+	}
 
 	private void updatePlayer() {
 		if(CodeUtility.keyPressed.contains(KeyCode.A)) player.setVelX(-1);
 		if(CodeUtility.keyPressed.contains(KeyCode.D)) player.setVelX(1);
 		if(CodeUtility.keyPressed.contains(KeyCode.W)) player.setVelY(-1);
 		if(CodeUtility.keyPressed.contains(KeyCode.S)) player.setVelY(1);
+		
 	}
 	
 	public void update() {
 		updatePlayer();
 		for(IRenderable ir : RenderableHolder.getInstance().getEntities()) {
-			if(ir instanceof IMovable) {
-				((IMovable) ir).move();
+			if(ir instanceof Entity) {
+				((Entity)ir).update();
 			}
 		}
 		CollisionManager.checkCollision();

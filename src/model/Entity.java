@@ -84,12 +84,16 @@ public abstract class Entity implements IRenderable, ICollidable {
 		this.height = height;
 	}
 	
-	// default draw function for all entity
-	public void draw(GraphicsContext gc,Image img) {
-		gc.drawImage(img,x,y,width,height);
+	public void drawHitbox(GraphicsContext gc) { // for debugging
 		gc.setFill(Color.YELLOW);
 		gc.setGlobalAlpha(0.5);
 		gc.fillRect(x, y, width, height);
 		gc.setGlobalAlpha(1);
+	}
+	
+	// default draw function for all entity
+	public void draw(GraphicsContext gc,Image img) {
+		gc.drawImage(img,x,y,width,height);
+		drawHitbox(gc);
 	}
 }

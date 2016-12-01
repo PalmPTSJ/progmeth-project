@@ -1,9 +1,8 @@
 package model;
 
 import javafx.scene.canvas.GraphicsContext;
-import logic.IBlockable;
 
-public class Player extends MovableEntity implements IBlockable {
+public class Player extends BlockingEntity {
 
 	public static final double speed = 5;
 	public static final double width = 20;

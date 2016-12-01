@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import logic.GameManager;
@@ -13,7 +14,7 @@ import ui.Menu;
 public class Main extends Application {
 	
 	public final int screenWidth = 900;
-	public final int screenHeight = 600;
+	public final int screenHeight = 900;
 	public final double screenScale = 1;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -41,6 +42,13 @@ public class Main extends Application {
 			}
 		});
 		
+		s.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			public void handle(MouseEvent me) {
+				// TODO: FIX THIS (just for test)
+				gm.mouseClick(me);
+			}
+		});
+		
 		new AnimationTimer() {
 			Long start=0l;
 			@Override
@@ -48,7 +56,7 @@ public class Main extends Application {
 				// TODO Auto-generated method stub
 				if(start==0l)start=now;
 				long diff = now-start;
-				if(diff > 0) gm.fps = (int) (1000000000l/(diff));
+				if(diff > 0) GameManager.fps = (int) (1000000000l/(diff));
 				
 				if(diff>=10000000l) { // Full speed (60fps)
 					gm.update();

@@ -6,8 +6,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import logic.BuyManager;
-import logic.GameManager;
-import model.TileObject;
 
 public class BuyItem extends HBox{
 	private String name;

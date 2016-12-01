@@ -1,9 +1,6 @@
 package model;
 
-import graphics.GameScreen;
-import graphics.GraphicUtility;
 import javafx.scene.canvas.GraphicsContext;
-import logic.ICollidable;
 import logic.TileManager;
 
 public class TileObjectTree extends TileObject {

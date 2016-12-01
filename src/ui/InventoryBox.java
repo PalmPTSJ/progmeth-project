@@ -1,10 +1,7 @@
 package ui;
 
-import javafx.scene.Node;
-import javafx.scene.effect.Effect;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import model.IRenderable;
 import model.RenderableHolder;
 
 public class InventoryBox extends HBox {

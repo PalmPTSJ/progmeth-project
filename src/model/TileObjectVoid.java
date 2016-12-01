@@ -15,6 +15,11 @@ public class TileObjectVoid extends TileObject {
 	}
 	
 	@Override
+	public void update() {
+		// TileObjectVoid don't die
+	}
+	
+	@Override
 	public void place(Tile tile) {
 		System.out.println(this.x+ " " + this.y);
 		RenderableHolder.getInstance().add(this);

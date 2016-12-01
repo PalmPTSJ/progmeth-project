@@ -5,11 +5,9 @@ import java.util.List;
 import java.util.Random;
 
 import graphics.GameScreen;
-import javafx.scene.canvas.GraphicsContext;
 import model.RenderableHolder;
 import model.Tile;
 import model.TileGround;
-import model.TileObject;
 import model.TileObjectStone;
 import model.TileObjectTree;
 import model.TileStone;
@@ -19,9 +17,9 @@ import model.TileObjectVoid;
 public class TileManager {
 	
 	public static final int tileCountX = 30;
-	public static final int tileCountY = 20;
+	public static final int tileCountY = 30;
 	public static final double tileSizeDefault = 30;
-	public static double tileSize = 30;
+	public static double tileSize;
 	public static List<Tile> tileList;
 	public static Tile[][] tileArray; // Use X,Y coordinate system
 	public TileManager() {
