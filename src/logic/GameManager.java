@@ -21,19 +21,16 @@ public class GameManager {
 	private void addEntity(IRenderable entity) {
 		RenderableHolder.getInstance().add(entity);
 	}
-	
-	public void mouseClick(MouseEvent me) {
-		ProjectileArrow arrow = new ProjectileArrow(player.getX(), player.getY(), me.getSceneX(),me.getSceneY());
-		RenderableHolder.getInstance().add(arrow);
-		System.out.println("Shoot");
-	}
 
 	private void updatePlayer() {
-		if(CodeUtility.keyPressed.contains(KeyCode.A)) player.setVelX(-1);
-		if(CodeUtility.keyPressed.contains(KeyCode.D)) player.setVelX(1);
-		if(CodeUtility.keyPressed.contains(KeyCode.W)) player.setVelY(-1);
-		if(CodeUtility.keyPressed.contains(KeyCode.S)) player.setVelY(1);
-		
+		if(InputUtility.instance.isKeyDown(KeyCode.A)) player.setVelX(-1);
+		if(InputUtility.instance.isKeyDown(KeyCode.D)) player.setVelX(1);
+		if(InputUtility.instance.isKeyDown(KeyCode.W)) player.setVelY(-1);
+		if(InputUtility.instance.isKeyDown(KeyCode.S)) player.setVelY(1);
+		if(InputUtility.instance.isMouseLeftDown()) {
+			ProjectileArrow arrow = new ProjectileArrow(player.getX(), player.getY(), InputUtility.instance.getMouseX(),InputUtility.instance.getMouseY());
+			RenderableHolder.getInstance().add(arrow);
+		}
 	}
 	
 	public void update() {
@@ -46,6 +43,7 @@ public class GameManager {
 		CollisionManager.checkCollision();
 		removeDestroyEntity();
 		//timer++;
+		InputUtility.instance.reset();
 	}
 
 	private void removeDestroyEntity() {
@@ -55,14 +53,7 @@ public class GameManager {
 		}
 	}
 
-	public void receiveKey(KeyCode new_code) {
-		if(!CodeUtility.keyPressed.contains(new_code)) {
-			CodeUtility.keyPressed.add(new_code);
-			CodeUtility.keyTriggered.add(new_code);
-		}
-	}
-
-	public void dropKey(KeyCode new_code) {
-		CodeUtility.keyPressed.remove(new_code);
-	}
+	
+	
+	
 }

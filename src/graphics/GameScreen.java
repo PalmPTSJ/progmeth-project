@@ -35,7 +35,7 @@ public class GameScreen extends Canvas {
 	}
 	public void drawOverlay(GraphicsContext gc){
 		gc.setGlobalAlpha(0.5);
-		gc.setFill(Color.BLACK);
+		/*gc.setFill(Color.BLACK);
 		gc.fillRect(0,0, screen_width,screen_height);
 		gc.setFill(Color.GREEN);
 		for(Tile t:TileManager.tileList){
@@ -50,6 +50,18 @@ public class GameScreen extends Canvas {
 			if(ok){
 				gc.fillRect(t.getX(), t.getY(), TileManager.tileSize, TileManager.tileSize);
 			}
+		}*/
+		
+		for(Tile tile : TileManager.tileList) {
+			if(tile.tileObject == null) {
+				gc.setFill(Color.GREEN);
+				gc.fillRect(tile.getX(), tile.getY(), TileManager.tileSize, TileManager.tileSize);
+			}
+			else {
+				gc.setFill(Color.DARKRED);
+				gc.fillRect(tile.getX(), tile.getY(), TileManager.tileSize, TileManager.tileSize);
+			}
+			
 		}
 		gc.setGlobalAlpha(1);
 	}

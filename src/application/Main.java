@@ -9,12 +9,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import logic.GameManager;
+import logic.InputUtility;
 import ui.Menu;
 
 public class Main extends Application {
 	
 	public final int screenWidth = 900;
-	public final int screenHeight = 900;
+	public final int screenHeight = 600;
 	public final double screenScale = 1;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -31,23 +32,7 @@ public class Main extends Application {
 		root.getChildren().add(gs);
 		root.getChildren().add(menu);
 		GameManager gm = new GameManager();
-		s.setOnKeyPressed(new EventHandler<KeyEvent>() {
-			public void handle(KeyEvent ke) {
-				gm.receiveKey(ke.getCode());
-			}
-		});
-		s.setOnKeyReleased(new EventHandler<KeyEvent>() {
-			public void handle(KeyEvent ke) {
-				gm.dropKey(ke.getCode());
-			}
-		});
-		
-		s.setOnMouseClicked(new EventHandler<MouseEvent>() {
-			public void handle(MouseEvent me) {
-				// TODO: FIX THIS (just for test)
-				gm.mouseClick(me);
-			}
-		});
+		InputUtility.instance.setEventHandler(s);
 		
 		new AnimationTimer() {
 			Long start=0l;
