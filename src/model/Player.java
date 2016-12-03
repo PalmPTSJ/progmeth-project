@@ -4,19 +4,21 @@ import javafx.scene.canvas.GraphicsContext;
 
 public class Player extends BlockingEntity {
 
-	public static final double speed = 5;
-	public static final double width = 20;
-	public static final double height = 20;
+	private static final double speed = 5;
+	private static final double width = 20;
+	private static final double height = 20;
+	private static final int startHp = 500;
+
 	public Player(double x, double y) {
-		super(x, y, width, height, speed);
+		super(x, y, width, height, speed, startHp);
 	}
-	
+
 	@Override
 	public void move() {
 		super.move();
 		velX = velY = 0;
 	}
-	
+
 	@Override
 	public void undoMove() {
 		x = lastX;

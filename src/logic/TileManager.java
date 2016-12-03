@@ -17,7 +17,7 @@ import model.TileObjectVoid;
 public class TileManager {
 	
 	public static final int tileCountX = 30;
-	public static final int tileCountY = 30;
+	public static final int tileCountY = 20;
 	public static final double tileSizeDefault = 30;
 	public static double tileSize;
 	public static List<Tile> tileList;
