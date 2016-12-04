@@ -2,6 +2,7 @@ package model;
 
 import logic.CollisionManager;
 import logic.IBlockable;
+import logic.ICollidable;
 
 public abstract class BlockingEntity extends MovingEntity implements IBlockable {
 	protected double lastX, lastY;
@@ -15,8 +16,9 @@ public abstract class BlockingEntity extends MovingEntity implements IBlockable 
 		lastX = x;
 		lastY = y;
 		x += velX * speed;
-		if (CollisionManager.isBlocked(this))
+		if (CollisionManager.isBlocked(this)) {
 			x = lastX;
+		}
 		y += velY * speed;
 		if (CollisionManager.isBlocked(this))
 			y = lastY;

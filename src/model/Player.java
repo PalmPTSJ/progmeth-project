@@ -7,7 +7,7 @@ public class Player extends BlockingEntity {
 	private static final double speed = 5;
 	private static final double width = 20;
 	private static final double height = 20;
-	private static final int startHp = 500;
+	private static final int startHp = 300;
 
 	public Player(double x, double y) {
 		super(x, y, width, height, speed, startHp);

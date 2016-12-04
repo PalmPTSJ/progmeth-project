@@ -17,7 +17,12 @@ public class CollisionManager {
 	public static boolean isBlocked(ICollidable object) {
 		for(IRenderable ir : RenderableHolder.getInstance().getEntities()) {
 			if(ir instanceof IBlockable && ir != object) {
-				if(collide((ICollidable)ir,object)) return true;
+				if(collide((ICollidable)ir,object)) {
+					// report collision as well
+					((ICollidable)ir).onCollision(object);
+					((ICollidable)object).onCollision((ICollidable) ir);
+					return true;
+				}
 			}
 		}
 		return false;
@@ -36,10 +41,6 @@ public class CollisionManager {
 					if(collide(o1,o2)) {
 						o1.onCollision(o2);
 						o2.onCollision(o1);
-						/*if(o1 instanceof IBlockable && e2 instanceof IBlockable) {
-							((IBlockable)o1).undoMove();
-							((IBlockable)o2).undoMove();
-						}*/
 					}
 				}
 			}

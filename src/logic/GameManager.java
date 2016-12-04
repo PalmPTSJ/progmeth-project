@@ -1,5 +1,6 @@
 package logic;
 
+import java.util.Random;
 
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
@@ -7,15 +8,29 @@ import model.*;
 public class GameManager {
 	private int timer=0;
 	public static int score=0;
-	private Player player;
+	public static Player player;
 	private TileManager tileHolder;
 	public static int fps;
 	public static boolean isOverlayMode;
+	public static EnemyController enemyController;
+	
 	public GameManager(){
 		tileHolder = new TileManager();
 		player = new Player(10,10);
+		Random random = new Random();
+		
 		addEntity(player);
 		System.out.println(player);
+		enemyController = new EnemyController();
+		for(Tile tile : tileHolder.tileList) {
+			if(tile.tileObject == null) {
+				if(random.nextInt(100) < 3) {
+					Enemy enemy = new Enemy(tile.getX(), tile.getY());
+					addEntity(enemy);
+					enemyController.addEnemy(enemy);
+				}
+			}
+		}
 	}
 
 	private void addEntity(IRenderable entity) {

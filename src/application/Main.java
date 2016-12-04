@@ -57,5 +57,10 @@ public class Main extends Application {
 		primaryStage.show();
 		
 	}
+	
+	@Override
+	public void stop() {
+		GameManager.enemyController.stop();
+	}
 
 }
