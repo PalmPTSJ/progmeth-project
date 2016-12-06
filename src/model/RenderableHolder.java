@@ -18,7 +18,8 @@ public class RenderableHolder {
 	public static Image player_img;
 	public static Image enemy_img;
 	public static Image tower_arrow_img;
-	public final static RenderableHolder instance;
+	public static Image projectile_rock_img;
+	private final static RenderableHolder instance;
 	
 	public RenderableHolder(){
 		entities = new CopyOnWriteArrayList<>();
@@ -50,6 +51,7 @@ public class RenderableHolder {
 		projectile_arrow_img = getRes("img/object/arrow.png");
 		enemy_img = getRes("img/enemy.png");
 		tower_arrow_img = getRes("img/tileObject/towerArrow.png");
+		projectile_rock_img = getRes("img/object/table.png");
 	}
 	public synchronized void remove(int index){
 		instance.entities.remove(index);

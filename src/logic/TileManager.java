@@ -27,7 +27,7 @@ public class TileManager {
 		tileSize = tileSizeDefault*GameScreen.scale;
 		tileList = new ArrayList<Tile>();
 		tileArray = new Tile[tileCountX][tileCountY];
-		generateMap(5555);
+		generateMap((new Random()).nextInt(99999));
 	}
 	public static boolean canPlace(Tile tile,int sizeX,int sizeY) {
 		for(int dx = 0; dx < sizeX; dx++) {
@@ -75,7 +75,7 @@ public class TileManager {
 			else if(t instanceof TileStone && random.nextInt(100) < 5 && TileObjectStone.canPlace(t)) {
 					TileObjectStone stone = new TileObjectStone(t);
 			}
-			else if(random.nextInt(100) < 5 && TowerArrow.canPlace(t)) {
+			else if(random.nextInt(100) < 12 && TowerArrow.canPlace(t) && t.getTileX() > 10) {
 				TowerArrow tower = new TowerArrow(t);
 			}
 		}

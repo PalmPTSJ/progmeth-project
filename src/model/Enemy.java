@@ -48,7 +48,7 @@ public class Enemy extends BlockingEntity {
 	}
 	
 	private void attack() {
-		for(IRenderable ir : RenderableHolder.instance.getEntities()) {
+		for(IRenderable ir : RenderableHolder.getInstance().getEntities()) {
 			if(ir instanceof Entity) {
 				if(!(ir instanceof Enemy) && CollisionManager.findDistance(this, (ICollidable) ir) <= attackRange) {
 					((Entity) ir).reduceHP(damage);

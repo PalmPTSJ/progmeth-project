@@ -15,14 +15,14 @@ public abstract class Projectile extends MovingEntity {
 
 	// Every projectile should be going to the target
 	public Projectile(double x, double y, double width, double height, double speed, int damage, double targetX,
-			double targetY, int hp) {
-		super(x, y, width, height, speed, hp);
+			double targetY) {
+		super(x, y, width, height, speed, 100);
 		this.damage = damage;
 		setTarget(targetX, targetY);
 	}
 	
-	public Projectile(double x, double y, double width, double height, double speed, int damage, Entity target, int hp) {
-		this(x,y,width,height,speed,damage,target.x,target.y,hp);
+	public Projectile(double x, double y, double width, double height, double speed, int damage, Entity target) {
+		this(x,y,width,height,speed,damage,target.x,target.y);
 		this.target = target;
 	}
 

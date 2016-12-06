@@ -9,11 +9,11 @@ public class ProjectileArrow extends Projectile {
 	private static final int damage = 5;
 	
 	public ProjectileArrow(double x, double y, double targetX, double targetY) {
-		super(x, y, width, height, speed, damage, targetX, targetY, 100);
+		super(x, y, width, height, speed, damage, targetX, targetY);
 	}
 
 	public ProjectileArrow(double x, double y, Entity target) {
-		super(x, y, width, height, speed, damage, target, 100);
+		super(x, y, width, height, speed, damage, target);
 	}
 
 	@Override
