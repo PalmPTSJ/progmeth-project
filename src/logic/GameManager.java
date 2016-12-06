@@ -23,8 +23,8 @@ public class GameManager {
 		System.out.println(player);
 		enemyController = new EnemyController();
 		for(Tile tile : tileHolder.tileList) {
-			if(tile.tileObject == null) {
-				if(random.nextInt(100) < 3) {
+			if(tile.tileObject == null && !(tile instanceof TileVoid)) {
+				if(random.nextInt(100) < 20) {
 					Enemy enemy = new Enemy(tile.getX(), tile.getY());
 					addEntity(enemy);
 					enemyController.addEnemy(enemy);

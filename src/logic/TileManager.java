@@ -12,6 +12,7 @@ import model.TileObjectStone;
 import model.TileObjectTree;
 import model.TileStone;
 import model.TileVoid;
+import model.TowerArrow;
 import model.TileObjectVoid;
 
 public class TileManager {
@@ -68,19 +69,14 @@ public class TileManager {
 		}
 		// add some tree & stone
 		for(Tile t : tileList) {
-			if(t instanceof TileGround) {
-				if(random.nextInt(100) < 10) {
-					if(TileObjectTree.canPlace(t)) {
-						TileObjectTree tree = new TileObjectTree(t);
-					}
-				}
+			if(t instanceof TileGround && random.nextInt(100) < 10 && TileObjectTree.canPlace(t)) {
+				TileObjectTree tree = new TileObjectTree(t);
 			}
-			else if(t instanceof TileStone) {
-				if(random.nextInt(100) < 5) {
-					if(TileObjectStone.canPlace(t)) {
-						TileObjectStone stone = new TileObjectStone(t);
-					}
-				}
+			else if(t instanceof TileStone && random.nextInt(100) < 5 && TileObjectStone.canPlace(t)) {
+					TileObjectStone stone = new TileObjectStone(t);
+			}
+			else if(random.nextInt(100) < 5 && TowerArrow.canPlace(t)) {
+				TowerArrow tower = new TowerArrow(t);
 			}
 		}
 	}

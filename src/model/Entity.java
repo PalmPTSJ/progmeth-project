@@ -119,4 +119,8 @@ public abstract class Entity implements IRenderable, ICollidable {
 		//drawHitbox(gc);
 		drawHealthBar(gc);
 	}
+
+	public void reduceHP(int damage) {
+		this.hp -= damage;
+	}
 }

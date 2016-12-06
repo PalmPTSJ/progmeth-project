@@ -10,6 +10,8 @@ public abstract class Projectile extends MovingEntity {
 
 	private int damage;
 	private double angle;
+	
+	private Entity target = null;
 
 	// Every projectile should be going to the target
 	public Projectile(double x, double y, double width, double height, double speed, int damage, double targetX,
@@ -18,6 +20,11 @@ public abstract class Projectile extends MovingEntity {
 		this.damage = damage;
 		setTarget(targetX, targetY);
 	}
+	
+	public Projectile(double x, double y, double width, double height, double speed, int damage, Entity target, int hp) {
+		this(x,y,width,height,speed,damage,target.x,target.y,hp);
+		this.target = target;
+	}
 
 	private void setTarget(double tx, double ty) {
 		double dx = tx - x;
@@ -25,6 +32,16 @@ public abstract class Projectile extends MovingEntity {
 		this.angle = Math.atan2(dy, dx);
 		this.velX = Math.cos(angle);
 		this.velY = Math.sin(angle);
+	}
+	
+	@Override
+	public void update() {
+		super.update();
+		if(target != null && target.isDestroy()) target = null;
+		
+		if(target != null) {
+			setTarget(target.getX()+target.getWidth()/2,target.getY()+target.getHeight()/2);
+		}
 	}
 
 	@Override
@@ -36,11 +53,13 @@ public abstract class Projectile extends MovingEntity {
 	public void onCollision(ICollidable collider) {
 		if (this.destroyed)
 			return;
-		if (collider instanceof Projectile)
+		else if (collider instanceof Projectile)
 			return; // projectiles are not suppose to hit each other
-		if (collider instanceof Entity && !(collider instanceof Player)) {
+		else if (collider instanceof TileObjectVoid)
 			this.destroy();
-			((Entity) collider).hp -= this.damage;
+		else if ((target != null && collider == target) || (target==null && collider instanceof Enemy)) {
+			this.destroy();
+			((Entity) collider).reduceHP(this.damage);
 		}
 	}
 
@@ -54,6 +73,11 @@ public abstract class Projectile extends MovingEntity {
 		gc.setTransform(old);
 		
 		super.draw(gc, null);
+	}
+	
+	@Override
+	public void reduceHP(int damage) {
+		
 	}
 
 }

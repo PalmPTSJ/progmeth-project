@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Enemy;
+import model.Entity;
+import model.IRenderable;
+import model.RenderableHolder;
+import model.TowerArrow;
 
 public class EnemyController {
 	// use thread !
@@ -41,6 +45,12 @@ public class EnemyController {
 				// just move to player
 				for (Enemy enemy : enemyList) {
 					enemy.setTarget(GameManager.player);
+					for(IRenderable ir : RenderableHolder.getInstance().getEntities()) {
+						if(ir instanceof TowerArrow) {
+							enemy.setTarget((Entity) ir);
+							break;
+						}
+					}
 				}
 			}
 		});

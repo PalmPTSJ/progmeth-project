@@ -18,9 +18,6 @@ public class CollisionManager {
 		for(IRenderable ir : RenderableHolder.getInstance().getEntities()) {
 			if(ir instanceof IBlockable && ir != object) {
 				if(collide((ICollidable)ir,object)) {
-					// report collision as well
-					((ICollidable)ir).onCollision(object);
-					((ICollidable)object).onCollision((ICollidable) ir);
 					return true;
 				}
 			}
@@ -45,5 +42,9 @@ public class CollisionManager {
 				}
 			}
 		}
+	}
+	
+	public static double findDistance(ICollidable ic1,ICollidable ic2) {
+		return Math.hypot((ic1.getX() + ic1.getWidth()/2) - (ic2.getX() + ic2.getWidth()/2), (ic1.getY() + ic1.getHeight()/2) - (ic2.getY() + ic2.getHeight()/2));
 	}
 }

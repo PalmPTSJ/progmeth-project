@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import javafx.scene.image.Image;
 
@@ -16,10 +17,11 @@ public class RenderableHolder {
 	public static Image projectile_arrow_img;
 	public static Image player_img;
 	public static Image enemy_img;
+	public static Image tower_arrow_img;
 	public final static RenderableHolder instance;
 	
 	public RenderableHolder(){
-		entities = new ArrayList<>();
+		entities = new CopyOnWriteArrayList<>();
 		comparator = new Comparator<IRenderable>() {
 			public int compare(IRenderable a,IRenderable b) {
 				return Integer.compare(a.getZ(),b.getZ());
@@ -47,6 +49,7 @@ public class RenderableHolder {
 		player_img = getRes("img/player.png");
 		projectile_arrow_img = getRes("img/object/arrow.png");
 		enemy_img = getRes("img/enemy.png");
+		tower_arrow_img = getRes("img/tileObject/towerArrow.png");
 	}
 	public synchronized void remove(int index){
 		instance.entities.remove(index);

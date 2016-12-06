@@ -1,16 +1,21 @@
 package model;
 
 import javafx.scene.canvas.GraphicsContext;
+import logic.CollisionManager;
 import logic.ICollidable;
 
 public class Enemy extends BlockingEntity {
 
-	private static final double speed = 2;
+	private static final double speed = 5;
 	private static final double width = 20;
 	private static final double height = 20;
-	private static final int startHp = 40;
+	private static final int startHp = 150;
 
-	private int damage = 1;
+	private int damage = 5;
+	private int attackDelay = 0;
+	private static final int attackMaxDelay = 20;
+	
+	private static final double attackRange = 60;
 
 	private Entity target;
 
@@ -20,6 +25,8 @@ public class Enemy extends BlockingEntity {
 
 	@Override
 	public void update() {
+		super.update();
+		
 		if (target != null && target.isDestroy())
 			target = null;
 		if (target != null) {
@@ -31,24 +38,29 @@ public class Enemy extends BlockingEntity {
 		} else {
 			this.velX = this.velY = 0;
 		}
+		
+		attackDelay++;
+		if(attackDelay >= attackMaxDelay) {
+			attack();
+			attackDelay = 0;
+		}
 
-		super.update();
-
+	}
+	
+	private void attack() {
+		for(IRenderable ir : RenderableHolder.instance.getEntities()) {
+			if(ir instanceof Entity) {
+				if(!(ir instanceof Enemy) && CollisionManager.findDistance(this, (ICollidable) ir) <= attackRange) {
+					((Entity) ir).reduceHP(damage);
+				}
+			}
+		}
 	}
 
 	@Override
 	public void undoMove() {
 		x = lastX;
 		y = lastY;
-	}
-
-	@Override
-	public void onCollision(ICollidable collider) {
-		if (collider instanceof Entity) {
-			if (!(collider instanceof Enemy))
-				((Entity) collider).hp -= this.damage;
-		}
-		super.onCollision(collider);
 	}
 
 	@Override
@@ -61,7 +73,7 @@ public class Enemy extends BlockingEntity {
 		super.draw(gc, RenderableHolder.enemy_img);
 	}
 
-	public void setTarget(Entity target) {
+	public synchronized void setTarget(Entity target) {
 		this.target = target;
 	}
 
