@@ -23,8 +23,8 @@ public class TileManager {
 	public static double tileSize;
 	public static List<Tile> tileList;
 	public static Tile[][] tileArray; // Use X,Y coordinate system
-	public TileManager() {
-		tileSize = tileSizeDefault*GameScreen.scale;
+	static {
+		tileSize = tileSizeDefault;
 		tileList = new ArrayList<Tile>();
 		tileArray = new Tile[tileCountX][tileCountY];
 		generateMap((new Random()).nextInt(99999));
@@ -44,7 +44,7 @@ public class TileManager {
 		}
 		return true;
 	}
-	private void generateMap(int seed) {
+	private static void generateMap(int seed) {
 		Random random = new Random(seed);
 		for(int x = -1;x <= tileCountX;x++) {
 			for(int y = -1;y <= tileCountY;y++) {

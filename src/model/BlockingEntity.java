@@ -2,7 +2,6 @@ package model;
 
 import logic.CollisionManager;
 import logic.IBlockable;
-import logic.ICollidable;
 
 public abstract class BlockingEntity extends MovingEntity implements IBlockable {
 	protected double lastX, lastY;

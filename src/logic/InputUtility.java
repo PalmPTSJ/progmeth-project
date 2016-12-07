@@ -66,12 +66,12 @@ public class InputUtility {
 		});
 		scene.setOnMouseDragged((MouseEvent event) -> {
 			// Mouse drag = mouse moved while pressing
-			mouseX = event.getSceneX();
-			mouseY = event.getSceneY();
+			mouseX = event.getX();
+			mouseY = event.getY();
 		});
 		scene.setOnMouseMoved((MouseEvent event) -> {
-			mouseX = event.getSceneX();
-			mouseY = event.getSceneY();
+			mouseX = event.getX();
+			mouseY = event.getY();
 		});
 	}
 

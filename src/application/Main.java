@@ -16,7 +16,6 @@ public class Main extends Application {
 	
 	public final int screenWidth = 900;
 	public final int screenHeight = 600;
-	public final double screenScale = 1;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		launch(args);
@@ -28,7 +27,7 @@ public class Main extends Application {
 		HBox root = new HBox();
 		Menu menu=new Menu();
 		Scene s = new Scene(root,screenWidth+200, screenHeight);
-		GameScreen gs = new GameScreen(screenWidth, screenHeight,screenScale);
+		GameScreen gs = new GameScreen(screenWidth, screenHeight);
 		root.getChildren().add(gs);
 		root.getChildren().add(menu);
 		GameManager gm = new GameManager();

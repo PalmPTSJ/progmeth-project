@@ -57,7 +57,7 @@ public abstract class Projectile extends MovingEntity {
 			return; // projectiles are not suppose to hit each other
 		else if (collider instanceof TileObjectVoid)
 			this.destroy();
-		else if ((target != null && collider == target) || (target==null && collider instanceof Enemy)) {
+		else if (collider instanceof Enemy) {
 			this.destroy();
 			((Entity) collider).reduceHP(this.damage);
 		}

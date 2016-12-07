@@ -28,4 +28,8 @@ public class TowerArrow extends Tower {
 		super.draw(gc, RenderableHolder.tower_arrow_img);
 	}
 
+	public static int[] getResourceNeeded() {
+		// TODO Auto-generated method stub
+		return new int[]{5,0,0,0};
+	}
 }

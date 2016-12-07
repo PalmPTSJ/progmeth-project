@@ -1,6 +1,5 @@
 package model;
 
-import javafx.scene.canvas.GraphicsContext;
 import logic.CollisionManager;
 import logic.ICollidable;
 

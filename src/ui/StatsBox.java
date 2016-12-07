@@ -15,5 +15,4 @@ public class StatsBox extends VBox {
 		score.setText("Score "+GameManager.score);
 		fps.setText(GameManager.fps+"fps");
 	}
-		
 }
