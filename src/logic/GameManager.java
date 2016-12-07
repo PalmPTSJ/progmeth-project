@@ -69,18 +69,17 @@ public class GameManager {
 			try {
 				System.out.println(InputUtility.instance.getMouseX()+" "+InputUtility.instance.getMouseY());
 				Boolean ok=(Boolean) BuyManager.currentObjectClass.getMethod("canPlace",Tile.class).invoke(null,TileManager.tileArray[x][y]);
-				boolean ok2=true;
 				int[] resourceNeeded=(int[]) BuyManager.currentObjectClass.getMethod("getResourceNeeded").invoke(null);
 				for(int i=0;i<4;i++){
-					if(ResourceManager.getResource(i)<resourceNeeded[i])ok2=false;
+					if(ResourceManager.getResource(i)<resourceNeeded[i])ok=false;
 				}
-				if(ok && ok2){
+				if(ok){
 					for(int i=0;i<4;i++){
 						ResourceManager.addResource(i, -resourceNeeded[i]);
 					}
 					IRenderable ir=(IRenderable) BuyManager.currentObjectClass.getDeclaredConstructor(Tile.class).newInstance(TileManager.tileArray[x][y]);
 					addEntity(ir);
-					BuyManager.buyMode=false;
+					if(!InputUtility.instance.isKeyDown(KeyCode.SHIFT))BuyManager.buyMode=false;
 				}
 			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
 					| NoSuchMethodException | SecurityException e) {
