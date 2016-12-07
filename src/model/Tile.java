@@ -38,7 +38,7 @@ public abstract class Tile implements IRenderable {
 	
 	@Override
 	public int getZ() {
-		return 0;
+		return -10;
 	}
 	
 	@Override

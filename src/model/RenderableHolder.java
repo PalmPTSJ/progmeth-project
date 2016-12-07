@@ -18,6 +18,10 @@ public class RenderableHolder {
 	public static Image enemy_img;
 	public static Image tower_arrow_img;
 	public static Image projectile_rock_img;
+	public static Image tileObject_wall_wood_img;
+	public static Image tileObject_wall_stone_img;
+	public static Image tileObject_wall_iron_img;
+	
 	private final static RenderableHolder instance;
 	
 	public RenderableHolder(){
@@ -51,6 +55,9 @@ public class RenderableHolder {
 		enemy_img = getRes("img/enemy.png");
 		tower_arrow_img = getRes("img/tileObject/towerArrow.png");
 		projectile_rock_img = getRes("img/object/table.png");
+		tileObject_wall_wood_img = getRes("img/object/woodwall.png");
+		tileObject_wall_stone_img = getRes("img/object/stonewall.png");
+		tileObject_wall_iron_img = getRes("img/object/ironwall.png");
 	}
 	public synchronized void remove(int index){
 		instance.entities.remove(index);
