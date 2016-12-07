@@ -3,6 +3,7 @@ package model;
 import javafx.scene.canvas.GraphicsContext;
 import logic.CollisionManager;
 import logic.ICollidable;
+import logic.ResourceManager;
 
 public class Enemy extends BlockingEntity {
 
@@ -13,8 +14,8 @@ public class Enemy extends BlockingEntity {
 
 	private int damage = 5;
 	private int attackDelay = 0;
+	private int reward = 15;
 	private static final int attackMaxDelay = 20;
-	
 	private static final double attackRange = 60;
 
 	private Entity target;
@@ -77,4 +78,10 @@ public class Enemy extends BlockingEntity {
 		this.target = target;
 	}
 
+	@Override
+	public void onDestroy() {
+		// TODO Auto-generated method stub
+		ResourceManager.addResource(ResourceManager.ARTIFACT, reward);
+	}
+	
 }

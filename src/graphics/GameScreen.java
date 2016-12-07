@@ -12,8 +12,6 @@ import logic.TileManager;
 import model.IRenderable;
 import model.RenderableHolder;
 import model.Tile;
-import model.TileObjectStone;
-import model.TileObjectTree;
 
 public class GameScreen extends Canvas {
 	public static int screen_width, screen_height;
@@ -34,7 +32,17 @@ public class GameScreen extends Canvas {
 		}
 	}
 	public void drawBuyingItem(GraphicsContext gc){
-		gc.drawImage(BuyManager.currentObjectImage, InputUtility.instance.getMouseX(), InputUtility.instance.getMouseY());
+		int x=(int) (InputUtility.instance.getMouseX()/TileManager.tileSize);
+		int y=(int) (InputUtility.instance.getMouseY()/TileManager.tileSize);
+		int sizeX=0,sizeY=0;
+		try {
+			sizeX=BuyManager.currentObjectClass.getDeclaredField("sizeX").getInt(null);
+			sizeY=BuyManager.currentObjectClass.getDeclaredField("sizeY").getInt(null);
+		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		gc.drawImage(BuyManager.currentObjectImage,x*TileManager.tileSize,y*TileManager.tileSize,sizeX*TileManager.tileSize,sizeY*TileManager.tileSize);
 	}
 	public void drawOverlay(GraphicsContext gc){
 		gc.setGlobalAlpha(0.5);

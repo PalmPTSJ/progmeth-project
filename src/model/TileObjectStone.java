@@ -4,8 +4,8 @@ import javafx.scene.canvas.GraphicsContext;
 import logic.TileManager;
 
 public class TileObjectStone extends TileObject {
-	private static final int sizeX = 2;
-	private static final int sizeY = 2;
+	public static final int sizeX = 2;
+	public static final int sizeY = 2;
 	private static final int startHp = 250;
 
 	public TileObjectStone(Tile tile) {

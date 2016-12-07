@@ -7,8 +7,8 @@ public class TowerArrow extends Tower {
 	
 	private static final int startHP = 200;
 	private static final int shootingMaxDelay = 15;
-	private static final int sizeX = 1;
-	private static final int sizeY = 1;
+	public static final int sizeX = 1;
+	public static final int sizeY = 1;
 	
 	public TowerArrow(Tile tile) {
 		super(tile, sizeX, sizeY, startHP, shootingMaxDelay);

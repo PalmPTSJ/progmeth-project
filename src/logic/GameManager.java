@@ -38,20 +38,12 @@ public class GameManager {
 	}
 
 	private void updatePlayer() {
-		if (InputUtility.instance.isKeyDown(KeyCode.A))
-			player.setVelX(-1);
-		if (InputUtility.instance.isKeyDown(KeyCode.D))
-			player.setVelX(1);
-		if (InputUtility.instance.isKeyDown(KeyCode.W))
-			player.setVelY(-1);
-		if (InputUtility.instance.isKeyDown(KeyCode.S))
-			player.setVelY(1);
+		if (BuyManager.buyMode)return;
+		
 		if (InputUtility.instance.isMouseLeftDown()) {
-			if (!BuyManager.buyMode) {
-				ProjectileRock arrow = new ProjectileRock(player.getX(), player.getY(),
-						InputUtility.instance.getMouseX(), InputUtility.instance.getMouseY());
-				RenderableHolder.getInstance().add(arrow);
-			}
+			ProjectileRock arrow = new ProjectileRock(player.getX(), player.getY(),
+					InputUtility.instance.getMouseX(), InputUtility.instance.getMouseY());
+			RenderableHolder.getInstance().add(arrow);
 		}
 	}
 

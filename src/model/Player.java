@@ -1,6 +1,8 @@
 package model;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyCode;
+import logic.InputUtility;
 
 public class Player extends BlockingEntity {
 
@@ -35,4 +37,16 @@ public class Player extends BlockingEntity {
 		super.draw(gc, RenderableHolder.player_img);
 	}
 
+	@Override
+	public void update(){
+		if (InputUtility.instance.isKeyDown(KeyCode.A))
+			setVelX(-1);
+		if (InputUtility.instance.isKeyDown(KeyCode.D))
+			setVelX(1);
+		if (InputUtility.instance.isKeyDown(KeyCode.W))
+			setVelY(-1);
+		if (InputUtility.instance.isKeyDown(KeyCode.S))
+			setVelY(1);
+		super.update();
+	}
 }
