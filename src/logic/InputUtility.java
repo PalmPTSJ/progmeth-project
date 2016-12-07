@@ -84,6 +84,8 @@ public class InputUtility {
 	
 	public boolean isMouseLeftClicked() { return mouseLeftTriggered; }
 	public boolean isMouseLeftDown() { return mouseLeftDown; }
+	public boolean isMouseRightClicked() { return mouseRightTriggered; }
+	public boolean isMouseRightDown() { return mouseRightDown; }
 	public double getMouseX() { return mouseX; }
 	public double getMouseY() { return mouseY; }
 	
