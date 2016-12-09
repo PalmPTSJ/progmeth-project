@@ -1,5 +1,9 @@
 package graphics;
 
+import java.lang.reflect.InvocationTargetException;
+
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -34,15 +38,19 @@ public class GameScreen extends Canvas {
 	public void drawBuyingItem(GraphicsContext gc){
 		int x=(int) (InputUtility.instance.getMouseX()/TileManager.tileSize);
 		int y=(int) (InputUtility.instance.getMouseY()/TileManager.tileSize);
+		if(x>=TileManager.tileCountX || x<0 || y>=TileManager.tileCountY || y<0)return;
 		int sizeX=0,sizeY=0;
 		try {
 			sizeX=BuyManager.instance.currentObjectClass.getDeclaredField("sizeX").getInt(null);
 			sizeY=BuyManager.instance.currentObjectClass.getDeclaredField("sizeY").getInt(null);
-		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
+			if((Boolean)BuyManager.instance.currentObjectClass.getMethod("canPlace", Tile.class).invoke(null, TileManager.instance.tileArray[x][y])){			
+				gc.drawImage(BuyManager.instance.currentObjectImage,x*TileManager.tileSize,y*TileManager.tileSize,sizeX*TileManager.tileSize,sizeY*TileManager.tileSize);
+			}
+		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException | InvocationTargetException | NoSuchMethodException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		gc.drawImage(BuyManager.instance.currentObjectImage,x*TileManager.tileSize,y*TileManager.tileSize,sizeX*TileManager.tileSize,sizeY*TileManager.tileSize);
+		
 	}
 	public void drawOverlay(GraphicsContext gc){
 		gc.setGlobalAlpha(0.5);

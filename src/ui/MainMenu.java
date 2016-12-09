@@ -2,14 +2,16 @@ package ui;
 
 import application.Main;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import javafx.scene.layout.VBox;
 
 public class MainMenu extends VBox {
 
 	public MainMenu() {
-		// TODO Auto-generated constructor stub
+		
 		Button start=new Button("Start");
-		getChildren().addAll(start,new Button("Exit"));
+		Slider sl=new Slider(0,100,50);
+		getChildren().addAll(start,sl,new Button("Exit"));
 		start.setOnAction(e->{
 			Main.changeSceneToGame();
 		});
