@@ -17,10 +17,10 @@ public class BuyItem extends HBox{
 		lb.setFont(Font.font(30));
 		getChildren().addAll(iv,lb);
 		setOnMouseClicked(e->{
-			BuyManager.buyMode = !BuyManager.buyMode;
-			BuyManager.currentObjectImage=img;
-			BuyManager.currentObjectName=name;
-			BuyManager.currentObjectClass=T;
+			BuyManager.instance.buyMode = !BuyManager.instance.buyMode;
+			BuyManager.instance.currentObjectImage=img;
+			BuyManager.instance.currentObjectName=name;
+			BuyManager.instance.currentObjectClass=T;
 		});
 	}
 

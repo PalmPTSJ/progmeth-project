@@ -45,8 +45,8 @@ public abstract class TileObject extends Entity implements IBlockable {
 			for (int dy = 0; dy < this.sizeY; dy++) {
 				int x = tile.getTileX() + dx;
 				int y = tile.getTileY() + dy;
-				TileManager.tileArray[x][y].setTileObject(this);
-				this.tile.add(TileManager.tileArray[x][y]);
+				TileManager.instance.tileArray[x][y].setTileObject(this);
+				this.tile.add(TileManager.instance.tileArray[x][y]);
 			}
 		}
 		RenderableHolder.getInstance().add(this);
