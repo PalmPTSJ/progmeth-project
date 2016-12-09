@@ -1,6 +1,6 @@
 package model;
 
-import logic.CollisionManager;
+import logic.CollisionUtility;
 import logic.IBlockable;
 
 public abstract class BlockingEntity extends MovingEntity implements IBlockable {
@@ -15,11 +15,11 @@ public abstract class BlockingEntity extends MovingEntity implements IBlockable 
 		lastX = x;
 		lastY = y;
 		x += velX * speed;
-		if (CollisionManager.isBlocked(this)) {
+		if (CollisionUtility.isBlocked(this)) {
 			x = lastX;
 		}
 		y += velY * speed;
-		if (CollisionManager.isBlocked(this))
+		if (CollisionUtility.isBlocked(this))
 			y = lastY;
 	}
 

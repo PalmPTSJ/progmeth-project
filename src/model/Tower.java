@@ -1,6 +1,6 @@
 package model;
 
-import logic.CollisionManager;
+import logic.CollisionUtility;
 import logic.ICollidable;
 
 public abstract class Tower extends TileObject {
@@ -31,7 +31,7 @@ public abstract class Tower extends TileObject {
 		double targetDist = Double.MAX_VALUE;
 		for(IRenderable ir : RenderableHolder.getInstance().getEntities()) {
 			if(ir instanceof Enemy) {
-				double dist = CollisionManager.findDistance(this, (ICollidable) ir);
+				double dist = CollisionUtility.findDistance(this, (ICollidable) ir);
 				if(dist < targetDist) {
 					targetDist = dist;
 					target = (Enemy) ir;

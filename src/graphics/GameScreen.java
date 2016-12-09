@@ -26,7 +26,7 @@ public class GameScreen extends Canvas {
 		GraphicsContext gc = this.getGraphicsContext2D();
 		drawBackground(gc);
 		drawEntities(gc);
-		if(BuyManager.buyMode){
+		if(BuyManager.instance.buyMode){
 			drawOverlay(gc);
 			drawBuyingItem(gc);
 		}
@@ -36,17 +36,17 @@ public class GameScreen extends Canvas {
 		int y=(int) (InputUtility.instance.getMouseY()/TileManager.tileSize);
 		int sizeX=0,sizeY=0;
 		try {
-			sizeX=BuyManager.currentObjectClass.getDeclaredField("sizeX").getInt(null);
-			sizeY=BuyManager.currentObjectClass.getDeclaredField("sizeY").getInt(null);
+			sizeX=BuyManager.instance.currentObjectClass.getDeclaredField("sizeX").getInt(null);
+			sizeY=BuyManager.instance.currentObjectClass.getDeclaredField("sizeY").getInt(null);
 		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		gc.drawImage(BuyManager.currentObjectImage,x*TileManager.tileSize,y*TileManager.tileSize,sizeX*TileManager.tileSize,sizeY*TileManager.tileSize);
+		gc.drawImage(BuyManager.instance.currentObjectImage,x*TileManager.tileSize,y*TileManager.tileSize,sizeX*TileManager.tileSize,sizeY*TileManager.tileSize);
 	}
 	public void drawOverlay(GraphicsContext gc){
 		gc.setGlobalAlpha(0.5);
-		for(Tile tile : TileManager.tileList) {
+		for(Tile tile : TileManager.instance.tileList) {
 			if(tile.tileObject == null) {
 				gc.setFill(Color.GREEN);
 				gc.fillRect(tile.getX(), tile.getY(), TileManager.tileSize, TileManager.tileSize);

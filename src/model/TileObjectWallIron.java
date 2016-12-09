@@ -14,7 +14,7 @@ public class TileObjectWallIron extends TileObject {
 	}
 	
 	public static boolean canPlace(Tile tile) {
-		return TileManager.canPlace(tile, sizeX, sizeY);
+		return TileManager.instance.canPlace(tile, sizeX, sizeY);
 	}
 	
 	@Override

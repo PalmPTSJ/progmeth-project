@@ -3,7 +3,7 @@ package logic;
 import model.IRenderable;
 import model.RenderableHolder;
 
-public class CollisionManager {
+public class CollisionUtility {
 	
 	public static boolean collide(ICollidable o1,ICollidable o2) {
 		// rectangle collision detection

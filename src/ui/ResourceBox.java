@@ -22,8 +22,8 @@ public class ResourceBox extends VBox {
 	}
 	public void update() {
 		for(int i=0;i<4;i++){
-			int res=ResourceManager.getResource(i);
-			int cap=ResourceManager.getCapacity(i);
+			int res=ResourceManager.instance.getResource(i);
+			int cap=ResourceManager.instance.getCapacity(i);
 			lb[i].setText(ResourceManager.name[i]+" "+res+"/"+cap);
 			if(cap==0){
 				pb[i].setDisable(true);

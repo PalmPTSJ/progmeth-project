@@ -14,13 +14,18 @@ public class GameManager {
 	public static EnemyController enemyController;
 
 	public GameManager() {
+		//initialize singleton
+		BuyManager.instance=new BuyManager();
+		ResourceManager.instance=new ResourceManager();
+		TileManager.instance=new TileManager();
+		TileManager.instance.generateMap((new Random()).nextInt(99999));
 		player = new Player(10, 10);
 		Random random = new Random();
 
 		addEntity(player);
 		// System.out.println(player);
 		enemyController = new EnemyController();
-		for (Tile tile : TileManager.tileList) {
+		for (Tile tile : TileManager.instance.tileList) {
 			if (tile.tileObject == null && !(tile instanceof TileVoid)) {
 				if (random.nextInt(100) < 50 && tile.getTileX() < 10) {
 					Enemy enemy = new Enemy(tile.getX(), tile.getY());
@@ -37,7 +42,7 @@ public class GameManager {
 	
 
 	private void updatePlayer() {
-		if (BuyManager.buyMode)return;
+		if (BuyManager.instance.buyMode)return;
 		
 		if (InputUtility.instance.isMouseLeftDown()) {
 			ProjectileRock arrow = new ProjectileRock(player.getX(), player.getY(),
@@ -54,31 +59,31 @@ public class GameManager {
 				((Entity) ir).update();
 			}
 		}
-		CollisionManager.checkCollision();
+		CollisionUtility.checkCollision();
 		removeDestroyEntity();
 		// timer++;
 		InputUtility.instance.reset();
 	}
 
 	private void updateOverlay(){
-		if(!BuyManager.buyMode)return;
+		if(!BuyManager.instance.buyMode)return;
 		if(InputUtility.instance.isMouseLeftClicked()){
 			int x=(int) (InputUtility.instance.getMouseX()/TileManager.tileSize);
 			int y=(int) (InputUtility.instance.getMouseY()/TileManager.tileSize);
 			try {
 				System.out.println(InputUtility.instance.getMouseX()+" "+InputUtility.instance.getMouseY());
-				Boolean ok=(Boolean) BuyManager.currentObjectClass.getMethod("canPlace",Tile.class).invoke(null,TileManager.tileArray[x][y]);
-				int[] resourceNeeded=(int[]) BuyManager.currentObjectClass.getMethod("getResourceNeeded").invoke(null);
+				Boolean ok=(Boolean) BuyManager.instance.currentObjectClass.getMethod("canPlace",Tile.class).invoke(null,TileManager.instance.tileArray[x][y]);
+				int[] resourceNeeded=(int[]) BuyManager.instance.currentObjectClass.getMethod("getResourceNeeded").invoke(null);
 				for(int i=0;i<4;i++){
-					if(ResourceManager.getResource(i)<resourceNeeded[i])ok=false;
+					if(ResourceManager.instance.getResource(i)<resourceNeeded[i])ok=false;
 				}
 				if(ok){
 					for(int i=0;i<4;i++){
-						ResourceManager.addResource(i, -resourceNeeded[i]);
+						ResourceManager.instance.addResource(i, -resourceNeeded[i]);
 					}
-					IRenderable ir=(IRenderable) BuyManager.currentObjectClass.getDeclaredConstructor(Tile.class).newInstance(TileManager.tileArray[x][y]);
+					IRenderable ir=(IRenderable) BuyManager.instance.currentObjectClass.getDeclaredConstructor(Tile.class).newInstance(TileManager.instance.tileArray[x][y]);
 					addEntity(ir);
-					if(!InputUtility.instance.isKeyDown(KeyCode.SHIFT))BuyManager.buyMode=false;
+					if(!InputUtility.instance.isKeyDown(KeyCode.SHIFT))BuyManager.instance.buyMode=false;
 				}
 			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
 					| NoSuchMethodException | SecurityException e) {

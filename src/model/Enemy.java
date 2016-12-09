@@ -1,7 +1,7 @@
 package model;
 
 import javafx.scene.canvas.GraphicsContext;
-import logic.CollisionManager;
+import logic.CollisionUtility;
 import logic.ICollidable;
 import logic.ResourceManager;
 
@@ -51,7 +51,7 @@ public class Enemy extends BlockingEntity {
 	private void attack() {
 		for(IRenderable ir : RenderableHolder.getInstance().getEntities()) {
 			if(ir instanceof Entity) {
-				if(!(ir instanceof Enemy) && CollisionManager.findDistance(this, (ICollidable) ir) <= attackRange) {
+				if(!(ir instanceof Enemy) && CollisionUtility.findDistance(this, (ICollidable) ir) <= attackRange) {
 					((Entity) ir).reduceHP(damage);
 				}
 			}
@@ -81,7 +81,7 @@ public class Enemy extends BlockingEntity {
 	@Override
 	public void onDestroy() {
 		// TODO Auto-generated method stub
-		ResourceManager.addResource(ResourceManager.ARTIFACT, reward);
+		ResourceManager.instance.addResource(ResourceManager.ARTIFACT, reward);
 	}
 	
 }
