@@ -7,7 +7,7 @@ import logic.ResourceManager;
 
 public class Enemy extends BlockingEntity {
 
-	private static final double speed = 5;
+	private static final double speed = 3;
 	private static final double width = 20;
 	private static final double height = 20;
 	private static final int startHp = 150;

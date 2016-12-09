@@ -3,7 +3,8 @@ package model;
 import javafx.scene.canvas.GraphicsContext;
 
 public class ProjectileLaser extends Projectile {
-	private static final double width = 20;
+	
+	private static final double width = 60;
 	private static final double height = 7;
 	private static final double speed = 20;
 	private static final int damage = 2;

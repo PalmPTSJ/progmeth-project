@@ -7,27 +7,29 @@ import javafx.scene.input.KeyCode;
 import model.*;
 
 public class GameManager {
+	public static GameManager instance;
 	public static int score = 0;
 	public static Player player;
 	public static int fps;
 	public static boolean isOverlayMode;
 	public static EnemyController enemyController;
-
+	public static Random globalRNG;
 	public GameManager() {
+		globalRNG = new Random();
 		//initialize singleton
 		BuyManager.instance=new BuyManager();
 		ResourceManager.instance=new ResourceManager();
 		TileManager.instance=new TileManager();
 		TileManager.instance.generateMap((new Random()).nextInt(99999));
+		EnemyManager.instance = new EnemyManager();
 		player = new Player(10, 10);
-		Random random = new Random();
 
 		addEntity(player);
 		// System.out.println(player);
 		enemyController = new EnemyController();
 		for (Tile tile : TileManager.instance.tileList) {
 			if (tile.tileObject == null && !(tile instanceof TileVoid)) {
-				if (random.nextInt(100) < 50 && tile.getTileX() < 10 && tile.getTileX() > 1) {
+				if (globalRNG.nextInt(100) < 50 && tile.getTileX() < 10 && tile.getTileX() > 1) {
 					Enemy enemy = new Enemy(tile.getX(), tile.getY());
 					addEntity(enemy);
 					enemyController.addEnemy(enemy);
@@ -36,7 +38,7 @@ public class GameManager {
 		}
 	}
 
-	private void addEntity(IRenderable entity) {
+	public static void addEntity(IRenderable entity) {
 		RenderableHolder.getInstance().add(entity);
 	}
 	
@@ -61,6 +63,7 @@ public class GameManager {
 		}
 		CollisionUtility.checkCollision();
 		removeDestroyEntity();
+		EnemyManager.instance.update();
 		// timer++;
 		InputUtility.instance.reset();
 	}

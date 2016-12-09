@@ -7,6 +7,8 @@ import model.Enemy;
 import model.Entity;
 import model.IRenderable;
 import model.RenderableHolder;
+import model.TileObject;
+import model.Tower;
 import model.TowerArrow;
 
 public class EnemyController {
@@ -46,7 +48,7 @@ public class EnemyController {
 				for (Enemy enemy : enemyList) {
 					enemy.setTarget(GameManager.player);
 					for(IRenderable ir : RenderableHolder.getInstance().getEntities()) {
-						if(ir instanceof TowerArrow) {
+						if(ir instanceof Tower) {
 							enemy.setTarget((Entity) ir);
 							break;
 						}

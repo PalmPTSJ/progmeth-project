@@ -1,18 +1,18 @@
 package logic;
 
 public class ResourceManager {
-	public static final int WOOD=0,IRON=1,DIAMOND=2,ARTIFACT=3;
-	public static final String[] name={"Wood","Iron","Diamond","Alien Artifact"};
+	public static final int WOOD=0,STONE=1,IRON=2,DIAMOND=3,ARTIFACT=4;
+	public static final String[] name={"Wood","Stone","Iron","Diamond","Alien Artifact"};
 	
 	public static ResourceManager instance;
 	
 	private int[] capacity;
 	private int[] resource;
 	public ResourceManager(){
-		capacity=new int[4];
-		capacity[0]=capacity[1]=capacity[2]=capacity[3]=10;
-		resource=new int[4];
-		resource[0]=resource[1]=resource[2]=resource[3]=10;
+		capacity=new int[5];
+		capacity[0]=capacity[1]=capacity[2]=capacity[3]=capacity[4] = 100;
+		resource=new int[5];
+		resource[0]=resource[1]=resource[2]=resource[3]=resource[4] = 100;
 	}
 	public int getCapacity(int index){
 		return capacity[index];

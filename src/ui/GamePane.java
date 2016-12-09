@@ -14,7 +14,7 @@ public class GamePane extends HBox {
 		getChildren().add(gs);
 		getChildren().add(menu);
 		
-		GameManager gm = new GameManager();
+		GameManager.instance = new GameManager();
 		
 		new AnimationTimer() {
 			Long start=0l;
@@ -26,7 +26,7 @@ public class GamePane extends HBox {
 				if(diff > 0) GameManager.fps = (int) (1000000000l/(diff));
 				
 				if(diff>=10000000l) { // Full speed (60fps)
-					gm.update();
+					GameManager.instance.update();
 					gs.paintComponents();
 					menu.update();
 					start = now;

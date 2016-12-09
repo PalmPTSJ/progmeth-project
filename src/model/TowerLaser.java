@@ -6,7 +6,7 @@ import logic.TileManager;
 public class TowerLaser extends Tower {
 	
 	private static final int startHP = 300;
-	private static final int shootingMaxDelay = 1;
+	private static final int shootingMaxDelay = 3;
 	public static final int sizeX = 2;
 	public static final int sizeY = 2;
 	
