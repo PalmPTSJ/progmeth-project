@@ -4,11 +4,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.MouseEvent;
 import model.*;
 
 public class GameManager {
-	private int timer = 0;
 	public static int score = 0;
 	public static Player player;
 	public static int fps;
@@ -36,6 +34,7 @@ public class GameManager {
 	private void addEntity(IRenderable entity) {
 		RenderableHolder.getInstance().add(entity);
 	}
+	
 
 	private void updatePlayer() {
 		if (BuyManager.buyMode)return;

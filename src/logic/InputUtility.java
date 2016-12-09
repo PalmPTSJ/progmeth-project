@@ -90,4 +90,7 @@ public class InputUtility {
 	
 	public boolean isKeyDown(KeyCode a) { return keyPressed.contains(a); }
 	
+	public boolean isMouseOnScreen(){
+		return mouseOnScreen;
+	}
 }

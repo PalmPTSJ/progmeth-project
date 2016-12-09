@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import graphics.GameScreen;
 import model.RenderableHolder;
 import model.Tile;
 import model.TileGround;
@@ -50,7 +49,7 @@ public class TileManager {
 			for(int y = -1;y <= tileCountY;y++) {
 				if(x == -1 || y == -1 || x == tileCountX || y == tileCountY) {
 					TileVoid vt = new TileVoid(x,y);
-					TileObjectVoid vtObject = new TileObjectVoid(vt);
+					new TileObjectVoid(vt);
 					tileList.add(vt);
 				}
 				else {
@@ -70,13 +69,13 @@ public class TileManager {
 		// add some tree & stone
 		for(Tile t : tileList) {
 			if(t instanceof TileGround && random.nextInt(100) < 10 && TileObjectTree.canPlace(t)) {
-				TileObjectTree tree = new TileObjectTree(t);
+				new TileObjectTree(t);
 			}
 			else if(t instanceof TileStone && random.nextInt(100) < 5 && TileObjectStone.canPlace(t)) {
-					TileObjectStone stone = new TileObjectStone(t);
+				new TileObjectStone(t);
 			}
 			else if(random.nextInt(100) < 12 && TowerArrow.canPlace(t) && t.getTileX() > 10) {
-				TowerArrow tower = new TowerArrow(t);
+				new TowerArrow(t);
 			}
 		}
 	}
