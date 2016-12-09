@@ -12,6 +12,7 @@ import model.TileObjectTree;
 import model.TileStone;
 import model.TileVoid;
 import model.TowerArrow;
+import model.TowerLaser;
 import model.TileObjectVoid;
 
 public class TileManager {
@@ -74,8 +75,11 @@ public class TileManager {
 			else if(t instanceof TileStone && random.nextInt(100) < 5 && TileObjectStone.canPlace(t)) {
 				new TileObjectStone(t);
 			}
-			else if(random.nextInt(100) < 12 && TowerArrow.canPlace(t) && t.getTileX() > 10) {
+			else if(random.nextInt(100) < 8 && TowerArrow.canPlace(t) && t.getTileX() > 10) {
 				new TowerArrow(t);
+			}
+			else if(random.nextInt(100) < 2 && TowerLaser.canPlace(t) && t.getTileX() > 10) {
+				new TowerLaser(t);
 			}
 		}
 	}

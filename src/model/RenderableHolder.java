@@ -11,13 +11,20 @@ public class RenderableHolder {
 	private Comparator<IRenderable> comparator;
 	public static Image tile_ground_img;
 	public static Image tile_stone_img;
+	
 	public static Image tileObject_tree_img;
 	public static Image tileObject_stone_img;
+	
 	public static Image projectile_arrow_img;
+	public static Image projectile_laser_img;
+	public static Image projectile_rock_img;
+	
 	public static Image player_img;
 	public static Image enemy_img;
+	
 	public static Image tower_arrow_img;
-	public static Image projectile_rock_img;
+	public static Image tower_laser_img;
+	
 	public static Image tileObject_wall_wood_img;
 	public static Image tileObject_wall_stone_img;
 	public static Image tileObject_wall_iron_img;
@@ -48,13 +55,20 @@ public class RenderableHolder {
 	private static void loadResource() {
 		tile_ground_img = getRes("img/tile/ground.png");
 		tile_stone_img = getRes("img/tile/mountain.png");
+		
 		tileObject_tree_img = getRes("img/tileObject/tree.png");
 		tileObject_stone_img = getRes("img/tileObject/stone.png");
+		
 		player_img = getRes("img/player.png");
-		projectile_arrow_img = getRes("img/object/arrow.png");
 		enemy_img = getRes("img/enemy.png");
+		
 		tower_arrow_img = getRes("img/tileObject/towerArrow.png");
-		projectile_rock_img = getRes("img/object/table.png");
+		tower_laser_img = getRes("img/tileObject/towerLaser.png");
+		
+		projectile_arrow_img = getRes("img/object/arrow.png");
+		projectile_rock_img = getRes("img/object/laser.png");
+		projectile_laser_img = getRes("img/object/laser.png");
+		
 		tileObject_wall_wood_img = getRes("img/object/woodwall.png");
 		tileObject_wall_stone_img = getRes("img/object/stonewall.png");
 		tileObject_wall_iron_img = getRes("img/object/ironwall.png");

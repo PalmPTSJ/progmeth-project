@@ -16,7 +16,7 @@ public abstract class Projectile extends MovingEntity {
 	// Every projectile should be going to the target
 	public Projectile(double x, double y, double width, double height, double speed, int damage, double targetX,
 			double targetY) {
-		super(x, y, width, height, speed, 100);
+		super(x - width/2, y - height/2, width, height, speed, 100);
 		this.damage = damage;
 		setTarget(targetX, targetY);
 	}
@@ -67,7 +67,7 @@ public abstract class Projectile extends MovingEntity {
 		// draw with rotation
 		Affine old = gc.getTransform().clone();
 		Affine rotated = old.clone();
-		rotated.append(new Rotate(angle / Math.PI * 180, x, y));
+		rotated.append(new Rotate(angle / Math.PI * 180, x+width/2, y+height/2));
 		gc.setTransform(rotated);
 		gc.drawImage(img, x, y, width, height);
 		gc.setTransform(old);

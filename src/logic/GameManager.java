@@ -22,7 +22,7 @@ public class GameManager {
 		enemyController = new EnemyController();
 		for (Tile tile : TileManager.tileList) {
 			if (tile.tileObject == null && !(tile instanceof TileVoid)) {
-				if (random.nextInt(100) < 50 && tile.getTileX() < 10) {
+				if (random.nextInt(100) < 50 && tile.getTileX() < 10 && tile.getTileX() > 1) {
 					Enemy enemy = new Enemy(tile.getX(), tile.getY());
 					addEntity(enemy);
 					enemyController.addEnemy(enemy);
@@ -40,7 +40,7 @@ public class GameManager {
 		if (BuyManager.buyMode)return;
 		
 		if (InputUtility.instance.isMouseLeftDown()) {
-			ProjectileRock arrow = new ProjectileRock(player.getX(), player.getY(),
+			Projectile arrow = new ProjectileLaser(player.getX(), player.getY(),
 					InputUtility.instance.getMouseX(), InputUtility.instance.getMouseY());
 			RenderableHolder.getInstance().add(arrow);
 		}
