@@ -6,7 +6,7 @@ import javafx.scene.layout.HBox;
 import logic.GameManager;
 
 public class GamePane extends HBox {
-
+	AnimationTimer at;
 	public GamePane(int width,int height) {
 		// TODO Auto-generated constructor stub
 		Menu menu=new Menu();
@@ -16,7 +16,7 @@ public class GamePane extends HBox {
 		
 		GameManager.instance = new GameManager();
 		
-		new AnimationTimer() {
+		at=new AnimationTimer() {
 			Long start=0l;
 			@Override
 			public void handle(long now) {
@@ -33,6 +33,11 @@ public class GamePane extends HBox {
 				}
 				
 			}
-		}.start();
+		};
+		at.start();
+	}
+	public void stop(){
+		at.stop();
+		GameManager.enemyController.stop();
 	}
 }

@@ -37,4 +37,9 @@ public class Main extends Application {
 		scene.setRoot(new GamePane(screenWidth, screenHeight));
 		SoundManager.start();
 	}
+	public static void changeSceneToMain(){
+		((GamePane)scene.getRoot()).stop();
+		SoundManager.stop();
+		scene.setRoot(new MainMenu());
+	}
 }

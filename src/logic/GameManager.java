@@ -3,6 +3,9 @@ package logic;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
+import application.Main;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
 import model.*;
 
@@ -36,17 +39,29 @@ public class GameManager {
 
 	public void update() {
 		updateOverlay();
+		updateEntity();
+		CollisionUtility.checkCollision();
+		removeDestroyEntity();
+		EnemyManager.instance.update();
+		checkWiningCondition();
+		InputUtility.instance.reset();
+	}
+	private void checkWiningCondition(){
+		if(player.isDestroy()){
+			Alert alert=new Alert(AlertType.INFORMATION);
+			alert.setContentText("GameOver");
+			alert.setHeaderText("GG");
+			alert.show();
+			Main.changeSceneToMain();
+		}
+	}
+	private void updateEntity(){
 		for (IRenderable ir : RenderableHolder.getInstance().getEntities()) {
 			if (ir instanceof Entity) {
 				((Entity) ir).update();
 			}
 		}
-		CollisionUtility.checkCollision();
-		removeDestroyEntity();
-		EnemyManager.instance.update();
-		InputUtility.instance.reset();
 	}
-
 	private void updateOverlay() {
 		if (!BuyManager.instance.buyMode)
 			return;
