@@ -16,6 +16,7 @@ public class GameManager {
 	public static Random globalRNG;
 	public GameManager() {
 		globalRNG = new Random();
+		
 		//initialize singleton
 		BuyManager.instance=new BuyManager();
 		ResourceManager.instance=new ResourceManager();

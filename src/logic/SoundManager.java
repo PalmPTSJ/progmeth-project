@@ -1,9 +1,9 @@
-package application;
+package logic;
 
 import javafx.scene.media.AudioClip;
 
 public class SoundManager {
-	private static AudioClip bgm;
+	public static AudioClip bgm;
 	static{
 		// TODO Auto-generated constructor stub
 		bgm=new AudioClip(ClassLoader.getSystemResource("sound/bgm.wav").toString());
@@ -12,9 +12,10 @@ public class SoundManager {
 	public static void start(){
 		bgm.play();
 	}
+	public static void stop(){
+		bgm.stop();
+	}
 	public static void setVolume(double value){
-//		bgm.stop();
-//		bgm.setVolume(value);
-//		bgm.play();
+		bgm.setVolume(value/100);
 	}
 }

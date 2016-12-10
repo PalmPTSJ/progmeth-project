@@ -1,10 +1,10 @@
 package application;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 import logic.GameManager;
 import logic.InputUtility;
+import logic.SoundManager;
 import ui.GamePane;
 import ui.MainMenu;
 
@@ -23,9 +23,6 @@ public class Main extends Application {
 		scene = new Scene(new MainMenu(),screenWidth+200, screenHeight);
 		InputUtility.instance.setEventHandler(scene);
 		
-		SoundManager.start();
-		
-		
 		primaryStage.setResizable(false);
 		primaryStage.setScene(scene);
 		primaryStage.show();
@@ -38,5 +35,6 @@ public class Main extends Application {
 	}
 	public static void changeSceneToGame(){
 		scene.setRoot(new GamePane(screenWidth, screenHeight));
+		SoundManager.start();
 	}
 }
