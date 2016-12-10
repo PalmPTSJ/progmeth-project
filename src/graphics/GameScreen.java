@@ -2,8 +2,6 @@ package graphics;
 
 import java.lang.reflect.InvocationTargetException;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;

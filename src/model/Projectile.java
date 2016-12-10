@@ -10,19 +10,23 @@ public abstract class Projectile extends MovingEntity {
 
 	private int damage;
 	private double angle;
-	
+
+	private double originalWidth, originalHeight;
+
 	private Entity target = null;
 
 	// Every projectile should be going to the target
 	public Projectile(double x, double y, double width, double height, double speed, int damage, double targetX,
 			double targetY) {
-		super(x - width/2, y - height/2, width, height, speed, 100);
+		super(x - width / 2, y - height / 2, width, height, speed, 100);
 		this.damage = damage;
+		this.originalWidth = width;
+		this.originalHeight = height;
 		setTarget(targetX, targetY);
 	}
-	
+
 	public Projectile(double x, double y, double width, double height, double speed, int damage, Entity target) {
-		this(x,y,width,height,speed,damage,target.x,target.y);
+		this(x, y, width, height, speed, damage, target.x, target.y);
 		this.target = target;
 	}
 
@@ -32,15 +36,21 @@ public abstract class Projectile extends MovingEntity {
 		this.angle = Math.atan2(dy, dx);
 		this.velX = Math.cos(angle);
 		this.velY = Math.sin(angle);
+		// modify my hitbox
+		this.width = Math.max(Math.abs(Math.sin(angle) * this.originalHeight),
+				Math.abs(Math.cos(angle) * this.originalWidth));
+
+		this.height = Math.max(Math.abs(Math.cos(angle) * this.originalHeight),
+				Math.abs(Math.sin(angle) * this.originalWidth));
 	}
-	
+
 	@Override
 	public void update() {
 		super.update();
-		if(target != null && target.isDestroy()) target = null;
-		
-		if(target != null) {
-			setTarget(target.getX()+target.getWidth()/2,target.getY()+target.getHeight()/2);
+		if (target != null && target.isDestroy())
+			target = null;
+		if (target != null) {
+			setTarget(target.getCenterX(), target.getCenterY());
 		}
 	}
 
@@ -67,17 +77,17 @@ public abstract class Projectile extends MovingEntity {
 		// draw with rotation
 		Affine old = gc.getTransform().clone();
 		Affine rotated = old.clone();
-		rotated.append(new Rotate(angle / Math.PI * 180, x+width/2, y+height/2));
+		rotated.append(new Rotate(angle / Math.PI * 180, x + originalWidth / 2, y + originalHeight / 2));
 		gc.setTransform(rotated);
-		gc.drawImage(img, x, y, width, height);
+		gc.drawImage(img, x, y, originalWidth, originalHeight);
 		gc.setTransform(old);
-		
+
 		super.draw(gc, null);
 	}
-	
+
 	@Override
 	public void reduceHP(int damage) {
-		
+
 	}
 
 }

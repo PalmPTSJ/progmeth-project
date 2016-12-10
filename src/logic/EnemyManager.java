@@ -1,6 +1,5 @@
 package logic;
 
-import javafx.scene.image.Image;
 import model.Enemy;
 import model.Tile;
 import model.TileVoid;

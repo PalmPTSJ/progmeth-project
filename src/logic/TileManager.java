@@ -11,8 +11,6 @@ import model.TileObjectStone;
 import model.TileObjectTree;
 import model.TileStone;
 import model.TileVoid;
-import model.TowerArrow;
-import model.TowerLaser;
 import model.TileObjectVoid;
 
 public class TileManager {
