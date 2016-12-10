@@ -1,6 +1,7 @@
 package application;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 import logic.GameManager;
 import logic.InputUtility;
@@ -21,6 +22,9 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		scene = new Scene(new MainMenu(),screenWidth+200, screenHeight);
 		InputUtility.instance.setEventHandler(scene);
+		
+		SoundManager.start();
+		
 		
 		primaryStage.setResizable(false);
 		primaryStage.setScene(scene);

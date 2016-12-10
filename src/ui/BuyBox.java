@@ -2,8 +2,6 @@ package ui;
 
 import javafx.scene.control.ListView;
 import model.RenderableHolder;
-import model.TileObjectStone;
-import model.TileObjectTree;
 import model.TileObjectWallIron;
 import model.TileObjectWallStone;
 import model.TileObjectWallWood;
