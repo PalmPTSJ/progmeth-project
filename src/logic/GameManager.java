@@ -22,7 +22,7 @@ public class GameManager {
 		BuyManager.instance = new BuyManager();
 		ResourceManager.instance = new ResourceManager();
 		TileManager.instance = new TileManager();
-		TileManager.instance.generateMap((new Random()).nextInt(99999));
+		TileManager.instance.generateMap(globalRNG.nextInt(99999));
 		EnemyManager.instance = new EnemyManager();
 		player = new Player(10, 10);
 
