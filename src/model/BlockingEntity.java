@@ -15,9 +15,8 @@ public abstract class BlockingEntity extends MovingEntity implements IBlockable 
 		lastX = x;
 		lastY = y;
 		x += velX * speed;
-		if (CollisionUtility.isBlocked(this)) {
+		if (CollisionUtility.isBlocked(this))
 			x = lastX;
-		}
 		y += velY * speed;
 		if (CollisionUtility.isBlocked(this))
 			y = lastY;

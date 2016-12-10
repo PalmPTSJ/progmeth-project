@@ -23,10 +23,9 @@ public abstract class TileObject extends Entity implements IBlockable {
 
 	@Override
 	public void onDestroy() {
+		super.onDestroy();
 		// remove link from tile
-		System.out.println("Destroy");
 		for (Tile t : tile) {
-			System.out.println(t);
 			t.setTileObject(null);
 		}
 	}
@@ -35,7 +34,8 @@ public abstract class TileObject extends Entity implements IBlockable {
 	public int getZ() {
 		return 10;
 	}
-
+	
+	@Override
 	public void undoMove() {
 		// tile object aren't supposed to move anyway
 	}

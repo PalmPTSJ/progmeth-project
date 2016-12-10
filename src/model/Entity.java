@@ -108,9 +108,9 @@ public abstract class Entity implements IRenderable, ICollidable {
 	protected void drawHealthBar(GraphicsContext gc) {
 		if(this.hp == this.maxHp) return; // don't draw when at full hp
 		gc.setFill(Color.RED);
-		gc.fillRect(x+width/2-healthBarWidth/2, y-5, healthBarWidth, healthBarHeight);
+		gc.fillRect(getCenterX()-healthBarWidth/2, y-5, healthBarWidth, healthBarHeight);
 		gc.setFill(Color.GREEN);
-		gc.fillRect(x+width/2-healthBarWidth/2, y-5, healthBarWidth * (double)hp/maxHp , healthBarHeight);
+		gc.fillRect(getCenterX()-healthBarWidth/2, y-5, healthBarWidth * (double)hp/maxHp , healthBarHeight);
 	}
 
 	// default draw function for all entity
@@ -122,5 +122,13 @@ public abstract class Entity implements IRenderable, ICollidable {
 
 	public void reduceHP(int damage) {
 		this.hp -= damage;
+	}
+	
+	public double getCenterX() {
+		return x+width/2;
+	}
+	
+	public double getCenterY() {
+		return y+height/2;
 	}
 }

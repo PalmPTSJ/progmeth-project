@@ -12,7 +12,7 @@ public class Enemy extends BlockingEntity {
 	private static final double height = 20;
 	private static final int startHp = 150;
 
-	private int damage = 5;
+	private int damage = 3;
 	private int attackDelay = 0;
 	private int reward = 15;
 	private static final int attackMaxDelay = 20;
@@ -80,7 +80,7 @@ public class Enemy extends BlockingEntity {
 
 	@Override
 	public void onDestroy() {
-		// TODO Auto-generated method stub
+		super.onDestroy();
 		ResourceManager.instance.addResource(ResourceManager.ARTIFACT, reward);
 	}
 	

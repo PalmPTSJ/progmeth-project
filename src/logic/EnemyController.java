@@ -7,9 +7,7 @@ import model.Enemy;
 import model.Entity;
 import model.IRenderable;
 import model.RenderableHolder;
-import model.TileObject;
 import model.Tower;
-import model.TowerArrow;
 
 public class EnemyController {
 	// use thread !
