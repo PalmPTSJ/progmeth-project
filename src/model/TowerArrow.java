@@ -9,9 +9,10 @@ public class TowerArrow extends Tower {
 	private static final int shootingMaxDelay = 15;
 	public static final int sizeX = 1;
 	public static final int sizeY = 1;
+	public static final int shootingRange = 150;
 	
 	public TowerArrow(Tile tile) {
-		super(tile, sizeX, sizeY, startHP, shootingMaxDelay);
+		super(tile, sizeX, sizeY, startHP, shootingMaxDelay, shootingRange);
 	}
 	
 	public static boolean canPlace(Tile tile) {

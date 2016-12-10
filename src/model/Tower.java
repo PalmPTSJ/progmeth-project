@@ -7,10 +7,12 @@ public abstract class Tower extends TileObject {
 	
 	private int shootingDelay = 0;
 	private int shootingMaxDelay = 0;
+	private double shootingRange;
 	
-	public Tower(Tile tile, int sizeX, int sizeY, int hp,int shootingMaxDelay) {
+	public Tower(Tile tile, int sizeX, int sizeY, int hp,int shootingMaxDelay,double shootingRange) {
 		super(tile, sizeX, sizeY, hp);
 		this.shootingMaxDelay = shootingMaxDelay;
+		this.shootingRange = shootingRange;
 	}
 	
 	@Override
@@ -39,10 +41,9 @@ public abstract class Tower extends TileObject {
 			}
 		}
 		
-		if(target != null) {
+		if(target != null && targetDist <= shootingRange) {
 			Projectile projectile = createProjectile(this.x + this.width/2,this.y + this.height/2,target);
 			RenderableHolder.getInstance().add(projectile);
-			//System.out.println(projectile);
 		}
 	}
 

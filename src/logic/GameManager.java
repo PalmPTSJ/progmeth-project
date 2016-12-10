@@ -73,6 +73,7 @@ public class GameManager {
 		if(InputUtility.instance.isMouseLeftClicked()){
 			int x=(int) (InputUtility.instance.getMouseX()/TileManager.tileSize);
 			int y=(int) (InputUtility.instance.getMouseY()/TileManager.tileSize);
+			if(x>=TileManager.tileCountX || x<0 || y>=TileManager.tileCountY || y<0) return;
 			try {
 				System.out.println(InputUtility.instance.getMouseX()+" "+InputUtility.instance.getMouseY());
 				Boolean ok=(Boolean) BuyManager.instance.currentObjectClass.getMethod("canPlace",Tile.class).invoke(null,TileManager.instance.tileArray[x][y]);
@@ -90,7 +91,6 @@ public class GameManager {
 				}
 			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
 					| NoSuchMethodException | SecurityException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

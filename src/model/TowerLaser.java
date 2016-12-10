@@ -9,9 +9,10 @@ public class TowerLaser extends Tower {
 	private static final int shootingMaxDelay = 3;
 	public static final int sizeX = 2;
 	public static final int sizeY = 2;
+	public static final int shootingRange = 350;
 	
 	public TowerLaser(Tile tile) {
-		super(tile, sizeX, sizeY, startHP, shootingMaxDelay);
+		super(tile, sizeX, sizeY, startHP, shootingMaxDelay, shootingRange);
 	}
 	
 	public static boolean canPlace(Tile tile) {

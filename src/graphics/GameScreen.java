@@ -16,6 +16,7 @@ import logic.TileManager;
 import model.IRenderable;
 import model.RenderableHolder;
 import model.Tile;
+import model.Tower;
 
 public class GameScreen extends Canvas {
 	public static int screen_width, screen_height;
@@ -43,9 +44,23 @@ public class GameScreen extends Canvas {
 		try {
 			sizeX=BuyManager.instance.currentObjectClass.getDeclaredField("sizeX").getInt(null);
 			sizeY=BuyManager.instance.currentObjectClass.getDeclaredField("sizeY").getInt(null);
-			if((Boolean)BuyManager.instance.currentObjectClass.getMethod("canPlace", Tile.class).invoke(null, TileManager.instance.tileArray[x][y])){			
-				gc.drawImage(BuyManager.instance.currentObjectImage,x*TileManager.tileSize,y*TileManager.tileSize,sizeX*TileManager.tileSize,sizeY*TileManager.tileSize);
+			
+			if(Tower.class.isAssignableFrom(BuyManager.instance.currentObjectClass)) {
+				gc.setGlobalAlpha(0.3);
+				gc.setFill(Color.BLACK);
+				double r = BuyManager.instance.currentObjectClass.getDeclaredField("shootingRange").getDouble(null);
+				gc.fillOval((x+0.5)*TileManager.tileSize - r, (y+0.5)*TileManager.tileSize - r, 2*r, 2*r);
+				gc.setGlobalAlpha(1);
 			}
+			
+			boolean canPlace = (Boolean)BuyManager.instance.currentObjectClass.getMethod("canPlace", Tile.class).invoke(null, TileManager.instance.tileArray[x][y]);			
+			if(!canPlace) {
+				gc.setGlobalAlpha(0.2);
+			}
+			gc.drawImage(BuyManager.instance.currentObjectImage,x*TileManager.tileSize,y*TileManager.tileSize,sizeX*TileManager.tileSize,sizeY*TileManager.tileSize);
+			gc.setGlobalAlpha(1.0);
+			
+			
 		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException | InvocationTargetException | NoSuchMethodException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

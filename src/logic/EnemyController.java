@@ -24,7 +24,7 @@ public class EnemyController {
 			public void run() {
 				try {
 					while (true) {
-						Thread.sleep(100);
+						Thread.sleep(1000);
 						synchronized (enemyList) {
 							removeDestroyedEnemy();
 							calculateTarget();
@@ -45,12 +45,14 @@ public class EnemyController {
 
 			private void calculateTarget() {
 				// just move to player
-				for (Enemy enemy : enemyList) {
-					enemy.setTarget(GameManager.player);
-					for(IRenderable ir : RenderableHolder.getInstance().getEntities()) {
-						if(ir instanceof Tower) {
-							enemy.setTarget((Entity) ir);
-							break;
+				synchronized(RenderableHolder.getInstance()) {
+					for (Enemy enemy : enemyList) {
+						enemy.setTarget(GameManager.player);
+						for(IRenderable ir : RenderableHolder.getInstance().getEntities()) {
+							if(ir instanceof Tower) {
+								enemy.setTarget((Entity) ir);
+								break;
+							}
 						}
 					}
 				}
