@@ -30,6 +30,6 @@ public class TowerBomb extends Tower {
 	}
 
 	public static int[] getResourceNeeded() {
-		return new int[]{0,2,8,5,0};
+		return new int[]{0,2,8,0,0};
 	}
 }

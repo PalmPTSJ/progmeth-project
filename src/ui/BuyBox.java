@@ -11,6 +11,10 @@ import model.TowerCatapult;
 import model.TowerLaser;
 import model.TowerSniper;
 import model.TowerTurret;
+import model.generator.GeneratorDiamond;
+import model.generator.GeneratorIron;
+import model.generator.GeneratorStone;
+import model.generator.GeneratorWood;
 
 public class BuyBox extends ListView<BuyItem>{
 	public BuyBox() {
@@ -24,5 +28,10 @@ public class BuyBox extends ListView<BuyItem>{
 		getItems().add(new BuyItem("Wood Wall",RenderableHolder.tileObject_wall_wood_img,TileObjectWallWood.class));
 		getItems().add(new BuyItem("Stone Wall",RenderableHolder.tileObject_wall_stone_img,TileObjectWallStone.class));
 		getItems().add(new BuyItem("Iron Wall",RenderableHolder.tileObject_wall_iron_img,TileObjectWallIron.class));
+		
+		getItems().add(new BuyItem("Wood Generator",RenderableHolder.generator_wood_img,GeneratorWood.class));
+		getItems().add(new BuyItem("Stone Generator",RenderableHolder.generator_stone_img,GeneratorStone.class));
+		getItems().add(new BuyItem("Iron Generator",RenderableHolder.generator_iron_img,GeneratorIron.class));
+		getItems().add(new BuyItem("Diamond Generator",RenderableHolder.generator_diamond_img,GeneratorDiamond.class));
 	}
 }

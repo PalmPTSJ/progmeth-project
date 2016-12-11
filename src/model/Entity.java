@@ -35,7 +35,7 @@ public abstract class Entity implements IRenderable, ICollidable {
 	}
 
 	public void onDestroy() {
-
+		
 	}
 
 	public void update() {
@@ -46,9 +46,9 @@ public abstract class Entity implements IRenderable, ICollidable {
 	}
 
 	public void onCollision(ICollidable collider) {
-
+		
 	}
-
+	
 	@Override
 	public boolean isDestroy() {
 		return destroyed;

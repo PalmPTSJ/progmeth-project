@@ -40,6 +40,11 @@ public class RenderableHolder {
 	public static Image tileObject_wall_stone_img;
 	public static Image tileObject_wall_iron_img;
 	
+	public static Image generator_wood_img;
+	public static Image generator_stone_img;
+	public static Image generator_iron_img;
+	public static Image generator_diamond_img;
+	
 	public static RenderableHolder instance;
 	
 	public RenderableHolder(){
@@ -94,6 +99,11 @@ public class RenderableHolder {
 		tileObject_wall_wood_img = getRes("img/tileObject/wallWood.png");
 		tileObject_wall_stone_img = getRes("img/tileObject/wallStone.png");
 		tileObject_wall_iron_img = getRes("img/tileObject/wallIron.png");
+		
+		generator_wood_img = getRes("img/tileObject/generatorWood.png");
+		generator_stone_img = getRes("img/tileObject/generatorStone.png");
+		generator_iron_img = getRes("img/tileObject/generatorIron.png");
+		generator_diamond_img = getRes("img/tileObject/generatorDiamond.png");
 	}
 	public synchronized void remove(int index){
 		instance.entities.remove(index);

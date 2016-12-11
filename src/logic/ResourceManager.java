@@ -17,7 +17,7 @@ public class ResourceManager {
 		capacity[4] = 9999;
 		resource=new int[5];
 		resource[0]=resource[1]=resource[2]=resource[3]=0;
-		resource[4] = 100;
+		resource[4] = 10000;
 	}
 	public int getCapacity(int index){
 		return capacity[index];
