@@ -66,11 +66,14 @@ public class RenderableHolder {
 		tile_stone_img = getRes("img/tile/mountain.png");
 		
 		resource_img=new Image[5];
-		resource_img[0]=tileObject_tree_img = getRes("img/tileObject/tree.png");
-		resource_img[1]=tileObject_stone_img = getRes("img/tileObject/stone.png");
-		resource_img[2]=tileObject_iron_img = getRes("img/tileObject/iron.png");
-		resource_img[3]=tileObject_diamond_img = getRes("img/tileObject/diamond.png");
-		resource_img[4]=tileObject_artifact_img = getRes("img/tileObject/artifact.png");
+		resource_img[0] = getRes("img/ui/res_wood.png");
+		resource_img[1] = getRes("img/ui/res_stone.png");
+		resource_img[2] = getRes("img/ui/res_iron.png");
+		resource_img[3] = getRes("img/ui/res_diamond.png");
+		resource_img[4] = getRes("img/ui/res_alienArtifact.png");
+		
+		tileObject_tree_img = getRes("img/tileObject/tree.png");
+		tileObject_stone_img = getRes("img/tileObject/stone.png");
 		
 		player_img = getRes("img/entity/player.png");
 		enemy_img = getRes("img/entity/enemy.png");
