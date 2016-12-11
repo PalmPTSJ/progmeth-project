@@ -20,7 +20,7 @@ public class GameManager {
 
 	public GameManager() {
 		globalRNG = new Random();
-
+		
 		// initialize singleton
 		RenderableHolder.instance = new RenderableHolder();
 		BuyManager.instance = new BuyManager();
@@ -29,7 +29,7 @@ public class GameManager {
 		TileManager.instance.generateMap(globalRNG.nextInt(99999));
 		EnemyManager.instance = new EnemyManager();
 		player = new Player(10, 10);
-
+		
 		addEntity(player);
 		enemyController = new EnemyController();
 	}

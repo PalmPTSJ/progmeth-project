@@ -6,6 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import logic.SoundManager;
 
 public class MainMenu extends VBox {
 
@@ -16,15 +17,16 @@ public class MainMenu extends VBox {
 		VolumePane volume=new VolumePane();
 		getChildren().addAll(title,start,exit,volume);
 		setAlignment(Pos.CENTER);
-		
+	
 		title.getStyleClass().setAll("bg-primary");
 		title.setPadding(new Insets(50));
 		
 		start.setOnAction(e->{
 			start.setText("LOADING");
+			SoundManager.setVolume(volume.getVolume());
 			Main.changeSceneToGame();
 		});
-		start.getStyleClass().setAll("btn","btn-lg","btn-primary");
+		start.getStyleClass().setAll("btn","btn-lg","btn-seccess");
 		start.setPadding(new Insets(50));
 		
 		exit.getStyleClass().setAll("btn","btn-lg","btn-danger");

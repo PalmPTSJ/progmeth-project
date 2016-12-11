@@ -1,5 +1,7 @@
 package ui;
 
+import java.lang.reflect.InvocationTargetException;
+
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -10,16 +12,24 @@ import logic.BuyManager;
 public class BuyItem extends HBox{
 	@SuppressWarnings("rawtypes")
 	public BuyItem(String name,Image img,Class T) {
-		// TODO Auto-generated constructor stub
-		super();
 		ImageView iv=new ImageView(img);
 		Label lb=new Label(name);
-		lb.setFont(Font.font(30));
+		
+		iv.setFitWidth(32);
+		iv.setFitHeight(32);
+		lb.setFont(Font.font(20));
+		int[] resourceNeeded=null;
+		try {
+			resourceNeeded=(int[]) BuyManager.instance.currentObjectClass.getMethod("getResourceNeeded").invoke(null);
+		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException
+				| SecurityException e1) {
+			e1.printStackTrace();
+		}
 		getChildren().addAll(iv,lb);
+		
 		setOnMouseClicked(e->{
 			BuyManager.instance.buyMode = !BuyManager.instance.buyMode;
 			BuyManager.instance.currentObjectImage=img;
-			BuyManager.instance.currentObjectName=name;
 			BuyManager.instance.currentObjectClass=T;
 		});
 	}
