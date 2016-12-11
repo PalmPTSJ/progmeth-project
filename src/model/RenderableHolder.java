@@ -14,9 +14,6 @@ public class RenderableHolder {
 	
 	public static Image tileObject_tree_img;
 	public static Image tileObject_stone_img;
-	public static Image tileObject_iron_img;
-	public static Image tileObject_diamond_img;
-	public static Image tileObject_artifact_img;
 	
 	public static Image[] resource_img;
 	
@@ -44,6 +41,12 @@ public class RenderableHolder {
 	public static Image generator_stone_img;
 	public static Image generator_iron_img;
 	public static Image generator_diamond_img;
+	
+	public static Image research_iron_img;
+	public static Image research_diamond_img;
+	public static Image research_gun;
+	public static Image research_super_gun;
+	public static Image research_regen;
 	
 	public static RenderableHolder instance;
 	
@@ -104,6 +107,12 @@ public class RenderableHolder {
 		generator_stone_img = getRes("img/tileObject/generatorStone.png");
 		generator_iron_img = getRes("img/tileObject/generatorIron.png");
 		generator_diamond_img = getRes("img/tileObject/generatorDiamond.png");
+		
+		research_iron_img = getRes("img/ui/research_diamond.png");
+		research_diamond_img = getRes("img/ui/research_iron.png");
+		research_gun = getRes("img/ui/research_gun.png");
+		research_super_gun = getRes("img/ui/research_supergun.png");
+		research_regen = getRes("img/ui/research_regen.png");
 	}
 	public synchronized void remove(int index){
 		instance.entities.remove(index);
