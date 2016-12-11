@@ -29,7 +29,7 @@ public class BuyItem extends HBox{
 			e1.printStackTrace();
 		}
 		for(int i=0;i<5;i++){
-			Label needed=new Label(""+resourceNeeded[i]);
+			Label needed=new Label(" "+resourceNeeded[i]);
 			ImageView pic=new ImageView(RenderableHolder.resource_img[i]);
 			pic.setFitWidth(16);
 			pic.setFitHeight(16);
