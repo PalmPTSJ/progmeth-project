@@ -40,7 +40,9 @@ public class Main extends Application {
 		SoundManager.start();
 	}
 	public static void changeSceneToMain(){
-		((GamePane)scene.getRoot()).stop();
+		if(scene.getRoot() instanceof GamePane){			
+			((GamePane)scene.getRoot()).stop();
+		}
 		SoundManager.stop();
 		scene.setRoot(new MainMenu());
 	}
