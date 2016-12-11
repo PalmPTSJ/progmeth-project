@@ -9,16 +9,20 @@ import model.TileVoid;
 public class EnemyManager {
 	public static EnemyManager instance;
 	private int timer = 0;
+	private int wave = 0;
 	private static final int spawnDelay = 180;
 	public EnemyManager(){
 		
 	}
-	
+	public int getWaveNumber(){
+		return wave;
+	}
 	public void update() {
 		timer++;
 		if(timer >= spawnDelay) {
 			timer = 0;
 			spawn();
+			wave++;
 		}
 	}
 	private void spawn() {
