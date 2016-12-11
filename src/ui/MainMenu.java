@@ -1,6 +1,7 @@
 package ui;
 
 import application.Main;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -33,6 +34,9 @@ public class MainMenu extends VBox {
 		start.getStyleClass().setAll("btn","btn-lg","btn-success");
 		setMargin(start, new Insets(10));
 		
+		exit.setOnAction(e->{
+			Platform.exit();
+		});
 		exit.getStyleClass().setAll("btn","btn-lg","btn-danger");
 		setMargin(exit, new Insets(10));
 		
