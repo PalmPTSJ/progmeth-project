@@ -30,6 +30,6 @@ public class TowerSniper extends Tower {
 	}
 
 	public static int[] getResourceNeeded() {
-		return new int[]{2,2,8,2};
+		return new int[]{2,2,8,2,0};
 	}
 }
