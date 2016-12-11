@@ -47,7 +47,7 @@ public class GameScreen extends Canvas {
 				gc.setGlobalAlpha(0.3);
 				gc.setFill(Color.BLACK);
 				double r = BuyManager.instance.currentObjectClass.getDeclaredField("shootingRange").getDouble(null);
-				gc.fillOval((x+0.5)*TileManager.tileSize - r, (y+0.5)*TileManager.tileSize - r, 2*r, 2*r);
+				gc.fillOval((x+(double)(sizeX)/2)*TileManager.tileSize - r, (y+(double)(sizeY)/2)*TileManager.tileSize - r, 2*r, 2*r);
 				gc.setGlobalAlpha(1);
 			}
 			

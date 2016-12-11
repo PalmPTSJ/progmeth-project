@@ -15,13 +15,15 @@ public class MainMenu extends VBox {
 		Label title=new Label("PROGMETH");
 		Button start=new Button("Start");
 		Button exit=new Button("Exit");
+		Button highscore = new Button("High score");
 		VolumePane volume=new VolumePane();
-		getChildren().addAll(title,start,exit,volume);
+		getChildren().addAll(title,start,exit,highscore,volume);
 		setAlignment(Pos.CENTER);
 	
 		title.getStyleClass().setAll("lbl-primary");
 		title.setFont(Font.font(40));
 		title.setPadding(new Insets(40));
+		setMargin(title, new Insets(60));
 		
 		start.setOnAction(e->{
 			start.setText("LOADING");
@@ -29,10 +31,13 @@ public class MainMenu extends VBox {
 			Main.changeSceneToGame();
 		});
 		start.getStyleClass().setAll("btn","btn-lg","btn-success");
-		start.setPadding(new Insets(40));
+		setMargin(start, new Insets(10));
 		
 		exit.getStyleClass().setAll("btn","btn-lg","btn-danger");
-		exit.setPadding(new Insets(40));
+		setMargin(exit, new Insets(10));
+		
+		highscore.getStyleClass().setAll("btn","btn-lg","btn-info");
+		setMargin(highscore, new Insets(10));
 
 		volume.setPadding(new Insets(40));
 	}
