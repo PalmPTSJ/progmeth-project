@@ -17,12 +17,12 @@ public class GameManager {
 	public static boolean isOverlayMode;
 	public static EnemyController enemyController;
 	public static Random globalRNG;
-	
+
 	private boolean rocketLaunched;
 
 	public GameManager() {
 		globalRNG = new Random();
-		
+
 		// initialize singleton
 		RenderableHolder.instance = new RenderableHolder();
 		BuyManager.instance = new BuyManager();
@@ -31,10 +31,10 @@ public class GameManager {
 		TileManager.instance.generateMap(globalRNG.nextInt(99999));
 		EnemyManager.instance = new EnemyManager();
 		player = new Player(10, 10);
-		
+
 		addEntity(player);
 		enemyController = new EnemyController();
-		
+
 		rocketLaunched = false;
 	}
 
@@ -43,7 +43,8 @@ public class GameManager {
 	}
 
 	public void update() {
-		if(player.isDestroy() || rocketLaunched) return;
+		if (player.isDestroy() || rocketLaunched)
+			return;
 		updateOverlay();
 		updateEntity();
 		CollisionUtility.checkCollision();
@@ -52,45 +53,47 @@ public class GameManager {
 		checkEndingCondition();
 		InputUtility.instance.reset();
 	}
-	private void checkEndingCondition(){
-		if(rocketLaunched) {
-			Alert alert=new Alert(AlertType.INFORMATION);
+
+	private void checkEndingCondition() {
+		if (rocketLaunched) {
+			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setContentText("You win");
 			alert.setHeaderText("GGEZ");
 			alert.show();
 			Main.changeSceneToMain();
-		}
-		else if(player.isDestroy()){
-			Alert alert=new Alert(AlertType.INFORMATION);
+		} else if (player.isDestroy()) {
+			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setContentText("GameOver");
 			alert.setHeaderText("GG");
 			alert.show();
 			Main.changeSceneToMain();
 		}
 	}
-	private void updateEntity(){
+
+	private void updateEntity() {
 		for (IRenderable ir : RenderableHolder.getInstance().getEntities()) {
 			if (ir instanceof Entity) {
 				((Entity) ir).update();
 			}
 		}
 	}
+
 	private void updateOverlay() {
 		if (!BuyManager.instance.buyMode)
 			return;
 		if (InputUtility.instance.isMouseLeftClicked()) {
-			int x=(int) (InputUtility.instance.getMouseX()/TileManager.tileSize);
-			int y=(int) (InputUtility.instance.getMouseY()/TileManager.tileSize);
+			int x = (int) (InputUtility.instance.getMouseX() / TileManager.tileSize);
+			int y = (int) (InputUtility.instance.getMouseY() / TileManager.tileSize);
 			int[] resourceNeeded;
 			try {
 				resourceNeeded = (int[]) BuyManager.instance.currentObjectClass.getMethod("getResourceNeeded")
 						.invoke(null);
-				if(BuyManager.instance.canBuy()){
+				if (BuyManager.instance.canBuy()) {
 					for (int i = 0; i < 4; i++) {
 						ResourceManager.instance.addResource(i, -resourceNeeded[i]);
 					}
-					IRenderable ir = (IRenderable) BuyManager.instance.currentObjectClass
-							.getDeclaredConstructor(Tile.class).newInstance(TileManager.instance.tileArray[x][y]);
+					BuyManager.instance.currentObjectClass.getDeclaredConstructor(Tile.class)
+							.newInstance(TileManager.instance.tileArray[x][y]);
 					if (!InputUtility.instance.isKeyDown(KeyCode.SHIFT))
 						BuyManager.instance.buyMode = false;
 				}
@@ -99,7 +102,7 @@ public class GameManager {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 		}
 	}
 
@@ -109,8 +112,7 @@ public class GameManager {
 				RenderableHolder.getInstance().remove(i);
 		}
 	}
-	
-	
+
 	public void setRocketLaunched(boolean launched) {
 		this.rocketLaunched = true;
 	}
