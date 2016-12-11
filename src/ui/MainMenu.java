@@ -6,14 +6,16 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import logic.SoundManager;
 
 public class MainMenu extends VBox {
 
 	public MainMenu() {
-		Label title=new Label("PROGMETH");
+		HBox title=new HBox();
+		Label titleName=new Label("Super Killing War");
+		Label titleVersion=new Label("1.0.1");
 		Button start=new Button("Start");
 		Button exit=new Button("Exit");
 		Button highscore = new Button("High score");
@@ -21,9 +23,10 @@ public class MainMenu extends VBox {
 		getChildren().addAll(title,start,exit,highscore,volume);
 		setAlignment(Pos.CENTER);
 	
-		title.getStyleClass().setAll("lbl-primary");
-		title.setFont(Font.font(40));
-		title.setPadding(new Insets(40));
+		title.setAlignment(Pos.TOP_CENTER);
+		titleName.getStyleClass().setAll("h1","text-primary");
+		titleVersion.getStyleClass().setAll("lbl-success","lbl");
+		title.getChildren().addAll(titleName,titleVersion);
 		setMargin(title, new Insets(60));
 		
 		start.setOnAction(e->{
