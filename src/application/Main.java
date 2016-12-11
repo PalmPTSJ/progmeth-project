@@ -24,7 +24,8 @@ public class Main extends Application {
 		scene.getStylesheets().add("bootstrapfx.css");
 		
 		InputUtility.instance.setEventHandler(scene);
-		
+		SoundManager.setVolume(0);
+
 		primaryStage.setResizable(false);
 		primaryStage.setScene(scene);
 		primaryStage.show();

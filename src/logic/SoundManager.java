@@ -18,4 +18,7 @@ public class SoundManager {
 	public static void setVolume(double value){
 		bgm.setVolume(value/100);
 	}
+	public static double getVolume(){
+		return bgm.getVolume();
+	}
 }
