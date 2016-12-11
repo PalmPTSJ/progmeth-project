@@ -68,20 +68,13 @@ public class GameManager {
 		if (!BuyManager.instance.buyMode)
 			return;
 		if (InputUtility.instance.isMouseLeftClicked()) {
-			int x = (int) (InputUtility.instance.getMouseX() / TileManager.tileSize);
-			int y = (int) (InputUtility.instance.getMouseY() / TileManager.tileSize);
-			if (x >= TileManager.tileCountX || x < 0 || y >= TileManager.tileCountY || y < 0)
-				return;
+			int x=(int) (InputUtility.instance.getMouseX()/TileManager.tileSize);
+			int y=(int) (InputUtility.instance.getMouseY()/TileManager.tileSize);
+			int[] resourceNeeded;
 			try {
-				Boolean ok = (Boolean) BuyManager.instance.currentObjectClass.getMethod("canPlace", Tile.class)
-						.invoke(null, TileManager.instance.tileArray[x][y]);
-				int[] resourceNeeded = (int[]) BuyManager.instance.currentObjectClass.getMethod("getResourceNeeded")
+				resourceNeeded = (int[]) BuyManager.instance.currentObjectClass.getMethod("getResourceNeeded")
 						.invoke(null);
-				for (int i = 0; i < 4; i++) {
-					if (ResourceManager.instance.getResource(i) < resourceNeeded[i])
-						ok = false;
-				}
-				if (ok) {
+				if(BuyManager.instance.canBuy()){
 					for (int i = 0; i < 4; i++) {
 						ResourceManager.instance.addResource(i, -resourceNeeded[i]);
 					}
@@ -91,10 +84,12 @@ public class GameManager {
 					if (!InputUtility.instance.isKeyDown(KeyCode.SHIFT))
 						BuyManager.instance.buyMode = false;
 				}
-			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException
-					| InvocationTargetException | NoSuchMethodException | SecurityException e) {
+			} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
+					| NoSuchMethodException | SecurityException | InstantiationException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 		}
 	}
 

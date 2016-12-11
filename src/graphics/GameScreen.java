@@ -1,7 +1,5 @@
 package graphics;
 
-import java.lang.reflect.InvocationTargetException;
-
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -35,14 +33,13 @@ public class GameScreen extends Canvas {
 		}
 	}
 	public void drawBuyingItem(GraphicsContext gc){
-		int x=(int) (InputUtility.instance.getMouseX()/TileManager.tileSize);
-		int y=(int) (InputUtility.instance.getMouseY()/TileManager.tileSize);
-		if(x>=TileManager.tileCountX || x<0 || y>=TileManager.tileCountY || y<0)return;
-		int sizeX=0,sizeY=0;
+		int x = (int) (InputUtility.instance.getMouseX() / TileManager.tileSize);
+		int y = (int) (InputUtility.instance.getMouseY() / TileManager.tileSize);
+		int sizeX;
+		int sizeY;
 		try {
-			sizeX=BuyManager.instance.currentObjectClass.getDeclaredField("sizeX").getInt(null);
-			sizeY=BuyManager.instance.currentObjectClass.getDeclaredField("sizeY").getInt(null);
-			
+			sizeX = BuyManager.instance.currentObjectClass.getDeclaredField("sizeX").getInt(null);
+			sizeY = BuyManager.instance.currentObjectClass.getDeclaredField("sizeY").getInt(null);
 			if(Tower.class.isAssignableFrom(BuyManager.instance.currentObjectClass)) {
 				gc.setGlobalAlpha(0.3);
 				gc.setFill(Color.BLACK);
@@ -50,20 +47,17 @@ public class GameScreen extends Canvas {
 				gc.fillOval((x+(double)(sizeX)/2)*TileManager.tileSize - r, (y+(double)(sizeY)/2)*TileManager.tileSize - r, 2*r, 2*r);
 				gc.setGlobalAlpha(1);
 			}
-			
-			boolean canPlace = (Boolean)BuyManager.instance.currentObjectClass.getMethod("canPlace", Tile.class).invoke(null, TileManager.instance.tileArray[x][y]);			
-			if(!canPlace) {
-				gc.setGlobalAlpha(0.2);
-			}
-			gc.drawImage(BuyManager.instance.currentObjectImage,x*TileManager.tileSize,y*TileManager.tileSize,sizeX*TileManager.tileSize,sizeY*TileManager.tileSize);
-			gc.setGlobalAlpha(1.0);
-			
-			
-		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException | InvocationTargetException | NoSuchMethodException e) {
+		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return;
 		}
-		
+		boolean canPlace = BuyManager.instance.canBuy();
+		if(!canPlace) {
+				gc.setGlobalAlpha(0.2);
+		}	
+		gc.drawImage(BuyManager.instance.currentObjectImage,x*TileManager.tileSize,y*TileManager.tileSize,sizeX*TileManager.tileSize,sizeY*TileManager.tileSize);
+		gc.setGlobalAlpha(1.0);
 	}
 	public void drawOverlay(GraphicsContext gc){
 		gc.setGlobalAlpha(0.5);
