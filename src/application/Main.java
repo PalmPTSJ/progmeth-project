@@ -21,6 +21,8 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		scene = new Scene(new MainMenu(),screenWidth+200, screenHeight);
+		scene.getStylesheets().add("bootstrapfx.css");
+		
 		InputUtility.instance.setEventHandler(scene);
 		
 		primaryStage.setResizable(false);

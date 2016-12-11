@@ -29,7 +29,7 @@ public class RenderableHolder {
 	public static Image tileObject_wall_stone_img;
 	public static Image tileObject_wall_iron_img;
 	
-	private final static RenderableHolder instance;
+	public static RenderableHolder instance;
 	
 	public RenderableHolder(){
 		entities = new CopyOnWriteArrayList<>();
@@ -38,10 +38,8 @@ public class RenderableHolder {
 				return Integer.compare(a.getZ(),b.getZ());
 			}
 		};
-		
 	}
 	static{
-		instance = new RenderableHolder();
 		loadResource();
 	}
 	

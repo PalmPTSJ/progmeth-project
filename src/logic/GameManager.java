@@ -22,6 +22,7 @@ public class GameManager {
 		globalRNG = new Random();
 
 		// initialize singleton
+		RenderableHolder.instance = new RenderableHolder();
 		BuyManager.instance = new BuyManager();
 		ResourceManager.instance = new ResourceManager();
 		TileManager.instance = new TileManager();
