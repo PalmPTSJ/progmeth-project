@@ -2,12 +2,12 @@ package ui;
 
 import javafx.scene.layout.VBox;
 
-public class Menu extends VBox {
+public class GameMenu extends VBox {
 	private StatsBox statsBox;
 	private BuyBox buyBox;
 	private ResourceBox resourceBox;
 	private ResearchBox researchBox;
-	public Menu() {
+	public GameMenu() {
 		// TODO Auto-generated constructor stub
 		buyBox=new BuyBox();
 		statsBox=new StatsBox();

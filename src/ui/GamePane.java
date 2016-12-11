@@ -9,7 +9,7 @@ public class GamePane extends HBox {
 	AnimationTimer at;
 	public GamePane(int width,int height) {
 		// TODO Auto-generated constructor stub
-		Menu menu=new Menu();
+		GameMenu menu=new GameMenu();
 		GameScreen gs = new GameScreen(width, height);
 		getChildren().add(gs);
 		getChildren().add(menu);
