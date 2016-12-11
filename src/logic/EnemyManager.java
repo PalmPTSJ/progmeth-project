@@ -4,6 +4,7 @@ import model.Enemy;
 import model.EnemyBasic;
 import model.EnemyBoss;
 import model.Tile;
+import model.TileSpawner;
 import model.TileVoid;
 
 public class EnemyManager {
@@ -27,13 +28,13 @@ public class EnemyManager {
 	}
 	private void spawn() {
 		for (Tile tile : TileManager.instance.tileList) {
-			if (tile.tileObject == null && !(tile instanceof TileVoid)) {
-				if (GameManager.globalRNG.nextInt(100) < 2 && tile.getTileX() < 10 && tile.getTileX() > 1) {
+			if (tile instanceof TileSpawner) {
+				if (GameManager.globalRNG.nextInt(100) < 15) {
 					Enemy enemy = new EnemyBasic(tile.getX(), tile.getY(),1);
 					GameManager.addEntity(enemy);
 					GameManager.enemyController.addEnemy(enemy);
 				}
-				else if (GameManager.globalRNG.nextInt(100)==0){
+				else if (GameManager.globalRNG.nextInt(100) < 5){
 					Enemy enemy = new EnemyBoss(tile.getX(), tile.getY(),1);
 					GameManager.addEntity(enemy);
 					GameManager.enemyController.addEnemy(enemy);

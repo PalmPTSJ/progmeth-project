@@ -11,6 +11,7 @@ public class RenderableHolder {
 	private Comparator<IRenderable> comparator;
 	public static Image tile_ground_img;
 	public static Image tile_stone_img;
+	public static Image tile_spawner_img;
 	
 	public static Image tileObject_tree_img;
 	public static Image tileObject_stone_img;
@@ -81,6 +82,7 @@ public class RenderableHolder {
 	private static void loadResource() {
 		tile_ground_img = getRes("img/tile/ground.png");
 		tile_stone_img = getRes("img/tile/mountain.png");
+		tile_spawner_img = getRes("img/tile/spawner.png");
 		
 		resource_img=new Image[5];
 		resource_img[0] = getRes("img/ui/res_wood.png");

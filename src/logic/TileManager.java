@@ -12,6 +12,7 @@ import model.TileObjectTree;
 import model.TileStone;
 import model.TileVoid;
 import model.TileObjectVoid;
+import model.TileSpawner;
 
 public class TileManager {
 	public static TileManager instance;
@@ -39,6 +40,8 @@ public class TileManager {
 				if (tileArray[x][y].tileObject != null) {
 					return false; // already have object
 				}
+				
+				if(tileArray[x][y] instanceof TileSpawner) return false; // can't place on spawner
 			}
 		}
 		return true;
@@ -53,10 +56,12 @@ public class TileManager {
 					new TileObjectVoid(vt);
 					tileList.add(vt);
 				} else {
-					if (random.nextInt(2) <= 2)
+					if(x == tileCountX-1) {
+						tileArray[x][y] = new TileSpawner(x, y);
+					}
+					else {
 						tileArray[x][y] = new TileGround(x, y);
-					else
-						tileArray[x][y] = new TileStone(x, y);
+					}
 
 					tileList.add(tileArray[x][y]);
 					RenderableHolder.getInstance().add(tileArray[x][y]);
