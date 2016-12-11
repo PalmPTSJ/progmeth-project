@@ -12,7 +12,7 @@ public class VolumePane extends HBox {
 	public VolumePane() {
 		setAlignment(Pos.CENTER);
 		
-		ImageView iv=new ImageView(new Image(ClassLoader.getSystemResource("img/volume.png").toString()));			
+		ImageView iv=new ImageView(new Image(ClassLoader.getSystemResource("img/ui/volume.png").toString()));			
 		sl=new Slider(0,100,50);
 		SoundManager.setVolume(50);
 		
