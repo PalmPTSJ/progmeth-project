@@ -12,8 +12,12 @@ public class Player extends BlockingEntity {
 	private static final double height = 20;
 	private static final int startHp = 400;
 
+	private int shootingTimer = 0;
+	private static final int shootingDelay = 20;
+
 	public Player(double x, double y) {
 		super(x, y, width, height, speed, startHp);
+		shootingTimer = shootingDelay;
 	}
 
 	@Override
@@ -49,11 +53,17 @@ public class Player extends BlockingEntity {
 		if (InputUtility.instance.isKeyDown(KeyCode.S))
 			setVelY(1);
 
-		if (!BuyManager.instance.buyMode && InputUtility.instance.isMouseLeftDown()) {
-			Projectile arrow = new ProjectileLaser(getCenterX(), getCenterY(), InputUtility.instance.getMouseX(),
-					InputUtility.instance.getMouseY());
-			RenderableHolder.getInstance().add(arrow);
-		}
 		super.update();
+
+		if (shootingTimer < shootingDelay) {
+			shootingTimer++;
+		} else {
+			if (!BuyManager.instance.buyMode && InputUtility.instance.isMouseLeftDown()) {
+				Projectile bullet = new ProjectilePlayerBullet(getCenterX(), getCenterY(), InputUtility.instance.getMouseX(),
+						InputUtility.instance.getMouseY());
+				RenderableHolder.getInstance().add(bullet);
+			}
+			shootingTimer = 0;
+		}
 	}
 }

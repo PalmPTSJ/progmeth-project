@@ -3,15 +3,15 @@ package model;
 import javafx.scene.canvas.GraphicsContext;
 import logic.TileManager;
 
-public class TowerArrow extends Tower {
+public class TowerTurret extends Tower {
 	
-	private static final int startHP = 200;
-	private static final int shootingMaxDelay = 15;
+	private static final int startHP = 500;
+	private static final int shootingMaxDelay = 30;
 	public static final int sizeX = 1;
-	public static final int sizeY = 1;
-	public static final int shootingRange = 250;
+	public static final int sizeY = 2;
+	public static final int shootingRange = 200;
 	
-	public TowerArrow(Tile tile) {
+	public TowerTurret(Tile tile) {
 		super(tile, sizeX, sizeY, startHP, shootingMaxDelay, shootingRange);
 	}
 	
@@ -21,15 +21,15 @@ public class TowerArrow extends Tower {
 
 	@Override
 	protected Projectile createProjectile(double x, double y, Entity target) {
-		return new ProjectileArrow(x, y, target);
+		return new ProjectileBullet(x, y, target);
 	}
 	
 	@Override
 	public void draw(GraphicsContext gc) {
-		super.draw(gc, RenderableHolder.tower_arrow_img);
+		super.draw(gc, RenderableHolder.tower_turret_img);
 	}
 
 	public static int[] getResourceNeeded() {
-		return new int[]{5,0,0,0};
+		return new int[]{0,3,5,0};
 	}
 }

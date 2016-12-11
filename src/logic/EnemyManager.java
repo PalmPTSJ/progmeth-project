@@ -7,7 +7,7 @@ import model.TileVoid;
 public class EnemyManager {
 	public static EnemyManager instance;
 	private int timer = 0;
-	private static final int spawnDelay = 60;
+	private static final int spawnDelay = 180;
 	public EnemyManager(){
 		
 	}

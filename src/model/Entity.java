@@ -24,8 +24,7 @@ public abstract class Entity implements IRenderable, ICollidable {
 		this.y = y;
 		this.width = width;
 		this.height = height;
-		this.hp = hp; // default
-		this.maxHp = hp;
+		this.hp = this.maxHp = hp;
 	}
 
 	protected void destroy() {
