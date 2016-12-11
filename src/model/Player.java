@@ -12,6 +12,10 @@ public class Player extends BlockingEntity {
 	private static final double height = 20;
 	private static final int startHp = 40;
 
+	private int healthRegenerationTimer = 0;
+	private static final int healthRegenerationDelay = 10;
+	private static int healthRegenerationRate=0;
+	
 	private int shootingTimer = 0;
 	private static final int shootingDelay = 20;
 
@@ -65,5 +69,19 @@ public class Player extends BlockingEntity {
 			}
 			shootingTimer = 0;
 		}
+		
+		if ( healthRegenerationTimer < healthRegenerationDelay){
+			healthRegenerationTimer++;
+		}
+		else{
+			hp+=healthRegenerationRate;
+			if(hp>maxHp){
+				hp=maxHp;
+			}
+			healthRegenerationTimer=0;
+		}
+	}
+	public static void setHealthRegenerationRate(int rate){
+		healthRegenerationRate=rate;
 	}
 }

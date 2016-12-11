@@ -13,10 +13,12 @@ public class ResourceManager {
 	private int[] resource;
 	public ResourceManager(){
 		capacity=new int[5];
-		capacity[0]=capacity[1]=capacity[2]=capacity[3]=capacity[4] = 100;
+		capacity[0]=capacity[1]=capacity[4] = 10;
+		capacity[2]=capacity[3]=0;
 		resource=new int[5];
-		resource[0]=resource[1]=resource[2]=resource[3]=0;
-		resource[4] = 100;
+		resource[0]=resource[1]=10;
+		resource[2]=resource[3]=0;
+		resource[4] = 0;
 	}
 	public int getCapacity(int index){
 		return capacity[index];
