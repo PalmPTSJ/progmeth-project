@@ -26,7 +26,7 @@ public class MainMenu extends VBox {
 			SoundManager.setVolume(volume.getVolume());
 			Main.changeSceneToGame();
 		});
-		start.getStyleClass().setAll("btn","btn-lg","btn-seccess");
+		start.getStyleClass().setAll("btn","btn-lg","btn-success");
 		start.setPadding(new Insets(50));
 		
 		exit.getStyleClass().setAll("btn","btn-lg","btn-danger");

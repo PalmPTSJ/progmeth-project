@@ -20,7 +20,7 @@ public class BuyItem extends HBox{
 		lb.setFont(Font.font(20));
 		int[] resourceNeeded=null;
 		try {
-			resourceNeeded=(int[]) BuyManager.instance.currentObjectClass.getMethod("getResourceNeeded").invoke(null);
+			resourceNeeded=(int[]) T.getMethod("getResourceNeeded").invoke(null);
 		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException
 				| SecurityException e1) {
 			e1.printStackTrace();
