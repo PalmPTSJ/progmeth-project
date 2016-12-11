@@ -3,17 +3,17 @@ package model;
 import javafx.scene.canvas.GraphicsContext;
 
 public class ProjectileArrow extends Projectile {
-	private static final double width = 20;
-	private static final double height = 8;
-	private static final double speed = 8;
-	private static final int damage = 5;
+	private static final double defaultWidth = 20;
+	private static final double defaultHeight = 8;
+	private static final double defaultSpeed = 8;
+	private static final int defaultDamage = 5;
 	
 	public ProjectileArrow(double x, double y, double targetX, double targetY) {
-		super(x, y, width, height, speed, damage, targetX, targetY);
+		super(x, y, defaultWidth, defaultHeight, defaultSpeed, defaultDamage, targetX, targetY);
 	}
 
 	public ProjectileArrow(double x, double y, Entity target) {
-		super(x, y, width, height, speed, damage, target);
+		super(x, y, defaultWidth, defaultHeight, defaultSpeed, defaultDamage, target);
 	}
 
 	@Override

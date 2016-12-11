@@ -8,7 +8,7 @@ import logic.ICollidable;
 
 public abstract class Projectile extends MovingEntity {
 
-	private int damage;
+	protected int damage;
 	private double angle;
 
 	private double originalWidth, originalHeight;

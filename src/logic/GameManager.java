@@ -39,6 +39,7 @@ public class GameManager {
 	}
 
 	public void update() {
+		if(player.isDestroy()) return;
 		updateOverlay();
 		updateEntity();
 		CollisionUtility.checkCollision();
