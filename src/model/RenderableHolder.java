@@ -24,6 +24,7 @@ public class RenderableHolder {
 	public static Image projectile_laser_img;
 	public static Image projectile_rock_img;
 	public static Image projectile_bullet_img;
+	public static Image projectile_bomb_img;
 	
 	public static Image player_img;
 	public static Image enemy_img;
@@ -33,6 +34,7 @@ public class RenderableHolder {
 	public static Image tower_catapult_img;
 	public static Image tower_turret_img;
 	public static Image tower_sniper_img;
+	public static Image tower_bomb_img;
 	
 	public static Image tileObject_wall_wood_img;
 	public static Image tileObject_wall_stone_img;
@@ -77,10 +79,12 @@ public class RenderableHolder {
 		tower_laser_img = getRes("img/tileObject/towerLaser.png");
 		tower_catapult_img = getRes("img/tileObject/towerCatapult.png");
 		tower_turret_img = getRes("img/tileObject/towerTurret.png");
+		tower_bomb_img = getRes("img/tileObject/towerBomb.png");
 		tower_sniper_img = getRes("img/tileObject/towerSniper.png");
 		
 		projectile_arrow_img = getRes("img/projectile/arrow.png");
 		projectile_rock_img = getRes("img/projectile/rock.png");
+		projectile_bomb_img = getRes("img/projectile/bomb.png");
 		projectile_laser_img = getRes("img/projectile/laser.png");
 		projectile_bullet_img = getRes("img/projectile/bullet.png");
 		
