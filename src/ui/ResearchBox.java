@@ -1,7 +1,5 @@
 package ui;
 
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.GridPane;
 import ui.research.DiamondResearch;
 import ui.research.GunResearch;

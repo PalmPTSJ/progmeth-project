@@ -17,6 +17,8 @@ public class GameManager {
 	public static boolean isOverlayMode;
 	public static EnemyController enemyController;
 	public static Random globalRNG;
+	
+	private boolean rocketLaunched;
 
 	public GameManager() {
 		globalRNG = new Random();
@@ -32,6 +34,8 @@ public class GameManager {
 		
 		addEntity(player);
 		enemyController = new EnemyController();
+		
+		rocketLaunched = false;
 	}
 
 	public static void addEntity(IRenderable entity) {
@@ -39,17 +43,24 @@ public class GameManager {
 	}
 
 	public void update() {
-		if(player.isDestroy()) return;
+		if(player.isDestroy() || rocketLaunched) return;
 		updateOverlay();
 		updateEntity();
 		CollisionUtility.checkCollision();
 		removeDestroyEntity();
 		EnemyManager.instance.update();
-		checkWiningCondition();
+		checkEndingCondition();
 		InputUtility.instance.reset();
 	}
-	private void checkWiningCondition(){
-		if(player.isDestroy()){
+	private void checkEndingCondition(){
+		if(rocketLaunched) {
+			Alert alert=new Alert(AlertType.INFORMATION);
+			alert.setContentText("You win");
+			alert.setHeaderText("GGEZ");
+			alert.show();
+			Main.changeSceneToMain();
+		}
+		else if(player.isDestroy()){
 			Alert alert=new Alert(AlertType.INFORMATION);
 			alert.setContentText("GameOver");
 			alert.setHeaderText("GG");
@@ -80,7 +91,6 @@ public class GameManager {
 					}
 					IRenderable ir = (IRenderable) BuyManager.instance.currentObjectClass
 							.getDeclaredConstructor(Tile.class).newInstance(TileManager.instance.tileArray[x][y]);
-					addEntity(ir);
 					if (!InputUtility.instance.isKeyDown(KeyCode.SHIFT))
 						BuyManager.instance.buyMode = false;
 				}
@@ -99,5 +109,9 @@ public class GameManager {
 				RenderableHolder.getInstance().remove(i);
 		}
 	}
-
+	
+	
+	public void setRocketLaunched(boolean launched) {
+		this.rocketLaunched = true;
+	}
 }

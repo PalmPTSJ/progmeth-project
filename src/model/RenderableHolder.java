@@ -53,6 +53,8 @@ public class RenderableHolder {
 	public static Image research_gun;
 	public static Image research_super_gun;
 	public static Image research_regen;
+	
+	public static Image tileObject_rocket_img;
 
 	
 	public static RenderableHolder instance;
@@ -69,7 +71,7 @@ public class RenderableHolder {
 		loadResource();
 	}
 	
-	public synchronized void add(IRenderable entity){
+	public void add(IRenderable entity){
 		instance.entities.add(entity);
 		instance.entities.sort(comparator);
 	}
@@ -126,6 +128,8 @@ public class RenderableHolder {
 		research_gun = getRes("img/ui/research_gun.png");
 		research_super_gun = getRes("img/ui/research_supergun.png");
 		research_regen = getRes("img/ui/research_regen.png");
+		
+		tileObject_rocket_img = getRes("img/tileObject/rocketSilo.png");
 
 	}
 	public synchronized void remove(int index){

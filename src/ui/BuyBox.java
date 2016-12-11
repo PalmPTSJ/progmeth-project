@@ -27,5 +27,7 @@ public class BuyBox extends ListView<BuyItem>{
 		getItems().add(new BuyItem("Stone Storage",RenderableHolder.storage_stone_img,StorageStone.class));
 		getItems().add(new BuyItem("Iron Storage",RenderableHolder.storage_iron_img,StorageIron.class));
 		getItems().add(new BuyItem("Diamond Storage",RenderableHolder.storage_diamond_img,StorageDiamond.class));
+		
+		getItems().add(new BuyItem("Rocket",RenderableHolder.tileObject_rocket_img,TileObjectRocket.class));
 	}
 }
