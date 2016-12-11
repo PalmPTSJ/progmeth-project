@@ -24,6 +24,7 @@ public class RenderableHolder {
 	
 	public static Image tower_arrow_img;
 	public static Image tower_laser_img;
+	public static Image tower_catapult_img;
 	
 	public static Image tileObject_wall_wood_img;
 	public static Image tileObject_wall_stone_img;
@@ -59,19 +60,20 @@ public class RenderableHolder {
 		tileObject_tree_img = getRes("img/tileObject/tree.png");
 		tileObject_stone_img = getRes("img/tileObject/stone.png");
 		
-		player_img = getRes("img/player.png");
-		enemy_img = getRes("img/enemy.png");
+		player_img = getRes("img/entity/player.png");
+		enemy_img = getRes("img/entity/enemy.png");
 		
 		tower_arrow_img = getRes("img/tileObject/towerArrow.png");
 		tower_laser_img = getRes("img/tileObject/towerLaser.png");
+		tower_catapult_img = getRes("img/tileObject/towerCatapult.png");
 		
-		projectile_arrow_img = getRes("img/object/arrow.png");
-		projectile_rock_img = getRes("img/object/laser.png");
-		projectile_laser_img = getRes("img/object/laser.png");
+		projectile_arrow_img = getRes("img/projectile/arrow.png");
+		projectile_rock_img = getRes("img/projectile/rock.png");
+		projectile_laser_img = getRes("img/projectile/laser.png");
 		
-		tileObject_wall_wood_img = getRes("img/object/woodwall.png");
-		tileObject_wall_stone_img = getRes("img/object/stonewall.png");
-		tileObject_wall_iron_img = getRes("img/object/ironwall.png");
+		tileObject_wall_wood_img = getRes("img/tileObject/wallWood.png");
+		tileObject_wall_stone_img = getRes("img/tileObject/wallStone.png");
+		tileObject_wall_iron_img = getRes("img/tileObject/wallIron.png");
 	}
 	public synchronized void remove(int index){
 		instance.entities.remove(index);
