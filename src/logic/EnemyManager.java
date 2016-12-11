@@ -1,6 +1,8 @@
 package logic;
 
 import model.Enemy;
+import model.EnemyBasic;
+import model.EnemyBoss;
 import model.Tile;
 import model.TileVoid;
 
@@ -23,7 +25,12 @@ public class EnemyManager {
 		for (Tile tile : TileManager.instance.tileList) {
 			if (tile.tileObject == null && !(tile instanceof TileVoid)) {
 				if (GameManager.globalRNG.nextInt(100) < 2 && tile.getTileX() < 10 && tile.getTileX() > 1) {
-					Enemy enemy = new Enemy(tile.getX(), tile.getY());
+					Enemy enemy = new EnemyBasic(tile.getX(), tile.getY(),1);
+					GameManager.addEntity(enemy);
+					GameManager.enemyController.addEnemy(enemy);
+				}
+				else if (GameManager.globalRNG.nextInt(100)==0){
+					Enemy enemy = new EnemyBoss(tile.getX(), tile.getY(),1);
 					GameManager.addEntity(enemy);
 					GameManager.enemyController.addEnemy(enemy);
 				}

@@ -1,27 +1,26 @@
 package model;
 
-import javafx.scene.canvas.GraphicsContext;
 import logic.CollisionUtility;
 import logic.ICollidable;
 import logic.ResourceManager;
 
-public class Enemy extends BlockingEntity {
+public abstract class Enemy extends BlockingEntity {
 
-	private static final double speed = 3;
 	private static final double width = 20;
 	private static final double height = 20;
-	private static final int startHp = 150;
 
 	private int damage = 3;
-	private int attackDelay = 0;
+	private int attackTimer = 0;
 	private int reward = 15;
 	private static final int attackMaxDelay = 20;
 	private static final double attackRange = 60;
 
 	private Entity target;
 
-	public Enemy(double x, double y) {
+	public Enemy(double x, double y,double speed,int startHp,int damage,int reward) {
 		super(x, y, width, height, speed, startHp);
+		this.damage=damage;
+		this.reward=reward;
 	}
 
 	@Override
@@ -40,10 +39,10 @@ public class Enemy extends BlockingEntity {
 			this.velX = this.velY = 0;
 		}
 		
-		attackDelay++;
-		if(attackDelay >= attackMaxDelay) {
+		attackTimer++;
+		if(attackTimer >= attackMaxDelay) {
 			attack();
-			attackDelay = 0;
+			attackTimer = 0;
 		}
 
 	}
@@ -67,11 +66,6 @@ public class Enemy extends BlockingEntity {
 	@Override
 	public int getZ() {
 		return 15;
-	}
-
-	@Override
-	public void draw(GraphicsContext gc) {
-		super.draw(gc, RenderableHolder.enemy_img);
 	}
 
 	public synchronized void setTarget(Entity target) {

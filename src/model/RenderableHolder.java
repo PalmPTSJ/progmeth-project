@@ -24,7 +24,8 @@ public class RenderableHolder {
 	public static Image projectile_bomb_img;
 	
 	public static Image player_img;
-	public static Image enemy_img;
+	public static Image enemy_basic_img;
+	public static Image enemy_boss_img;
 	
 	public static Image tower_arrow_img;
 	public static Image tower_laser_img;
@@ -90,7 +91,8 @@ public class RenderableHolder {
 		tileObject_stone_img = getRes("img/tileObject/stone.png");
 		
 		player_img = getRes("img/entity/player.png");
-		enemy_img = getRes("img/entity/enemy.png");
+		enemy_basic_img = getRes("img/entity/enemy.png");
+		enemy_boss_img = getRes("img/entity/enemy_boss.png");
 		
 		tower_arrow_img = getRes("img/tileObject/towerArrow.png");
 		tower_laser_img = getRes("img/tileObject/towerLaser.png");
