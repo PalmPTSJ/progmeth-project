@@ -28,7 +28,7 @@ public class GeneratorWood extends Generator {
 	}
 
 	public static int[] getResourceNeeded() {
-		return new int[] { 15, 0, 0, 0, 0 };
+		return new int[] { 10, 0, 0, 0, 1 };
 	}
 
 }

@@ -1,7 +1,6 @@
 package ui.research;
 
 import model.Player;
-import model.ProjectilePlayerBullet;
 import model.RenderableHolder;
 
 public class HealthRegenerationResearch extends ResearchItem {

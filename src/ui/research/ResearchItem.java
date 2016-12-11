@@ -1,6 +1,8 @@
 package ui.research;
 
+
 import javafx.scene.control.Tooltip;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import logic.ResourceManager;
@@ -36,6 +38,7 @@ public abstract class ResearchItem extends ImageView {
 			ResourceManager.instance.addResource(i, -resourceNeeded[i]);
 		}
 		isResearched=true;
+		this.setEffect(new ColorAdjust(0,-0.5,-0.5,0));
 		onResearchSuccess();
 	}
 	public abstract void onResearchSuccess();

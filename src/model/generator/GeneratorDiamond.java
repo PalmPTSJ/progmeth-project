@@ -28,7 +28,7 @@ public class GeneratorDiamond extends Generator {
 	}
 
 	public static int[] getResourceNeeded() {
-		return new int[] { 15, 15, 15, 15, 0 };
+		return new int[] { 10, 10, 10, 10, 500 };
 	}
 
 }
