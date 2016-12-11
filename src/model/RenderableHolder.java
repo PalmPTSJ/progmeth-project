@@ -45,6 +45,11 @@ public class RenderableHolder {
 	public static Image generator_iron_img;
 	public static Image generator_diamond_img;
 	
+	public static Image storage_wood_img;
+	public static Image storage_stone_img;
+	public static Image storage_iron_img;
+	public static Image storage_diamond_img;
+	
 	public static RenderableHolder instance;
 	
 	public RenderableHolder(){
@@ -104,6 +109,11 @@ public class RenderableHolder {
 		generator_stone_img = getRes("img/tileObject/generatorStone.png");
 		generator_iron_img = getRes("img/tileObject/generatorIron.png");
 		generator_diamond_img = getRes("img/tileObject/generatorDiamond.png");
+		
+		storage_wood_img = getRes("img/tileObject/storageWood.png");
+		storage_stone_img = getRes("img/tileObject/storageStone.png");
+		storage_iron_img = getRes("img/tileObject/storageIron.png");
+		storage_diamond_img = getRes("img/tileObject/storageDiamond.png");
 	}
 	public synchronized void remove(int index){
 		instance.entities.remove(index);

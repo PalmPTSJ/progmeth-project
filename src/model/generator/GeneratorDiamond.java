@@ -1,6 +1,7 @@
 package model.generator;
 
 import javafx.scene.canvas.GraphicsContext;
+import logic.ResourceManager;
 import logic.TileManager;
 import model.RenderableHolder;
 import model.Tile;
@@ -10,7 +11,7 @@ public class GeneratorDiamond extends Generator {
 	public static final int sizeY = 2;
 	private static final int startHp = 1000;
 
-	private static final int resource = 3;
+	private static final int resource = ResourceManager.DIAMOND;
 	private static final int delay = 240;
 	private static final int amount = 1;
 

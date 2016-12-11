@@ -1,6 +1,7 @@
 package model.generator;
 
 import javafx.scene.canvas.GraphicsContext;
+import logic.ResourceManager;
 import logic.TileManager;
 import model.RenderableHolder;
 import model.Tile;
@@ -10,7 +11,7 @@ public class GeneratorWood extends Generator {
 	public static final int sizeY = 2;
 	private static final int startHp = 250;
 
-	private static final int resource = 0;
+	private static final int resource = ResourceManager.WOOD;
 	private static final int delay = 120;
 	private static final int amount = 2;
 

@@ -1,20 +1,9 @@
 package ui;
 
 import javafx.scene.control.ListView;
-import model.RenderableHolder;
-import model.TileObjectWallIron;
-import model.TileObjectWallStone;
-import model.TileObjectWallWood;
-import model.TowerArrow;
-import model.TowerBomb;
-import model.TowerCatapult;
-import model.TowerLaser;
-import model.TowerSniper;
-import model.TowerTurret;
-import model.generator.GeneratorDiamond;
-import model.generator.GeneratorIron;
-import model.generator.GeneratorStone;
-import model.generator.GeneratorWood;
+import model.*;
+import model.generator.*;
+import model.storage.*;
 
 public class BuyBox extends ListView<BuyItem>{
 	public BuyBox() {
@@ -33,5 +22,10 @@ public class BuyBox extends ListView<BuyItem>{
 		getItems().add(new BuyItem("Stone Generator",RenderableHolder.generator_stone_img,GeneratorStone.class));
 		getItems().add(new BuyItem("Iron Generator",RenderableHolder.generator_iron_img,GeneratorIron.class));
 		getItems().add(new BuyItem("Diamond Generator",RenderableHolder.generator_diamond_img,GeneratorDiamond.class));
+		
+		getItems().add(new BuyItem("Wood Storage",RenderableHolder.storage_wood_img,StorageWood.class));
+		getItems().add(new BuyItem("Stone Storage",RenderableHolder.storage_stone_img,StorageStone.class));
+		getItems().add(new BuyItem("Iron Storage",RenderableHolder.storage_iron_img,StorageIron.class));
+		getItems().add(new BuyItem("Diamond Storage",RenderableHolder.storage_diamond_img,StorageDiamond.class));
 	}
 }
