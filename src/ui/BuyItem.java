@@ -6,18 +6,21 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import javafx.scene.text.Font;
+import javafx.scene.layout.VBox;
 import logic.BuyManager;
+import model.RenderableHolder;
 
 public class BuyItem extends HBox{
-	@SuppressWarnings("rawtypes")
-	public BuyItem(String name,Image img,Class T) {
+	public BuyItem(String _name,Image img,Class T) {
 		ImageView iv=new ImageView(img);
-		Label lb=new Label(name);
+		VBox vb=new VBox();
+		Label name=new Label();
+		HBox cost=new HBox();
 		
 		iv.setFitWidth(32);
 		iv.setFitHeight(32);
-		lb.setFont(Font.font(20));
+		name.setText(_name);
+		
 		int[] resourceNeeded=null;
 		try {
 			resourceNeeded=(int[]) T.getMethod("getResourceNeeded").invoke(null);
@@ -25,7 +28,17 @@ public class BuyItem extends HBox{
 				| SecurityException e1) {
 			e1.printStackTrace();
 		}
-		getChildren().addAll(iv,lb);
+		for(int i=0;i<5;i++){
+			Label needed=new Label(""+resourceNeeded[i]);
+			ImageView pic=new ImageView(RenderableHolder.resource_img[i]);
+			pic.setFitWidth(16);
+			pic.setFitHeight(16);
+			
+			cost.getChildren().addAll(needed,pic);
+		}
+		
+		vb.getChildren().addAll(name,cost);
+		getChildren().addAll(iv,vb);
 		
 		setOnMouseClicked(e->{
 			BuyManager.instance.buyMode = !BuyManager.instance.buyMode;

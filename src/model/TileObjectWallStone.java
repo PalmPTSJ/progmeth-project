@@ -23,7 +23,7 @@ public class TileObjectWallStone extends TileObject {
 	}
 	
 	public static int[] getResourceNeeded() {
-		return new int[]{0,1,0,0};
+		return new int[]{0,1,0,0,0};
 	}
 
 }

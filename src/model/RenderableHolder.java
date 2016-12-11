@@ -14,6 +14,11 @@ public class RenderableHolder {
 	
 	public static Image tileObject_tree_img;
 	public static Image tileObject_stone_img;
+	public static Image tileObject_iron_img;
+	public static Image tileObject_diamond_img;
+	public static Image tileObject_artifact_img;
+	
+	public static Image[] resource_img;
 	
 	public static Image projectile_arrow_img;
 	public static Image projectile_laser_img;
@@ -57,8 +62,12 @@ public class RenderableHolder {
 		tile_ground_img = getRes("img/tile/ground.png");
 		tile_stone_img = getRes("img/tile/mountain.png");
 		
-		tileObject_tree_img = getRes("img/tileObject/tree.png");
-		tileObject_stone_img = getRes("img/tileObject/stone.png");
+		resource_img=new Image[5];
+		resource_img[0]=tileObject_tree_img = getRes("img/tileObject/tree.png");
+		resource_img[1]=tileObject_stone_img = getRes("img/tileObject/stone.png");
+		resource_img[2]=tileObject_iron_img = getRes("img/tileObject/iron.png");
+		resource_img[3]=tileObject_diamond_img = getRes("img/tileObject/diamond.png");
+		resource_img[4]=tileObject_artifact_img = getRes("img/tileObject/artifact.png");
 		
 		player_img = getRes("img/entity/player.png");
 		enemy_img = getRes("img/entity/enemy.png");

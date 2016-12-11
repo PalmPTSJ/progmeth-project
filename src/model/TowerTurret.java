@@ -30,6 +30,6 @@ public class TowerTurret extends Tower {
 	}
 
 	public static int[] getResourceNeeded() {
-		return new int[]{0,3,5,0};
+		return new int[]{0,3,5,0,0};
 	}
 }

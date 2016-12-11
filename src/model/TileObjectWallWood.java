@@ -23,7 +23,7 @@ public class TileObjectWallWood extends TileObject {
 	}
 	
 	public static int[] getResourceNeeded() {
-		return new int[]{1,0,0,0};
+		return new int[]{1,0,0,0,0};
 	}
 
 }

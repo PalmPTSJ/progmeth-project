@@ -6,6 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import logic.SoundManager;
 
 public class MainMenu extends VBox {
@@ -18,8 +19,9 @@ public class MainMenu extends VBox {
 		getChildren().addAll(title,start,exit,volume);
 		setAlignment(Pos.CENTER);
 	
-		title.getStyleClass().setAll("bg-primary");
-		title.setPadding(new Insets(50));
+		title.getStyleClass().setAll("lbl-primary");
+		title.setFont(Font.font(40));
+		title.setPadding(new Insets(40));
 		
 		start.setOnAction(e->{
 			start.setText("LOADING");
@@ -27,11 +29,11 @@ public class MainMenu extends VBox {
 			Main.changeSceneToGame();
 		});
 		start.getStyleClass().setAll("btn","btn-lg","btn-success");
-		start.setPadding(new Insets(50));
+		start.setPadding(new Insets(40));
 		
 		exit.getStyleClass().setAll("btn","btn-lg","btn-danger");
-		exit.setPadding(new Insets(50));
+		exit.setPadding(new Insets(40));
 
-		volume.setPadding(new Insets(50));
+		volume.setPadding(new Insets(40));
 	}
 }

@@ -30,6 +30,6 @@ public class TowerCatapult extends Tower {
 	}
 
 	public static int[] getResourceNeeded() {
-		return new int[]{5,5,0,0};
+		return new int[]{5,5,0,0,0};
 	}
 }

@@ -30,6 +30,6 @@ public class TowerLaser extends Tower {
 	}
 
 	public static int[] getResourceNeeded() {
-		return new int[]{0,0,6,3};
+		return new int[]{0,0,6,3,0};
 	}
 }
