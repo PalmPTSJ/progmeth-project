@@ -1,3 +1,6 @@
+/*
+ * Increase 10 HP every tick
+ */
 package ui.research;
 
 import model.Player;

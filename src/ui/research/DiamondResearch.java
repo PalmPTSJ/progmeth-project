@@ -1,3 +1,6 @@
+/*
+ * Unlock diamond storage
+ */
 package ui.research;
 
 import logic.ResourceManager;

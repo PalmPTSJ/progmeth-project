@@ -1,3 +1,6 @@
+/*
+ * Put name and score to the high score server (blocking)
+ */
 package thread;
 
 import exception.HighscoreException;

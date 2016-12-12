@@ -1,3 +1,6 @@
+/*
+ * Unlock wood and stone storage
+ */
 package ui.research;
 
 import logic.ResourceManager;

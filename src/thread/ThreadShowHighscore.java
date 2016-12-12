@@ -1,3 +1,6 @@
+/*
+ * Get high score from server (blocking) and display it 
+ */
 package thread;
 
 import java.util.ArrayList;

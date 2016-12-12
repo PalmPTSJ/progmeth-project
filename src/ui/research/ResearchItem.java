@@ -1,3 +1,6 @@
+/*
+ * Base class for research item
+ */
 package ui.research;
 
 import javafx.scene.control.Tooltip;
