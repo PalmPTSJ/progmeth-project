@@ -1,9 +1,12 @@
 package ui;
 
 import application.Main;
+import exception.InvalidNameException;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -36,16 +39,19 @@ public class MainPane extends VBox implements IStoppable {
 		setBackground(new Background(new BackgroundImage(new Image(ClassLoader.getSystemResource("img/ui/background.png").toString()), null, null, null,null)));
 		
 		name.setText(playerName);
-		name.setOnKeyTyped(e->{
-			System.out.println(name.getText());
-			playerName=name.getText();
-		});
 		name.setMaxWidth(200);
 		setMargin(name, new Insets(0,100,20,0));
 		
-		start.setOnAction(e->{
-			start.setText("LOADING");
+		start.setOnAction(event->{
 			SoundManager.setVolume(volume.getVolume());
+			try {
+				setName(name.getText());
+			} catch (InvalidNameException e) {
+				Alert alert=new Alert(AlertType.ERROR);
+				alert.setContentText(e.getMessage());
+				alert.show();
+				return;
+			}
 			Main.changeSceneToGame();
 		});
 		start.getStyleClass().setAll("btn","btn-lg","btn-success");
@@ -93,5 +99,10 @@ public class MainPane extends VBox implements IStoppable {
 	}
 	public static String getName(){
 		return playerName;
+	}
+	public static void setName(String name) throws InvalidNameException{
+		if(name.contains(" ")){
+			throw new InvalidNameException();
+		}
 	}
 }

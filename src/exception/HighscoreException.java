@@ -5,5 +5,4 @@ public class HighscoreException extends Exception {
 	public HighscoreException(String message) {
 		super(message);
 	}
-
 }
