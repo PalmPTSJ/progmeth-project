@@ -25,8 +25,9 @@ public class Main extends Application {
 		
 		InputUtility.instance.setEventHandler(scene);
 		SoundManager.setVolume(0);
-
-		primaryStage.setResizable(false);
+		
+		primaryStage.setTitle("Super Killing Wars");
+		primaryStage.setResizable(true);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		

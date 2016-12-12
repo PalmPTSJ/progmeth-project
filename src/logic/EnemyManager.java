@@ -56,7 +56,7 @@ public class EnemyManager {
 		int basicCount,level,bossCount;
 		level = 0 + wave;
 		if(GameManager.instance.getRocketCount() > 0) { // rocket wave
-			level = 100;
+			level = 75;
 			basicCount = 2;
 			bossCount = 1;
 		}

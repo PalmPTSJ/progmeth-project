@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import logic.SoundManager;
@@ -19,6 +20,7 @@ import thread.showHighscoreThread;
 public class MainPane extends VBox implements IStoppable {
 	Thread joiner;
 	public MainPane() {
+		
 		HBox title=new HBox();
 		Label titleName=new Label("Super Killing War");
 		Label titleVersion=new Label("1.0.1");
@@ -29,8 +31,8 @@ public class MainPane extends VBox implements IStoppable {
 		getChildren().addAll(title,start,exit,highscore,volume);
 		setAlignment(Pos.CENTER);
 		setPrefSize(Main.screenWidth+300, Main.screenHeight);
+		
 		setBackground(new Background(new BackgroundImage(new Image(ClassLoader.getSystemResource("img/ui/background.png").toString()), null, null, null,null)));
-	
 		title.setAlignment(Pos.TOP_CENTER);
 		titleName.getStyleClass().setAll("h1","text-primary");
 		titleVersion.getStyleClass().setAll("lbl-success","lbl");

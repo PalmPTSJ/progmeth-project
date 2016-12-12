@@ -9,6 +9,6 @@ public class SuperGunResearch extends ResearchItem {
 	}
 	@Override
 	public void onResearchSuccess() {
-		ProjectilePlayerBullet.addDamage(40);
+		ProjectilePlayerBullet.addDamage(50);
 	}
 }

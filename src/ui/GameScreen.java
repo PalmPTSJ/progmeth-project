@@ -7,6 +7,7 @@ import logic.BuyManager;
 import logic.IRenderable;
 import logic.InputUtility;
 import logic.TileManager;
+import model.Entity;
 import model.RenderableHolder;
 import model.Tile;
 import model.tileObject.tower.Tower;
@@ -70,7 +71,6 @@ public class GameScreen extends Canvas {
 		gc.setGlobalAlpha(1);
 	}
 	public void drawBackground(GraphicsContext gc){
-		
 		gc.setFill(Color.BLACK);
 		gc.fillRect(0,0, screen_width,screen_height);
 	}
@@ -78,5 +78,12 @@ public class GameScreen extends Canvas {
 		for(IRenderable o : RenderableHolder.getInstance().getEntities()) {
 			o.draw(gc);
 		}
+		// draw healthbar
+		for(IRenderable ir : RenderableHolder.getInstance().getEntities()) {
+			if(ir instanceof Entity) {
+				((Entity) ir).drawHealthBar(gc);
+			}
+		}
+			
 	}
 }

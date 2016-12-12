@@ -8,7 +8,7 @@ public class GameMenu extends VBox {
 	private ResourceBox resourceBox;
 	private ResearchBox researchBox;
 	public GameMenu() {
-		// TODO Auto-generated constructor stub
+		this.setPrefSize(300,600);
 		buyBox=new BuyBox();
 		statsBox=new StatsBox();
 		resourceBox=new ResourceBox();

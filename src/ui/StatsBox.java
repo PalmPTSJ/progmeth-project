@@ -17,14 +17,14 @@ public class StatsBox extends VBox {
 		entityCount = new Label();
 		playerDamage = new Label();
 		wave = new Label();
-		getChildren().addAll(score, fps, entityCount, playerDamage, wave);
+		getChildren().addAll(score, fps, wave);
 	}
 
 	public void update() {
 		score.setText("Score " + GameManager.instance.score);
 		fps.setText(GameManager.instance.fps + "fps");
 		playerDamage.setText("Damage " + ProjectilePlayerBullet.getDamage());
-		wave.setText("Wave " + EnemyManager.instance.getWaveNumber() + " , Next wave in "
+		wave.setText("Wave " + EnemyManager.instance.getWaveNumber() + " , Next in "
 				+ (EnemyManager.instance.getRemainingTime() / 60) + " sec (" + EnemyManager.instance.getNextWaveName()
 				+ ")");
 		int tileCount = (TileManager.tileCountX + 2) * (TileManager.tileCountY + 2);

@@ -102,14 +102,14 @@ public abstract class Entity implements IRenderable, ICollidable {
 		gc.setGlobalAlpha(1);
 	}
 
-	private static final double healthBarWidth = 30;
-	private static final double healthBarHeight = 5;
+	private static final double healthBarWidth = 20;
+	private static final double healthBarHeight = 3;
 
-	protected void drawHealthBar(GraphicsContext gc) {
+	public void drawHealthBar(GraphicsContext gc) {
 		if(this.hp == this.maxHp) return; // don't draw when at full hp
 		gc.setFill(Color.RED);
 		gc.fillRect(getCenterX()-healthBarWidth/2, y-5, healthBarWidth, healthBarHeight);
-		gc.setFill(Color.GREEN);
+		gc.setFill(Color.LIME);
 		gc.fillRect(getCenterX()-healthBarWidth/2, y-5, healthBarWidth * (double)hp/maxHp , healthBarHeight);
 	}
 
@@ -117,7 +117,7 @@ public abstract class Entity implements IRenderable, ICollidable {
 	protected void draw(GraphicsContext gc, Image img) {
 		gc.drawImage(img, x, y, width, height);
 		//drawHitbox(gc);
-		drawHealthBar(gc);
+		//drawHealthBar(gc);
 	}
 
 	public void reduceHP(int damage) {
