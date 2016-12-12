@@ -20,7 +20,7 @@ public class Player extends BlockingEntity {
 	private static int healthRegenerationRate = 0;
 
 	private int shootingTimer = 0;
-	private static final int shootingDelay = 20;
+	private static final int shootingDelay = 15;
 
 	public Player(double x, double y) {
 		super(x, y, width, height, speed, startHp);
@@ -71,8 +71,8 @@ public class Player extends BlockingEntity {
 				Projectile bullet = new ProjectilePlayerBullet(getCenterX(), getCenterY(),
 						InputUtility.instance.getMouseX(), InputUtility.instance.getMouseY());
 				RenderableHolder.getInstance().add(bullet);
+				shootingTimer = 0;
 			}
-			shootingTimer = 0;
 		}
 
 		if (healthRegenerationTimer < healthRegenerationDelay) {

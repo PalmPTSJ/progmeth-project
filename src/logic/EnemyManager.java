@@ -56,20 +56,20 @@ public class EnemyManager {
 		int basicCount,level,bossCount;
 		level = 0 + wave;
 		if(GameManager.instance.getRocketCount() > 0) { // rocket wave
-			level = 75;
-			basicCount = 4;
+			level = 100;
+			basicCount = 2;
 			bossCount = 1;
 		}
 		else if(wave % 5 == 4) { // big wave
-			basicCount = GameManager.globalRNG.nextInt(5) + 10; // 10 - 14
+			basicCount = GameManager.globalRNG.nextInt(5) + 5; // 5 - 9
 			bossCount = 1;
 		}
 		else if(wave % 5 == 0) { // boss wave
-			basicCount = GameManager.globalRNG.nextInt(3) + 3; // 3 - 5
-			bossCount = GameManager.globalRNG.nextInt(3) + 5; // 5 - 7
+			basicCount = GameManager.globalRNG.nextInt(3) + 1; // 1 - 3
+			bossCount = GameManager.globalRNG.nextInt(3) + 3; // 3 - 5
 		}
 		else { // normal wave
-			basicCount = GameManager.globalRNG.nextInt(3) + 4; // 4 - 6
+			basicCount = GameManager.globalRNG.nextInt(3) + 3; // 3 - 5
 			bossCount = 1;
 		}
 		

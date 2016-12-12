@@ -52,8 +52,7 @@ public class TileObjectRocket extends TileObject {
 	}
 	
 	public static int[] getResourceNeeded() {
-		return new int[]{0,0,0,0,0};
-		//return new int[]{100,100,100,100,9999};
+		return new int[]{100,100,100,100,9999};
 	}
 
 }

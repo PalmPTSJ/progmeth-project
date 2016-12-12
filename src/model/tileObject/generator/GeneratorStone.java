@@ -13,7 +13,7 @@ public class GeneratorStone extends Generator {
 
 	private static final int resource = ResourceManager.STONE;
 	private static final int delay = 60;
-	private static final int amount = 2;
+	private static final int amount = 1;
 
 	public GeneratorStone(Tile tile) {
 		super(tile, sizeX, sizeY, startHp, resource, delay, amount);

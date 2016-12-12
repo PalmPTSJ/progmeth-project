@@ -5,7 +5,6 @@ import model.RenderableHolder;
 
 public class HealthRegenerationResearch extends ResearchItem {
 	public HealthRegenerationResearch() {
-		// TODO Auto-generated constructor stub
 		super(RenderableHolder.research_regen,"Health Regeneration",new int[]{0,0,0,0,500});
 	}
 	@Override

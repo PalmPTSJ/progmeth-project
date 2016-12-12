@@ -51,11 +51,11 @@ public abstract class Enemy extends BlockingEntity {
 
 		if (target != null && target.isDestroy())
 			target = null;
-
-		if (target == null)
-			target = findTarget(Tower.class);
+		
 		if (target == null)
 			target = findTarget(TileObjectRocket.class);
+		if (target == null)
+			target = findTarget(Tower.class);
 		if (target == null)
 			target = findTarget(Generator.class);
 		if (target == null)

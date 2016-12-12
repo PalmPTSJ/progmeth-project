@@ -7,7 +7,7 @@ import model.Tile;
 
 public class TileObjectWallWood extends TileObject {
 	
-	private static final int startHP = 500;
+	private static final int startHP = 300;
 	public static final int sizeX = 1;
 	public static final int sizeY = 1;
 	

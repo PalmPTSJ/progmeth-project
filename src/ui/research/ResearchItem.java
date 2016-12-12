@@ -1,6 +1,5 @@
 package ui.research;
 
-
 import javafx.scene.control.Tooltip;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;

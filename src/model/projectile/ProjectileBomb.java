@@ -12,10 +12,10 @@ public class ProjectileBomb extends Projectile {
 	private static final double defaultWidth = 30;
 	private static final double defaultHeight = 30;
 	private static final double defaultSpeed = 3;
-	private static final int defaultDamage = 50;
+	private static final int defaultDamage = 30;
 	
 	private static final double explosiveRange = 120;
-	private static final int explosiveDamage = 100;
+	private static final int explosiveDamage = 60;
 	
 	public ProjectileBomb(double x, double y, double targetX, double targetY) {
 		super(x, y, defaultWidth, defaultHeight, defaultSpeed, defaultDamage, targetX, targetY);
