@@ -2,7 +2,9 @@ package model;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import logic.IRenderable;
 import logic.TileManager;
+import model.tileObject.TileObject;
 
 public abstract class Tile implements IRenderable {
 	public TileObject tileObject = null; // object on this tile

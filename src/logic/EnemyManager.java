@@ -1,11 +1,11 @@
 package logic;
 
-import model.Enemy;
-import model.EnemyBasic;
-import model.EnemyBoss;
 import model.Tile;
 import model.TileSpawner;
 import model.TileVoid;
+import model.enemy.Enemy;
+import model.enemy.EnemyBasic;
+import model.enemy.EnemyBoss;
 
 public class EnemyManager {
 	public static EnemyManager instance;

@@ -3,11 +3,10 @@ package logic;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Enemy;
 import model.Entity;
-import model.IRenderable;
 import model.RenderableHolder;
-import model.Tower;
+import model.enemy.Enemy;
+import model.tileObject.tower.Tower;
 
 public class EnemyController {
 	// use thread !

@@ -7,11 +7,11 @@ import java.util.Random;
 import model.RenderableHolder;
 import model.Tile;
 import model.TileGround;
-import model.TileObjectStone;
-import model.TileObjectTree;
 import model.TileStone;
 import model.TileVoid;
-import model.TileObjectVoid;
+import model.tileObject.TileObjectStone;
+import model.tileObject.TileObjectTree;
+import model.tileObject.TileObjectVoid;
 import model.TileSpawner;
 
 public class TileManager {

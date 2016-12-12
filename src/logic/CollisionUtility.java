@@ -1,6 +1,5 @@
 package logic;
 
-import model.IRenderable;
 import model.RenderableHolder;
 
 public class CollisionUtility {

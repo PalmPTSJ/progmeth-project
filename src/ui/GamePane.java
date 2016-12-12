@@ -1,6 +1,5 @@
 package ui;
 
-import graphics.GameScreen;
 import javafx.animation.AnimationTimer;
 import javafx.scene.layout.HBox;
 import logic.GameManager;

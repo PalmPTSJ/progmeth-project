@@ -4,6 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import logic.ICollidable;
+import logic.IRenderable;
 
 /* Every entity is :
  * - Destroyable (has hp)

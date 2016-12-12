@@ -5,8 +5,8 @@ import javafx.scene.layout.VBox;
 import logic.EnemyManager;
 import logic.GameManager;
 import logic.TileManager;
-import model.ProjectilePlayerBullet;
 import model.RenderableHolder;
+import model.projectile.ProjectilePlayerBullet;
 
 public class StatsBox extends VBox {
 	private Label score, fps, entityCount,playerDamage,wave;

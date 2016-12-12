@@ -1,7 +1,7 @@
 package ui.research;
 
-import model.ProjectilePlayerBullet;
 import model.RenderableHolder;
+import model.projectile.ProjectilePlayerBullet;
 
 public class SuperGunResearch extends ResearchItem {
 	public SuperGunResearch() {

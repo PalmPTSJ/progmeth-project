@@ -4,6 +4,8 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import logic.BuyManager;
 import logic.InputUtility;
+import model.projectile.Projectile;
+import model.projectile.ProjectilePlayerBullet;
 
 public class Player extends BlockingEntity {
 

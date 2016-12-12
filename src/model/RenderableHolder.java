@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import javafx.scene.image.Image;
+import logic.IRenderable;
 
 public class RenderableHolder {
 	private List<IRenderable> entities;
