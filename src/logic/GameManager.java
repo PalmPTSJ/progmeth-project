@@ -89,7 +89,7 @@ public class GameManager {
 				resourceNeeded = (int[]) BuyManager.instance.currentObjectClass.getMethod("getResourceNeeded")
 						.invoke(null);
 				if (BuyManager.instance.canBuy()) {
-					for (int i = 0; i < 4; i++) {
+					for (int i = 0; i < 5; i++) {
 						ResourceManager.instance.addResource(i, -resourceNeeded[i]);
 					}
 					BuyManager.instance.currentObjectClass.getDeclaredConstructor(Tile.class)

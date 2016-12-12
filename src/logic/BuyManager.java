@@ -23,7 +23,7 @@ public class BuyManager {
 			ret = (boolean)BuyManager.instance.currentObjectClass.getMethod("canPlace", Tile.class).invoke(null, TileManager.instance.tileArray[x][y]);
 			int[] resourceNeeded = (int[]) BuyManager.instance.currentObjectClass.getMethod("getResourceNeeded")
 					.invoke(null);
-			for (int i = 0; i < 4; i++) {
+			for (int i = 0; i < 5; i++) {
 				if (ResourceManager.instance.getResource(i) < resourceNeeded[i])
 					ret = false;
 			}
