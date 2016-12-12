@@ -56,7 +56,7 @@ public class TileManager {
 					new TileObjectVoid(vt);
 					tileList.add(vt);
 				} else {
-					if(x == tileCountX-1) {
+					if(x >= tileCountX-2) {
 						tileArray[x][y] = new TileSpawner(x, y);
 					}
 					else {
