@@ -7,8 +7,8 @@ import exception.HighscoreException;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.text.Text;
 import logic.HighscoreManager;
+import model.ScoreRecord;
 
 public class showHighscoreThread extends Thread{
 	@Override
@@ -16,15 +16,17 @@ public class showHighscoreThread extends Thread{
 		String rawscore;
 		try{
 			rawscore=HighscoreManager.getScore();
-			ArrayList<String> scores=new ArrayList<>();
-			for(String score:rawscore.split("\n")){
-				scores.add(score);
+			ArrayList<ScoreRecord> scores=new ArrayList<>();
+			for(String scoreline:rawscore.split("\n")){
+				String[] result=scoreline.split(" ");
+				int score=Integer.parseInt(result[0]);
+				String name=result[1];
+				scores.add(new ScoreRecord(score, name));
 			}
 			Collections.sort(scores);
-			Collections.reverse(scores);
 			String scoreText="";
 			for(int i=0;i<Math.min(10,scores.size());i++){
-				scoreText+=scores.get(i).replaceAll("!"," : ");
+				scoreText+=scores.get(i).toString();
 				scoreText+="\n";
 			}
 			final String copyOfScoreText=scoreText;
