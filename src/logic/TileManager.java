@@ -7,7 +7,6 @@ import java.util.Random;
 import model.RenderableHolder;
 import model.Tile;
 import model.TileGround;
-import model.TileStone;
 import model.TileVoid;
 import model.tileObject.TileObjectStone;
 import model.tileObject.TileObjectTree;
@@ -30,6 +29,42 @@ public class TileManager {
 	}
 
 	public boolean canPlace(Tile tile, int sizeX, int sizeY) {
+		for(IRenderable ir:RenderableHolder.instance.getEntities()){
+			if(ir instanceof IBlockable){
+				if(CollisionUtility.isCollide((ICollidable)ir, new ICollidable() {					
+					@Override
+					public double getY() {
+						// TODO Auto-generated method stub
+						return tile.getY();
+					}
+					
+					@Override
+					public double getX() {
+						// TODO Auto-generated method stub
+						return tile.getX();
+					}
+					
+					@Override
+					public double getWidth() {
+						// TODO Auto-generated method stub
+						return sizeX*TileManager.tileSize;
+					}
+					
+					@Override
+					public double getHeight() {
+						// TODO Auto-generated method stub
+						return sizeY*TileManager.tileSize;
+					}
+
+					@Override
+					public void onCollision(ICollidable entity) {
+						// TODO Auto-generated method stub
+						
+					}
+				}))
+				return false;
+			}
+		}
 		for (int dx = 0; dx < sizeX; dx++) {
 			for (int dy = 0; dy < sizeY; dy++) {
 				int x = tile.getTileX() + dx;

@@ -4,7 +4,7 @@ import model.RenderableHolder;
 
 public class CollisionUtility {
 	
-	public static boolean collide(ICollidable o1,ICollidable o2) {
+	public static boolean isCollide(ICollidable o1,ICollidable o2) {
 		// rectangle collision detection
 		if(o1.getX() 				>= o2.getX()+o2.getWidth()) 	return false;
 		if(o1.getX()+o1.getWidth() 	<= o2.getX()) 					return false;
@@ -16,7 +16,7 @@ public class CollisionUtility {
 	public static boolean isBlocked(ICollidable object) {
 		for(IRenderable ir : RenderableHolder.getInstance().getEntities()) {
 			if(ir instanceof IBlockable && ir != object) {
-				if(collide((ICollidable)ir,object)) {
+				if(isCollide((ICollidable)ir,object)) {
 					return true;
 				}
 			}
@@ -34,7 +34,7 @@ public class CollisionUtility {
 					ICollidable o1 = (ICollidable) e1;
 					ICollidable o2 = (ICollidable) e2;
 					// check hit
-					if(collide(o1,o2)) {
+					if(isCollide(o1,o2)) {
 						o1.onCollision(o2);
 						o2.onCollision(o1);
 					}
