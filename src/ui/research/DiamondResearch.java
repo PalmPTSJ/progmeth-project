@@ -5,11 +5,10 @@ import model.RenderableHolder;
 
 public class DiamondResearch extends ResearchItem {
 	public DiamondResearch() {
-		// TODO Auto-generated constructor stub
-		super(RenderableHolder.research_diamond_img,"unlock diamond",new int[]{1,1,1,0,0});
+		super(RenderableHolder.research_diamond_img,"Unlock diamond",new int[]{50,50,30,0,5000});
 	}
 	@Override
 	public void onResearchSuccess() {
-		ResourceManager.instance.addCapacity(ResourceManager.DIAMOND, 10);
+		ResourceManager.instance.addCapacity(ResourceManager.DIAMOND, 5);
 	}
 }

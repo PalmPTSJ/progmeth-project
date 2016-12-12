@@ -8,7 +8,7 @@ public class ProjectileRock extends Projectile {
 	private static final double width = 30;
 	private static final double height = 30;
 	private static final double speed = 5;
-	private static final int damage = 50;
+	private static final int damage = 30;
 	
 	public ProjectileRock(double x, double y, double targetX, double targetY) {
 		super(x, y, width, height, speed, damage, targetX, targetY);

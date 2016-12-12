@@ -22,7 +22,7 @@ public class TileObjectStone extends TileObject {
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		ResourceManager.instance.addResource(ResourceManager.STONE, 5);
+		ResourceManager.instance.addResource(ResourceManager.STONE, 3);
 	}
 
 	@Override

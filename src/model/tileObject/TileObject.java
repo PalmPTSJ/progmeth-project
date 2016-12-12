@@ -25,7 +25,7 @@ public abstract class TileObject extends Entity implements IBlockable {
 	}
 
 	@Override
-	public void onDestroy() {
+	protected void onDestroy() {
 		super.onDestroy();
 		// remove link from tile
 		for (Tile t : tile) {

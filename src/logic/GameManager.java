@@ -11,30 +11,31 @@ import model.*;
 
 public class GameManager {
 	public static GameManager instance;
+	
 	public int score = 0;
 	public Player player;
 	public int fps;
 	public boolean isOverlayMode;
-	public EnemyController enemyController;
 	public static Random globalRNG=new Random();;
 
 	private boolean rocketLaunched;
+	private int rocketCount;
 
 	public GameManager() {
-
 		// initialize singleton
 		RenderableHolder.instance = new RenderableHolder();
+		
+		player = new Player(10, 10);
+		addEntity(player);
+		
 		BuyManager.instance = new BuyManager();
 		ResourceManager.instance = new ResourceManager();
 		TileManager.instance = new TileManager();
 		TileManager.instance.generateMap(globalRNG.nextInt(99999));
 		EnemyManager.instance = new EnemyManager();
-		player = new Player(10, 10);
-
-		addEntity(player);
-		enemyController = new EnemyController();
 
 		rocketLaunched = false;
+		rocketCount = 0;
 	}
 
 	public static void addEntity(IRenderable entity) {
@@ -114,5 +115,11 @@ public class GameManager {
 
 	public void setRocketLaunched(boolean launched) {
 		this.rocketLaunched = true;
+	}
+	public int getRocketCount() {
+		return rocketCount;
+	}
+	public void setRocketCount(int rocketCount) {
+		this.rocketCount = rocketCount;
 	}
 }

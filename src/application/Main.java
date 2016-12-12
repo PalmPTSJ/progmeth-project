@@ -2,7 +2,6 @@ package application;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import logic.GameManager;
 import logic.InputUtility;
 import logic.SoundManager;
 import ui.GamePane;
@@ -35,9 +34,7 @@ public class Main extends Application {
 	
 	@Override
 	public void stop() {
-		if(GameManager.instance.enemyController!=null){
-			GameManager.instance.enemyController.stop();
-		}
+		((IStoppable)scene.getRoot()).stop();
 	}
 	public static void changeSceneToGame(){
 		((IStoppable)scene.getRoot()).stop();

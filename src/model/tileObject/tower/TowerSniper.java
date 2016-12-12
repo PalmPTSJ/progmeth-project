@@ -11,10 +11,10 @@ import model.projectile.ProjectileBulletSniper;
 public class TowerSniper extends Tower {
 	
 	private static final int startHP = 500;
-	private static final int shootingMaxDelay = 240;
+	private static final int shootingMaxDelay = 180;
 	public static final int sizeX = 2;
 	public static final int sizeY = 2;
-	public static final int shootingRange = 600;
+	public static final int shootingRange = 700;
 	
 	public TowerSniper(Tile tile) {
 		super(tile, sizeX, sizeY, startHP, shootingMaxDelay, shootingRange);

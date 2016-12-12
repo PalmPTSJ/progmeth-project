@@ -8,55 +8,88 @@ import logic.ResourceManager;
 import model.BlockingEntity;
 import model.Entity;
 import model.RenderableHolder;
+import model.tileObject.TileObjectRocket;
+import model.tileObject.generator.Generator;
+import model.tileObject.storage.Storage;
+import model.tileObject.tower.Tower;
 
 public abstract class Enemy extends BlockingEntity {
 
-	private static final double width = 20;
-	private static final double height = 20;
+	private static final double defaultWidth = 20;
+	private static final double defualtHeight = 20;
 
 	private int damage = 3;
 	private int attackTimer = 0;
 	private int reward = 15;
 	private static final int attackMaxDelay = 20;
-	private static final double attackRange = 60;
+	private static final double attackRange = 5;
 
 	private Entity target;
 
-	public Enemy(double x, double y,double speed,int startHp,int damage,int reward) {
-		super(x, y, width, height, speed, startHp);
-		this.damage=damage;
-		this.reward=reward;
+	public Enemy(double x, double y, double speed, int startHp, int damage, int reward) {
+		super(x, y, defaultWidth, defualtHeight, speed, startHp);
+		this.damage = damage;
+		this.reward = reward;
+	}
+
+	private Entity findTarget(Class targetClass) {
+		double minDist = 0;
+		Entity target = null;
+		for (IRenderable ir : RenderableHolder.getInstance().getEntities()) {
+			if (targetClass.isAssignableFrom(ir.getClass())) {
+				if (target == null || CollisionUtility.findDistance(this, (ICollidable) ir) < minDist) {
+					target = (Entity) ir;
+				}
+			}
+		}
+		return target;
 	}
 
 	@Override
 	public void update() {
 		super.update();
-		
+
 		if (target != null && target.isDestroy())
 			target = null;
+
+		if (target == null)
+			target = findTarget(Tower.class);
+		if (target == null)
+			target = findTarget(TileObjectRocket.class);
+		if (target == null)
+			target = findTarget(Generator.class);
+		if (target == null)
+			target = findTarget(Storage.class);
+		if (target == null)
+			target = GameManager.instance.player;
+
 		if (target != null) {
 			double dx = target.getX() - x;
 			double dy = target.getY() - y;
 			double angle = Math.atan2(dy, dx);
 			this.velX = Math.cos(angle);
 			this.velY = Math.sin(angle);
-		} else {
-			this.velX = this.velY = 0;
 		}
-		
+
 		attackTimer++;
-		if(attackTimer >= attackMaxDelay) {
+		if (attackTimer >= attackMaxDelay) {
 			attack();
 			attackTimer = 0;
 		}
 
 	}
-	
+
 	private void attack() {
-		for(IRenderable ir : RenderableHolder.getInstance().getEntities()) {
-			if(ir instanceof Entity) {
-				if(!(ir instanceof Enemy) && CollisionUtility.findDistance(this, (ICollidable) ir) <= attackRange) {
-					((Entity) ir).reduceHP(damage);
+		for (IRenderable ir : RenderableHolder.getInstance().getEntities()) {
+			if (ir instanceof Entity) {
+				if (!(ir instanceof Enemy)) {
+					double dx = Math.abs(((Entity) ir).getCenterX() - getCenterX());
+					double dy = Math.abs(((Entity) ir).getCenterY() - getCenterY());
+					dx -= getWidth() / 2 + ((Entity) ir).getWidth() / 2;
+					dy -= getHeight() / 2 + ((Entity) ir).getHeight() / 2;
+					if (dx <= attackRange && dy <= attackRange) {
+						((Entity) ir).reduceHP(damage);
+					}
 				}
 			}
 		}
@@ -83,5 +116,5 @@ public abstract class Enemy extends BlockingEntity {
 		ResourceManager.instance.addResource(ResourceManager.ARTIFACT, reward);
 		GameManager.instance.score+=reward;
 	}
-	
+
 }

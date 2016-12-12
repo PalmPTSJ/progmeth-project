@@ -14,7 +14,7 @@ public class TowerArrow extends Tower {
 	private static final int shootingMaxDelay = 20;
 	public static final int sizeX = 1;
 	public static final int sizeY = 1;
-	public static final int shootingRange = 200;
+	public static final int shootingRange = 150;
 	
 	public TowerArrow(Tile tile) {
 		super(tile, sizeX, sizeY, startHP, shootingMaxDelay, shootingRange);
@@ -35,6 +35,6 @@ public class TowerArrow extends Tower {
 	}
 
 	public static int[] getResourceNeeded() {
-		return new int[]{5,0,0,0,0};
+		return new int[]{3,0,0,0,0};
 	}
 }

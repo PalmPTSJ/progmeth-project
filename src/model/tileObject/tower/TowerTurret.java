@@ -14,7 +14,7 @@ public class TowerTurret extends Tower {
 	private static final int shootingMaxDelay = 30;
 	public static final int sizeX = 1;
 	public static final int sizeY = 2;
-	public static final int shootingRange = 200;
+	public static final int shootingRange = 250;
 	
 	public TowerTurret(Tile tile) {
 		super(tile, sizeX, sizeY, startHP, shootingMaxDelay, shootingRange);
@@ -35,6 +35,6 @@ public class TowerTurret extends Tower {
 	}
 
 	public static int[] getResourceNeeded() {
-		return new int[]{0,3,5,0,0};
+		return new int[]{0,5,3,0,0};
 	}
 }

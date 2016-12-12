@@ -6,7 +6,7 @@ import model.RenderableHolder;
 public class EnemyBasic extends Enemy {
 
 	public EnemyBasic(double x, double y,int level) {
-		super(x, y, 2, 50 + 25*level, 3 + 2*level, 10*level);
+		super(x, y, 2, 20 + 15*level, (int)(3 + 0.4*level), 3*level);
 	}
 	@Override
 	public void draw(GraphicsContext gc) {

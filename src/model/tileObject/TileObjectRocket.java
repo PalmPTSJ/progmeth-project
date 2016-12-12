@@ -19,10 +19,17 @@ public class TileObjectRocket extends TileObject {
 	
 	public TileObjectRocket(Tile tile) {
 		super(tile, sizeX, sizeY, startHP);
+		GameManager.instance.setRocketCount(GameManager.instance.getRocketCount()+1);
 	}
 	
 	public static boolean canPlace(Tile tile) {
 		return TileManager.instance.canPlace(tile, sizeX, sizeY);
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		GameManager.instance.setRocketCount(GameManager.instance.getRocketCount()-1);
 	}
 	
 	@Override
@@ -33,7 +40,6 @@ public class TileObjectRocket extends TileObject {
 		}
 		else {
 			GameManager.instance.setRocketLaunched(true);
-			
 		}
 	}
 	
@@ -47,7 +53,7 @@ public class TileObjectRocket extends TileObject {
 	
 	public static int[] getResourceNeeded() {
 		return new int[]{0,0,0,0,0};
-		//return new int[]{100,100,100,50,1000};
+		//return new int[]{100,100,100,100,9999};
 	}
 
 }
