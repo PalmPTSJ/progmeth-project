@@ -10,7 +10,7 @@ import javafx.scene.control.Alert.AlertType;
 import logic.HighscoreManager;
 import model.ScoreRecord;
 
-public class showHighscoreThread extends Thread{
+public class ThreadShowHighscore extends Thread{
 	@Override
 	public void run() {
 		String rawscore;

@@ -8,7 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
 import model.*;
-import thread.newScoreThread;
+import thread.ThreadNewScore;
 import ui.MainPane;
 
 public class GameManager {
@@ -80,7 +80,7 @@ public class GameManager {
 			alert.setHeaderText("GG");
 		}
 		alert.show();
-		new newScoreThread(MainPane.getName(),score).start();
+		new ThreadNewScore(MainPane.getName(),score).start();
 		Main.changeSceneToMain();
 	}
 

@@ -15,7 +15,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.VBox;
 import logic.SoundManager;
-import thread.showHighscoreThread;
+import thread.ThreadShowHighscore;
 
 public class MainPane extends VBox implements IStoppable {
 	private static String playerName = "ProgMeth";
@@ -71,7 +71,7 @@ public class MainPane extends VBox implements IStoppable {
 		
 		highscore.setOnAction(e->{
 			highscore.setText("Loading");
-			Thread t=new showHighscoreThread();
+			Thread t=new ThreadShowHighscore();
 			t.start();
 			joiner=new Thread(()->{
 				try {
