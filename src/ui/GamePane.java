@@ -6,13 +6,13 @@ import logic.GameManager;
 
 public class GamePane extends HBox implements IStoppable {
 	AnimationTimer at;
-	public GamePane(int width,int height,String playerName) {
+	public GamePane(int width,int height) {
 		GameMenu menu=new GameMenu();
 		GameScreen gs = new GameScreen(width, height);
 		getChildren().add(gs);
 		getChildren().add(menu);
 		
-		GameManager.instance = new GameManager(playerName);
+		GameManager.instance = new GameManager();
 		
 		at=new AnimationTimer() {
 			Long start=0l;

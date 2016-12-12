@@ -9,22 +9,20 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
 import model.*;
 import thread.newScoreThread;
+import ui.MainPane;
 
 public class GameManager {
 	public static GameManager instance;
 	
 	public int score = 0;
-	public String name;
 	public Player player;
 	public int fps;
-	public boolean isOverlayMode;
 	public static Random globalRNG=new Random();;
 
 	private boolean rocketLaunched;
 	private int rocketCount;
 
-	public GameManager(String playerName) {
-		name=playerName;
+	public GameManager() {
 		// initialize singleton
 		RenderableHolder.instance = new RenderableHolder();
 		
@@ -46,33 +44,34 @@ public class GameManager {
 	}
 
 	public void update() {
-		if (player.isDestroy() || rocketLaunched)
+		if (isGameEnded()){
 			return;
+		}
 		updateOverlay();
 		updateEntity();
 		CollisionUtility.checkCollision();
 		removeDestroyEntity();
 		EnemyManager.instance.update();
-		checkEndingCondition();
+		if(isGameEnded()){
+			onGameEnded();
+		}
 		InputUtility.instance.reset();
 	}
-
-	private void checkEndingCondition() {
+	private boolean isGameEnded(){
+		return player.isDestroy() || rocketLaunched;
+	}
+	private void onGameEnded() {
+		Alert alert = new Alert(AlertType.INFORMATION);
 		if (rocketLaunched) {
-			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setContentText("You win");
 			alert.setHeaderText("GGEZ");
-			alert.show();
-			new newScoreThread(name,score).start();
-			Main.changeSceneToMain();
-		} else if (player.isDestroy()) {
-			Alert alert = new Alert(AlertType.INFORMATION);
+		} else {
 			alert.setContentText("GameOver");
 			alert.setHeaderText("GG");
-			alert.show();
-			new newScoreThread(name,score).start();
-			Main.changeSceneToMain();
 		}
+		alert.show();
+		new newScoreThread(MainPane.getName(),score).start();
+		Main.changeSceneToMain();
 	}
 
 	private void updateEntity() {
