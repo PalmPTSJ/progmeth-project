@@ -10,34 +10,38 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import logic.SoundManager;
 import thread.showHighscoreThread;
 
 public class MainPane extends VBox implements IStoppable {
-	private static String playerName;
+	private static String playerName = "ProgMeth";
 	Thread joiner;
 	public MainPane() {
-		
-		HBox title=new HBox();
-		Label titleName=new Label("Super Killing War");
-		Label titleVersion=new Label("1.0.1");
 		Button start=new Button("Start");
+		
+		Label nameLabel = new Label("Your name");
+		nameLabel.getStyleClass().setAll("h1");
+		nameLabel.setPadding(new Insets(20,130,10,0));
+		
 		TextField name=new TextField();
 		Button exit=new Button("Exit");
 		Button highscore = new Button("High score");
 		VolumePane volume=new VolumePane();
-		getChildren().addAll(title,start,name,exit,highscore,volume);
-		setAlignment(Pos.CENTER);
+		getChildren().addAll(nameLabel,name,start,exit,highscore,volume);
+		
+		setAlignment(Pos.BOTTOM_RIGHT);
 		setPrefSize(Main.screenWidth+300, Main.screenHeight);
 		
 		setBackground(new Background(new BackgroundImage(new Image(ClassLoader.getSystemResource("img/ui/background.png").toString()), null, null, null,null)));
-		title.setAlignment(Pos.TOP_CENTER);
-		titleName.getStyleClass().setAll("h1","text-primary");
-		titleVersion.getStyleClass().setAll("lbl-success","lbl");
-		title.getChildren().addAll(titleName,titleVersion);
-		setMargin(title, new Insets(60));
+		
+		name.setText(playerName);
+		name.setOnKeyTyped(e->{
+			System.out.println(name.getText());
+			playerName=name.getText();
+		});
+		name.setMaxWidth(200);
+		setMargin(name, new Insets(0,100,20,0));
 		
 		start.setOnAction(e->{
 			start.setText("LOADING");
@@ -46,21 +50,18 @@ public class MainPane extends VBox implements IStoppable {
 		});
 		start.getStyleClass().setAll("btn","btn-lg","btn-success");
 		start.setAlignment(Pos.CENTER);
-		setMargin(start, new Insets(10));
-		
-		name.setOnKeyTyped(e->{
-			System.out.println(name.getText());
-			playerName=name.getText();
-		});
-		name.setPrefWidth(400);
-		setMargin(name, new Insets(10));
+		start.setPrefSize(200, 80);
+		start.setStyle("-fx-cursor: hand;");
+		setMargin(start, new Insets(20,100,20,0));
 		
 		exit.setOnAction(e->{
 			Platform.exit();
 		});
 		exit.getStyleClass().setAll("btn","btn-lg","btn-danger");
 		exit.setAlignment(Pos.CENTER);
-		setMargin(exit, new Insets(10));
+		exit.setPrefSize(200, 80);
+		exit.setStyle("-fx-cursor: hand;");
+		setMargin(exit, new Insets(20,100,20,0));
 		
 		highscore.setOnAction(e->{
 			highscore.setText("Loading");
@@ -73,16 +74,16 @@ public class MainPane extends VBox implements IStoppable {
 						highscore.setText("High score");
 					});
 				} catch (InterruptedException e1) {
-					// TODO Auto-generated catch block
-					
+
 				}
-				
 			});
 			joiner.start();
 		});
 		highscore.getStyleClass().setAll("btn","btn-lg","btn-info");
 		highscore.setAlignment(Pos.CENTER);
-		setMargin(highscore, new Insets(10));
+		highscore.setPrefSize(200, 80);
+		highscore.setStyle("-fx-cursor: hand;");
+		setMargin(highscore, new Insets(20,100,20,0));
 	}
 
 	public void stop() {

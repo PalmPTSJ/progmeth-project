@@ -1,5 +1,6 @@
 package ui;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
@@ -10,7 +11,8 @@ import logic.SoundManager;
 public class VolumePane extends HBox {
 	Slider sl;
 	public VolumePane() {
-		setAlignment(Pos.CENTER);
+		setAlignment(Pos.CENTER_RIGHT);
+		this.setPadding(new Insets(0,100,0,0));
 		
 		ImageView iv=new ImageView(new Image(ClassLoader.getSystemResource("img/ui/volume.png").toString()));			
 		sl=new Slider(0,100,SoundManager.getVolume());
