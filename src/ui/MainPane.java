@@ -5,6 +5,8 @@ import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
@@ -13,18 +15,33 @@ import logic.SoundManager;
 import thread.showHighscoreThread;
 
 public class MainPane extends VBox implements IStoppable {
+	private static String playerName = "ProgMeth";
 	Thread joiner;
 	public MainPane() {
 		Button start=new Button("Start");
+		
+		Label nameLabel = new Label("Your name");
+		nameLabel.getStyleClass().setAll("h1");
+		nameLabel.setPadding(new Insets(20,130,10,0));
+		
+		TextField name=new TextField();
 		Button exit=new Button("Exit");
 		Button highscore = new Button("High score");
 		VolumePane volume=new VolumePane();
-		getChildren().addAll(start,exit,highscore,volume);
+		getChildren().addAll(nameLabel,name,start,exit,highscore,volume);
 		
 		setAlignment(Pos.BOTTOM_RIGHT);
 		setPrefSize(Main.screenWidth+300, Main.screenHeight);
 		
 		setBackground(new Background(new BackgroundImage(new Image(ClassLoader.getSystemResource("img/ui/background.png").toString()), null, null, null,null)));
+		
+		name.setText(playerName);
+		name.setOnKeyTyped(e->{
+			System.out.println(name.getText());
+			playerName=name.getText();
+		});
+		name.setMaxWidth(200);
+		setMargin(name, new Insets(0,100,20,0));
 		
 		start.setOnAction(e->{
 			start.setText("LOADING");
@@ -73,5 +90,8 @@ public class MainPane extends VBox implements IStoppable {
 		if(joiner!=null){
 			joiner.interrupt();			
 		}
+	}
+	public static String getName(){
+		return playerName;
 	}
 }
