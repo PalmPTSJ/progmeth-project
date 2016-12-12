@@ -4,10 +4,13 @@ import javafx.scene.media.AudioClip;
 
 public class SoundManager {
 	public static AudioClip bgm;
+	public static AudioClip gunshot;
 	static{
 		// TODO Auto-generated constructor stub
 		bgm=new AudioClip(ClassLoader.getSystemResource("sound/bgm.wav").toString());
 		bgm.setCycleCount(AudioClip.INDEFINITE);
+		
+		gunshot=new AudioClip(ClassLoader.getSystemResource("sound/gunshot.wav").toString());
 	}
 	public static void start(){
 		bgm.play();

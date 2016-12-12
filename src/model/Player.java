@@ -4,6 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import logic.BuyManager;
 import logic.InputUtility;
+import logic.SoundManager;
 import logic.TileManager;
 import model.projectile.Projectile;
 import model.projectile.ProjectilePlayerBullet;
@@ -68,6 +69,7 @@ public class Player extends BlockingEntity {
 			shootingTimer++;
 		} else {
 			if (!BuyManager.instance.buyMode && InputUtility.instance.isMouseLeftDown()) {
+				SoundManager.gunshot.play();
 				Projectile bullet = new ProjectilePlayerBullet(getCenterX(), getCenterY(),
 						InputUtility.instance.getMouseX(), InputUtility.instance.getMouseY());
 				RenderableHolder.getInstance().add(bullet);
