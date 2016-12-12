@@ -64,13 +64,13 @@ public class GameManager {
 			alert.setContentText("You win");
 			alert.setHeaderText("GGEZ");
 			alert.show();
-//			new newScoreThread(score).start();
+			new newScoreThread(name,score).start();
 			Main.changeSceneToMain();
 		} else if (player.isDestroy()) {
-//			Alert alert = new Alert(AlertType.INFORMATION);
-//			alert.setContentText("GameOver");
-//			alert.setHeaderText("GG");
-//			alert.show();
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setContentText("GameOver");
+			alert.setHeaderText("GG");
+			alert.show();
 			new newScoreThread(name,score).start();
 			Main.changeSceneToMain();
 		}
