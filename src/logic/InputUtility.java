@@ -89,6 +89,8 @@ public class InputUtility {
 	public double getMouseY() { return mouseY; }
 	
 	public boolean isKeyDown(KeyCode a) { return keyPressed.contains(a); }
+	public boolean isKeyTriggered(KeyCode a) { return keyTriggered.contains(a); }
+	
 	
 	public boolean isMouseOnScreen(){
 		return mouseOnScreen;

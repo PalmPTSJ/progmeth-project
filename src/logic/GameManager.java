@@ -19,6 +19,8 @@ public class GameManager {
 	public int fps;
 	public static Random globalRNG=new Random();;
 
+	private boolean isGameRunning=true;
+	
 	private boolean rocketLaunched;
 	private int rocketCount;
 
@@ -47,15 +49,23 @@ public class GameManager {
 		if (isGameEnded()){
 			return;
 		}
-		updateOverlay();
-		updateEntity();
-		CollisionUtility.checkCollision();
-		removeDestroyEntity();
-		EnemyManager.instance.update();
+		if(!isPause()){
+			updateOverlay();
+			updateEntity();
+			CollisionUtility.checkCollision();
+			removeDestroyEntity();
+			EnemyManager.instance.update();
+		}
 		if(isGameEnded()){
 			onGameEnded();
 		}
 		InputUtility.instance.reset();
+	}
+	private boolean isPause(){
+		if(InputUtility.instance.isKeyTriggered(KeyCode.SPACE)){
+			isGameRunning=!isGameRunning;
+		}
+		return !isGameRunning;
 	}
 	private boolean isGameEnded(){
 		return player.isDestroy() || rocketLaunched;
@@ -85,6 +95,10 @@ public class GameManager {
 	private void updateOverlay() {
 		if (!BuyManager.instance.buyMode)
 			return;
+		if (InputUtility.instance.isMouseRightClicked()){
+			BuyManager.instance.buyMode=false;
+			return;
+		}
 		if (InputUtility.instance.isMouseLeftClicked()) {
 			int x = (int) (InputUtility.instance.getMouseX() / TileManager.tileSize);
 			int y = (int) (InputUtility.instance.getMouseY() / TileManager.tileSize);
