@@ -1,3 +1,6 @@
+/*
+ * Research SmallGun (Gun level 1)
+ */
 package ui.research;
 
 import model.RenderableHolder;

@@ -1,3 +1,6 @@
+/*
+ * throws when trying to set name that contains spaces
+ */
 package exception;
 
 public class InvalidNameException extends Exception {

@@ -1,3 +1,6 @@
+/*
+ * JavaFx Main Class - The beginning of every thing
+ */
 package application;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -10,7 +13,7 @@ import ui.MainPane;
 
 public class Main extends Application {
 	
-	public static final int screenWidth = 900;
+	public static final int screenWidth = 1200;
 	public static final int screenHeight = 600;
 	public static Scene scene;
 	public static void main(String[] args) {
@@ -19,7 +22,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		scene = new Scene(new MainPane(),screenWidth+300, screenHeight);
+		scene = new Scene(new MainPane(),screenWidth, screenHeight);
 		scene.getStylesheets().add("bootstrapfx.css");
 		
 		InputUtility.instance.setEventHandler(scene);

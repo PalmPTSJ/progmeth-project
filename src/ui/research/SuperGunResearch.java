@@ -1,3 +1,6 @@
+/*
+ * Research SuperGun (Gun level 3)
+ */
 package ui.research;
 
 import model.RenderableHolder;

@@ -7,8 +7,8 @@ import logic.GameManager;
 public class GamePane extends HBox implements IStoppable {
 	AnimationTimer at;
 	public GamePane(int width,int height) {
+		GameScreen gs = new GameScreen(width-300, height);
 		GameMenu menu=new GameMenu();
-		GameScreen gs = new GameScreen(width, height);
 		getChildren().add(gs);
 		getChildren().add(menu);
 		

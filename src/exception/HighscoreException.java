@@ -1,3 +1,6 @@
+/*
+ * throws when there is an error while getting high score (online)
+ */
 package exception;
 
 public class HighscoreException extends Exception {

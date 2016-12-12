@@ -1,3 +1,6 @@
+/*
+ * Research Gun (Gun level 2)
+ */
 package ui.research;
 
 import model.RenderableHolder;
