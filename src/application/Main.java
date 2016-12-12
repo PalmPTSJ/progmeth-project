@@ -23,7 +23,6 @@ public class Main extends Application {
 		scene.getStylesheets().add("bootstrapfx.css");
 		
 		InputUtility.instance.setEventHandler(scene);
-		SoundManager.setVolume(0);
 		
 		primaryStage.setTitle("Super Killing Wars");
 		primaryStage.setResizable(true);

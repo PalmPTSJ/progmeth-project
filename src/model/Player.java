@@ -96,7 +96,6 @@ public class Player extends BlockingEntity {
 					TileManager.instance.tileArray[x][y].tileObject.reduceHP(harvestPower);
 				}
 			}
-			
 		}
 	}
 

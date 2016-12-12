@@ -10,6 +10,8 @@ public class SoundManager {
 		bgm.setCycleCount(AudioClip.INDEFINITE);
 		
 		gunshot=new AudioClip(ClassLoader.getSystemResource("sound/gunshot.wav").toString());
+		
+		setVolume(0.2);
 	}
 
 	public static void start() {
@@ -21,10 +23,11 @@ public class SoundManager {
 	}
 
 	public static void setVolume(double value) {
-		bgm.setVolume(value / 100);
+		bgm.setVolume(value);
+		gunshot.setVolume(value);
 	}
 
 	public static double getVolume() {
-		return bgm.getVolume()*100;
+		return bgm.getVolume();
 	}
 }
