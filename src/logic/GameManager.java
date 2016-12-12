@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
 import model.*;
+import thread.newScoreThread;
 
 public class GameManager {
 	public static GameManager instance;
@@ -60,12 +61,14 @@ public class GameManager {
 			alert.setContentText("You win");
 			alert.setHeaderText("GGEZ");
 			alert.show();
+			new newScoreThread(score).start();
 			Main.changeSceneToMain();
 		} else if (player.isDestroy()) {
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setContentText("GameOver");
 			alert.setHeaderText("GG");
 			alert.show();
+			new newScoreThread(score).start();
 			Main.changeSceneToMain();
 		}
 	}
