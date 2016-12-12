@@ -12,7 +12,7 @@ public class StorageDiamond extends Storage {
 	private static final int startHp = 500;
 
 	private static final int resource = ResourceManager.DIAMOND;
-	private static final int amount = 20;
+	private static final int amount = 15;
 
 	public StorageDiamond(Tile tile) {
 		super(tile, sizeX, sizeY, startHp, resource, amount);
@@ -28,7 +28,7 @@ public class StorageDiamond extends Storage {
 	}
 
 	public static int[] getResourceNeeded() {
-		return new int[] { 10, 0, 0, 10, 0 };
+		return new int[] { 5, 0, 0, 5, 0 };
 	}
 
 }

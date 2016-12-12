@@ -11,10 +11,10 @@ import model.projectile.ProjectileRock;
 public class TowerCatapult extends Tower {
 	
 	private static final int startHP = 250;
-	private static final int shootingMaxDelay = 150;
+	private static final int shootingMaxDelay = 60;
 	public static final int sizeX = 2;
 	public static final int sizeY = 1;
-	public static final int shootingRange = 200;
+	public static final int shootingRange = 400;
 	
 	public TowerCatapult(Tile tile) {
 		super(tile, sizeX, sizeY, startHP, shootingMaxDelay, shootingRange);

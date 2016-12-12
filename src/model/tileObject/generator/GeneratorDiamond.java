@@ -12,7 +12,7 @@ public class GeneratorDiamond extends Generator {
 	private static final int startHp = 1000;
 
 	private static final int resource = ResourceManager.DIAMOND;
-	private static final int delay = 240;
+	private static final int delay = 120;
 	private static final int amount = 1;
 
 	public GeneratorDiamond(Tile tile) {

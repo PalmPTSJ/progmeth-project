@@ -12,7 +12,7 @@ public class GeneratorIron extends Generator {
 	private static final int startHp = 750;
 
 	private static final int resource = ResourceManager.IRON;
-	private static final int delay = 120;
+	private static final int delay = 60;
 	private static final int amount = 1;
 
 	public GeneratorIron(Tile tile) {

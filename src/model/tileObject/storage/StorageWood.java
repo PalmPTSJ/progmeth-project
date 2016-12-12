@@ -12,7 +12,7 @@ public class StorageWood extends Storage {
 	private static final int startHp = 100;
 
 	private static final int resource = ResourceManager.WOOD;
-	private static final int amount = 20;
+	private static final int amount = 15;
 
 	public StorageWood(Tile tile) {
 		super(tile, sizeX, sizeY, startHp, resource, amount);
@@ -28,7 +28,7 @@ public class StorageWood extends Storage {
 	}
 
 	public static int[] getResourceNeeded() {
-		return new int[] { 10, 0, 0, 0, 0 };
+		return new int[] { 5, 0, 0, 0, 0 };
 	}
 
 }

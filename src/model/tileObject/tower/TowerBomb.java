@@ -11,10 +11,10 @@ import model.projectile.ProjectileBomb;
 public class TowerBomb extends Tower {
 	
 	private static final int startHP = 800;
-	private static final int shootingMaxDelay = 120;
+	private static final int shootingMaxDelay = 60;
 	public static final int sizeX = 2;
 	public static final int sizeY = 2;
-	public static final int shootingRange = 200;
+	public static final int shootingRange = 300;
 	
 	public TowerBomb(Tile tile) {
 		super(tile, sizeX, sizeY, startHP, shootingMaxDelay, shootingRange);

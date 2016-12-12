@@ -13,7 +13,8 @@ public class EnemyManager {
 	private int timer = 0;
 	private int wave = 0;
 	private static final int firstWaveDelay = 1800; // 30 sec
-	private static final int spawnDelay = 1200; // 20 sec
+	private static final int waveDelay = 1200; // 20 sec
+	private static final int rocketWaveDelay = 120; // 2 sec
 	public EnemyManager(){
 		
 	}
@@ -22,18 +23,26 @@ public class EnemyManager {
 	}
 	public void update() {
 		timer++;
-		if((wave == 0 && timer >= firstWaveDelay) || (wave > 0 && timer >= spawnDelay)) {
+		if(GameManager.instance.getRocketCount() > 0) {
+			if(timer >= rocketWaveDelay) {
+				timer = 0;
+				spawn();
+			}
+		}
+		else if((wave == 0 && timer >= firstWaveDelay) || (wave > 0 && timer >= waveDelay)) {
 			timer = 0;
 			wave++;
 			spawn();
 		}
 	}
 	public int getRemainingTime() {
+		if(GameManager.instance.getRocketCount() > 0) return 0;
 		if(wave == 0) return firstWaveDelay - timer;
-		return spawnDelay - timer;
+		return waveDelay - timer;
 	}
 	public String getNextWaveName() {
-		if((wave+1) % 5 == 4) return "Big";
+		if(GameManager.instance.getRocketCount() > 0) return "Rocket";
+		else if((wave+1) % 5 == 4) return "Big";
 		else if((wave+1) % 5 == 0) return "Boss";
 		else return "Normal";
 	}
@@ -45,8 +54,13 @@ public class EnemyManager {
 			}
 		}
 		int basicCount,level,bossCount;
-		level = 1 + wave/5;
-		if(wave % 5 == 4) { // a lot of enemy (but low level)
+		level = 0 + wave;
+		if(GameManager.instance.getRocketCount() > 0) { // rocket wave
+			level = 75;
+			basicCount = 4;
+			bossCount = 1;
+		}
+		else if(wave % 5 == 4) { // big wave
 			basicCount = GameManager.globalRNG.nextInt(5) + 10; // 10 - 14
 			bossCount = 1;
 		}
@@ -73,11 +87,9 @@ public class EnemyManager {
 			else break;
 			
 			GameManager.addEntity(enemy);
-			GameManager.enemyController.addEnemy(enemy);
 			
 			if(CollisionUtility.isBlocked(enemy)) {
 				enemy.destroy();
-				System.out.println("(EnemyManager#spawn) : Enemy blocked when spawn");
 			}
 		}
 	}

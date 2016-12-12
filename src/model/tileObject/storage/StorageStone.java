@@ -12,7 +12,7 @@ public class StorageStone extends Storage {
 	private static final int startHp = 200;
 
 	private static final int resource = ResourceManager.STONE;
-	private static final int amount = 20;
+	private static final int amount = 15;
 
 	public StorageStone(Tile tile) {
 		super(tile, sizeX, sizeY, startHp, resource, amount);
@@ -28,7 +28,7 @@ public class StorageStone extends Storage {
 	}
 
 	public static int[] getResourceNeeded() {
-		return new int[] { 10, 10, 0, 0, 0 };
+		return new int[] { 5, 5, 0, 0, 0 };
 	}
 
 }

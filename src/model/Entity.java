@@ -35,7 +35,7 @@ public abstract class Entity implements IRenderable, ICollidable {
 		this.onDestroy();
 	}
 
-	public void onDestroy() {
+	protected void onDestroy() {
 		
 	}
 

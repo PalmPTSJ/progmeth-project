@@ -12,7 +12,7 @@ public class GeneratorWood extends Generator {
 	private static final int startHp = 250;
 
 	private static final int resource = ResourceManager.WOOD;
-	private static final int delay = 120;
+	private static final int delay = 60;
 	private static final int amount = 2;
 
 	public GeneratorWood(Tile tile) {
