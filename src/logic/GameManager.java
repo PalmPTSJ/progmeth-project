@@ -6,6 +6,7 @@ import java.util.Random;
 import application.Main;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.KeyCode;
 import model.*;
 import thread.newScoreThread;
@@ -14,6 +15,7 @@ public class GameManager {
 	public static GameManager instance;
 	
 	public int score = 0;
+	public String name;
 	public Player player;
 	public int fps;
 	public boolean isOverlayMode;
@@ -22,7 +24,8 @@ public class GameManager {
 	private boolean rocketLaunched;
 	private int rocketCount;
 
-	public GameManager() {
+	public GameManager(String playerName) {
+		name=playerName;
 		// initialize singleton
 		RenderableHolder.instance = new RenderableHolder();
 		
@@ -61,14 +64,14 @@ public class GameManager {
 			alert.setContentText("You win");
 			alert.setHeaderText("GGEZ");
 			alert.show();
-			new newScoreThread(score).start();
+//			new newScoreThread(score).start();
 			Main.changeSceneToMain();
 		} else if (player.isDestroy()) {
-			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setContentText("GameOver");
-			alert.setHeaderText("GG");
-			alert.show();
-			new newScoreThread(score).start();
+//			Alert alert = new Alert(AlertType.INFORMATION);
+//			alert.setContentText("GameOver");
+//			alert.setHeaderText("GG");
+//			alert.show();
+			new newScoreThread(name,score).start();
 			Main.changeSceneToMain();
 		}
 	}

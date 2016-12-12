@@ -39,7 +39,7 @@ public class Main extends Application {
 	}
 	public static void changeSceneToGame(){
 		((IStoppable)scene.getRoot()).stop();
-		scene.setRoot(new GamePane(screenWidth, screenHeight));
+		scene.setRoot(new GamePane(screenWidth, screenHeight,MainPane.getName()));
 		SoundManager.start();
 	}
 	public static void changeSceneToMain(){

@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
@@ -15,6 +16,7 @@ import logic.SoundManager;
 import thread.showHighscoreThread;
 
 public class MainPane extends VBox implements IStoppable {
+	private static String playerName;
 	Thread joiner;
 	public MainPane() {
 		
@@ -22,10 +24,11 @@ public class MainPane extends VBox implements IStoppable {
 		Label titleName=new Label("Super Killing War");
 		Label titleVersion=new Label("1.0.1");
 		Button start=new Button("Start");
+		TextField name=new TextField();
 		Button exit=new Button("Exit");
 		Button highscore = new Button("High score");
 		VolumePane volume=new VolumePane();
-		getChildren().addAll(title,start,exit,highscore,volume);
+		getChildren().addAll(title,start,name,exit,highscore,volume);
 		setAlignment(Pos.CENTER);
 		setPrefSize(Main.screenWidth+300, Main.screenHeight);
 		
@@ -44,6 +47,13 @@ public class MainPane extends VBox implements IStoppable {
 		start.getStyleClass().setAll("btn","btn-lg","btn-success");
 		start.setAlignment(Pos.CENTER);
 		setMargin(start, new Insets(10));
+		
+		name.setOnKeyTyped(e->{
+			System.out.println(name.getText());
+			playerName=name.getText();
+		});
+		name.setPrefWidth(400);
+		setMargin(name, new Insets(10));
 		
 		exit.setOnAction(e->{
 			Platform.exit();
@@ -79,5 +89,8 @@ public class MainPane extends VBox implements IStoppable {
 		if(joiner!=null){
 			joiner.interrupt();			
 		}
+	}
+	public static String getName(){
+		return playerName;
 	}
 }

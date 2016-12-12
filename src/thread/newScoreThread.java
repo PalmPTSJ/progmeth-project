@@ -8,12 +8,14 @@ import logic.HighscoreManager;
 
 public class newScoreThread extends Thread {
 	private int score;
-	public newScoreThread(int score) {
+	private String name;
+	public newScoreThread(String name,int score) {
 		this.score=score;
+		this.name=name;
 	}
 	public void run(){
 		try {
-			HighscoreManager.postScore("YOURNAMEHERE", score);
+			HighscoreManager.postScore(name, score);
 		} 
 		catch(HighscoreException e){
 			Platform.runLater(()->{
