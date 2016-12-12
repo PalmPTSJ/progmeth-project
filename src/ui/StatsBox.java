@@ -9,7 +9,7 @@ import model.ProjectilePlayerBullet;
 import model.RenderableHolder;
 
 public class StatsBox extends VBox {
-	private Label score, fps, entityCount,playerDamage,wave;
+	private Label score, fps, entityCount, playerDamage, wave;
 
 	public StatsBox() {
 		score = new Label();
@@ -17,15 +17,17 @@ public class StatsBox extends VBox {
 		entityCount = new Label();
 		playerDamage = new Label();
 		wave = new Label();
-		getChildren().addAll(score, fps, entityCount,playerDamage,wave);
+		getChildren().addAll(score, fps, entityCount, playerDamage, wave);
 	}
 
 	public void update() {
 		score.setText("Score " + GameManager.score);
 		fps.setText(GameManager.fps + "fps");
-		playerDamage.setText("Damage "+ProjectilePlayerBullet.getDamage());
-		wave.setText("Wave "+EnemyManager.instance.getWaveNumber());
-		int tileCount = (TileManager.tileCountX+2)*(TileManager.tileCountY+2);
+		playerDamage.setText("Damage " + ProjectilePlayerBullet.getDamage());
+		wave.setText("Wave " + EnemyManager.instance.getWaveNumber() + " , Next wave in "
+				+ (EnemyManager.instance.getRemainingTime() / 60) + " sec (" + EnemyManager.instance.getNextWaveName()
+				+ ")");
+		int tileCount = (TileManager.tileCountX + 2) * (TileManager.tileCountY + 2);
 		entityCount.setText("Entity Count : " + (RenderableHolder.getInstance().getEntities().size() - tileCount));
 	}
 }

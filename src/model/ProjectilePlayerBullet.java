@@ -7,12 +7,10 @@ public class ProjectilePlayerBullet extends Projectile {
 	private static final double width = 20;
 	private static final double height = 8;
 	private static final double speed = 12;
-	private static int damage = 15;
+	private static int damage = 20;
 	
 	public ProjectilePlayerBullet(double x, double y, double targetX, double targetY) {
 		super(x, y, width, height, speed, damage, targetX, targetY);
-		// scale damage / speed from research
-		
 	}
 
 	public ProjectilePlayerBullet(double x, double y, Entity target) {

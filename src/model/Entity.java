@@ -27,7 +27,7 @@ public abstract class Entity implements IRenderable, ICollidable {
 		this.hp = this.maxHp = hp;
 	}
 
-	protected void destroy() {
+	public void destroy() {
 		if (this.destroyed)
 			return;
 		this.destroyed = true;
