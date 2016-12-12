@@ -3,7 +3,9 @@ package ui;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import logic.BuyManager;
+import logic.GameManager;
 import logic.IRenderable;
 import logic.InputUtility;
 import logic.TileManager;
@@ -29,7 +31,21 @@ public class GameScreen extends Canvas {
 			drawOverlay(gc);
 			drawBuyingItem(gc);
 		}
+		if(GameManager.instance.isGamePause()) {
+			drawPause(gc);
+		}
 	}
+	
+	private void drawPause(GraphicsContext gc) {
+		gc.setGlobalAlpha(0.5);
+		gc.setFill(Color.BLACK);
+		gc.fillRect(0, 0, screen_width, screen_height);
+		gc.setFill(Color.WHITE);
+		gc.setFont(Font.font(40));
+		gc.fillText("PAUSE", screen_width/2-50, screen_height/2-15);
+		gc.setGlobalAlpha(1);
+	}
+
 	public void drawBuyingItem(GraphicsContext gc){
 		int x = (int) (InputUtility.instance.getMouseX() / TileManager.tileSize);
 		int y = (int) (InputUtility.instance.getMouseY() / TileManager.tileSize);

@@ -17,9 +17,9 @@ public class GameManager {
 	public int score = 0;
 	public Player player;
 	public int fps;
-	public static Random globalRNG=new Random();;
+	public static Random globalRNG = new Random();
 
-	private boolean isGameRunning=true;
+	private boolean isGamePause = false;
 	
 	private boolean rocketLaunched;
 	private int rocketCount;
@@ -39,6 +39,8 @@ public class GameManager {
 
 		rocketLaunched = false;
 		rocketCount = 0;
+		
+		isGamePause = false;
 	}
 
 	public static void addEntity(IRenderable entity) {
@@ -62,10 +64,10 @@ public class GameManager {
 		InputUtility.instance.reset();
 	}
 	private boolean isPause(){
-		if(InputUtility.instance.isKeyTriggered(KeyCode.SPACE)){
-			isGameRunning=!isGameRunning;
+		if(InputUtility.instance.isKeyTriggered(KeyCode.P)){
+			isGamePause=!isGamePause;
 		}
-		return !isGameRunning;
+		return isGamePause;
 	}
 	private boolean isGameEnded(){
 		return player.isDestroy() || rocketLaunched;
@@ -74,10 +76,10 @@ public class GameManager {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		if (rocketLaunched) {
 			alert.setContentText("You win");
-			alert.setHeaderText("GGEZ");
+			alert.setHeaderText("Congratulations!");
 		} else {
-			alert.setContentText("GameOver");
-			alert.setHeaderText("GG");
+			alert.setContentText("Game Over");
+			alert.setHeaderText("Try again later.");
 		}
 		alert.show();
 		new ThreadNewScore(MainPane.getName(),score).start();
@@ -117,7 +119,6 @@ public class GameManager {
 				}
 			} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
 					| NoSuchMethodException | SecurityException | InstantiationException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -139,5 +140,9 @@ public class GameManager {
 	}
 	public void setRocketCount(int rocketCount) {
 		this.rocketCount = rocketCount;
+	}
+	
+	public boolean isGamePause() {
+		return isGamePause;
 	}
 }
