@@ -48,13 +48,12 @@ public class GameScreen extends Canvas {
 				gc.setGlobalAlpha(1);
 			}
 		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return;
 		}
 		boolean canPlace = BuyManager.instance.canBuy();
 		if(!canPlace) {
-				gc.setGlobalAlpha(0.2);
+			gc.setGlobalAlpha(0.2);
 		}	
 		gc.drawImage(BuyManager.instance.currentObjectImage,x*TileManager.tileSize,y*TileManager.tileSize,sizeX*TileManager.tileSize,sizeY*TileManager.tileSize);
 		gc.setGlobalAlpha(1.0);

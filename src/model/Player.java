@@ -4,6 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import logic.BuyManager;
 import logic.InputUtility;
+import logic.TileManager;
 import model.projectile.Projectile;
 import model.projectile.ProjectilePlayerBullet;
 
@@ -16,8 +17,8 @@ public class Player extends BlockingEntity {
 
 	private int healthRegenerationTimer = 0;
 	private static final int healthRegenerationDelay = 10;
-	private static int healthRegenerationRate=0;
-	
+	private static int healthRegenerationRate = 0;
+
 	private int shootingTimer = 0;
 	private static final int shootingDelay = 20;
 
@@ -47,7 +48,9 @@ public class Player extends BlockingEntity {
 	public void draw(GraphicsContext gc) {
 		super.draw(gc, RenderableHolder.player_img);
 	}
-
+	
+	private static final int harvestPower = 1;
+	
 	@Override
 	public void update() {
 		if (InputUtility.instance.isKeyDown(KeyCode.A))
@@ -65,25 +68,37 @@ public class Player extends BlockingEntity {
 			shootingTimer++;
 		} else {
 			if (!BuyManager.instance.buyMode && InputUtility.instance.isMouseLeftDown()) {
-				Projectile bullet = new ProjectilePlayerBullet(getCenterX(), getCenterY(), InputUtility.instance.getMouseX(),
-						InputUtility.instance.getMouseY());
+				Projectile bullet = new ProjectilePlayerBullet(getCenterX(), getCenterY(),
+						InputUtility.instance.getMouseX(), InputUtility.instance.getMouseY());
 				RenderableHolder.getInstance().add(bullet);
 			}
 			shootingTimer = 0;
 		}
-		
-		if ( healthRegenerationTimer < healthRegenerationDelay){
+
+		if (healthRegenerationTimer < healthRegenerationDelay) {
 			healthRegenerationTimer++;
-		}
-		else{
-			hp+=healthRegenerationRate;
-			if(hp>maxHp){
-				hp=maxHp;
+		} else {
+			hp += healthRegenerationRate;
+			if (hp > maxHp) {
+				hp = maxHp;
 			}
-			healthRegenerationTimer=0;
+			healthRegenerationTimer = 0;
+		}
+		
+		// cut object
+		if(InputUtility.instance.isMouseRightDown()) {
+			int x = (int) (InputUtility.instance.getMouseX() / TileManager.tileSize);
+			int y = (int) (InputUtility.instance.getMouseY() / TileManager.tileSize);
+			if(!(x>=TileManager.tileCountX || x<0 || y>=TileManager.tileCountY || y<0)) {
+				if(TileManager.instance.tileArray[x][y].tileObject != null) {
+					TileManager.instance.tileArray[x][y].tileObject.reduceHP(harvestPower);
+				}
+			}
+			
 		}
 	}
-	public static void setHealthRegenerationRate(int rate){
-		healthRegenerationRate=rate;
+
+	public static void setHealthRegenerationRate(int rate) {
+		healthRegenerationRate = rate;
 	}
 }

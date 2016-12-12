@@ -1,6 +1,7 @@
 package model.tileObject;
 
 import javafx.scene.canvas.GraphicsContext;
+import logic.ResourceManager;
 import logic.TileManager;
 import model.RenderableHolder;
 import model.Tile;
@@ -16,6 +17,12 @@ public class TileObjectTree extends TileObject {
 
 	public static boolean canPlace(Tile tile) {
 		return TileManager.instance.canPlace(tile, sizeX, sizeY);
+	}
+	
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		ResourceManager.instance.addResource(ResourceManager.WOOD, 2);
 	}
 
 	@Override

@@ -29,7 +29,6 @@ public class BuyManager {
 			}
 		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException
 				| SecurityException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}
