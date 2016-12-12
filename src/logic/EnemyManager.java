@@ -12,9 +12,8 @@ public class EnemyManager {
 	public static EnemyManager instance;
 	private int timer = 0;
 	private int wave = 0;
-	private static final int firstWaveDelay = 1800; // 30 sec
-	private static final int waveDelay = 1200; // 20 sec
-	private static final int rocketWaveDelay = 120; // 2 sec
+	private static final int waveDelay = 1200; // 20 secs
+	private static final int rocketWaveDelay = 120; // 2 secs
 	public EnemyManager(){
 		
 	}
@@ -29,7 +28,7 @@ public class EnemyManager {
 				spawn();
 			}
 		}
-		else if((wave == 0 && timer >= firstWaveDelay) || (wave > 0 && timer >= waveDelay)) {
+		else if(timer >= waveDelay) {
 			timer = 0;
 			wave++;
 			spawn();
@@ -37,7 +36,6 @@ public class EnemyManager {
 	}
 	public int getRemainingTime() {
 		if(GameManager.instance.getRocketCount() > 0) return 0;
-		if(wave == 0) return firstWaveDelay - timer;
 		return waveDelay - timer;
 	}
 	public String getNextWaveName() {

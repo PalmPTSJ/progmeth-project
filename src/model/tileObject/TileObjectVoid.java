@@ -17,6 +17,11 @@ public class TileObjectVoid extends TileObject {
 	public void draw(GraphicsContext gc) {
 
 	}
+	
+	@Override
+	public void drawHealthBar(GraphicsContext gc) {
+		
+	}
 
 	@Override
 	public void update() {

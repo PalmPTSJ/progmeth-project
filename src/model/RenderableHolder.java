@@ -49,13 +49,15 @@ public class RenderableHolder {
 	public static Image storage_stone_img;
 	public static Image storage_iron_img;
 	public static Image storage_diamond_img;
-
+	
+	public static Image research_building_img;
 	public static Image research_iron_img;
 	public static Image research_diamond_img;
-	public static Image research_gun;
-	public static Image research_super_gun;
-	public static Image research_regen;
-
+	public static Image research_gun_img;
+	public static Image research_supergun_img;
+	public static Image research_regen_img;
+	public static Image research_smallgun_img;
+	
 	public static Image tileObject_rocket_img;
 
 	public static RenderableHolder instance;
@@ -127,13 +129,15 @@ public class RenderableHolder {
 		storage_stone_img = getRes("img/tileObject/storageStone.png");
 		storage_iron_img = getRes("img/tileObject/storageIron.png");
 		storage_diamond_img = getRes("img/tileObject/storageDiamond.png");
-
+		
+		research_building_img = getRes("img/ui/research_building.png");
 		research_iron_img = getRes("img/ui/research_iron.png");
 		research_diamond_img = getRes("img/ui/research_diamond.png");
-		research_gun = getRes("img/ui/research_gun.png");
-		research_super_gun = getRes("img/ui/research_supergun.png");
-		research_regen = getRes("img/ui/research_regen.png");
-
+		research_gun_img = getRes("img/ui/research_gun.png");
+		research_supergun_img = getRes("img/ui/research_supergun.png");
+		research_regen_img = getRes("img/ui/research_regen.png");
+		research_smallgun_img = getRes("img/ui/research_smallGun.png");
+		
 		tileObject_rocket_img = getRes("img/tileObject/rocketSilo.png");
 
 	}

@@ -9,9 +9,6 @@ import model.BlockingEntity;
 import model.Entity;
 import model.RenderableHolder;
 import model.tileObject.TileObjectRocket;
-import model.tileObject.generator.Generator;
-import model.tileObject.storage.Storage;
-import model.tileObject.tower.Tower;
 
 public abstract class Enemy extends BlockingEntity {
 
@@ -58,12 +55,6 @@ public abstract class Enemy extends BlockingEntity {
 		
 		if (target == null)
 			target = findTarget(TileObjectRocket.class);
-		if (target == null)
-			target = findTarget(Tower.class);
-		if (target == null)
-			target = findTarget(Generator.class);
-		if (target == null)
-			target = findTarget(Storage.class);
 		if (target == null)
 			target = GameManager.instance.player;
 

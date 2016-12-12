@@ -6,7 +6,6 @@ import java.util.Random;
 import application.Main;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.KeyCode;
 import model.*;
 import thread.newScoreThread;
