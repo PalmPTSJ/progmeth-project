@@ -4,7 +4,7 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.layout.HBox;
 import logic.GameManager;
 
-public class GamePane extends HBox {
+public class GamePane extends HBox implements IStoppable {
 	AnimationTimer at;
 	public GamePane(int width,int height) {
 		// TODO Auto-generated constructor stub
@@ -22,7 +22,7 @@ public class GamePane extends HBox {
 				// TODO Auto-generated method stub
 				if(start==0l)start=now;
 				long diff = now-start;
-				if(diff > 0) GameManager.fps = (int) (1000000000l/(diff));
+				if(diff > 0) GameManager.instance.fps = (int) (1000000000l/(diff));
 				
 				if(diff>=10000000l) { // Full speed (60fps)
 					GameManager.instance.update();
@@ -37,6 +37,6 @@ public class GamePane extends HBox {
 	}
 	public void stop(){
 		at.stop();
-		GameManager.enemyController.stop();
+		GameManager.instance.enemyController.stop();
 	}
 }

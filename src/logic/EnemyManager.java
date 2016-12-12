@@ -73,7 +73,7 @@ public class EnemyManager {
 			else break;
 			
 			GameManager.addEntity(enemy);
-			GameManager.enemyController.addEnemy(enemy);
+			GameManager.instance.enemyController.addEnemy(enemy);
 			
 			if(CollisionUtility.isBlocked(enemy)) {
 				enemy.destroy();

@@ -44,7 +44,7 @@ public class EnemyController {
 				// just move to player
 				synchronized(RenderableHolder.getInstance()) {
 					for (Enemy enemy : enemyList) {
-						enemy.setTarget(GameManager.player);
+						enemy.setTarget(GameManager.instance.player);
 						for(IRenderable ir : RenderableHolder.getInstance().getEntities()) {
 							if(ir instanceof Tower) {
 								enemy.setTarget((Entity) ir);

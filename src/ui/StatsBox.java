@@ -21,8 +21,8 @@ public class StatsBox extends VBox {
 	}
 
 	public void update() {
-		score.setText("Score " + GameManager.score);
-		fps.setText(GameManager.fps + "fps");
+		score.setText("Score " + GameManager.instance.score);
+		fps.setText(GameManager.instance.fps + "fps");
 		playerDamage.setText("Damage " + ProjectilePlayerBullet.getDamage());
 		wave.setText("Wave " + EnemyManager.instance.getWaveNumber() + " , Next wave in "
 				+ (EnemyManager.instance.getRemainingTime() / 60) + " sec (" + EnemyManager.instance.getNextWaveName()

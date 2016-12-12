@@ -6,7 +6,8 @@ import logic.GameManager;
 import logic.InputUtility;
 import logic.SoundManager;
 import ui.GamePane;
-import ui.MainMenu;
+import ui.IStoppable;
+import ui.MainPane;
 
 public class Main extends Application {
 	
@@ -20,7 +21,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		scene = new Scene(new MainMenu(),screenWidth+300, screenHeight);
+		scene = new Scene(new MainPane(),screenWidth+300, screenHeight);
 		scene.getStylesheets().add("bootstrapfx.css");
 		
 		InputUtility.instance.setEventHandler(scene);
@@ -34,17 +35,18 @@ public class Main extends Application {
 	
 	@Override
 	public void stop() {
-		if(GameManager.enemyController!=null)GameManager.enemyController.stop();
+		if(GameManager.instance.enemyController!=null){
+			GameManager.instance.enemyController.stop();
+		}
 	}
 	public static void changeSceneToGame(){
+		((IStoppable)scene.getRoot()).stop();
 		scene.setRoot(new GamePane(screenWidth, screenHeight));
 		SoundManager.start();
 	}
 	public static void changeSceneToMain(){
-		if(scene.getRoot() instanceof GamePane){			
-			((GamePane)scene.getRoot()).stop();
-		}
+		((IStoppable)scene.getRoot()).stop();
 		SoundManager.stop();
-		scene.setRoot(new MainMenu());
+		scene.setRoot(new MainPane());
 	}
 }

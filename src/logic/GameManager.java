@@ -11,17 +11,16 @@ import model.*;
 
 public class GameManager {
 	public static GameManager instance;
-	public static int score = 0;
-	public static Player player;
-	public static int fps;
-	public static boolean isOverlayMode;
-	public static EnemyController enemyController;
-	public static Random globalRNG;
+	public int score = 0;
+	public Player player;
+	public int fps;
+	public boolean isOverlayMode;
+	public EnemyController enemyController;
+	public static Random globalRNG=new Random();;
 
 	private boolean rocketLaunched;
 
 	public GameManager() {
-		globalRNG = new Random();
 
 		// initialize singleton
 		RenderableHolder.instance = new RenderableHolder();

@@ -1,6 +1,7 @@
 package model.enemy;
 
 import logic.CollisionUtility;
+import logic.GameManager;
 import logic.ICollidable;
 import logic.IRenderable;
 import logic.ResourceManager;
@@ -80,6 +81,7 @@ public abstract class Enemy extends BlockingEntity {
 	public void onDestroy() {
 		super.onDestroy();
 		ResourceManager.instance.addResource(ResourceManager.ARTIFACT, reward);
+		GameManager.instance.score+=reward;
 	}
 	
 }
