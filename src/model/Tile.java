@@ -10,7 +10,6 @@ public abstract class Tile implements IRenderable {
 	private TileObject tileObject = null; // object on this tile
 	protected double x, y;
 	protected int tileX, tileY; // x,y in tile grid
-	private boolean destroyed = false;
 
 	public Tile(int tileX, int tileY) {
 		this.tileX = tileX;
@@ -50,7 +49,7 @@ public abstract class Tile implements IRenderable {
 
 	@Override
 	public boolean isDestroy() {
-		return destroyed;
+		return false;
 	}
 
 	public void setTileObject(TileObject tileObject) {
