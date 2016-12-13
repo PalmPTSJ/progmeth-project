@@ -36,7 +36,7 @@ public class EnemyManager {
 
 	public int getRemainingTime() {
 		if (GameManager.instance.getRocketCount() > 0)
-			return 0;
+			return rocketWaveDelay-timer;
 		return waveDelay - timer;
 	}
 
