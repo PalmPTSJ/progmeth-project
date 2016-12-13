@@ -48,8 +48,8 @@ public class GameScreen extends Canvas {
 	}
 
 	public void drawBuyingItem(GraphicsContext gc) {
-		int x = GameManager.getMouseTileX();
-		int y = GameManager.getMouseTileY();
+		int x = TileManager.getMouseTileX();
+		int y = TileManager.getMouseTileY();
 		int sizeX;
 		int sizeY;
 		try {

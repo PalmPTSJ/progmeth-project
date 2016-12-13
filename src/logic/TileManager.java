@@ -28,48 +28,42 @@ public class TileManager {
 		tileArray = new Tile[tileCountX][tileCountY];
 	}
 
+	private ICollidable createCollidableFromTile(Tile tile, int sizeX, int sizeY) {
+		// create temporary ICollidable object to check collision with entities
+		ICollidable ic = new ICollidable() {
+			@Override
+			public double getY() {
+				return tile.getY();
+			}
+
+			@Override
+			public double getX() {
+				return tile.getX();
+			}
+
+			@Override
+			public double getWidth() {
+				return sizeX * TileManager.tileSize;
+			}
+
+			@Override
+			public double getHeight() {
+				return sizeY * TileManager.tileSize;
+			}
+
+			@Override
+			public void onCollision(ICollidable entity) {
+			}
+		};
+
+		return ic;
+	}
+
 	public boolean canPlace(Tile tile, int sizeX, int sizeY) {
 		// can't place on tile that has Blocking entity
-		for (IRenderable ir : RenderableHolder.instance.getEntities()) {
-			if (ir instanceof IBlockable) {
-				// new collidable object that represent this tile
-				ICollidable ic = new ICollidable() {
-					@Override
-					public double getY() {
-						// TODO Auto-generated method stub
-						return tile.getY();
-					}
+		ICollidable ic = createCollidableFromTile(tile, sizeX, sizeY);
+		if(CollisionUtility.isBlocked(ic)) return false;
 
-					@Override
-					public double getX() {
-						// TODO Auto-generated method stub
-						return tile.getX();
-					}
-
-					@Override
-					public double getWidth() {
-						// TODO Auto-generated method stub
-						return sizeX * TileManager.tileSize;
-					}
-
-					@Override
-					public double getHeight() {
-						// TODO Auto-generated method stub
-						return sizeY * TileManager.tileSize;
-					}
-
-					@Override
-					public void onCollision(ICollidable entity) {
-						// TODO Auto-generated method stub
-
-					}
-				};
-				if (CollisionUtility.isCollide((ICollidable) ir, ic)){
-					return false;
-				}
-			}
-		}
-		
 		for (int dx = 0; dx < sizeX; dx++) {
 			for (int dy = 0; dy < sizeY; dy++) {
 				int x = tile.getTileX() + dx;
@@ -80,7 +74,6 @@ public class TileManager {
 				if (tileArray[x][y].getTileObject() != null) {
 					return false; // already have object
 				}
-
 				if (tileArray[x][y] instanceof TileSpawner)
 					return false; // can't place on spawner
 			}
@@ -116,6 +109,18 @@ public class TileManager {
 				new TileObjectStone(t);
 			}
 		}
+	}
+
+	public static int getMouseTileX() {
+		return (int) (InputUtility.instance.getMouseX() / tileSize);
+	}
+
+	public static int getMouseTileY() {
+		return (int) (InputUtility.instance.getMouseY() / tileSize);
+	}
+
+	public static boolean isOutOfBound(int x, int y) {
+		return x >= tileCountX || x < 0 || y >= tileCountY || y < 0;
 	}
 
 }

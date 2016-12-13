@@ -24,7 +24,7 @@ public class GameManager {
 	private Player player;
 	private int fps = 0;
 	private boolean isGamePause = false;
-	private boolean rocketLaunched = false;
+	private boolean isRocketLaunched = false;
 	private int rocketCount = 0;
 
 	public GameManager() {
@@ -72,13 +72,13 @@ public class GameManager {
 	}
 
 	private boolean isGameEnded() {
-		return player.isDestroy() || rocketLaunched;
+		return player.isDestroy() || isRocketLaunched;
 	}
 
 	private void onGameEnded() {
 		Platform.runLater(() -> {
 			Alert alert = new Alert(AlertType.INFORMATION);
-			if (rocketLaunched) {
+			if (isRocketLaunched) {
 				alert.setContentText("You win");
 				alert.setHeaderText("Congratulations!");
 			} else {
@@ -141,20 +141,8 @@ public class GameManager {
 		}
 	}
 
-	public static int getMouseTileX() {
-		return (int) (InputUtility.instance.getMouseX() / TileManager.tileSize);
-	}
-
-	public static int getMouseTileY() {
-		return (int) (InputUtility.instance.getMouseY() / TileManager.tileSize);
-	}
-
-	public static boolean isOutOfBound(int x, int y) {
-		return x >= TileManager.tileCountX || x < 0 || y >= TileManager.tileCountY || y < 0;
-	}
-
 	public void setRocketLaunched(boolean launched) {
-		this.rocketLaunched = true;
+		this.isRocketLaunched = launched;
 	}
 
 	public int getRocketCount() {

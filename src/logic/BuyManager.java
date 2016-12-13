@@ -12,9 +12,9 @@ public class BuyManager {
 	public Class currentObjectClass = null;
 
 	public boolean canBuy() {
-		int x = GameManager.getMouseTileX();
-		int y = GameManager.getMouseTileY();
-		if (GameManager.isOutOfBound(x, y))
+		int x = TileManager.getMouseTileX();
+		int y = TileManager.getMouseTileY();
+		if (TileManager.isOutOfBound(x, y))
 			return false;
 		boolean ret = true;
 		try {
