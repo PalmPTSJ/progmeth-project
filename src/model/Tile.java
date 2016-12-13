@@ -14,8 +14,8 @@ public abstract class Tile implements IRenderable {
 	public Tile(int tileX, int tileY) {
 		this.tileX = tileX;
 		this.tileY = tileY;
-		this.x = tileX * TileManager.tileSize;
-		this.y = tileY * TileManager.tileSize;
+		this.x = tileX * TileManager.TILE_SIZE;
+		this.y = tileY * TileManager.TILE_SIZE;
 	}
 
 	public int getTileX() {
@@ -57,7 +57,7 @@ public abstract class Tile implements IRenderable {
 	}
 
 	public void draw(GraphicsContext gc, Image img) {
-		gc.drawImage(img, x, y, TileManager.tileSize, TileManager.tileSize);
+		gc.drawImage(img, x, y, TileManager.TILE_SIZE, TileManager.TILE_SIZE);
 	}
 
 	public TileObject getTileObject() {

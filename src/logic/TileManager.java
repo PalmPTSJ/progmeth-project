@@ -16,16 +16,16 @@ import model.TileSpawner;
 public class TileManager {
 	public static TileManager instance;
 
-	public static final int tileCountX = 30;
-	public static final int tileCountY = 20;
-	public static final double tileSize = 30;
+	public static final int TILE_COUNT_X = 30;
+	public static final int TILE_COUNT_Y = 20;
+	public static final double TILE_SIZE = 30;
 
 	public List<Tile> tileList;
 	public Tile[][] tileArray; // Use X,Y coordinate system
 
 	public TileManager() {
 		tileList = new ArrayList<Tile>();
-		tileArray = new Tile[tileCountX][tileCountY];
+		tileArray = new Tile[TILE_COUNT_X][TILE_COUNT_Y];
 	}
 
 	private ICollidable createCollidableFromTile(Tile tile, int sizeX, int sizeY) {
@@ -43,12 +43,12 @@ public class TileManager {
 
 			@Override
 			public double getWidth() {
-				return sizeX * TileManager.tileSize;
+				return sizeX * TileManager.TILE_SIZE;
 			}
 
 			@Override
 			public double getHeight() {
-				return sizeY * TileManager.tileSize;
+				return sizeY * TileManager.TILE_SIZE;
 			}
 
 			@Override
@@ -69,7 +69,7 @@ public class TileManager {
 			for (int dy = 0; dy < sizeY; dy++) {
 				int x = tile.getTileX() + dx;
 				int y = tile.getTileY() + dy;
-				if (x < 0 || y < 0 || x >= TileManager.tileCountX || y >= TileManager.tileCountY) {
+				if (x < 0 || y < 0 || x >= TileManager.TILE_COUNT_X || y >= TileManager.TILE_COUNT_Y) {
 					return false;
 				}
 				if (tileArray[x][y].getTileObject() != null) {
@@ -84,14 +84,14 @@ public class TileManager {
 
 	public void generateMap(int seed) {
 		Random random = new Random(seed);
-		for (int x = -1; x <= tileCountX; x++) {
-			for (int y = -1; y <= tileCountY; y++) {
-				if (x == -1 || y == -1 || x == tileCountX || y == tileCountY) {
+		for (int x = -1; x <= TILE_COUNT_X; x++) {
+			for (int y = -1; y <= TILE_COUNT_Y; y++) {
+				if (x == -1 || y == -1 || x == TILE_COUNT_X || y == TILE_COUNT_Y) {
 					TileVoid vt = new TileVoid(x, y);
 					new TileObjectVoid(vt);
 					tileList.add(vt);
 				} else {
-					if (x >= tileCountX - 2) {
+					if (x >= TILE_COUNT_X - 2) {
 						tileArray[x][y] = new TileSpawner(x, y);
 					} else {
 						tileArray[x][y] = new TileGround(x, y);
@@ -113,15 +113,15 @@ public class TileManager {
 	}
 
 	public static int getMouseTileX() {
-		return (int) (InputUtility.instance.getMouseX() / tileSize);
+		return (int) (InputUtility.instance.getMouseX() / TILE_SIZE);
 	}
 
 	public static int getMouseTileY() {
-		return (int) (InputUtility.instance.getMouseY() / tileSize);
+		return (int) (InputUtility.instance.getMouseY() / TILE_SIZE);
 	}
 
 	public static boolean isOutOfBound(int x, int y) {
-		return x >= tileCountX || x < 0 || y >= tileCountY || y < 0;
+		return x >= TILE_COUNT_X || x < 0 || y >= TILE_COUNT_Y || y < 0;
 	}
 
 }

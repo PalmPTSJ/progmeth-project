@@ -14,17 +14,18 @@ import ui.MainPane;
 
 public class Main extends Application {
 
-	private static final int screenWidth = 1200;
-	private static final int screenHeight = 600;
+	private static final int SCREEN_WIDTH = 1200;
+	private static final int SCREEN_HEIGHT = 600;
 	private static Scene scene;
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		MainPane mainPane = new MainPane(screenWidth, screenHeight);
-		scene = new Scene(mainPane, screenWidth, screenHeight);
+		MainPane mainPane = new MainPane(SCREEN_WIDTH, SCREEN_HEIGHT);
+		scene = new Scene(mainPane, SCREEN_WIDTH, SCREEN_HEIGHT);
 		scene.getStylesheets().add("bootstrapfx.css");
 		InputUtility.instance.setEventHandler(scene);
 
@@ -41,7 +42,7 @@ public class Main extends Application {
 
 	public static void changeSceneToGame() {
 		((IStoppable) scene.getRoot()).stop();
-		GamePane gamePane = new GamePane(screenWidth, screenHeight);
+		GamePane gamePane = new GamePane(SCREEN_WIDTH, SCREEN_HEIGHT);
 		scene.setRoot(gamePane);
 		SoundManager.start();
 	}
@@ -49,7 +50,7 @@ public class Main extends Application {
 	public static void changeSceneToMain() {
 		((IStoppable) scene.getRoot()).stop();
 		SoundManager.stop();
-		MainPane mainPane = new MainPane(screenWidth, screenHeight);
+		MainPane mainPane = new MainPane(SCREEN_WIDTH, SCREEN_HEIGHT);
 		scene.setRoot(mainPane);
 	}
 	

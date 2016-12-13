@@ -7,16 +7,16 @@ import model.RenderableHolder;
 import model.Tile;
 
 public class TileObjectTree extends TileObject {
-	public static final int sizeX = 1;
-	public static final int sizeY = 2;
-	private static final int startHp = 100;
+	public static final int SIZE_X = 1;
+	public static final int SIZE_Y = 2;
+	private static final int START_HP = 100;
 
 	public TileObjectTree(Tile tile) {
-		super(tile, sizeX, sizeY, startHp); // 1x2
+		super(tile, SIZE_X, SIZE_Y, START_HP); // 1x2
 	}
 
 	public static boolean canPlace(Tile tile) {
-		return TileManager.instance.canPlace(tile, sizeX, sizeY);
+		return TileManager.instance.canPlace(tile, SIZE_X, SIZE_Y);
 	}
 
 	@Override

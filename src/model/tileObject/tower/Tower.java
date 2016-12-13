@@ -12,13 +12,13 @@ import model.tileObject.TileObject;
 
 public abstract class Tower extends TileObject {
 
+	private int shootingTimer = 0;
 	private int shootingDelay = 0;
-	private int shootingMaxDelay = 0;
 	private double shootingRange;
 
-	public Tower(Tile tile, int sizeX, int sizeY, int hp, int shootingMaxDelay, double shootingRange) {
+	public Tower(Tile tile, int sizeX, int sizeY, int hp, int shootingDelay, double shootingRange) {
 		super(tile, sizeX, sizeY, hp);
-		this.shootingMaxDelay = shootingMaxDelay;
+		this.shootingDelay = shootingDelay;
 		this.shootingRange = shootingRange;
 	}
 
@@ -26,10 +26,10 @@ public abstract class Tower extends TileObject {
 	public void update() {
 		super.update();
 
-		shootingDelay++;
-		if (shootingDelay >= shootingMaxDelay) {
+		shootingTimer++;
+		if (shootingTimer >= shootingDelay) {
 			shoot();
-			shootingDelay = 0;
+			shootingTimer = 0;
 		}
 	}
 

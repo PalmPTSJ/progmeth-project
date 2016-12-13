@@ -53,15 +53,15 @@ public class GameScreen extends Canvas {
 		int sizeX;
 		int sizeY;
 		try {
-			sizeX = BuyManager.instance.currentObjectClass.getDeclaredField("sizeX").getInt(null);
-			sizeY = BuyManager.instance.currentObjectClass.getDeclaredField("sizeY").getInt(null);
+			sizeX = BuyManager.instance.currentObjectClass.getDeclaredField("SIZE_X").getInt(null);
+			sizeY = BuyManager.instance.currentObjectClass.getDeclaredField("SIZE_Y").getInt(null);
 			// ie currentObjectClass Object is instance of Tower
 			if (Tower.class.isAssignableFrom(BuyManager.instance.currentObjectClass)) {
 				gc.setGlobalAlpha(0.3);
 				gc.setFill(Color.BLACK);
-				double r = BuyManager.instance.currentObjectClass.getDeclaredField("shootingRange").getDouble(null);
-				gc.fillOval((x + (double) (sizeX) / 2) * TileManager.tileSize - r,
-						(y + (double) (sizeY) / 2) * TileManager.tileSize - r, 2 * r, 2 * r);
+				double r = BuyManager.instance.currentObjectClass.getDeclaredField("SHOOTING_RANGE").getDouble(null);
+				gc.fillOval((x + (double) (sizeX) / 2) * TileManager.TILE_SIZE - r,
+						(y + (double) (sizeY) / 2) * TileManager.TILE_SIZE - r, 2 * r, 2 * r);
 				gc.setGlobalAlpha(1);
 			}
 		} catch (Exception e) {
@@ -72,8 +72,8 @@ public class GameScreen extends Canvas {
 		if (!canPlace) {
 			gc.setGlobalAlpha(0.2);
 		}
-		gc.drawImage(BuyManager.instance.currentObjectImage, x * TileManager.tileSize, y * TileManager.tileSize,
-				sizeX * TileManager.tileSize, sizeY * TileManager.tileSize);
+		gc.drawImage(BuyManager.instance.currentObjectImage, x * TileManager.TILE_SIZE, y * TileManager.TILE_SIZE,
+				sizeX * TileManager.TILE_SIZE, sizeY * TileManager.TILE_SIZE);
 		gc.setGlobalAlpha(1.0);
 	}
 
@@ -82,10 +82,10 @@ public class GameScreen extends Canvas {
 		for (Tile tile : TileManager.instance.tileList) {
 			if (tile.getTileObject() == null) {
 				gc.setFill(Color.GREEN);
-				gc.fillRect(tile.getX(), tile.getY(), TileManager.tileSize, TileManager.tileSize);
+				gc.fillRect(tile.getX(), tile.getY(), TileManager.TILE_SIZE, TileManager.TILE_SIZE);
 			} else {
 				gc.setFill(Color.DARKRED);
-				gc.fillRect(tile.getX(), tile.getY(), TileManager.tileSize, TileManager.tileSize);
+				gc.fillRect(tile.getX(), tile.getY(), TileManager.TILE_SIZE, TileManager.TILE_SIZE);
 			}
 		}
 		gc.setGlobalAlpha(1);

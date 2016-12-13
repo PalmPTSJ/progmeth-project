@@ -13,22 +13,22 @@ import model.tileObject.TileObject;
 
 public class Player extends BlockingEntity {
 
-	private static final double speed = 5;
-	private static final double width = 20;
-	private static final double height = 20;
-	private static final int startHp = 750;
+	private static final double SPEED = 5;
+	private static final double WIDTH = 20;
+	private static final double HEIGHT = 20;
+	private static final int START_HP = 750;
 
 	private int healthRegenerationTimer = 0;
-	private static final int healthRegenerationDelay = 10;
+	private static final int HEALTH_REGEN_DELAY = 10;
 	private static int healthRegenerationRate = 0;
 
 	private int shootingTimer = 0;
-	private static final int shootingDelay = 15;
-	private static final int harvestPower = 1;
+	private static final int SHOOTING_DELAY = 15;
+	private static final int HARVEST_POWER = 1;
 
 	public Player(double x, double y) {
-		super(x, y, width, height, speed, startHp);
-		shootingTimer = shootingDelay;
+		super(x, y, WIDTH, HEIGHT, SPEED, START_HP);
+		shootingTimer = SHOOTING_DELAY;
 	}
 
 	@Override
@@ -65,7 +65,7 @@ public class Player extends BlockingEntity {
 	}
 
 	private void updateShoot() {
-		if (shootingTimer < shootingDelay) {
+		if (shootingTimer < SHOOTING_DELAY) {
 			shootingTimer++;
 		} else {
 			if (!BuyManager.instance.isBuyMode && InputUtility.instance.isMouseLeftDown()) {
@@ -79,7 +79,7 @@ public class Player extends BlockingEntity {
 	}
 
 	private void updateHealthRegeneration() {
-		if (healthRegenerationTimer < healthRegenerationDelay) {
+		if (healthRegenerationTimer < HEALTH_REGEN_DELAY) {
 			healthRegenerationTimer++;
 		} else {
 			hp += healthRegenerationRate;
@@ -97,7 +97,7 @@ public class Player extends BlockingEntity {
 			if (!TileManager.isOutOfBound(x, y)) {
 				TileObject object = TileManager.instance.tileArray[x][y].getTileObject();
 				if (object != null) {
-					object.reduceHP(harvestPower);
+					object.reduceHP(HARVEST_POWER);
 				}
 			}
 		}

@@ -10,18 +10,18 @@ import model.projectile.ProjectileRock;
 
 public class TowerCatapult extends Tower {
 
-	private static final int startHP = 250;
-	private static final int shootingMaxDelay = 60;
-	public static final int sizeX = 2;
-	public static final int sizeY = 1;
-	public static final int shootingRange = 400;
+	private static final int START_HP = 250;
+	private static final int SHOOTING_DELAY = 60;
+	public static final int SIZE_X = 2;
+	public static final int SIZE_Y = 1;
+	public static final int SHOOTING_RANGE = 400;
 
 	public TowerCatapult(Tile tile) {
-		super(tile, sizeX, sizeY, startHP, shootingMaxDelay, shootingRange);
+		super(tile, SIZE_X, SIZE_Y, START_HP, SHOOTING_DELAY, SHOOTING_RANGE);
 	}
 
 	public static boolean canPlace(Tile tile) {
-		return TileManager.instance.canPlace(tile, sizeX, sizeY);
+		return TileManager.instance.canPlace(tile, SIZE_X, SIZE_Y);
 	}
 
 	@Override
