@@ -1,3 +1,6 @@
+/*
+ * Managing enemy spawning (spawn in waves)
+ */
 package logic;
 
 import model.Tile;

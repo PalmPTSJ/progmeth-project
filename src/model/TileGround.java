@@ -1,3 +1,6 @@
+/*
+ * Tile ground (grass)
+ */
 package model;
 
 import javafx.scene.canvas.GraphicsContext;

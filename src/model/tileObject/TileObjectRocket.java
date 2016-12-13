@@ -1,3 +1,6 @@
+/*
+ * Rocket silo (When placed, it will countdown from 30 sec to 0 sec and then win)
+ */
 package model.tileObject;
 
 import javafx.scene.canvas.GraphicsContext;

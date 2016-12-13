@@ -1,3 +1,6 @@
+/*
+ * Display game stats
+ */
 package ui;
 
 import javafx.scene.control.Label;

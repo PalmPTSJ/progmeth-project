@@ -1,3 +1,6 @@
+/*
+ * Main menu for this application
+ */
 package ui;
 
 import application.Main;

@@ -1,3 +1,6 @@
+/*
+ * Base class for tower
+ */
 package model.tileObject.tower;
 
 import logic.CollisionUtility;

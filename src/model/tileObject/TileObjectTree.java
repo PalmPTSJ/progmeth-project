@@ -1,3 +1,6 @@
+/*
+ * Tree (Give 2 woods when destroyed)
+ */
 package model.tileObject;
 
 import javafx.scene.canvas.GraphicsContext;

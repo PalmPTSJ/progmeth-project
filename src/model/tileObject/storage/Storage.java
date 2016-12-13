@@ -1,3 +1,6 @@
+/*
+ * Base class for storage
+ */
 package model.tileObject.storage;
 
 import logic.ResourceManager;

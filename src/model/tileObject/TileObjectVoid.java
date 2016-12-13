@@ -1,3 +1,6 @@
+/*
+ * TileObjectVoid is place around the outside of the screen so entity won’t go out
+ */
 package model.tileObject;
 
 import javafx.scene.canvas.GraphicsContext;

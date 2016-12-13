@@ -1,3 +1,6 @@
+/*
+ * Manage items buying
+ */
 package logic;
 
 import java.lang.reflect.Method;

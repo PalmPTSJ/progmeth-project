@@ -1,3 +1,6 @@
+/*
+ * Canvas for drawing
+ */
 package ui;
 
 import javafx.scene.canvas.Canvas;

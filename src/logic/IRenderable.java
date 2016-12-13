@@ -1,3 +1,7 @@
+/*
+ * Interface for renderable objects (can be drawn on canvas)
+
+ */
 package logic;
 
 import javafx.scene.canvas.GraphicsContext;

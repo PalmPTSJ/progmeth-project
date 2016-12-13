@@ -1,3 +1,6 @@
+/*
+ * Base class for generator
+ */
 package model.tileObject.generator;
 
 import model.Tile;

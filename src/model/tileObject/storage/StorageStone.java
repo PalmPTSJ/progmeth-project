@@ -1,3 +1,6 @@
+/*
+ * Storage for stone
+ */
 package model.tileObject.storage;
 
 import javafx.scene.canvas.GraphicsContext;

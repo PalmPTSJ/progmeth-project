@@ -1,3 +1,6 @@
+/*
+ * Enemy boss
+ */
 package model.enemy;
 
 import javafx.scene.canvas.GraphicsContext;

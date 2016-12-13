@@ -1,3 +1,6 @@
+/*
+ * Stone wall
+ */
 package model.tileObject;
 
 import javafx.scene.canvas.GraphicsContext;

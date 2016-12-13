@@ -1,3 +1,6 @@
+/*
+ * MovableEntity that is also blockable
+ */
 package model;
 
 import logic.CollisionUtility;

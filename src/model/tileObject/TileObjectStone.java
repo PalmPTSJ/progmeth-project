@@ -1,3 +1,6 @@
+/*
+ * Stone (Give 3 stones when destroy)
+ */
 package model.tileObject;
 
 import javafx.scene.canvas.GraphicsContext;

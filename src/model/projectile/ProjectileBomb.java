@@ -1,3 +1,6 @@
+/*
+ * Bomb (From bomb tower)
+ */
 package model.projectile;
 
 import javafx.scene.canvas.GraphicsContext;

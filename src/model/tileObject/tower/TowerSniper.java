@@ -1,3 +1,6 @@
+/*
+ * Sniper tower
+ */
 package model.tileObject.tower;
 
 import javafx.scene.canvas.GraphicsContext;

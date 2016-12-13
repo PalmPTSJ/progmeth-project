@@ -1,3 +1,6 @@
+/*
+ * Stone generator
+ */
 package model.tileObject.generator;
 
 import javafx.scene.canvas.GraphicsContext;

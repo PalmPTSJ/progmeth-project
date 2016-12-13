@@ -1,3 +1,6 @@
+/*
+ * All object in game
+ */
 package model;
 
 import javafx.scene.canvas.GraphicsContext;

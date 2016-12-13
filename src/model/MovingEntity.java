@@ -1,3 +1,6 @@
+/*
+ * Entity that can move
+ */
 package model;
 
 import logic.IMovable;

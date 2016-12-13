@@ -1,3 +1,6 @@
+/*
+ * Managing game states and update every entities
+ */
 package logic;
 
 import java.lang.reflect.Constructor;

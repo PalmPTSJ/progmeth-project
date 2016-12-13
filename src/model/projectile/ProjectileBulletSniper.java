@@ -1,3 +1,6 @@
+/*
+ * Sniper bullet (from Sniper tower)
+ */
 package model.projectile;
 
 import model.Entity;

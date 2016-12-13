@@ -1,3 +1,6 @@
+/*
+ * Bullet (from Turret tower)
+ */
 package model.projectile;
 
 import javafx.scene.canvas.GraphicsContext;

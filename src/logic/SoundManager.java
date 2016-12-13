@@ -1,3 +1,6 @@
+/*
+ * Managing sounds
+ */
 package logic;
 
 import javafx.scene.media.AudioClip;

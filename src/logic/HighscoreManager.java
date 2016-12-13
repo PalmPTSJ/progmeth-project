@@ -1,3 +1,6 @@
+/*
+ * Managing HTTP request to get highscore from the server.
+ */
 package logic;
 
 import java.net.*;

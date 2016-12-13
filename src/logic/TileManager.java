@@ -1,3 +1,6 @@
+/*
+ * Managing tiles
+ */
 package logic;
 
 import java.util.ArrayList;

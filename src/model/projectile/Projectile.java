@@ -1,3 +1,6 @@
+/*
+ * Base class for projectile
+ */
 package model.projectile;
 
 import javafx.scene.canvas.GraphicsContext;

@@ -1,3 +1,6 @@
+/*
+ * Holder for IRenderable objects
+ */
 package model;
 
 import java.util.ArrayList;

@@ -1,3 +1,6 @@
+/*
+ * Player’s bullet (Damage can be modified from research)
+ */
 package model.projectile;
 
 import javafx.scene.canvas.GraphicsContext;

@@ -1,3 +1,6 @@
+/*
+ * Storage for diamond
+ */
 package model.tileObject.storage;
 
 import javafx.scene.canvas.GraphicsContext;

@@ -1,3 +1,6 @@
+/*
+ * An object that is fix to a tile
+ */
 package model.tileObject;
 
 import java.util.ArrayList;
@@ -40,7 +43,7 @@ public abstract class TileObject extends Entity implements IBlockable {
 
 	@Override
 	public void undoMove() {
-		// tile object aren't supposed to move anyway
+		// 
 	}
 
 	public void place(Tile tile) {

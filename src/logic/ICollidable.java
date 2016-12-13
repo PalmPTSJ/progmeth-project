@@ -1,3 +1,6 @@
+/*
+ * Interface for collidable object (Can check collision with other Collidable Object)
+ */
 package logic;
 
 /* ICollidable entity will be called by CollisionManager */

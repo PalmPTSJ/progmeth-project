@@ -1,3 +1,6 @@
+/*
+ * Utility for managing input events
+ */
 package logic;
 
 import java.util.ArrayList;

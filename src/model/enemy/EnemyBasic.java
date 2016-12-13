@@ -1,3 +1,6 @@
+/*
+ * Basic enemy (weak)
+ */
 package model.enemy;
 
 import javafx.scene.canvas.GraphicsContext;

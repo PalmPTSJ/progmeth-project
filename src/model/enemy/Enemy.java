@@ -1,3 +1,6 @@
+/*
+ * Base class for enemy
+ */
 package model.enemy;
 
 import logic.CollisionUtility;

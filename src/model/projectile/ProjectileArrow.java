@@ -1,3 +1,6 @@
+/*
+ * Arrow (From arrow tower)
+ */
 package model.projectile;
 
 import javafx.scene.canvas.GraphicsContext;

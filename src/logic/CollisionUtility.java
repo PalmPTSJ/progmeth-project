@@ -1,3 +1,6 @@
+/*
+ * Methods for calculating collisions
+ */
 package logic;
 
 import model.RenderableHolder;

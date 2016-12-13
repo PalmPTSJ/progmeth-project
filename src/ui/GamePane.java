@@ -1,3 +1,6 @@
+/*
+ * Hold GameScreen,GameMenu and GameManager
+ */
 package ui;
 
 import javafx.animation.AnimationTimer;

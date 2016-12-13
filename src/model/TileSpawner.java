@@ -1,3 +1,6 @@
+/*
+ * Tile spawner (enemy spawn on this tile)
+ */
 package model;
 
 import javafx.scene.canvas.GraphicsContext;
