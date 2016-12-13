@@ -62,7 +62,8 @@ public class TileManager {
 	public boolean canPlace(Tile tile, int sizeX, int sizeY) {
 		// can't place on tile that has Blocking entity
 		ICollidable ic = createCollidableFromTile(tile, sizeX, sizeY);
-		if(CollisionUtility.isBlocked(ic)) return false;
+		if (CollisionUtility.isBlocked(ic))
+			return false;
 
 		for (int dx = 0; dx < sizeX; dx++) {
 			for (int dy = 0; dy < sizeY; dy++) {
