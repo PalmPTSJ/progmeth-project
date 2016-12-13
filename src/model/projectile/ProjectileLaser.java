@@ -9,17 +9,17 @@ import model.RenderableHolder;
 
 public class ProjectileLaser extends Projectile {
 
-	private static final double width = 60;
-	private static final double height = 7;
-	private static final double speed = 20;
-	private static final int damage = 6;
+	private static final double WIDTH = 60;
+	private static final double HEIGHT = 7;
+	private static final double SPEED = 20;
+	private static final int DAMAGE = 6;
 
 	public ProjectileLaser(double x, double y, double targetX, double targetY) {
-		super(x, y, width, height, speed, damage, targetX, targetY);
+		super(x, y, WIDTH, HEIGHT, SPEED, DAMAGE, targetX, targetY);
 	}
 
 	public ProjectileLaser(double x, double y, Entity target) {
-		super(x, y, width, height, speed, damage, target);
+		super(x, y, WIDTH, HEIGHT, SPEED, DAMAGE, target);
 	}
 
 	@Override

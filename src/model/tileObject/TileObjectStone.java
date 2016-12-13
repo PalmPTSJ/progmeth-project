@@ -10,16 +10,16 @@ import model.RenderableHolder;
 import model.Tile;
 
 public class TileObjectStone extends TileObject {
-	public static final int sizeX = 2;
-	public static final int sizeY = 2;
-	private static final int startHp = 250;
+	public static final int SIZE_X = 2;
+	public static final int SIZE_Y = 2;
+	private static final int START_HP = 250;
 
 	public TileObjectStone(Tile tile) {
-		super(tile, sizeX, sizeY, startHp); // 2x2
+		super(tile, SIZE_X, SIZE_Y, START_HP); // 2x2
 	}
 
 	public static boolean canPlace(Tile tile) {
-		return TileManager.instance.canPlace(tile, sizeX, sizeY);
+		return TileManager.instance.canPlace(tile, SIZE_X, SIZE_Y);
 	}
 
 	@Override

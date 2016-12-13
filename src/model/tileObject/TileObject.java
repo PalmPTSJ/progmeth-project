@@ -16,11 +16,11 @@ import model.Tile;
 public abstract class TileObject extends Entity implements IBlockable {
 
 	protected List<Tile> tile; // can take multiple tile
-	public int sizeX = 1;
-	public int sizeY = 1;
+	public int sizeX;
+	public int sizeY;
 
 	public TileObject(Tile tile, int sizeX, int sizeY, int hp) {
-		super(tile.getX(), tile.getY(), TileManager.tileSize * sizeX, TileManager.tileSize * sizeY, hp);
+		super(tile.getX(), tile.getY(), TileManager.TILE_SIZE * sizeX, TileManager.TILE_SIZE * sizeY, hp);
 		this.tile = new ArrayList<Tile>();
 		this.sizeX = sizeX;
 		this.sizeY = sizeY;

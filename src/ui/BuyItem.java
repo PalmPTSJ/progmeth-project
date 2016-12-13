@@ -41,7 +41,7 @@ public class BuyItem extends HBox {
 		getChildren().addAll(iv, vb);
 
 		setOnMouseClicked(e -> {
-			BuyManager.instance.isBuyMode = !BuyManager.instance.isBuyMode;
+			BuyManager.instance.isBuyMode = true;
 			BuyManager.instance.currentObjectImage = img;
 			BuyManager.instance.currentObjectClass = T;
 		});

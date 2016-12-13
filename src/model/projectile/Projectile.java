@@ -88,8 +88,6 @@ public abstract class Projectile extends MovingEntity {
 		gc.setTransform(rotated);
 		gc.drawImage(img, x, y, originalWidth, originalHeight);
 		gc.setTransform(old);
-
-		super.draw(gc, null);
 	}
 
 	@Override

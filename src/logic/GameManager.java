@@ -113,8 +113,8 @@ public class GameManager {
 		}
 		// Try to place
 		if (InputUtility.instance.isMouseLeftClicked()) {
-			int x = (int) (InputUtility.instance.getMouseX() / TileManager.tileSize);
-			int y = (int) (InputUtility.instance.getMouseY() / TileManager.tileSize);
+			int x = (int) (InputUtility.instance.getMouseX() / TileManager.TILE_SIZE);
+			int y = (int) (InputUtility.instance.getMouseY() / TileManager.TILE_SIZE);
 			int[] resourceNeeded;
 			try {
 				Method getResourceNeeded = BuyManager.instance.currentObjectClass.getMethod("getResourceNeeded");

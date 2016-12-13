@@ -22,8 +22,8 @@ public abstract class Entity implements IRenderable, ICollidable {
 	protected int hp;
 	protected int maxHp;
 	
-	private static final double healthBarWidth = 20;
-	private static final double healthBarHeight = 3;
+	private static final double HEALTHBAR_WIDTH = 20;
+	private static final double HEALTHBAR_HEIGHT = 3;
 	
 	public Entity(double x, double y, double width, double height, int hp) {
 		this.isDestroyed = false;
@@ -104,9 +104,9 @@ public abstract class Entity implements IRenderable, ICollidable {
 	public void drawHealthBar(GraphicsContext gc) {
 		if(this.hp == this.maxHp) return; // don't draw when at full hp
 		gc.setFill(Color.RED);
-		gc.fillRect(getCenterX()-healthBarWidth/2, y-5, healthBarWidth, healthBarHeight);
+		gc.fillRect(getCenterX()-HEALTHBAR_WIDTH/2, y-5, HEALTHBAR_WIDTH, HEALTHBAR_HEIGHT);
 		gc.setFill(Color.LIME);
-		gc.fillRect(getCenterX()-healthBarWidth/2, y-5, healthBarWidth * (double)hp/maxHp , healthBarHeight);
+		gc.fillRect(getCenterX()-HEALTHBAR_WIDTH/2, y-5, HEALTHBAR_WIDTH * (double)hp/maxHp , HEALTHBAR_HEIGHT);
 	}
 
 	// default draw function for all entity

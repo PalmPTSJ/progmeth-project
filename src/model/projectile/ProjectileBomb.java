@@ -12,28 +12,29 @@ import model.RenderableHolder;
 import model.enemy.Enemy;
 
 public class ProjectileBomb extends Projectile {
-	private static final double defaultWidth = 30;
-	private static final double defaultHeight = 30;
-	private static final double defaultSpeed = 3;
-	private static final int defaultDamage = 30;
+	private static final double WIDTH = 30;
+	private static final double HEIGHT = 30;
+	private static final double SPEED = 3;
+	private static final int DAMAGE = 30;
 
-	private static final double explosiveRange = 120;
-	private static final int explosiveDamage = 60;
+	private static final double EXPLOSIVE_RANGE = 120;
+	private static final int EXPLOSIVE_DAMAGE = 60;
 
 	public ProjectileBomb(double x, double y, double targetX, double targetY) {
-		super(x, y, defaultWidth, defaultHeight, defaultSpeed, defaultDamage, targetX, targetY);
+		super(x, y, WIDTH, HEIGHT, SPEED, DAMAGE, targetX, targetY);
 	}
 
 	public ProjectileBomb(double x, double y, Entity target) {
-		super(x, y, defaultWidth, defaultHeight, defaultSpeed, defaultDamage, target);
+		super(x, y, WIDTH, HEIGHT, SPEED, DAMAGE, target);
 	}
 
 	@Override
 	public void onDestroy() {
+		super.onDestroy();
 		for (IRenderable ir : RenderableHolder.instance.getEntities()) {
 			if (ir instanceof Entity) {
-				if (ir instanceof Enemy && CollisionUtility.findDistance(this, (ICollidable) ir) <= explosiveRange) {
-					((Entity) ir).reduceHP(explosiveDamage);
+				if (ir instanceof Enemy && CollisionUtility.findDistance(this, (ICollidable) ir) <= EXPLOSIVE_RANGE) {
+					((Entity) ir).reduceHP(EXPLOSIVE_DAMAGE);
 				}
 			}
 		}

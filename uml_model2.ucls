@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.11" icons="true" automaticImage="PNG" always-add-relationships="false" 
+  generalizations="true" realizations="true" associations="false" dependencies="false" nesting-relationships="true" 
+  router="FAN">  
+  <class id="1" language="java" name="model.tileObject.TileObjectWallWood" project="Project" 
+    file="/Project/src/model/tileObject/TileObjectWallWood.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="184" x="2189" y="1418"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="model.tileObject.TileObjectStone" project="Project" 
+    file="/Project/src/model/tileObject/TileObjectStone.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="184" x="2413" y="1418"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="model.tileObject.generator.GeneratorStone" project="Project" 
+    file="/Project/src/model/tileObject/generator/GeneratorStone.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="250" width="184" x="3142" y="1761"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="model.tileObject.TileObjectWallStone" project="Project" 
+    file="/Project/src/model/tileObject/TileObjectWallStone.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="184" x="2637" y="1418"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="model.tileObject.tower.TowerCatapult" project="Project" 
+    file="/Project/src/model/tileObject/tower/TowerCatapult.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4206" y="1518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="model.projectile.ProjectileBomb" project="Project" 
+    file="/Project/src/model/projectile/ProjectileBomb.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="250" width="286" x="1483" y="1761"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="model.Player" project="Project" file="/Project/src/model/Player.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1612" y="368"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="model.tileObject.generator.Generator" project="Project" 
+    file="/Project/src/model/tileObject/generator/Generator.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="177" width="219" x="3814" y="1418"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="model.tileObject.TileObjectWallIron" project="Project" 
+    file="/Project/src/model/tileObject/TileObjectWallIron.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="184" x="2861" y="1418"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="model.tileObject.tower.TowerSniper" project="Project" 
+    file="/Project/src/model/tileObject/tower/TowerSniper.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4202" y="1250"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="model.tileObject.storage.StorageDiamond" project="Project" 
+    file="/Project/src/model/tileObject/storage/StorageDiamond.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3667" y="1239"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="model.tileObject.tower.TowerLaser" project="Project" 
+    file="/Project/src/model/tileObject/tower/TowerLaser.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4204" y="984"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="model.projectile.ProjectileBullet" project="Project" 
+    file="/Project/src/model/projectile/ProjectileBullet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1531" y="1622"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="model.tileObject.generator.GeneratorIron" project="Project" 
+    file="/Project/src/model/tileObject/generator/GeneratorIron.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="250" width="184" x="3366" y="1761"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="model.tileObject.generator.GeneratorWood" project="Project" 
+    file="/Project/src/model/tileObject/generator/GeneratorWood.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="250" width="184" x="3590" y="1761"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="model.RenderableHolder" project="Project" 
+    file="/Project/src/model/RenderableHolder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3139" y="491"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="model.tileObject.TileObjectVoid" project="Project" 
+    file="/Project/src/model/tileObject/TileObjectVoid.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="214" width="241" x="3085" y="1418"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="model.TileVoid" project="Project" file="/Project/src/model/TileVoid.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1985" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="model.projectile.ProjectileRock" project="Project" 
+    file="/Project/src/model/projectile/ProjectileRock.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="282" x="1809" y="1761"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="model.tileObject.tower.TowerArrow" project="Project" 
+    file="/Project/src/model/tileObject/tower/TowerArrow.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4208" y="720"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="model.tileObject.TileObjectRocket" project="Project" 
+    file="/Project/src/model/tileObject/TileObjectRocket.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="268" width="184" x="3366" y="1418"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="model.ScoreRecord" project="Project" file="/Project/src/model/ScoreRecord.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3370" y="110"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="model.projectile.ProjectileLaser" project="Project" 
+    file="/Project/src/model/projectile/ProjectileLaser.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="284" x="2131" y="1761"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="model.tileObject.TileObjectTree" project="Project" 
+    file="/Project/src/model/tileObject/TileObjectTree.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="184" x="3590" y="1418"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="model.BlockingEntity" project="Project" 
+    file="/Project/src/model/BlockingEntity.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1979" y="766"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="model.Tile" project="Project" file="/Project/src/model/Tile.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2278" y="266"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="model.projectile.ProjectileBulletSniper" project="Project" 
+    file="/Project/src/model/projectile/ProjectileBulletSniper.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1491" y="1401"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="model.TileGround" project="Project" file="/Project/src/model/TileGround.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1985" y="318"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="model.projectile.ProjectilePlayerBullet" project="Project" 
+    file="/Project/src/model/projectile/ProjectilePlayerBullet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="232" width="322" x="2455" y="1761"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="model.MovingEntity" project="Project" file="/Project/src/model/MovingEntity.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2358" y="766"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="model.enemy.EnemyBoss" project="Project" 
+    file="/Project/src/model/enemy/EnemyBoss.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1508" y="1105"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="model.tileObject.tower.TowerBomb" project="Project" 
+    file="/Project/src/model/tileObject/tower/TowerBomb.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4210" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="model.TileSpawner" project="Project" file="/Project/src/model/TileSpawner.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1987" y="440"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="model.Entity" project="Project" file="/Project/src/model/Entity.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2839" y="416"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="model.projectile.Projectile" project="Project" 
+    file="/Project/src/model/projectile/Projectile.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="303" width="396" x="1753" y="1418"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="model.projectile.ProjectileArrow" project="Project" 
+    file="/Project/src/model/projectile/ProjectileArrow.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="285" x="2817" y="1761"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="model.tileObject.storage.Storage" project="Project" 
+    file="/Project/src/model/tileObject/storage/Storage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3420" y="1207"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="38" language="java" name="model.tileObject.storage.StorageStone" project="Project" 
+    file="/Project/src/model/tileObject/storage/StorageStone.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3459" y="990"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="39" language="java" name="model.enemy.Enemy" project="Project" file="/Project/src/model/enemy/Enemy.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1594" y="821"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="40" language="java" name="model.tileObject.tower.Tower" project="Project" 
+    file="/Project/src/model/tileObject/tower/Tower.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3596" y="575"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="41" language="java" name="model.tileObject.storage.StorageWood" project="Project" 
+    file="/Project/src/model/tileObject/storage/StorageWood.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3656" y="985"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="42" language="java" name="model.tileObject.generator.GeneratorDiamond" project="Project" 
+    file="/Project/src/model/tileObject/generator/GeneratorDiamond.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="250" width="184" x="3814" y="1761"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="43" language="java" name="model.tileObject.TileObject" project="Project" 
+    file="/Project/src/model/tileObject/TileObject.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="213" width="166" x="3085" y="1093"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="44" language="java" name="model.tileObject.storage.StorageIron" project="Project" 
+    file="/Project/src/model/tileObject/storage/StorageIron.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3856" y="1091"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="45" language="java" name="model.tileObject.tower.TowerTurret" project="Project" 
+    file="/Project/src/model/tileObject/tower/TowerTurret.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4208" y="200"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="46" language="java" name="model.enemy.EnemyBasic" project="Project" 
+    file="/Project/src/model/enemy/EnemyBasic.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1748" y="1101"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="47" language="java" name="logic.IMovable" project="Project" file="/Project/src/logic/IMovable.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2393" y="1056"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="48" language="java" name="logic.IBlockable" project="Project" file="/Project/src/logic/IBlockable.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2541" y="537"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="49" language="java" name="logic.ICollidable" project="Project" 
+    file="/Project/src/logic/ICollidable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2536" y="357"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="50" language="java" name="logic.IRenderable" project="Project" 
+    file="/Project/src/logic/IRenderable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2529" y="135"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <generalization id="51">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="43"/>  
+  </generalization>  
+  <generalization id="52">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="35"/>  
+  </generalization>  
+  <generalization id="53">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="54">    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="37"/>  
+  </generalization>  
+  <generalization id="55">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="43"/>  
+  </generalization>  
+  <generalization id="56">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="57">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="43"/>  
+  </generalization>  
+  <generalization id="58">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="37"/>  
+  </generalization>  
+  <generalization id="59">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="35"/>  
+  </generalization>  
+  <generalization id="60">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <generalization id="61">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="30"/>  
+  </generalization>  
+  <generalization id="62">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <generalization id="63">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="64">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="43"/>  
+  </generalization>  
+  <generalization id="65">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <generalization id="66">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="43"/>  
+  </generalization>  
+  <realization id="67">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="48"/>  
+  </realization>  
+  <generalization id="68">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="43"/>  
+  </generalization>  
+  <generalization id="69">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="39"/>  
+  </generalization>  
+  <generalization id="70">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="35"/>  
+  </generalization>  
+  <realization id="71">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="47"/>  
+  </realization>  
+  <generalization id="72">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="73">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="35"/>  
+  </generalization>  
+  <generalization id="74">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <generalization id="75">    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="39"/>  
+  </generalization>  
+  <realization id="76">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="48"/>  
+  </realization>  
+  <generalization id="77">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="30"/>  
+  </generalization>  
+  <generalization id="78">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <generalization id="79">    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <generalization id="80">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <realization id="81">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="49"/>  
+  </realization>  
+  <generalization id="82">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="35"/>  
+  </generalization>  
+  <generalization id="83">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="34"/>  
+  </generalization>  
+  <generalization id="84">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="85">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="34"/>  
+  </generalization>  
+  <realization id="86">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="50"/>  
+  </realization>  
+  <generalization id="87">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="88">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="89">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="35"/>  
+  </generalization>  
+  <generalization id="90">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="37"/>  
+  </generalization>  
+  <generalization id="91">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="43"/>  
+  </generalization>  
+  <generalization id="92">    
+    <end type="SOURCE" refId="45"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="93">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="43"/>  
+  </generalization>  
+  <generalization id="94">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="43"/>  
+  </generalization>  
+  <generalization id="95">    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="49"/>  
+  </generalization>  
+  <generalization id="96">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="43"/>  
+  </generalization>  
+  <realization id="97">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="50"/>  
+  </realization>  
+  <generalization id="98">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="99">    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="37"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

@@ -8,12 +8,12 @@ import logic.GameManager;
 import model.Tile;
 
 public class TileObjectVoid extends TileObject {
-	private static final int sizeX = 1;
-	private static final int sizeY = 1;
-	private static final int startHp = -1;
+	private static final int SIZE_X = 1;
+	private static final int SIZE_Y = 1;
+	private static final int START_HP = -1;
 
 	public TileObjectVoid(Tile tile) {
-		super(tile, sizeX, sizeY, startHp); // 1x2
+		super(tile, SIZE_X, SIZE_Y, START_HP); // 1x1
 	}
 
 	@Override

@@ -19,9 +19,9 @@ public class ResourceItem extends HBox {
 		this.index=index;
 		Button addResource=new Button("+");
 		addResource.setOnAction(e->{
-			if(ResourceManager.instance.getResource(ResourceManager.ARTIFACT) >= ResourceManager.exchangeRate[index]){
+			if(ResourceManager.instance.getResource(ResourceManager.ARTIFACT) >= ResourceManager.EXCHANGE_RATE[index]){
 				ResourceManager.instance.addResource(index,1);
-				ResourceManager.instance.addResource(ResourceManager.ARTIFACT,-ResourceManager.exchangeRate[index]);
+				ResourceManager.instance.addResource(ResourceManager.ARTIFACT,-ResourceManager.EXCHANGE_RATE[index]);
 			}
 		});
 		
@@ -35,7 +35,7 @@ public class ResourceItem extends HBox {
 	public void update(){
 		int res=ResourceManager.instance.getResource(index);
 		int cap=ResourceManager.instance.getCapacity(index);
-		lb.setText(ResourceManager.name[index]+" "+res+"/"+cap);
+		lb.setText(ResourceManager.NAME[index]+" "+res+"/"+cap);
 		if(cap==0){
 			pb.setDisable(true);
 			pb.setProgress(-1);

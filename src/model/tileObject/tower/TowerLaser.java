@@ -13,18 +13,18 @@ import model.projectile.ProjectileLaser;
 
 public class TowerLaser extends Tower {
 
-	private static final int startHP = 400;
-	private static final int shootingMaxDelay = 3;
-	public static final int sizeX = 2;
-	public static final int sizeY = 2;
-	public static final int shootingRange = 300;
+	private static final int START_HP = 400;
+	private static final int SHOOTING_DELAY = 3;
+	public static final int SIZE_X = 2;
+	public static final int SIZE_Y = 2;
+	public static final int SHOOTING_RANGE = 300;
 
 	public TowerLaser(Tile tile) {
-		super(tile, sizeX, sizeY, startHP, shootingMaxDelay, shootingRange);
+		super(tile, SIZE_X, SIZE_Y, START_HP, SHOOTING_DELAY, SHOOTING_RANGE);
 	}
 
 	public static boolean canPlace(Tile tile) {
-		return TileManager.instance.canPlace(tile, sizeX, sizeY);
+		return TileManager.instance.canPlace(tile, SIZE_X, SIZE_Y);
 	}
 
 	@Override

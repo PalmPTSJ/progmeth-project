@@ -13,18 +13,19 @@ import model.projectile.ProjectileArrow;
 
 public class TowerArrow extends Tower {
 
-	private static final int startHP = 200;
-	private static final int shootingMaxDelay = 20;
-	public static final int sizeX = 1;
-	public static final int sizeY = 1;
-	public static final int shootingRange = 150;
+	private static final int START_HP = 200;
+	private static final int SHOOTING_DELAY = 20;
+	public static final int SIZE_X = 1;
+	public static final int SIZE_Y = 1;
+	public static final int SHOOTING_RANGE = 150;
+	
 
 	public TowerArrow(Tile tile) {
-		super(tile, sizeX, sizeY, startHP, shootingMaxDelay, shootingRange);
+		super(tile, SIZE_X, SIZE_Y, START_HP, SHOOTING_DELAY, SHOOTING_RANGE);
 	}
 
 	public static boolean canPlace(Tile tile) {
-		return TileManager.instance.canPlace(tile, sizeX, sizeY);
+		return TileManager.instance.canPlace(tile, SIZE_X, SIZE_Y);
 	}
 
 	@Override
