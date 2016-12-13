@@ -4,9 +4,11 @@ import javafx.scene.canvas.GraphicsContext;
 import model.RenderableHolder;
 
 public class EnemyBoss extends Enemy {
-
+	
+	private static final double SPEED = 3;
+	
 	public EnemyBoss(double x, double y, int level) {
-		super(x, y, 3, 50 + 40 * level, (int) (4 + 0.8 * level), 10 * level);
+		super(x, y, SPEED, 50 + 40 * level, (int) (4 + 0.8 * level), 10 * level);
 	}
 
 	@Override

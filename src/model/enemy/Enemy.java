@@ -12,19 +12,19 @@ import model.tileObject.TileObjectRocket;
 
 public abstract class Enemy extends BlockingEntity {
 
-	private static final double defaultWidth = 20;
-	private static final double defualtHeight = 20;
+	private static final double WIDTH = 20;
+	private static final double HEIGHT = 20;
 
-	private int damage = 3;
-	private int attackTimer = 0;
-	private int reward = 15;
-	private static final int attackMaxDelay = 20;
-	private static final double attackRange = 5;
+	private int damage;
+	private int attackTimer;
+	private int reward;
+	private static final int ATTACK_DELAY = 20;
+	private static final double ATTACK_RANGE = 5;
 
 	private Entity target;
 
 	public Enemy(double x, double y, double speed, int startHp, int damage, int reward) {
-		super(x, y, defaultWidth, defualtHeight, speed, startHp);
+		super(x, y, WIDTH, HEIGHT, speed, startHp);
 		this.damage = damage;
 		this.reward = reward;
 	}
@@ -67,7 +67,7 @@ public abstract class Enemy extends BlockingEntity {
 		}
 
 		attackTimer++;
-		if (attackTimer >= attackMaxDelay) {
+		if (attackTimer >= ATTACK_DELAY) {
 			attack();
 			attackTimer = 0;
 		}
@@ -82,7 +82,7 @@ public abstract class Enemy extends BlockingEntity {
 					double dy = Math.abs(((Entity) ir).getCenterY() - getCenterY());
 					dx -= getWidth() / 2 + ((Entity) ir).getWidth() / 2;
 					dy -= getHeight() / 2 + ((Entity) ir).getHeight() / 2;
-					if (dx <= attackRange && dy <= attackRange) {
+					if (dx <= ATTACK_RANGE && dy <= ATTACK_RANGE) {
 						((Entity) ir).reduceHP(damage);
 					}
 				}
@@ -101,7 +101,7 @@ public abstract class Enemy extends BlockingEntity {
 		return 15;
 	}
 
-	public synchronized void setTarget(Entity target) {
+	public void setTarget(Entity target) {
 		this.target = target;
 	}
 

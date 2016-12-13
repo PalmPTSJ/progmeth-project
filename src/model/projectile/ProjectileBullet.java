@@ -6,17 +6,17 @@ import model.RenderableHolder;
 
 public class ProjectileBullet extends Projectile {
 
-	private static final double defaultWidth = 20;
-	private static final double defaultHeight = 8;
-	private static final double defaultSpeed = 12;
-	private static final int defaultDamage = 40;
+	private static final double WIDTH = 20;
+	private static final double HEIGHT = 8;
+	private static final double SPEED = 12;
+	private static final int DAMAGE = 40;
 
 	public ProjectileBullet(double x, double y, double targetX, double targetY) {
-		super(x, y, defaultWidth, defaultHeight, defaultSpeed, defaultDamage, targetX, targetY);
+		super(x, y, WIDTH, HEIGHT, SPEED, DAMAGE, targetX, targetY);
 	}
 
 	public ProjectileBullet(double x, double y, Entity target) {
-		super(x, y, defaultWidth, defaultHeight, defaultSpeed, defaultDamage, target);
+		super(x, y, WIDTH, HEIGHT, SPEED, DAMAGE, target);
 	}
 
 	@Override
