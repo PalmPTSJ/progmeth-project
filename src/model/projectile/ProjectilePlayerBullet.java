@@ -10,7 +10,7 @@ public class ProjectilePlayerBullet extends Projectile {
 	private static final double height = 8;
 	private static final double speed = 12;
 	private static int damage = 15;
-	
+
 	public ProjectilePlayerBullet(double x, double y, double targetX, double targetY) {
 		super(x, y, width, height, speed, damage, targetX, targetY);
 	}
@@ -23,11 +23,12 @@ public class ProjectilePlayerBullet extends Projectile {
 	public void draw(GraphicsContext gc) {
 		super.draw(gc, RenderableHolder.projectile_bullet_img);
 	}
-	
-	public static void addDamage(int d){
-		damage+=d;
+
+	public static void addDamage(int d) {
+		damage += d;
 	}
-	public static int getDamage(){
+
+	public static int getDamage() {
 		return damage;
 	}
 }

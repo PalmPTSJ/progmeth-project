@@ -3,11 +3,13 @@ package model;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import logic.BuyManager;
+import logic.GameManager;
 import logic.InputUtility;
 import logic.SoundManager;
 import logic.TileManager;
 import model.projectile.Projectile;
 import model.projectile.ProjectilePlayerBullet;
+import model.tileObject.TileObject;
 
 public class Player extends BlockingEntity {
 
@@ -22,6 +24,7 @@ public class Player extends BlockingEntity {
 
 	private int shootingTimer = 0;
 	private static final int shootingDelay = 15;
+	private static final int harvestPower = 1;
 
 	public Player(double x, double y) {
 		super(x, y, width, height, speed, startHp);
@@ -49,9 +52,7 @@ public class Player extends BlockingEntity {
 	public void draw(GraphicsContext gc) {
 		super.draw(gc, RenderableHolder.player_img);
 	}
-	
-	private static final int harvestPower = 1;
-	
+
 	@Override
 	public void update() {
 		if (InputUtility.instance.isKeyDown(KeyCode.A))
@@ -72,7 +73,7 @@ public class Player extends BlockingEntity {
 				SoundManager.getGunshot().play();
 				Projectile bullet = new ProjectilePlayerBullet(getCenterX(), getCenterY(),
 						InputUtility.instance.getMouseX(), InputUtility.instance.getMouseY());
-				RenderableHolder.getInstance().add(bullet);
+				GameManager.addEntity(bullet);
 				shootingTimer = 0;
 			}
 		}
@@ -86,14 +87,15 @@ public class Player extends BlockingEntity {
 			}
 			healthRegenerationTimer = 0;
 		}
-		
+
 		// cut object
-		if(InputUtility.instance.isMouseRightDown()) {
-			int x = (int) (InputUtility.instance.getMouseX() / TileManager.tileSize);
-			int y = (int) (InputUtility.instance.getMouseY() / TileManager.tileSize);
-			if(!(x>=TileManager.tileCountX || x<0 || y>=TileManager.tileCountY || y<0)) {
-				if(TileManager.instance.tileArray[x][y].getTileObject() != null) {
-					TileManager.instance.tileArray[x][y].getTileObject().reduceHP(harvestPower);
+		if (InputUtility.instance.isMouseRightDown()) {
+			int x = GameManager.getMouseTileX();
+			int y = GameManager.getMouseTileY();
+			if (!(x >= TileManager.tileCountX || x < 0 || y >= TileManager.tileCountY || y < 0)) {
+				TileObject object=TileManager.instance.tileArray[x][y].getTileObject();
+				if (object != null) {
+					object.reduceHP(harvestPower);
 				}
 			}
 		}

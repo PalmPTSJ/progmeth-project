@@ -16,9 +16,9 @@ public class BuyManager {
 	}
 
 	public boolean canBuy() {
-		int x = (int) (InputUtility.instance.getMouseX() / TileManager.tileSize);
-		int y = (int) (InputUtility.instance.getMouseY() / TileManager.tileSize);
-		if (x >= TileManager.tileCountX || x < 0 || y >= TileManager.tileCountY || y < 0)
+		int x = GameManager.getMouseTileX();
+		int y = GameManager.getMouseTileY();
+		if (GameManager.isOutOfBound(x, y))
 			return false;
 		boolean ret = true;
 		try {

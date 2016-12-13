@@ -9,7 +9,7 @@ public class ProjectileArrow extends Projectile {
 	private static final double defaultHeight = 8;
 	private static final double defaultSpeed = 8;
 	private static final int defaultDamage = 5;
-	
+
 	public ProjectileArrow(double x, double y, double targetX, double targetY) {
 		super(x, y, defaultWidth, defaultHeight, defaultSpeed, defaultDamage, targetX, targetY);
 	}

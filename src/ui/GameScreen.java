@@ -7,7 +7,6 @@ import javafx.scene.text.Font;
 import logic.BuyManager;
 import logic.GameManager;
 import logic.IRenderable;
-import logic.InputUtility;
 import logic.TileManager;
 import model.Entity;
 import model.RenderableHolder;
@@ -47,13 +46,14 @@ public class GameScreen extends Canvas {
 	}
 
 	public void drawBuyingItem(GraphicsContext gc){
-		int x = (int) (InputUtility.instance.getMouseX() / TileManager.tileSize);
-		int y = (int) (InputUtility.instance.getMouseY() / TileManager.tileSize);
+		int x = GameManager.getMouseTileX();
+		int y = GameManager.getMouseTileY();
 		int sizeX;
 		int sizeY;
 		try {
 			sizeX = BuyManager.instance.currentObjectClass.getDeclaredField("sizeX").getInt(null);
 			sizeY = BuyManager.instance.currentObjectClass.getDeclaredField("sizeY").getInt(null);
+			// ie currentObjectClass Object is instance of Tower
 			if(Tower.class.isAssignableFrom(BuyManager.instance.currentObjectClass)) {
 				gc.setGlobalAlpha(0.3);
 				gc.setFill(Color.BLACK);
@@ -61,7 +61,7 @@ public class GameScreen extends Canvas {
 				gc.fillOval((x+(double)(sizeX)/2)*TileManager.tileSize - r, (y+(double)(sizeY)/2)*TileManager.tileSize - r, 2*r, 2*r);
 				gc.setGlobalAlpha(1);
 			}
-		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return;
 		}

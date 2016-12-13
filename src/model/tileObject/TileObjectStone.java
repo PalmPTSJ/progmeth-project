@@ -18,7 +18,7 @@ public class TileObjectStone extends TileObject {
 	public static boolean canPlace(Tile tile) {
 		return TileManager.instance.canPlace(tile, sizeX, sizeY);
 	}
-	
+
 	@Override
 	public void onDestroy() {
 		super.onDestroy();

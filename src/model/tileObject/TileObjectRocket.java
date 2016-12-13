@@ -9,50 +9,49 @@ import model.RenderableHolder;
 import model.Tile;
 
 public class TileObjectRocket extends TileObject {
-	
+
 	private static final int startHP = 1500;
 	public static final int sizeX = 3;
 	public static final int sizeY = 3;
-	
+
 	private static final int launchDelay = 1800;
 	private int launchTimer = 0;
-	
+
 	public TileObjectRocket(Tile tile) {
 		super(tile, sizeX, sizeY, startHP);
-		GameManager.instance.setRocketCount(GameManager.instance.getRocketCount()+1);
+		GameManager.instance.setRocketCount(GameManager.instance.getRocketCount() + 1);
 	}
-	
+
 	public static boolean canPlace(Tile tile) {
 		return TileManager.instance.canPlace(tile, sizeX, sizeY);
 	}
-	
+
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		GameManager.instance.setRocketCount(GameManager.instance.getRocketCount()-1);
+		GameManager.instance.setRocketCount(GameManager.instance.getRocketCount() - 1);
 	}
-	
+
 	@Override
 	public void update() {
 		super.update();
-		if(launchTimer < launchDelay) {
+		if (launchTimer < launchDelay) {
 			launchTimer++;
-		}
-		else {
+		} else {
 			GameManager.instance.setRocketLaunched(true);
 		}
 	}
-	
+
 	@Override
 	public void draw(GraphicsContext gc) {
 		super.draw(gc, RenderableHolder.tileObject_rocket_img);
 		gc.setFill(Color.GREEN);
 		gc.setFont(Font.font(20));
-		gc.fillText(""+(int)((launchDelay-launchTimer)/60), this.getCenterX()-10,this.getCenterY());
+		gc.fillText("" + (int) ((launchDelay - launchTimer) / 60), this.getCenterX() - 10, this.getCenterY());
 	}
-	
+
 	public static int[] getResourceNeeded() {
-		return new int[]{100,100,100,100,9999};
+		return new int[] { 100, 100, 100, 100, 9999 };
 	}
 
 }

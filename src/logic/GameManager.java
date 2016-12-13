@@ -1,6 +1,7 @@
 package logic;
 
-import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 import java.util.Random;
 
 import application.Main;
@@ -93,28 +94,31 @@ public class GameManager {
 	private void updateOverlay() {
 		if (!BuyManager.instance.isBuyMode)
 			return;
+		// Exit buyMode if right click
 		if (InputUtility.instance.isMouseRightClicked()) {
 			BuyManager.instance.isBuyMode = false;
 			return;
 		}
+		// Try to place
 		if (InputUtility.instance.isMouseLeftClicked()) {
 			int x = (int) (InputUtility.instance.getMouseX() / TileManager.tileSize);
 			int y = (int) (InputUtility.instance.getMouseY() / TileManager.tileSize);
 			int[] resourceNeeded;
 			try {
-				resourceNeeded = (int[]) BuyManager.instance.currentObjectClass.getMethod("getResourceNeeded")
-						.invoke(null);
+				Method getResourceNeeded = BuyManager.instance.currentObjectClass.getMethod("getResourceNeeded");
+				resourceNeeded = (int[]) getResourceNeeded.invoke(null);
 				if (BuyManager.instance.canBuy()) {
 					for (int i = 0; i < 5; i++) {
 						ResourceManager.instance.addResource(i, -resourceNeeded[i]);
 					}
-					BuyManager.instance.currentObjectClass.getDeclaredConstructor(Tile.class)
-							.newInstance(TileManager.instance.tileArray[x][y]);
+					Constructor con = BuyManager.instance.currentObjectClass.getDeclaredConstructor(Tile.class);
+					con.newInstance(TileManager.instance.tileArray[x][y]);
+					
+					// keep buying if shift is down
 					if (!InputUtility.instance.isKeyDown(KeyCode.SHIFT))
 						BuyManager.instance.isBuyMode = false;
 				}
-			} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
-					| NoSuchMethodException | SecurityException | InstantiationException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
@@ -126,6 +130,18 @@ public class GameManager {
 			if (RenderableHolder.getInstance().getEntities().get(i).isDestroy())
 				RenderableHolder.getInstance().remove(i);
 		}
+	}
+
+	public static int getMouseTileX() {
+		return (int) (InputUtility.instance.getMouseX() / TileManager.tileSize);
+	}
+
+	public static int getMouseTileY() {
+		return (int) (InputUtility.instance.getMouseY() / TileManager.tileSize);
+	}
+
+	public static boolean isOutOfBound(int x, int y) {
+		return x >= TileManager.tileCountX || x < 0 || y >= TileManager.tileCountY || y < 0;
 	}
 
 	public void setRocketLaunched(boolean launched) {

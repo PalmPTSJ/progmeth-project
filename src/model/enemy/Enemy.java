@@ -33,7 +33,7 @@ public abstract class Enemy extends BlockingEntity {
 		double minDist = 0;
 		Entity target = null;
 		for (IRenderable ir : RenderableHolder.getInstance().getEntities()) {
-			if(ir instanceof Entity && !((Entity)ir).isDestroy()) {
+			if (ir instanceof Entity && !((Entity) ir).isDestroy()) {
 				if (targetClass.isAssignableFrom(ir.getClass())) {
 					double dist = CollisionUtility.findDistance(this, (ICollidable) ir);
 					if (target == null || dist < minDist) {
@@ -52,7 +52,7 @@ public abstract class Enemy extends BlockingEntity {
 
 		if (target != null && target.isDestroy())
 			target = null;
-		
+
 		if (target == null)
 			target = findTarget(TileObjectRocket.class);
 		if (target == null)

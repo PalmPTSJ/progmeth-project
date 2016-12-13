@@ -3,10 +3,10 @@ package model.tileObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import logic.GameManager;
 import logic.IBlockable;
 import logic.TileManager;
 import model.Entity;
-import model.RenderableHolder;
 import model.Tile;
 
 /* Tile Object is an object that is fix to a tile (object which can't be moved) */
@@ -37,7 +37,7 @@ public abstract class TileObject extends Entity implements IBlockable {
 	public int getZ() {
 		return 10;
 	}
-	
+
 	@Override
 	public void undoMove() {
 		// tile object aren't supposed to move anyway
@@ -52,6 +52,6 @@ public abstract class TileObject extends Entity implements IBlockable {
 				this.tile.add(TileManager.instance.tileArray[x][y]);
 			}
 		}
-		RenderableHolder.getInstance().add(this);
+		GameManager.addEntity(this);
 	}
 }

@@ -1,7 +1,7 @@
 package model.tileObject;
 
 import javafx.scene.canvas.GraphicsContext;
-import model.RenderableHolder;
+import logic.GameManager;
 import model.Tile;
 
 public class TileObjectVoid extends TileObject {
@@ -17,10 +17,10 @@ public class TileObjectVoid extends TileObject {
 	public void draw(GraphicsContext gc) {
 
 	}
-	
+
 	@Override
 	public void drawHealthBar(GraphicsContext gc) {
-		
+
 	}
 
 	@Override
@@ -30,7 +30,7 @@ public class TileObjectVoid extends TileObject {
 
 	@Override
 	public void place(Tile tile) {
-		RenderableHolder.getInstance().add(this);
+		GameManager.addEntity(this);
 	}
 
 }
