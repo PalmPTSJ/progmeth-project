@@ -5,8 +5,6 @@ package application;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
-import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
 import logic.InputUtility;
 import logic.SoundManager;
@@ -19,18 +17,14 @@ public class Main extends Application {
 	private static final int screenWidth = 1200;
 	private static final int screenHeight = 600;
 	private static Scene scene;
-	private static Stage primaryStage;
-	private static Scale scale=new Scale();
 	public static void main(String[] args) {
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Main.primaryStage=primaryStage;
 		MainPane mainPane = new MainPane(screenWidth, screenHeight);
 		scene = new Scene(mainPane, screenWidth, screenHeight);
-		scene.getRoot().getTransforms().add(scale);
 		scene.getStylesheets().add("bootstrapfx.css");
 		InputUtility.instance.setEventHandler(scene);
 
@@ -49,7 +43,6 @@ public class Main extends Application {
 		((IStoppable) scene.getRoot()).stop();
 		GamePane gamePane = new GamePane(screenWidth, screenHeight);
 		scene.setRoot(gamePane);
-		scene.getRoot().getTransforms().add(scale);
 		SoundManager.start();
 	}
 
@@ -58,14 +51,9 @@ public class Main extends Application {
 		SoundManager.stop();
 		MainPane mainPane = new MainPane(screenWidth, screenHeight);
 		scene.setRoot(mainPane);
-		scene.getRoot().getTransforms().add(scale);
 	}
-	public static void setScale(double scaleValue){
-		scale.setX(scaleValue);
-		scale.setY(scaleValue);
-		((Pane)scene.getRoot()).setPrefSize(screenWidth*scaleValue, screenHeight*scaleValue);
-		System.out.println(((Pane)scene.getRoot()).getHeight());
-		primaryStage.sizeToScene();
-		System.out.println(primaryStage.getHeight());
+	
+	public static Scene getScene() {
+		return scene;
 	}
 }

@@ -15,7 +15,7 @@ public class ThreadGameManager extends Thread {
 
 	public void run() {
 		try {
-			while (!interrupted() && Main.scene.getRoot() instanceof GamePane) {
+			while (!interrupted() && Main.getScene().getRoot() instanceof GamePane) {
 				Thread.sleep(16);
 				GameManager.instance.update();
 			}
