@@ -149,10 +149,6 @@ public class RenderableHolder {
 		instance.entities.remove(index);
 	}
 
-	public synchronized static RenderableHolder getInstance() {
-		return instance;
-	}
-
 	public synchronized List<IRenderable> getEntities() {
 		return entities;
 	}

@@ -21,7 +21,7 @@ public class HighscoreManager {
 			in.close();
 			return ret;
 		} catch (Exception e) {
-			throw new HighscoreException(e.getMessage());
+			throw new HighscoreException();
 		}
 	}
 

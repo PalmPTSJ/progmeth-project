@@ -38,7 +38,7 @@ public class GameManager {
 	}
 
 	public static void addEntity(IRenderable entity) {
-		RenderableHolder.getInstance().add(entity);
+		RenderableHolder.instance.add(entity);
 	}
 
 	public void update() {
@@ -84,7 +84,7 @@ public class GameManager {
 	}
 
 	private void updateEntity() {
-		for (IRenderable ir : RenderableHolder.getInstance().getEntities()) {
+		for (IRenderable ir : RenderableHolder.instance.getEntities()) {
 			if (ir instanceof Entity) {
 				((Entity) ir).update();
 			}
@@ -126,9 +126,9 @@ public class GameManager {
 	}
 
 	private void removeDestroyEntity() {
-		for (int i = RenderableHolder.getInstance().getEntities().size() - 1; i >= 0; i--) {
-			if (RenderableHolder.getInstance().getEntities().get(i).isDestroy())
-				RenderableHolder.getInstance().remove(i);
+		for (int i = RenderableHolder.instance.getEntities().size() - 1; i >= 0; i--) {
+			if (RenderableHolder.instance.getEntities().get(i).isDestroy())
+				RenderableHolder.instance.remove(i);
 		}
 	}
 
