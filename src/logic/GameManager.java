@@ -17,9 +17,9 @@ import ui.MainPane;
 public class GameManager {
 	public static GameManager instance;
 	public static Random globalRNG = new Random();
-	
+
 	private ThreadGameManager thread;
-	
+
 	private int score = 0;
 	private Player player;
 	private int fps = 0;
@@ -42,11 +42,11 @@ public class GameManager {
 	}
 
 	public static void addEntity(IRenderable entity) {
-		RenderableHolder.getInstance().add(entity);
+		RenderableHolder.instance.add(entity);
 	}
 
 	public void update() {
-		synchronized(RenderableHolder.getInstance().getEntities()) {
+		synchronized (RenderableHolder.getInstance().getEntities()) {
 			if (isGameEnded()) {
 				return;
 			}
@@ -76,7 +76,7 @@ public class GameManager {
 	}
 
 	private void onGameEnded() {
-		Platform.runLater(()->{
+		Platform.runLater(() -> {
 			Alert alert = new Alert(AlertType.INFORMATION);
 			if (rocketLaunched) {
 				alert.setContentText("You win");
@@ -92,7 +92,7 @@ public class GameManager {
 	}
 
 	private void updateEntity() {
-		for(int i = 0;i < RenderableHolder.getInstance().getEntities().size();i++) {
+		for (int i = 0; i < RenderableHolder.getInstance().getEntities().size(); i++) {
 			IRenderable ir = RenderableHolder.getInstance().getEntities().get(i);
 			if (ir instanceof Entity) {
 				((Entity) ir).update();
@@ -122,7 +122,7 @@ public class GameManager {
 					}
 					Constructor con = BuyManager.instance.currentObjectClass.getDeclaredConstructor(Tile.class);
 					con.newInstance(TileManager.instance.tileArray[x][y]);
-					
+
 					// keep buying if shift is down
 					if (!InputUtility.instance.isKeyDown(KeyCode.SHIFT))
 						BuyManager.instance.isBuyMode = false;
@@ -135,9 +135,9 @@ public class GameManager {
 	}
 
 	private void removeDestroyEntity() {
-		for (int i = RenderableHolder.getInstance().getEntities().size() - 1; i >= 0; i--) {
-			if (RenderableHolder.getInstance().getEntities().get(i).isDestroy())
-				RenderableHolder.getInstance().remove(i);
+		for (int i = RenderableHolder.instance.getEntities().size() - 1; i >= 0; i--) {
+			if (RenderableHolder.instance.getEntities().get(i).isDestroy())
+				RenderableHolder.instance.remove(i);
 		}
 	}
 
@@ -188,12 +188,12 @@ public class GameManager {
 	public void setFps(int fps) {
 		this.fps = fps;
 	}
-	
+
 	public void startUpdateThread() {
 		thread = new ThreadGameManager();
 		thread.start();
 	}
-	
+
 	public void stopUpdateThread() {
 		thread.interrupt();
 	}

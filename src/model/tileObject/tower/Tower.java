@@ -38,7 +38,7 @@ public abstract class Tower extends TileObject {
 	private void shoot() {
 		Enemy target = null;
 		double targetDist = Double.MAX_VALUE;
-		for (IRenderable ir : RenderableHolder.getInstance().getEntities()) {
+		for (IRenderable ir : RenderableHolder.instance.getEntities()) {
 			if (ir instanceof Enemy) {
 				double dist = CollisionUtility.findDistance(this, (ICollidable) ir);
 				if (dist < targetDist) {
@@ -50,7 +50,7 @@ public abstract class Tower extends TileObject {
 
 		if (target != null && targetDist <= shootingRange) {
 			Projectile projectile = createProjectile(this.x + this.width / 2, this.y + this.height / 2, target);
-			RenderableHolder.getInstance().add(projectile);
+			RenderableHolder.instance.add(projectile);
 		}
 	}
 

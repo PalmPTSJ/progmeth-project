@@ -8,8 +8,8 @@ import model.Tile;
 public class BuyManager {
 	public static BuyManager instance;
 	public boolean isBuyMode = false;
-	public Image currentObjectImage;
-	public Class currentObjectClass;
+	public Image currentObjectImage = null;
+	public Class currentObjectClass = null;
 
 	public BuyManager() {
 		isBuyMode = false;

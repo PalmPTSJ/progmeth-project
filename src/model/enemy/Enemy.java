@@ -32,7 +32,7 @@ public abstract class Enemy extends BlockingEntity {
 	private Entity findTarget(Class targetClass) {
 		double minDist = 0;
 		Entity target = null;
-		for (IRenderable ir : RenderableHolder.getInstance().getEntities()) {
+		for (IRenderable ir : RenderableHolder.instance.getEntities()) {
 			if (ir instanceof Entity && !((Entity) ir).isDestroy()) {
 				if (targetClass.isAssignableFrom(ir.getClass())) {
 					double dist = CollisionUtility.findDistance(this, (ICollidable) ir);
@@ -75,7 +75,7 @@ public abstract class Enemy extends BlockingEntity {
 	}
 
 	private void attack() {
-		for (IRenderable ir : RenderableHolder.getInstance().getEntities()) {
+		for (IRenderable ir : RenderableHolder.instance.getEntities()) {
 			if (ir instanceof Entity) {
 				if (!(ir instanceof Enemy)) {
 					double dx = Math.abs(((Entity) ir).getCenterX() - getCenterX());

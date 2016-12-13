@@ -104,7 +104,7 @@ public class TileManager {
 					}
 
 					tileList.add(tileArray[x][y]);
-					RenderableHolder.getInstance().add(tileArray[x][y]);
+					RenderableHolder.instance.add(tileArray[x][y]);
 				}
 			}
 		}

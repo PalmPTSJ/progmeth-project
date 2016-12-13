@@ -10,7 +10,7 @@ import logic.IRenderable;
 public class RenderableHolder {
 	private List<IRenderable> entities;
 	private Comparator<IRenderable> comparator;
-	
+
 	public static Image volume_img;
 	public static Image tile_ground_img;
 	public static Image tile_stone_img;

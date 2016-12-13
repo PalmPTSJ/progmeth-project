@@ -5,11 +5,14 @@ import javafx.scene.media.AudioClip;
 public class SoundManager {
 	private static AudioClip bgm;
 	private static AudioClip gunshot;
+	private static AudioClip getRes(String path){
+		return new AudioClip(ClassLoader.getSystemResource(path).toString());
+	}
 	static{
-		bgm=new AudioClip(ClassLoader.getSystemResource("sound/bgm.wav").toString());
+		bgm=getRes("sound/bgm.wav");
 		bgm.setCycleCount(AudioClip.INDEFINITE);
 		
-		gunshot=new AudioClip(ClassLoader.getSystemResource("sound/gunshot.wav").toString());
+		gunshot=getRes("sound/gunshot.wav");
 		
 		setVolume(0.2);
 	}
