@@ -4,7 +4,7 @@
   router="FAN">  
   <class id="1" language="java" name="logic.SoundManager" project="Project" file="/Project/src/logic/SoundManager.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="196" width="159" x="226" y="-147"/>    
+    <position height="250" width="168" x="546" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -13,7 +13,7 @@
   </class>  
   <class id="2" language="java" name="application.Main" project="Project" file="/Project/src/application/Main.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="232" width="187" x="425" y="-147"/>    
+    <position height="250" width="187" x="754" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -22,297 +22,297 @@
   </class>  
   <class id="3" language="java" name="model.tileObject.TileObjectWallWood" project="Project" 
     file="/Project/src/model/tileObject/TileObjectWallWood.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="196" width="184" x="5376" y="1170"/>    
+    <position height="196" width="184" x="6095" y="1199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="thread.ThreadNewScore" project="Project" 
-    file="/Project/src/thread/ThreadNewScore.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="142" width="182" x="652" y="-147"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="5" language="java" name="ui.ResearchBox" project="Project" file="/Project/src/ui/ResearchBox.java" 
+  <class id="4" language="java" name="ui.ResearchBox" project="Project" file="/Project/src/ui/ResearchBox.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="88" width="120" x="874" y="-147"/>    
+    <position height="88" width="120" x="981" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="logic.HighscoreManager" project="Project" 
+  <class id="5" language="java" name="logic.HighscoreManager" project="Project" 
     file="/Project/src/logic/HighscoreManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="142" width="171" x="1034" y="-147"/>    
+    <position height="142" width="171" x="1141" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="ui.ResourceBox" project="Project" file="/Project/src/ui/ResourceBox.java" 
+  <class id="6" language="java" name="ui.ResourceBox" project="Project" file="/Project/src/ui/ResourceBox.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="121" x="1245" y="-147"/>    
+    <position height="106" width="121" x="1352" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="ui.BuyItem" project="Project" file="/Project/src/ui/BuyItem.java" binary="false" 
+  <class id="7" language="java" name="ui.BuyItem" project="Project" file="/Project/src/ui/BuyItem.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="88" width="192" x="1406" y="-147"/>    
+    <position height="88" width="192" x="1513" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="model.tileObject.TileObjectWallIron" project="Project" 
+  <class id="8" language="java" name="model.tileObject.TileObjectWallIron" project="Project" 
     file="/Project/src/model/tileObject/TileObjectWallIron.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="196" width="184" x="6048" y="1170"/>    
+    <position height="196" width="184" x="6767" y="1199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="model.tileObject.tower.TowerSniper" project="Project" 
+  <class id="9" language="java" name="model.tileObject.tower.TowerSniper" project="Project" 
     file="/Project/src/model/tileObject/tower/TowerSniper.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="250" width="300" x="6720" y="1513"/>    
+    <position height="250" width="300" x="7439" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="ui.VolumePane" project="Project" file="/Project/src/ui/VolumePane.java" 
+  <class id="10" language="java" name="ui.VolumePane" project="Project" file="/Project/src/ui/VolumePane.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="124" width="137" x="1638" y="-147"/>    
+    <position height="124" width="137" x="1745" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <package id="12" language="java" name="model.tileObject.storage" project="Project" 
+  <package id="11" language="java" name="model.tileObject.storage" project="Project" 
     file="/Project/src/model/tileObject/storage" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="55" width="198" x="1815" y="-147"/>    
+    <position height="55" width="198" x="1922" y="-100"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <package id="13" language="java" name="ui" project="Project" file="/Project/src/ui" binary="false" 
+  <package id="12" language="java" name="ui" project="Project" file="/Project/src/ui" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="55" width="122" x="2053" y="-147"/>    
+    <position height="55" width="122" x="2160" y="-100"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <package id="14" language="java" name="model.projectile" project="Project" file="/Project/src/model/projectile" 
+  <package id="13" language="java" name="model.projectile" project="Project" file="/Project/src/model/projectile" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="55" width="138" x="2215" y="-147"/>    
+    <position height="55" width="138" x="2322" y="-100"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="15" language="java" name="ui.GamePane" project="Project" file="/Project/src/ui/GamePane.java" 
+  <class id="14" language="java" name="ui.GamePane" project="Project" file="/Project/src/ui/GamePane.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="124" width="134" x="8400" y="-147"/>    
+    <position height="124" width="134" x="9119" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="model.RenderableHolder" project="Project" 
+  <class id="15" language="java" name="model.RenderableHolder" project="Project" 
     file="/Project/src/model/RenderableHolder.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="952" width="250" x="2393" y="-147"/>    
+    <position height="934" width="250" x="2500" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="ui.GameMenu" project="Project" file="/Project/src/ui/GameMenu.java" 
+  <class id="16" language="java" name="ui.GameMenu" project="Project" file="/Project/src/ui/GameMenu.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="178" width="185" x="2683" y="-147"/>    
+    <position height="178" width="185" x="2790" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="18" language="java" name="logic.IRenderable" project="Project" 
+  <interface id="17" language="java" name="logic.IRenderable" project="Project" 
     file="/Project/src/logic/IRenderable.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="124" width="184" x="7141" y="845"/>    
+    <position height="124" width="184" x="6443" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="19" language="java" name="ui.research.DiamondResearch" project="Project" 
+  <class id="18" language="java" name="ui.research.DiamondResearch" project="Project" 
     file="/Project/src/ui/research/DiamondResearch.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="180" x="9660" y="845"/>    
+    <position height="106" width="180" x="10379" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <package id="20" language="java" name="logic" project="Project" file="/Project/src/logic" binary="false" 
+  <package id="19" language="java" name="logic" project="Project" file="/Project/src/logic" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="55" width="122" x="2908" y="-147"/>    
+    <position height="55" width="122" x="3015" y="-100"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="21" language="java" name="model.TileVoid" project="Project" file="/Project/src/model/TileVoid.java" 
+  <class id="20" language="java" name="model.TileVoid" project="Project" file="/Project/src/model/TileVoid.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="184" x="5187" y="845"/>    
+    <position height="106" width="184" x="3183" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="22" language="java" name="logic.ICollidable" project="Project" 
+  <interface id="21" language="java" name="logic.ICollidable" project="Project" 
     file="/Project/src/logic/ICollidable.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="160" width="182" x="8760" y="845"/>    
+    <position height="160" width="182" x="9479" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="23" language="java" name="model.ScoreRecord" project="Project" file="/Project/src/model/ScoreRecord.java" 
+  <class id="22" language="java" name="model.ScoreRecord" project="Project" file="/Project/src/model/ScoreRecord.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="160" width="190" x="3070" y="-147"/>    
+    <position height="160" width="190" x="3177" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="model.Tile" project="Project" file="/Project/src/model/Tile.java" binary="false" 
+  <class id="23" language="java" name="model.Tile" project="Project" file="/Project/src/model/Tile.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="375" width="223" x="5523" y="-147"/>    
+    <position height="375" width="223" x="3407" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="25" language="java" name="model.projectile.ProjectileBulletSniper" project="Project" 
+  <class id="24" language="java" name="model.projectile.ProjectileBulletSniper" project="Project" 
     file="/Project/src/model/projectile/ProjectileBulletSniper.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="178" width="322" x="9483" y="1929"/>    
+    <position height="178" width="322" x="10202" y="2030"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="26" language="java" name="model.TileGround" project="Project" file="/Project/src/model/TileGround.java" 
+  <class id="25" language="java" name="model.TileGround" project="Project" file="/Project/src/model/TileGround.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="184" x="5411" y="845"/>    
+    <position height="106" width="184" x="3407" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="27" language="java" name="model.projectile.ProjectilePlayerBullet" project="Project" 
+  <class id="26" language="java" name="model.projectile.ProjectilePlayerBullet" project="Project" 
     file="/Project/src/model/projectile/ProjectilePlayerBullet.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="232" width="322" x="9808" y="1513"/>    
+    <position height="232" width="322" x="10527" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="28" language="java" name="model.Entity" project="Project" file="/Project/src/model/Entity.java" 
+  <class id="27" language="java" name="model.Entity" project="Project" file="/Project/src/model/Entity.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="627" width="250" x="8760" y="-147"/>    
+    <position height="609" width="250" x="9479" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="29" language="java" name="logic.IMovable" project="Project" file="/Project/src/logic/IMovable.java" 
+  <interface id="28" language="java" name="logic.IMovable" project="Project" file="/Project/src/logic/IMovable.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="88" width="120" x="9302" y="1170"/>    
+    <position height="88" width="120" x="10021" y="1199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="30" language="java" name="model.projectile.Projectile" project="Project" 
+  <class id="29" language="java" name="model.projectile.Projectile" project="Project" 
     file="/Project/src/model/projectile/Projectile.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="303" width="396" x="10170" y="1170"/>    
+    <position height="303" width="396" x="10889" y="1199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="31" language="java" name="ui.research.SuperGunResearch" project="Project" 
+  <class id="30" language="java" name="ui.research.SuperGunResearch" project="Project" 
     file="/Project/src/ui/research/SuperGunResearch.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="180" x="9880" y="845"/>    
+    <position height="106" width="180" x="10599" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="32" language="java" name="model.projectile.ProjectileArrow" project="Project" 
+  <class id="31" language="java" name="model.projectile.ProjectileArrow" project="Project" 
     file="/Project/src/model/projectile/ProjectileArrow.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="196" width="285" x="10170" y="1513"/>    
+    <position height="196" width="285" x="10889" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="33" language="java" name="model.tileObject.storage.Storage" project="Project" 
+  <class id="32" language="java" name="model.tileObject.storage.Storage" project="Project" 
     file="/Project/src/model/tileObject/storage/Storage.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="141" width="189" x="5600" y="1170"/>    
+    <position height="141" width="189" x="6319" y="1199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="34" language="java" name="model.enemy.Enemy" project="Project" file="/Project/src/model/enemy/Enemy.java" 
+  <class id="33" language="java" name="model.enemy.Enemy" project="Project" file="/Project/src/model/enemy/Enemy.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="357" width="251" x="8920" y="1513"/>    
+    <position height="357" width="251" x="9639" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="35" language="java" name="ui.research.GunResearch" project="Project" 
+  <class id="34" language="java" name="ui.research.GunResearch" project="Project" 
     file="/Project/src/ui/research/GunResearch.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="180" x="10100" y="845"/>    
+    <position height="106" width="180" x="10819" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="36" language="java" name="model.tileObject.storage.StorageWood" project="Project" 
+  <class id="35" language="java" name="model.tileObject.storage.StorageWood" project="Project" 
     file="/Project/src/model/tileObject/storage/StorageWood.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="232" width="184" x="4928" y="1513"/>    
+    <position height="232" width="184" x="5647" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="37" language="java" name="logic.ResourceManager" project="Project" 
+  <class id="36" language="java" name="logic.ResourceManager" project="Project" 
     file="/Project/src/logic/ResourceManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="358" width="188" x="3300" y="-147"/>    
+    <position height="358" width="188" x="3670" y="-100"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="thread.ThreadGameManager" project="Project" 
+    file="/Project/src/thread/ThreadGameManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="178" x="3898" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -321,379 +321,379 @@
   </class>  
   <class id="38" language="java" name="model.tileObject.TileObject" project="Project" 
     file="/Project/src/model/tileObject/TileObject.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="213" width="166" x="7741" y="845"/>    
+    <position height="213" width="166" x="8460" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="39" language="java" name="model.TileStone" project="Project" file="/Project/src/model/TileStone.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="184" x="5635" y="845"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="40" language="java" name="model.tileObject.storage.StorageIron" project="Project" 
+  <class id="39" language="java" name="model.tileObject.storage.StorageIron" project="Project" 
     file="/Project/src/model/tileObject/storage/StorageIron.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="232" width="184" x="5152" y="1513"/>    
+    <position height="232" width="184" x="5871" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="41" language="java" name="model.tileObject.tower.TowerTurret" project="Project" 
+  <class id="40" language="java" name="model.tileObject.tower.TowerTurret" project="Project" 
     file="/Project/src/model/tileObject/tower/TowerTurret.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="250" width="300" x="7060" y="1513"/>    
+    <position height="250" width="300" x="7779" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="42" language="java" name="model.enemy.EnemyBasic" project="Project" 
+  <class id="41" language="java" name="model.enemy.EnemyBasic" project="Project" 
     file="/Project/src/model/enemy/EnemyBasic.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="206" x="8797" y="1929"/>    
+    <position height="124" width="206" x="9516" y="2030"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="43" language="java" name="ui.StatsBox" project="Project" file="/Project/src/ui/StatsBox.java" 
+  <class id="42" language="java" name="ui.StatsBox" project="Project" file="/Project/src/ui/StatsBox.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="196" width="148" x="3528" y="-147"/>    
+    <position height="196" width="148" x="4116" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="44" language="java" name="ui.MainPane" project="Project" file="/Project/src/ui/MainPane.java" 
+  <class id="43" language="java" name="ui.MainPane" project="Project" file="/Project/src/ui/MainPane.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="178" width="146" x="8574" y="-147"/>    
+    <position height="178" width="146" x="9293" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="45" language="java" name="model.tileObject.TileObjectStone" project="Project" 
+  <class id="44" language="java" name="model.tileObject.TileObjectStone" project="Project" 
     file="/Project/src/model/tileObject/TileObjectStone.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="196" width="184" x="6272" y="1170"/>    
+    <position height="196" width="184" x="6991" y="1199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="46" language="java" name="thread.ThreadShowHighscore" project="Project" 
-    file="/Project/src/thread/ThreadShowHighscore.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="185" x="3716" y="-147"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="47" language="java" name="model.tileObject.generator.GeneratorStone" project="Project" 
+  <class id="45" language="java" name="model.tileObject.generator.GeneratorStone" project="Project" 
     file="/Project/src/model/tileObject/generator/GeneratorStone.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="250" width="184" x="5824" y="1513"/>    
+    <position height="250" width="184" x="6543" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <package id="48" language="java" name="exception" project="Project" file="/Project/src/exception" binary="false" 
+  <package id="46" language="java" name="exception" project="Project" file="/Project/src/exception" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="55" width="122" x="3941" y="-147"/>    
+    <position height="55" width="122" x="4304" y="-100"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <package id="49" language="java" name="model" project="Project" file="/Project/src/model" binary="false" 
+  <package id="47" language="java" name="model" project="Project" file="/Project/src/model" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="55" width="122" x="4103" y="-147"/>    
+    <position height="55" width="122" x="4466" y="-100"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="50" language="java" name="ui.ResourceItem" project="Project" file="/Project/src/ui/ResourceItem.java" 
+  <class id="48" language="java" name="ui.ResourceItem" project="Project" file="/Project/src/ui/ResourceItem.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="160" width="128" x="4265" y="-147"/>    
+    <position height="160" width="128" x="4628" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="51" language="java" name="model.tileObject.TileObjectWallStone" project="Project" 
+  <class id="49" language="java" name="model.tileObject.TileObjectWallStone" project="Project" 
     file="/Project/src/model/tileObject/TileObjectWallStone.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="196" width="184" x="7176" y="1170"/>    
+    <position height="196" width="184" x="7895" y="1199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="52" language="java" name="logic.InputUtility" project="Project" file="/Project/src/logic/InputUtility.java" 
+  <class id="50" language="java" name="logic.InputUtility" project="Project" file="/Project/src/logic/InputUtility.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="448" width="228" x="4433" y="-147"/>    
+    <position height="466" width="228" x="4796" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="53" language="java" name="model.tileObject.tower.TowerCatapult" project="Project" 
+  <class id="51" language="java" name="model.tileObject.tower.TowerCatapult" project="Project" 
     file="/Project/src/model/tileObject/tower/TowerCatapult.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="250" width="300" x="7400" y="1513"/>    
+    <position height="250" width="300" x="8119" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="54" language="java" name="ui.BuyBox" project="Project" file="/Project/src/ui/BuyBox.java" binary="false" 
+  <class id="52" language="java" name="ui.BuyBox" project="Project" file="/Project/src/ui/BuyBox.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="88" width="104" x="4701" y="-147"/>    
+    <position height="88" width="104" x="5064" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="55" language="java" name="model.projectile.ProjectileBomb" project="Project" 
+  <class id="53" language="java" name="model.projectile.ProjectileBomb" project="Project" 
     file="/Project/src/model/projectile/ProjectileBomb.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="250" width="286" x="10495" y="1513"/>    
+    <position height="250" width="286" x="11214" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="56" language="java" name="model.Player" project="Project" file="/Project/src/model/Player.java" 
+  <class id="54" language="java" name="model.Player" project="Project" file="/Project/src/model/Player.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="376" width="232" x="9211" y="1513"/>    
+    <position height="448" width="232" x="9930" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="57" language="java" name="model.tileObject.generator.Generator" project="Project" 
+  <class id="55" language="java" name="model.tileObject.generator.Generator" project="Project" 
     file="/Project/src/model/tileObject/generator/Generator.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="177" width="219" x="6496" y="1170"/>    
+    <position height="177" width="219" x="7215" y="1199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="58" language="java" name="logic.TileManager" project="Project" file="/Project/src/logic/TileManager.java" 
+  <class id="56" language="java" name="logic.TileManager" project="Project" file="/Project/src/logic/TileManager.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="232" width="193" x="4845" y="-147"/>    
+    <position height="304" width="295" x="5208" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="59" language="java" name="logic.EnemyManager" project="Project" file="/Project/src/logic/EnemyManager.java" 
+  <class id="57" language="java" name="logic.EnemyManager" project="Project" file="/Project/src/logic/EnemyManager.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="268" width="183" x="5078" y="-147"/>    
+    <position height="322" width="265" x="5543" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="60" language="java" name="model.tileObject.storage.StorageDiamond" project="Project" 
+  <class id="58" language="java" name="model.tileObject.storage.StorageDiamond" project="Project" 
     file="/Project/src/model/tileObject/storage/StorageDiamond.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="232" width="184" x="5376" y="1513"/>    
+    <position height="232" width="184" x="6095" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="61" language="java" name="model.tileObject.tower.TowerLaser" project="Project" 
+  <class id="59" language="java" name="model.tileObject.tower.TowerLaser" project="Project" 
     file="/Project/src/model/tileObject/tower/TowerLaser.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="250" width="300" x="7740" y="1513"/>    
+    <position height="250" width="300" x="8459" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="62" language="java" name="model.projectile.ProjectileBullet" project="Project" 
+  <class id="60" language="java" name="model.projectile.ProjectileBullet" project="Project" 
     file="/Project/src/model/projectile/ProjectileBullet.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="196" width="285" x="9483" y="1513"/>    
+    <position height="196" width="285" x="10202" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="63" language="java" name="model.tileObject.generator.GeneratorIron" project="Project" 
+  <class id="61" language="java" name="model.tileObject.generator.GeneratorIron" project="Project" 
     file="/Project/src/model/tileObject/generator/GeneratorIron.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="250" width="184" x="6048" y="1513"/>    
+    <position height="250" width="184" x="6767" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="64" language="java" name="model.tileObject.generator.GeneratorWood" project="Project" 
+  <class id="62" language="java" name="model.tileObject.generator.GeneratorWood" project="Project" 
     file="/Project/src/model/tileObject/generator/GeneratorWood.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="250" width="184" x="6272" y="1513"/>    
+    <position height="250" width="184" x="6991" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="65" language="java" name="logic.BuyManager" project="Project" file="/Project/src/logic/BuyManager.java" 
+  <class id="63" language="java" name="logic.BuyManager" project="Project" file="/Project/src/logic/BuyManager.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="178" width="182" x="5301" y="-147"/>    
+    <position height="178" width="182" x="5848" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="66" language="java" name="logic.IBlockable" project="Project" file="/Project/src/logic/IBlockable.java" 
+  <interface id="64" language="java" name="logic.IBlockable" project="Project" file="/Project/src/logic/IBlockable.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="88" width="120" x="8760" y="1513"/>    
+    <position height="88" width="120" x="9479" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="67" language="java" name="ui.research.HealthRegenerationResearch" project="Project" 
+  <class id="65" language="java" name="ui.research.HealthRegenerationResearch" project="Project" 
     file="/Project/src/ui/research/HealthRegenerationResearch.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="235" x="10320" y="845"/>    
+    <position height="106" width="235" x="11039" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <package id="68" language="java" name="model.tileObject.tower" project="Project" 
+  <package id="66" language="java" name="model.tileObject.tower" project="Project" 
     file="/Project/src/model/tileObject/tower" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="55" width="184" x="5786" y="-147"/>    
+    <position height="55" width="184" x="6070" y="-100"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="69" language="java" name="model.tileObject.TileObjectVoid" project="Project" 
+  <class id="67" language="java" name="model.tileObject.TileObjectVoid" project="Project" 
     file="/Project/src/model/tileObject/TileObjectVoid.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="214" width="241" x="7741" y="1170"/>    
+    <position height="214" width="241" x="8460" y="1199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="70" language="java" name="logic.GameManager" project="Project" file="/Project/src/logic/GameManager.java" 
+  <class id="68" language="java" name="logic.GameManager" project="Project" file="/Project/src/logic/GameManager.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="394" width="220" x="6010" y="-147"/>    
+    <position height="592" width="220" x="6294" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="71" language="java" name="model.projectile.ProjectileRock" project="Project" 
+  <class id="69" language="java" name="model.projectile.ProjectileRock" project="Project" 
     file="/Project/src/model/projectile/ProjectileRock.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="196" width="282" x="10821" y="1513"/>    
+    <position height="196" width="282" x="11540" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="72" language="java" name="ui.research.SmallGunResearch" project="Project" 
+  <class id="70" language="java" name="ui.research.SmallGunResearch" project="Project" 
     file="/Project/src/ui/research/SmallGunResearch.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="180" x="10595" y="845"/>    
+    <position height="106" width="180" x="11314" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="73" language="java" name="model.tileObject.tower.TowerArrow" project="Project" 
+  <class id="71" language="java" name="model.tileObject.tower.TowerArrow" project="Project" 
     file="/Project/src/model/tileObject/tower/TowerArrow.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="250" width="300" x="8080" y="1513"/>    
+    <position height="250" width="300" x="8799" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="74" language="java" name="model.tileObject.TileObjectRocket" project="Project" 
+  <class id="72" language="java" name="model.tileObject.TileObjectRocket" project="Project" 
     file="/Project/src/model/tileObject/TileObjectRocket.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="268" width="184" x="8043" y="1170"/>    
+    <position height="268" width="184" x="8762" y="1199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <package id="75" language="java" name="thread" project="Project" file="/Project/src/thread" binary="false" 
+  <package id="73" language="java" name="thread" project="Project" file="/Project/src/thread" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="55" width="122" x="6270" y="-147"/>    
+    <position height="55" width="122" x="6554" y="-100"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <package id="76" language="java" name="ui.research" project="Project" file="/Project/src/ui/research" binary="false" 
+  <package id="74" language="java" name="ui.research" project="Project" file="/Project/src/ui/research" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="55" width="122" x="6432" y="-147"/>    
+    <position height="55" width="122" x="6716" y="-100"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="77" language="java" name="exception.HighscoreException" project="Project" 
+  <class id="75" language="java" name="exception.HighscoreException" project="Project" 
     file="/Project/src/exception/HighscoreException.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="184" x="6594" y="-147"/>    
+    <position height="106" width="168" x="6878" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="78" language="java" name="model.projectile.ProjectileLaser" project="Project" 
+  <class id="76" language="java" name="model.projectile.ProjectileLaser" project="Project" 
     file="/Project/src/model/projectile/ProjectileLaser.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="196" width="284" x="11143" y="1513"/>    
+    <position height="196" width="284" x="11862" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="79" language="java" name="model.tileObject.TileObjectTree" project="Project" 
+  <class id="77" language="java" name="model.tileObject.TileObjectTree" project="Project" 
     file="/Project/src/model/tileObject/TileObjectTree.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="196" width="184" x="8267" y="1170"/>    
+    <position height="196" width="184" x="8986" y="1199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <package id="80" language="java" name="application" project="Project" file="/Project/src/application" binary="false" 
+  <package id="78" language="java" name="application" project="Project" file="/Project/src/application" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="55" width="122" x="6818" y="-147"/>    
+    <position height="55" width="122" x="7086" y="-100"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="81" language="java" name="model.BlockingEntity" project="Project" 
+  <class id="79" language="java" name="model.BlockingEntity" project="Project" 
     file="/Project/src/model/BlockingEntity.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="141" width="342" x="8920" y="1170"/>    
+    <position height="141" width="342" x="9639" y="1199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="82" language="java" name="exception.InvalidNameException" project="Project" 
+  <class id="80" language="java" name="thread.ThreadShowHighscore" project="Project" 
+    file="/Project/src/thread/ThreadShowHighscore.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="187" x="7248" y="-100"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="81" language="java" name="exception.InvalidNameException" project="Project" 
     file="/Project/src/exception/InvalidNameException.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="182" x="6980" y="-147"/>    
+    <position height="106" width="182" x="7475" y="-100"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="82" language="java" name="thread.ThreadNewScore" project="Project" 
+    file="/Project/src/thread/ThreadNewScore.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="142" width="184" x="7697" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -702,7 +702,7 @@
   </class>  
   <class id="83" language="java" name="model.MovingEntity" project="Project" file="/Project/src/model/MovingEntity.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="285" width="332" x="9288" y="845"/>    
+    <position height="285" width="332" x="10007" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -711,7 +711,7 @@
   </class>  
   <class id="84" language="java" name="ui.GameScreen" project="Project" file="/Project/src/ui/GameScreen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="232" width="253" x="7202" y="-147"/>    
+    <position height="232" width="253" x="7921" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -720,7 +720,7 @@
   </class>  
   <class id="85" language="java" name="model.enemy.EnemyBoss" project="Project" 
     file="/Project/src/model/enemy/EnemyBoss.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="203" x="9043" y="1929"/>    
+    <position height="124" width="203" x="9762" y="2030"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -729,12 +729,12 @@
   </class>  
   <package id="86" language="java" name="model.tileObject" project="Project" file="/Project/src/model/tileObject" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="55" width="140" x="7495" y="-147"/>    
+    <position height="55" width="140" x="8214" y="-100"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <class id="87" language="java" name="model.tileObject.tower.TowerBomb" project="Project" 
     file="/Project/src/model/tileObject/tower/TowerBomb.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="250" width="300" x="8420" y="1513"/>    
+    <position height="250" width="300" x="9139" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -743,7 +743,7 @@
   </class>  
   <class id="88" language="java" name="ui.research.IronResearch" project="Project" 
     file="/Project/src/ui/research/IronResearch.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="180" x="10815" y="845"/>    
+    <position height="106" width="180" x="11534" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -752,7 +752,7 @@
   </class>  
   <class id="89" language="java" name="model.TileSpawner" project="Project" file="/Project/src/model/TileSpawner.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="184" x="5859" y="845"/>    
+    <position height="106" width="184" x="3631" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -761,7 +761,7 @@
   </class>  
   <class id="90" language="java" name="logic.CollisionUtility" project="Project" 
     file="/Project/src/logic/CollisionUtility.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="160" width="269" x="7675" y="-147"/>    
+    <position height="160" width="269" x="8394" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -770,7 +770,7 @@
   </class>  
   <interface id="91" language="java" name="ui.IStoppable" project="Project" file="/Project/src/ui/IStoppable.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="88" width="120" x="7581" y="845"/>    
+    <position height="88" width="120" x="8300" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -779,7 +779,7 @@
   </interface>  
   <class id="92" language="java" name="ui.research.ResearchItem" project="Project" 
     file="/Project/src/ui/research/ResearchItem.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="177" width="213" x="10320" y="-147"/>    
+    <position height="177" width="213" x="11039" y="-100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -788,12 +788,12 @@
   </class>  
   <package id="93" language="java" name="model.enemy" project="Project" file="/Project/src/model/enemy" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="55" width="122" x="7984" y="-147"/>    
+    <position height="55" width="122" x="8703" y="-100"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <class id="94" language="java" name="model.tileObject.storage.StorageStone" project="Project" 
     file="/Project/src/model/tileObject/storage/StorageStone.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="232" width="184" x="5600" y="1513"/>    
+    <position height="232" width="184" x="6319" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -802,12 +802,12 @@
   </class>  
   <package id="95" language="java" name="model.tileObject.generator" project="Project" 
     file="/Project/src/model/tileObject/generator" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="55" width="214" x="8146" y="-147"/>    
+    <position height="55" width="214" x="8865" y="-100"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <class id="96" language="java" name="model.tileObject.tower.Tower" project="Project" 
     file="/Project/src/model/tileObject/tower/Tower.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="195" width="301" x="7400" y="1170"/>    
+    <position height="195" width="301" x="8119" y="1199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -816,7 +816,7 @@
   </class>  
   <class id="97" language="java" name="model.tileObject.generator.GeneratorDiamond" project="Project" 
     file="/Project/src/model/tileObject/generator/GeneratorDiamond.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="250" width="184" x="6496" y="1513"/>    
+    <position height="250" width="184" x="7215" y="1542"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -825,7 +825,7 @@
   </class>  
   <class id="98" language="java" name="ui.research.BuildingResearch" project="Project" 
     file="/Project/src/ui/research/BuildingResearch.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="180" x="11035" y="845"/>    
+    <position height="106" width="180" x="11754" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -833,238 +833,238 @@
     </display>  
   </class>  
   <generalization id="99">    
-    <end type="SOURCE" refId="83"/>    
-    <end type="TARGET" refId="28"/>  
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="27"/>  
   </generalization>  
   <realization id="100">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="18"/>  
+    <end type="SOURCE" refId="79"/>    
+    <end type="TARGET" refId="64"/>  
   </realization>  
   <generalization id="101">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="38"/>  
+    <end type="SOURCE" refId="51"/>    
+    <end type="TARGET" refId="96"/>  
   </generalization>  
   <generalization id="102">    
-    <end type="SOURCE" refId="45"/>    
-    <end type="TARGET" refId="38"/>  
+    <end type="SOURCE" refId="62"/>    
+    <end type="TARGET" refId="55"/>  
   </generalization>  
   <generalization id="103">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="33"/>  
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="32"/>  
   </generalization>  
   <generalization id="104">    
-    <end type="SOURCE" refId="57"/>    
+    <end type="SOURCE" refId="72"/>    
     <end type="TARGET" refId="38"/>  
   </generalization>  
   <realization id="105">    
-    <end type="SOURCE" refId="81"/>    
-    <end type="TARGET" refId="66"/>  
+    <bendpoint x="8731" y="1199"/>    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="64"/>  
   </realization>  
-  <generalization id="106">    
-    <end type="SOURCE" refId="56"/>    
-    <end type="TARGET" refId="81"/>  
-  </generalization>  
+  <realization id="106">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="21"/>  
+  </realization>  
   <generalization id="107">    
-    <end type="SOURCE" refId="63"/>    
-    <end type="TARGET" refId="57"/>  
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="92"/>  
   </generalization>  
   <generalization id="108">    
-    <end type="SOURCE" refId="71"/>    
-    <end type="TARGET" refId="30"/>  
+    <end type="SOURCE" refId="45"/>    
+    <end type="TARGET" refId="55"/>  
   </generalization>  
   <generalization id="109">    
-    <end type="SOURCE" refId="74"/>    
-    <end type="TARGET" refId="38"/>  
-  </generalization>  
-  <generalization id="110">    
-    <end type="SOURCE" refId="94"/>    
-    <end type="TARGET" refId="33"/>  
-  </generalization>  
-  <generalization id="111">    
-    <end type="SOURCE" refId="96"/>    
-    <end type="TARGET" refId="38"/>  
-  </generalization>  
-  <generalization id="112">    
-    <end type="SOURCE" refId="61"/>    
-    <end type="TARGET" refId="96"/>  
-  </generalization>  
-  <generalization id="113">    
-    <end type="SOURCE" refId="34"/>    
-    <end type="TARGET" refId="81"/>  
-  </generalization>  
-  <generalization id="114">    
-    <end type="SOURCE" refId="40"/>    
-    <end type="TARGET" refId="33"/>  
-  </generalization>  
-  <generalization id="115">    
-    <end type="SOURCE" refId="69"/>    
-    <end type="TARGET" refId="38"/>  
-  </generalization>  
-  <generalization id="116">    
-    <end type="SOURCE" refId="73"/>    
-    <end type="TARGET" refId="96"/>  
-  </generalization>  
-  <generalization id="117">    
-    <end type="SOURCE" refId="87"/>    
-    <end type="TARGET" refId="96"/>  
-  </generalization>  
-  <realization id="118">    
-    <end type="SOURCE" refId="44"/>    
-    <end type="TARGET" refId="91"/>  
-  </realization>  
-  <generalization id="119">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="83"/>  
-  </generalization>  
-  <generalization id="120">    
-    <end type="SOURCE" refId="67"/>    
-    <end type="TARGET" refId="92"/>  
-  </generalization>  
-  <generalization id="121">    
-    <end type="SOURCE" refId="42"/>    
-    <end type="TARGET" refId="34"/>  
-  </generalization>  
-  <generalization id="122">    
-    <end type="SOURCE" refId="35"/>    
-    <end type="TARGET" refId="92"/>  
-  </generalization>  
-  <realization id="123">    
-    <end type="SOURCE" refId="83"/>    
-    <end type="TARGET" refId="29"/>  
-  </realization>  
-  <generalization id="124">    
-    <end type="SOURCE" refId="60"/>    
-    <end type="TARGET" refId="33"/>  
-  </generalization>  
-  <generalization id="125">    
-    <end type="SOURCE" refId="53"/>    
-    <end type="TARGET" refId="96"/>  
-  </generalization>  
-  <generalization id="126">    
-    <end type="SOURCE" refId="97"/>    
-    <end type="TARGET" refId="57"/>  
-  </generalization>  
-  <generalization id="127">    
-    <end type="SOURCE" refId="89"/>    
-    <end type="TARGET" refId="24"/>  
-  </generalization>  
-  <generalization id="128">    
-    <end type="SOURCE" refId="33"/>    
-    <end type="TARGET" refId="38"/>  
-  </generalization>  
-  <realization id="129">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="18"/>  
-  </realization>  
-  <generalization id="130">    
-    <end type="SOURCE" refId="62"/>    
-    <end type="TARGET" refId="30"/>  
-  </generalization>  
-  <generalization id="131">    
     <end type="SOURCE" refId="98"/>    
     <end type="TARGET" refId="92"/>  
   </generalization>  
-  <generalization id="132">    
-    <end type="SOURCE" refId="81"/>    
-    <end type="TARGET" refId="83"/>  
-  </generalization>  
-  <generalization id="133">    
-    <end type="SOURCE" refId="41"/>    
-    <end type="TARGET" refId="96"/>  
-  </generalization>  
-  <generalization id="134">    
-    <bendpoint x="8769" y="1170"/>    
-    <end type="SOURCE" refId="66"/>    
-    <end type="TARGET" refId="22"/>  
-  </generalization>  
-  <generalization id="135">    
-    <end type="SOURCE" refId="72"/>    
-    <end type="TARGET" refId="92"/>  
-  </generalization>  
-  <generalization id="136">    
-    <end type="SOURCE" refId="79"/>    
+  <generalization id="110">    
+    <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="38"/>  
   </generalization>  
-  <generalization id="137">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="24"/>  
+  <generalization id="111">    
+    <end type="SOURCE" refId="70"/>    
+    <end type="TARGET" refId="92"/>  
   </generalization>  
-  <generalization id="138">    
+  <generalization id="112">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <generalization id="113">    
+    <bendpoint x="9488" y="1199"/>    
+    <end type="SOURCE" refId="64"/>    
+    <end type="TARGET" refId="21"/>  
+  </generalization>  
+  <generalization id="114">    
+    <end type="SOURCE" refId="97"/>    
+    <end type="TARGET" refId="55"/>  
+  </generalization>  
+  <generalization id="115">    
+    <end type="SOURCE" refId="79"/>    
+    <end type="TARGET" refId="83"/>  
+  </generalization>  
+  <generalization id="116">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="79"/>  
+  </generalization>  
+  <generalization id="117">    
+    <end type="SOURCE" refId="83"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <generalization id="118">    
+    <end type="SOURCE" refId="87"/>    
+    <end type="TARGET" refId="96"/>  
+  </generalization>  
+  <generalization id="119">    
+    <end type="SOURCE" refId="58"/>    
+    <end type="TARGET" refId="32"/>  
+  </generalization>  
+  <generalization id="120">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="96"/>  
+  </generalization>  
+  <generalization id="121">    
     <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="24"/>  
+    <end type="TARGET" refId="29"/>  
   </generalization>  
-  <realization id="139">    
-    <bendpoint x="8012" y="1170"/>    
-    <end type="SOURCE" refId="38"/>    
-    <end type="TARGET" refId="66"/>  
-  </realization>  
-  <generalization id="140">    
+  <generalization id="122">    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <generalization id="123">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="38"/>  
   </generalization>  
-  <generalization id="141">    
-    <end type="SOURCE" refId="39"/>    
-    <end type="TARGET" refId="24"/>  
+  <generalization id="124">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="83"/>  
   </generalization>  
-  <generalization id="142">    
-    <end type="SOURCE" refId="32"/>    
-    <end type="TARGET" refId="30"/>  
+  <generalization id="125">    
+    <end type="SOURCE" refId="67"/>    
+    <end type="TARGET" refId="38"/>  
   </generalization>  
-  <generalization id="143">    
-    <end type="SOURCE" refId="10"/>    
+  <generalization id="126">    
+    <end type="SOURCE" refId="54"/>    
+    <end type="TARGET" refId="79"/>  
+  </generalization>  
+  <generalization id="127">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="60"/>  
+  </generalization>  
+  <realization id="128">    
+    <end type="SOURCE" refId="83"/>    
+    <end type="TARGET" refId="28"/>  
+  </realization>  
+  <generalization id="129">    
+    <end type="SOURCE" refId="53"/>    
+    <end type="TARGET" refId="29"/>  
+  </generalization>  
+  <generalization id="130">    
+    <end type="SOURCE" refId="59"/>    
     <end type="TARGET" refId="96"/>  
   </generalization>  
-  <generalization id="144">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="62"/>  
+  <generalization id="131">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="96"/>  
   </generalization>  
-  <realization id="145">    
-    <end type="SOURCE" refId="15"/>    
+  <generalization id="132">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <generalization id="133">    
+    <end type="SOURCE" refId="60"/>    
+    <end type="TARGET" refId="29"/>  
+  </generalization>  
+  <generalization id="134">    
+    <end type="SOURCE" refId="55"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <realization id="135">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <generalization id="136">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <generalization id="137">    
+    <end type="SOURCE" refId="65"/>    
+    <end type="TARGET" refId="92"/>  
+  </generalization>  
+  <generalization id="138">    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <realization id="139">    
+    <end type="SOURCE" refId="43"/>    
     <end type="TARGET" refId="91"/>  
   </realization>  
-  <realization id="146">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="22"/>  
+  <generalization id="140">    
+    <end type="SOURCE" refId="76"/>    
+    <end type="TARGET" refId="29"/>  
+  </generalization>  
+  <generalization id="141">    
+    <end type="SOURCE" refId="89"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <realization id="142">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="91"/>  
   </realization>  
+  <generalization id="143">    
+    <end type="SOURCE" refId="69"/>    
+    <end type="TARGET" refId="29"/>  
+  </generalization>  
+  <generalization id="144">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="32"/>  
+  </generalization>  
+  <realization id="145">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <generalization id="146">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="92"/>  
+  </generalization>  
   <generalization id="147">    
-    <end type="SOURCE" refId="64"/>    
-    <end type="TARGET" refId="57"/>  
+    <end type="SOURCE" refId="85"/>    
+    <end type="TARGET" refId="33"/>  
   </generalization>  
   <generalization id="148">    
-    <end type="SOURCE" refId="47"/>    
-    <end type="TARGET" refId="57"/>  
+    <end type="SOURCE" refId="61"/>    
+    <end type="TARGET" refId="55"/>  
   </generalization>  
   <generalization id="149">    
-    <end type="SOURCE" refId="31"/>    
-    <end type="TARGET" refId="92"/>  
+    <end type="SOURCE" refId="71"/>    
+    <end type="TARGET" refId="96"/>  
   </generalization>  
   <generalization id="150">    
-    <end type="SOURCE" refId="78"/>    
-    <end type="TARGET" refId="30"/>  
+    <end type="SOURCE" refId="94"/>    
+    <end type="TARGET" refId="32"/>  
   </generalization>  
   <generalization id="151">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="92"/>  
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="38"/>  
   </generalization>  
   <generalization id="152">    
-    <end type="SOURCE" refId="85"/>    
-    <end type="TARGET" refId="34"/>  
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="33"/>  
   </generalization>  
   <generalization id="153">    
-    <end type="SOURCE" refId="88"/>    
-    <end type="TARGET" refId="92"/>  
+    <end type="SOURCE" refId="96"/>    
+    <end type="TARGET" refId="38"/>  
   </generalization>  
   <generalization id="154">    
-    <end type="SOURCE" refId="38"/>    
-    <end type="TARGET" refId="28"/>  
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="92"/>  
   </generalization>  
   <generalization id="155">    
-    <end type="SOURCE" refId="55"/>    
-    <end type="TARGET" refId="30"/>  
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="29"/>  
   </generalization>  
   <generalization id="156">    
-    <end type="SOURCE" refId="51"/>    
-    <end type="TARGET" refId="38"/>  
+    <end type="SOURCE" refId="88"/>    
+    <end type="TARGET" refId="92"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
