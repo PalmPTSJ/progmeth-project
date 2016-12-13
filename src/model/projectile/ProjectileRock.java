@@ -5,17 +5,17 @@ import model.Entity;
 import model.RenderableHolder;
 
 public class ProjectileRock extends Projectile {
-	private static final double width = 30;
-	private static final double height = 30;
-	private static final double speed = 5;
-	private static final int damage = 30;
+	private static final double WIDTH = 30;
+	private static final double HEIGHT = 30;
+	private static final double SPEED = 5;
+	private static final int DAMAGE = 30;
 
 	public ProjectileRock(double x, double y, double targetX, double targetY) {
-		super(x, y, width, height, speed, damage, targetX, targetY);
+		super(x, y, WIDTH, HEIGHT, SPEED, DAMAGE, targetX, targetY);
 	}
 
 	public ProjectileRock(double x, double y, Entity target) {
-		super(x, y, width, height, speed, damage, target);
+		super(x, y, WIDTH, HEIGHT, SPEED, DAMAGE, target);
 	}
 
 	@Override
