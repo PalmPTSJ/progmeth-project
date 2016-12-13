@@ -1,8 +1,8 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 import javafx.scene.image.Image;
 import logic.IRenderable;
@@ -10,6 +10,7 @@ import logic.IRenderable;
 public class RenderableHolder {
 	private List<IRenderable> entities;
 	private Comparator<IRenderable> comparator;
+	
 	public static Image volume_img;
 	public static Image tile_ground_img;
 	public static Image tile_stone_img;
@@ -64,7 +65,7 @@ public class RenderableHolder {
 	public static RenderableHolder instance;
 
 	public RenderableHolder() {
-		entities = new CopyOnWriteArrayList<>();
+		entities = new ArrayList<>();
 		comparator = new Comparator<IRenderable>() {
 			public int compare(IRenderable a, IRenderable b) {
 				return Integer.compare(a.getZ(), b.getZ());
@@ -145,15 +146,15 @@ public class RenderableHolder {
 
 	}
 
-	public synchronized void remove(int index) {
+	public void remove(int index) {
 		instance.entities.remove(index);
 	}
 
-	public synchronized static RenderableHolder getInstance() {
+	public static RenderableHolder getInstance() {
 		return instance;
 	}
 
-	public synchronized List<IRenderable> getEntities() {
+	public List<IRenderable> getEntities() {
 		return entities;
 	}
 }

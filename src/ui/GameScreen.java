@@ -23,15 +23,17 @@ public class GameScreen extends Canvas {
 	}
 	
 	public void paintComponents(){
-		GraphicsContext gc = this.getGraphicsContext2D();
-		drawBackground(gc);
-		drawEntities(gc);
-		if(BuyManager.instance.isBuyMode){
-			drawOverlay(gc);
-			drawBuyingItem(gc);
-		}
-		if(GameManager.instance.isGamePause()) {
-			drawPause(gc);
+		synchronized(RenderableHolder.getInstance().getEntities()) {
+			GraphicsContext gc = this.getGraphicsContext2D();
+			drawBackground(gc);
+			drawEntities(gc);
+			if(BuyManager.instance.isBuyMode){
+				drawOverlay(gc);
+				drawBuyingItem(gc);
+			}
+			if(GameManager.instance.isGamePause()) {
+				drawPause(gc);
+			}
 		}
 	}
 	

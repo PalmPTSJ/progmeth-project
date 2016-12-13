@@ -5,17 +5,21 @@ import java.lang.reflect.Method;
 import java.util.Random;
 
 import application.Main;
+import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
 import model.*;
+import thread.ThreadGameManager;
 import thread.ThreadNewScore;
 import ui.MainPane;
 
 public class GameManager {
 	public static GameManager instance;
 	public static Random globalRNG = new Random();
-
+	
+	private ThreadGameManager thread;
+	
 	private int score = 0;
 	private Player player;
 	private int fps = 0;
@@ -42,20 +46,22 @@ public class GameManager {
 	}
 
 	public void update() {
-		if (isGameEnded()) {
-			return;
+		synchronized(RenderableHolder.getInstance().getEntities()) {
+			if (isGameEnded()) {
+				return;
+			}
+			if (!isPause()) {
+				updateOverlay();
+				updateEntity();
+				CollisionUtility.checkCollision();
+				removeDestroyEntity();
+				EnemyManager.instance.update();
+			}
+			if (isGameEnded()) {
+				onGameEnded();
+			}
+			InputUtility.instance.reset();
 		}
-		if (!isPause()) {
-			updateOverlay();
-			updateEntity();
-			CollisionUtility.checkCollision();
-			removeDestroyEntity();
-			EnemyManager.instance.update();
-		}
-		if (isGameEnded()) {
-			onGameEnded();
-		}
-		InputUtility.instance.reset();
 	}
 
 	private boolean isPause() {
@@ -70,21 +76,24 @@ public class GameManager {
 	}
 
 	private void onGameEnded() {
-		Alert alert = new Alert(AlertType.INFORMATION);
-		if (rocketLaunched) {
-			alert.setContentText("You win");
-			alert.setHeaderText("Congratulations!");
-		} else {
-			alert.setContentText("Game Over");
-			alert.setHeaderText("Try again later.");
-		}
-		alert.show();
+		Platform.runLater(()->{
+			Alert alert = new Alert(AlertType.INFORMATION);
+			if (rocketLaunched) {
+				alert.setContentText("You win");
+				alert.setHeaderText("Congratulations!");
+			} else {
+				alert.setContentText("Game Over");
+				alert.setHeaderText("Try again later.");
+			}
+			alert.show();
+		});
 		new ThreadNewScore(MainPane.getName(), score).start();
 		Main.changeSceneToMain();
 	}
 
 	private void updateEntity() {
-		for (IRenderable ir : RenderableHolder.getInstance().getEntities()) {
+		for(int i = 0;i < RenderableHolder.getInstance().getEntities().size();i++) {
+			IRenderable ir = RenderableHolder.getInstance().getEntities().get(i);
 			if (ir instanceof Entity) {
 				((Entity) ir).update();
 			}
@@ -178,5 +187,14 @@ public class GameManager {
 
 	public void setFps(int fps) {
 		this.fps = fps;
+	}
+	
+	public void startUpdateThread() {
+		thread = new ThreadGameManager();
+		thread.start();
+	}
+	
+	public void stopUpdateThread() {
+		thread.interrupt();
 	}
 }
