@@ -27,7 +27,7 @@ public class ProjectileBomb extends Projectile {
 
 	@Override
 	public void onDestroy() {
-		for (IRenderable ir : RenderableHolder.getInstance().getEntities()) {
+		for (IRenderable ir : RenderableHolder.instance.getEntities()) {
 			if (ir instanceof Entity) {
 				if (ir instanceof Enemy && CollisionUtility.findDistance(this, (ICollidable) ir) <= explosiveRange) {
 					((Entity) ir).reduceHP(explosiveDamage);

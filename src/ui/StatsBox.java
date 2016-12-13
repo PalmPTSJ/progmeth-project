@@ -28,6 +28,6 @@ public class StatsBox extends VBox {
 				+ (EnemyManager.instance.getRemainingTime() / 60) + " sec " + "("
 				+ EnemyManager.instance.getNextWaveName() + ")");
 		int tileCount = (TileManager.tileCountX + 2) * (TileManager.tileCountY + 2);
-		entityCount.setText("Entity Count : " + (RenderableHolder.getInstance().getEntities().size() - tileCount));
+		entityCount.setText("Entity Count : " + (RenderableHolder.instance.getEntities().size() - tileCount));
 	}
 }

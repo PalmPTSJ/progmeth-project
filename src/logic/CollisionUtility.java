@@ -18,7 +18,7 @@ public class CollisionUtility {
 	}
 
 	public static boolean isBlocked(ICollidable object) {
-		for (IRenderable ir : RenderableHolder.getInstance().getEntities()) {
+		for (IRenderable ir : RenderableHolder.instance.getEntities()) {
 			if (ir instanceof IBlockable && ir != object) {
 				if (isCollide((ICollidable) ir, object)) {
 					return true;
@@ -29,13 +29,13 @@ public class CollisionUtility {
 	}
 
 	public static void checkCollision() {
-		int n = RenderableHolder.getInstance().getEntities().size();
+		int n = RenderableHolder.instance.getEntities().size();
 		for (int i = 0; i < n; i++) {
-			IRenderable e1 = RenderableHolder.getInstance().getEntities().get(i);
+			IRenderable e1 = RenderableHolder.instance.getEntities().get(i);
 			if (!(e1 instanceof ICollidable))
 				continue;
 			for (int j = i + 1; j < n; j++) {
-				IRenderable e2 = RenderableHolder.getInstance().getEntities().get(j);
+				IRenderable e2 = RenderableHolder.instance.getEntities().get(j);
 				if (e2 instanceof ICollidable) {
 					ICollidable o1 = (ICollidable) e1;
 					ICollidable o2 = (ICollidable) e2;
