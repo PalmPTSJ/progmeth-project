@@ -36,37 +36,33 @@ public class EnemyManager {
 
 	public int getRemainingTime() {
 		if (GameManager.instance.getRocketCount() > 0)
-			return rocketWaveDelay-timer;
+			return rocketWaveDelay - timer;
 		return waveDelay - timer;
 	}
 
 	public String getNextWaveName() {
 		if (GameManager.instance.getRocketCount() > 0)
 			return "Rocket";
-		else if (isBigWave(wave+1))
+		else if (isBigWave(wave + 1))
 			return "Big";
 		else if (isBossWave(wave + 1))
 			return "Boss";
 		else
 			return "Normal";
 	}
-	private boolean isBigWave(int wave){
+
+	private boolean isBigWave(int wave) {
 		return wave % 5 == 4;
 	}
-	private boolean isBossWave(int wave){
+
+	private boolean isBossWave(int wave) {
 		return wave % 5 == 0;
 	}
-	private void spawn() {
-		ArrayList<Tile> spawnableTile = new ArrayList<>();
-		for (Tile tile : TileManager.instance.tileList) {
-			if (tile instanceof TileSpawner) {
-				spawnableTile.add(tile);
-			}
-		}
-		// number of each type of enemy
-		int basicCount, bossCount;
-		int level = 0 + wave;
 
+	private void spawn() {
+		// calculate number of each type of enemy
+		int basicCount, bossCount;
+		int level = wave;
 		if (GameManager.instance.getRocketCount() > 0) { // rocket wave
 			level = 75;
 			basicCount = 2;
@@ -81,7 +77,16 @@ public class EnemyManager {
 			basicCount = GameManager.globalRNG.nextInt(3) + 3; // 3 - 5
 			bossCount = 1;
 		}
+		spawnEnemiesOnSpawner(basicCount, bossCount, level);
+	}
 
+	private void spawnEnemiesOnSpawner(int basicCount, int bossCount, int level) {
+		ArrayList<Tile> spawnableTile = new ArrayList<>();
+		for (Tile tile : TileManager.instance.tileList) {
+			if (tile instanceof TileSpawner) {
+				spawnableTile.add(tile);
+			}
+		}
 		Collections.shuffle(spawnableTile, GameManager.globalRNG);
 		for (Tile tile : spawnableTile) {
 			Enemy enemy;
@@ -96,7 +101,7 @@ public class EnemyManager {
 
 			GameManager.addEntity(enemy);
 
-			// if place on blocking entity then destroy it
+			// if this enemy collide with other when created then destroy it
 			if (CollisionUtility.isBlocked(enemy)) {
 				enemy.destroy();
 			}
