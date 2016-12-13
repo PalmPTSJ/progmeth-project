@@ -13,34 +13,27 @@ import ui.MainPane;
 
 public class GameManager {
 	public static GameManager instance;
-	
-	public int score = 0;
-	public Player player;
-	public int fps;
 	public static Random globalRNG = new Random();
 
+	private int score = 0;
+	private Player player;
+	private int fps = 0;
 	private boolean isGamePause = false;
-	
-	private boolean rocketLaunched;
-	private int rocketCount;
+	private boolean rocketLaunched = false;
+	private int rocketCount = 0;
 
 	public GameManager() {
 		// initialize singleton
 		RenderableHolder.instance = new RenderableHolder();
-		
+
 		player = new Player(10, 10);
 		addEntity(player);
-		
+
 		BuyManager.instance = new BuyManager();
 		ResourceManager.instance = new ResourceManager();
 		TileManager.instance = new TileManager();
 		TileManager.instance.generateMap(globalRNG.nextInt(99999));
 		EnemyManager.instance = new EnemyManager();
-
-		rocketLaunched = false;
-		rocketCount = 0;
-		
-		isGamePause = false;
 	}
 
 	public static void addEntity(IRenderable entity) {
@@ -48,30 +41,33 @@ public class GameManager {
 	}
 
 	public void update() {
-		if (isGameEnded()){
+		if (isGameEnded()) {
 			return;
 		}
-		if(!isPause()){
+		if (!isPause()) {
 			updateOverlay();
 			updateEntity();
 			CollisionUtility.checkCollision();
 			removeDestroyEntity();
 			EnemyManager.instance.update();
 		}
-		if(isGameEnded()){
+		if (isGameEnded()) {
 			onGameEnded();
 		}
 		InputUtility.instance.reset();
 	}
-	private boolean isPause(){
-		if(InputUtility.instance.isKeyTriggered(KeyCode.P)){
-			isGamePause=!isGamePause;
+
+	private boolean isPause() {
+		if (InputUtility.instance.isKeyTriggered(KeyCode.P)) {
+			isGamePause = !isGamePause;
 		}
 		return isGamePause;
 	}
-	private boolean isGameEnded(){
+
+	private boolean isGameEnded() {
 		return player.isDestroy() || rocketLaunched;
 	}
+
 	private void onGameEnded() {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		if (rocketLaunched) {
@@ -82,7 +78,7 @@ public class GameManager {
 			alert.setHeaderText("Try again later.");
 		}
 		alert.show();
-		new ThreadNewScore(MainPane.getName(),score).start();
+		new ThreadNewScore(MainPane.getName(), score).start();
 		Main.changeSceneToMain();
 	}
 
@@ -95,10 +91,10 @@ public class GameManager {
 	}
 
 	private void updateOverlay() {
-		if (!BuyManager.instance.buyMode)
+		if (!BuyManager.instance.isBuyMode)
 			return;
-		if (InputUtility.instance.isMouseRightClicked()){
-			BuyManager.instance.buyMode=false;
+		if (InputUtility.instance.isMouseRightClicked()) {
+			BuyManager.instance.isBuyMode = false;
 			return;
 		}
 		if (InputUtility.instance.isMouseLeftClicked()) {
@@ -115,7 +111,7 @@ public class GameManager {
 					BuyManager.instance.currentObjectClass.getDeclaredConstructor(Tile.class)
 							.newInstance(TileManager.instance.tileArray[x][y]);
 					if (!InputUtility.instance.isKeyDown(KeyCode.SHIFT))
-						BuyManager.instance.buyMode = false;
+						BuyManager.instance.isBuyMode = false;
 				}
 			} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
 					| NoSuchMethodException | SecurityException | InstantiationException e) {
@@ -135,14 +131,36 @@ public class GameManager {
 	public void setRocketLaunched(boolean launched) {
 		this.rocketLaunched = true;
 	}
+
 	public int getRocketCount() {
 		return rocketCount;
 	}
+
 	public void setRocketCount(int rocketCount) {
 		this.rocketCount = rocketCount;
 	}
-	
+
 	public boolean isGamePause() {
 		return isGamePause;
+	}
+
+	public Player getPlayer() {
+		return player;
+	}
+
+	public void increaseScore(int amount) {
+		this.score += amount;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public int getFps() {
+		return fps;
+	}
+
+	public void setFps(int fps) {
+		this.fps = fps;
 	}
 }

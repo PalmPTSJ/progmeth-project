@@ -17,7 +17,7 @@ public class InputUtility {
 	private boolean mouseLeftTriggered, mouseLeftDown;
 	private boolean mouseRightTriggered, mouseRightDown;
 	private boolean mouseOnScreen;
-	
+
 	public InputUtility() {
 		instance = this;
 		mouseLeftTriggered = mouseLeftDown = false;
@@ -26,32 +26,30 @@ public class InputUtility {
 
 	public void setEventHandler(Scene scene) {
 		scene.setOnKeyPressed((KeyEvent event) -> {
-			if(!keyPressed.contains(event.getCode()))
+			if (!keyPressed.contains(event.getCode()))
 				keyPressed.add(event.getCode());
-			if(!keyTriggered.contains(event.getCode()))
+			if (!keyTriggered.contains(event.getCode()))
 				keyTriggered.add(event.getCode());
 		});
 		scene.setOnKeyReleased((KeyEvent event) -> {
-			
+
 			keyPressed.remove(event.getCode());
 		});
-		
+
 		scene.setOnMousePressed((MouseEvent event) -> {
-			if(event.getButton() == MouseButton.PRIMARY) {
+			if (event.getButton() == MouseButton.PRIMARY) {
 				mouseLeftDown = true;
 				mouseLeftTriggered = true;
-			}
-			else if(event.getButton() == MouseButton.SECONDARY) {
+			} else if (event.getButton() == MouseButton.SECONDARY) {
 				mouseRightDown = true;
 				mouseRightTriggered = true;
 			}
 		});
 
 		scene.setOnMouseReleased((MouseEvent event) -> {
-			if(event.getButton() == MouseButton.PRIMARY) {
+			if (event.getButton() == MouseButton.PRIMARY) {
 				mouseLeftDown = false;
-			}
-			else if(event.getButton() == MouseButton.SECONDARY) {
+			} else if (event.getButton() == MouseButton.SECONDARY) {
 				mouseRightDown = false;
 			}
 		});
@@ -80,19 +78,40 @@ public class InputUtility {
 		mouseRightTriggered = false;
 		keyTriggered.clear();
 	}
-	
-	public boolean isMouseLeftClicked() { return mouseLeftTriggered; }
-	public boolean isMouseLeftDown() { return mouseLeftDown; }
-	public boolean isMouseRightClicked() { return mouseRightTriggered; }
-	public boolean isMouseRightDown() { return mouseRightDown; }
-	public double getMouseX() { return mouseX; }
-	public double getMouseY() { return mouseY; }
-	
-	public boolean isKeyDown(KeyCode a) { return keyPressed.contains(a); }
-	public boolean isKeyTriggered(KeyCode a) { return keyTriggered.contains(a); }
-	
-	
-	public boolean isMouseOnScreen(){
+
+	public boolean isMouseLeftClicked() {
+		return mouseLeftTriggered;
+	}
+
+	public boolean isMouseLeftDown() {
+		return mouseLeftDown;
+	}
+
+	public boolean isMouseRightClicked() {
+		return mouseRightTriggered;
+	}
+
+	public boolean isMouseRightDown() {
+		return mouseRightDown;
+	}
+
+	public double getMouseX() {
+		return mouseX;
+	}
+
+	public double getMouseY() {
+		return mouseY;
+	}
+
+	public boolean isKeyDown(KeyCode a) {
+		return keyPressed.contains(a);
+	}
+
+	public boolean isKeyTriggered(KeyCode a) {
+		return keyTriggered.contains(a);
+	}
+
+	public boolean isMouseOnScreen() {
 		return mouseOnScreen;
 	}
 }

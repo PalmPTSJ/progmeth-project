@@ -20,63 +20,65 @@ import thread.ThreadShowHighscore;
 public class MainPane extends VBox implements IStoppable {
 	private static String playerName = "ProgMeth";
 	Thread joiner;
+
 	public MainPane() {
-		Button start=new Button("Start");
-		
+		Button start = new Button("Start");
 		Label nameLabel = new Label("Your name");
-		nameLabel.getStyleClass().setAll("h1");
-		nameLabel.setPadding(new Insets(20,130,10,0));
-		
-		TextField name=new TextField();
-		Button exit=new Button("Exit");
+		TextField name = new TextField(playerName);
+		Button exit = new Button("Exit");
 		Button highscore = new Button("High score");
-		VolumePane volume=new VolumePane();
-		getChildren().addAll(nameLabel,name,start,exit,highscore,volume);
-		
+		VolumePane volume = new VolumePane();
+		getChildren().addAll(nameLabel, name, start, exit, highscore, volume);
+
 		setAlignment(Pos.BOTTOM_RIGHT);
-		setPrefSize(Main.screenWidth+300, Main.screenHeight);
-		
-		setBackground(new Background(new BackgroundImage(new Image(ClassLoader.getSystemResource("img/ui/background.png").toString()), null, null, null,null)));
-		
-		name.setText(playerName);
+		setPrefSize(Main.screenWidth + 300, Main.screenHeight);
+
+		Image img = new Image(ClassLoader.getSystemResource("img/ui/background.png").toString());
+		BackgroundImage bgi = new BackgroundImage(img, null, null, null, null);
+		Background bg = new Background(bgi);
+		setBackground(bg);
+
+		nameLabel.getStyleClass().setAll("h1");
+		nameLabel.setPadding(new Insets(20, 130, 10, 0));
+
 		name.setMaxWidth(200);
-		setMargin(name, new Insets(0,100,20,0));
-		
-		start.setOnAction(event->{
+		setMargin(name, new Insets(0, 100, 20, 0));
+
+		start.setOnAction(event -> {
 			SoundManager.setVolume(volume.getVolume());
 			try {
 				setName(name.getText());
 			} catch (InvalidNameException e) {
-				Alert alert=new Alert(AlertType.ERROR);
+				Alert alert = new Alert(AlertType.ERROR);
 				alert.setContentText(e.getMessage());
 				alert.show();
 				return;
 			}
 			Main.changeSceneToGame();
 		});
-		start.getStyleClass().setAll("btn","btn-lg","btn-success");
+		start.getStyleClass().setAll("btn", "btn-lg", "btn-success");
 		start.setAlignment(Pos.CENTER);
 		start.setPrefSize(200, 80);
 		start.setStyle("-fx-cursor: hand;");
-		setMargin(start, new Insets(20,100,20,0));
-		
-		exit.setOnAction(e->{
+		setMargin(start, new Insets(20, 100, 20, 0));
+
+		exit.setOnAction(e -> {
 			Platform.exit();
 		});
-		exit.getStyleClass().setAll("btn","btn-lg","btn-danger");
+		exit.getStyleClass().setAll("btn", "btn-lg", "btn-danger");
 		exit.setAlignment(Pos.CENTER);
 		exit.setPrefSize(200, 80);
 		exit.setStyle("-fx-cursor: hand;");
-		setMargin(exit, new Insets(20,100,20,0));
-		
-		highscore.setOnAction(e->{
+		setMargin(exit, new Insets(20, 100, 20, 0));
+
+		highscore.setOnAction(e -> {
 			highscore.setText("Loading");
-			Thread t=new ThreadShowHighscore();
+			Thread t = new ThreadShowHighscore();
 			t.start();
-			joiner=new Thread(()->{
+			joiner = new Thread(() -> {
 				try {
 					t.join();
-					Platform.runLater(()->{
+					Platform.runLater(() -> {
 						highscore.setText("High score");
 					});
 				} catch (InterruptedException e1) {
@@ -85,23 +87,25 @@ public class MainPane extends VBox implements IStoppable {
 			});
 			joiner.start();
 		});
-		highscore.getStyleClass().setAll("btn","btn-lg","btn-info");
+		highscore.getStyleClass().setAll("btn", "btn-lg", "btn-info");
 		highscore.setAlignment(Pos.CENTER);
 		highscore.setPrefSize(200, 80);
 		highscore.setStyle("-fx-cursor: hand;");
-		setMargin(highscore, new Insets(20,100,20,0));
+		setMargin(highscore, new Insets(20, 100, 20, 0));
 	}
 
 	public void stop() {
-		if(joiner!=null){
-			joiner.interrupt();			
+		if (joiner != null) {
+			joiner.interrupt();
 		}
 	}
-	public static String getName(){
+
+	public static String getName() {
 		return playerName;
 	}
-	public static void setName(String name) throws InvalidNameException{
-		if(name.contains(" ")){
+
+	public static void setName(String name) throws InvalidNameException {
+		if (name.contains(" ")) {
 			throw new InvalidNameException();
 		}
 	}

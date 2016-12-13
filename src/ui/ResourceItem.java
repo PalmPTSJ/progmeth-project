@@ -1,3 +1,6 @@
+/*
+ *  ResourceItem index corresponding to ResourceManager index 
+ */
 package ui;
 
 import javafx.scene.control.Button;

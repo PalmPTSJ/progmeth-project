@@ -68,8 +68,8 @@ public class Player extends BlockingEntity {
 		if (shootingTimer < shootingDelay) {
 			shootingTimer++;
 		} else {
-			if (!BuyManager.instance.buyMode && InputUtility.instance.isMouseLeftDown()) {
-				SoundManager.gunshot.play();
+			if (!BuyManager.instance.isBuyMode && InputUtility.instance.isMouseLeftDown()) {
+				SoundManager.getGunshot().play();
 				Projectile bullet = new ProjectilePlayerBullet(getCenterX(), getCenterY(),
 						InputUtility.instance.getMouseX(), InputUtility.instance.getMouseY());
 				RenderableHolder.getInstance().add(bullet);
@@ -92,8 +92,8 @@ public class Player extends BlockingEntity {
 			int x = (int) (InputUtility.instance.getMouseX() / TileManager.tileSize);
 			int y = (int) (InputUtility.instance.getMouseY() / TileManager.tileSize);
 			if(!(x>=TileManager.tileCountX || x<0 || y>=TileManager.tileCountY || y<0)) {
-				if(TileManager.instance.tileArray[x][y].tileObject != null) {
-					TileManager.instance.tileArray[x][y].tileObject.reduceHP(harvestPower);
+				if(TileManager.instance.tileArray[x][y].getTileObject() != null) {
+					TileManager.instance.tileArray[x][y].getTileObject().reduceHP(harvestPower);
 				}
 			}
 		}

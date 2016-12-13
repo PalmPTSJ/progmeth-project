@@ -56,7 +56,7 @@ public abstract class Enemy extends BlockingEntity {
 		if (target == null)
 			target = findTarget(TileObjectRocket.class);
 		if (target == null)
-			target = GameManager.instance.player;
+			target = GameManager.instance.getPlayer();
 
 		if (target != null) {
 			double dx = target.getX() - x;
@@ -109,7 +109,7 @@ public abstract class Enemy extends BlockingEntity {
 	public void onDestroy() {
 		super.onDestroy();
 		ResourceManager.instance.addResource(ResourceManager.ARTIFACT, reward);
-		GameManager.instance.score+=reward;
+		GameManager.instance.increaseScore(reward);
 	}
 
 }

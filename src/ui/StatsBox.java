@@ -21,12 +21,12 @@ public class StatsBox extends VBox {
 	}
 
 	public void update() {
-		score.setText("Score " + GameManager.instance.score);
-		fps.setText(GameManager.instance.fps + "fps");
+		score.setText("Score " + GameManager.instance.getScore());
+		fps.setText(GameManager.instance.getFps() + "fps");
 		playerDamage.setText("Damage " + ProjectilePlayerBullet.getDamage());
 		wave.setText("Wave " + EnemyManager.instance.getWaveNumber() + " , Next in "
-				+ (EnemyManager.instance.getRemainingTime() / 60) + " sec (" + EnemyManager.instance.getNextWaveName()
-				+ ")");
+				+ (EnemyManager.instance.getRemainingTime() / 60) + " sec " + "("
+				+ EnemyManager.instance.getNextWaveName() + ")");
 		int tileCount = (TileManager.tileCountX + 2) * (TileManager.tileCountY + 2);
 		entityCount.setText("Entity Count : " + (RenderableHolder.getInstance().getEntities().size() - tileCount));
 	}

@@ -3,8 +3,8 @@ package logic;
 import javafx.scene.media.AudioClip;
 
 public class SoundManager {
-	public static AudioClip bgm;
-	public static AudioClip gunshot;
+	private static AudioClip bgm;
+	private static AudioClip gunshot;
 	static{
 		bgm=new AudioClip(ClassLoader.getSystemResource("sound/bgm.wav").toString());
 		bgm.setCycleCount(AudioClip.INDEFINITE);
@@ -29,5 +29,13 @@ public class SoundManager {
 
 	public static double getVolume() {
 		return bgm.getVolume();
+	}
+
+	public static AudioClip getBgm() {
+		return bgm;
+	}
+
+	public static AudioClip getGunshot() {
+		return gunshot;
 	}
 }

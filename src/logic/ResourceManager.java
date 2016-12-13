@@ -9,20 +9,8 @@ public class ResourceManager {
 
 	public static ResourceManager instance;
 
-	private int[] capacity;
-	private int[] resource;
-
-	public ResourceManager() {
-		capacity = new int[5];
-		capacity[0] = capacity[1] = 0;
-		capacity[2] = capacity[3] = 0;
-		capacity[4] = 9999;
-
-		resource = new int[5];
-		resource[0] = resource[1] = 0;
-		resource[2] = resource[3] = 0;
-		resource[4] = 0;
-	}
+	private int[] capacity = new int[] { 0, 0, 0, 0, 9999 };
+	private int[] resource = new int[] { 0, 0, 0, 0, 0 };
 
 	public int getCapacity(int index) {
 		return capacity[index];
@@ -42,6 +30,7 @@ public class ResourceManager {
 		normalize(index);
 	}
 
+	// check resource overflow
 	private void normalize(int index) {
 		if (resource[index] > capacity[index]) {
 			resource[index] = capacity[index];

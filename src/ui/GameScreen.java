@@ -27,7 +27,7 @@ public class GameScreen extends Canvas {
 		GraphicsContext gc = this.getGraphicsContext2D();
 		drawBackground(gc);
 		drawEntities(gc);
-		if(BuyManager.instance.buyMode){
+		if(BuyManager.instance.isBuyMode){
 			drawOverlay(gc);
 			drawBuyingItem(gc);
 		}
@@ -75,7 +75,7 @@ public class GameScreen extends Canvas {
 	public void drawOverlay(GraphicsContext gc){
 		gc.setGlobalAlpha(0.5);
 		for(Tile tile : TileManager.instance.tileList) {
-			if(tile.tileObject == null) {
+			if(tile.getTileObject() == null) {
 				gc.setFill(Color.GREEN);
 				gc.fillRect(tile.getX(), tile.getY(), TileManager.tileSize, TileManager.tileSize);
 			}

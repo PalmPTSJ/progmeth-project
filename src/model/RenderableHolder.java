@@ -10,6 +10,7 @@ import logic.IRenderable;
 public class RenderableHolder {
 	private List<IRenderable> entities;
 	private Comparator<IRenderable> comparator;
+	public static Image volume_img;
 	public static Image tile_ground_img;
 	public static Image tile_stone_img;
 	public static Image tile_spawner_img;
@@ -49,7 +50,7 @@ public class RenderableHolder {
 	public static Image storage_stone_img;
 	public static Image storage_iron_img;
 	public static Image storage_diamond_img;
-	
+
 	public static Image research_building_img;
 	public static Image research_iron_img;
 	public static Image research_diamond_img;
@@ -57,7 +58,7 @@ public class RenderableHolder {
 	public static Image research_supergun_img;
 	public static Image research_regen_img;
 	public static Image research_smallgun_img;
-	
+
 	public static Image tileObject_rocket_img;
 
 	public static RenderableHolder instance;
@@ -85,6 +86,8 @@ public class RenderableHolder {
 	}
 
 	private static void loadResource() {
+		volume_img = getRes("img/ui/volume.png");
+
 		tile_ground_img = getRes("img/tile/ground.png");
 		tile_stone_img = getRes("img/tile/mountain.png");
 		tile_spawner_img = getRes("img/tile/spawner.png");
@@ -129,7 +132,7 @@ public class RenderableHolder {
 		storage_stone_img = getRes("img/tileObject/storageStone.png");
 		storage_iron_img = getRes("img/tileObject/storageIron.png");
 		storage_diamond_img = getRes("img/tileObject/storageDiamond.png");
-		
+
 		research_building_img = getRes("img/ui/research_building.png");
 		research_iron_img = getRes("img/ui/research_iron.png");
 		research_diamond_img = getRes("img/ui/research_diamond.png");
@@ -137,7 +140,7 @@ public class RenderableHolder {
 		research_supergun_img = getRes("img/ui/research_supergun.png");
 		research_regen_img = getRes("img/ui/research_regen.png");
 		research_smallgun_img = getRes("img/ui/research_smallGun.png");
-		
+
 		tileObject_rocket_img = getRes("img/tileObject/rocketSilo.png");
 
 	}
