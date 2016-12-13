@@ -11,10 +11,6 @@ public class BuyManager {
 	public Image currentObjectImage = null;
 	public Class currentObjectClass = null;
 
-	public BuyManager() {
-		isBuyMode = false;
-	}
-
 	public boolean canBuy() {
 		int x = GameManager.getMouseTileX();
 		int y = GameManager.getMouseTileY();
