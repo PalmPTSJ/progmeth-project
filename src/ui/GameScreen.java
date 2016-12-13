@@ -23,7 +23,7 @@ public class GameScreen extends Canvas {
 	}
 
 	public void paintComponents() {
-		synchronized (RenderableHolder.getInstance().getEntities()) {
+		synchronized (RenderableHolder.instance.getEntities()) {
 			GraphicsContext gc = this.getGraphicsContext2D();
 			drawBackground(gc);
 			drawEntities(gc);

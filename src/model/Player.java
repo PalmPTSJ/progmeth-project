@@ -53,8 +53,7 @@ public class Player extends BlockingEntity {
 		super.draw(gc, RenderableHolder.player_img);
 	}
 
-	@Override
-	public void update() {
+	private void updateVelocity() {
 		if (InputUtility.instance.isKeyDown(KeyCode.A))
 			setVelX(-1);
 		if (InputUtility.instance.isKeyDown(KeyCode.D))
@@ -63,9 +62,9 @@ public class Player extends BlockingEntity {
 			setVelY(-1);
 		if (InputUtility.instance.isKeyDown(KeyCode.S))
 			setVelY(1);
+	}
 
-		super.update();
-
+	private void updateShoot() {
 		if (shootingTimer < shootingDelay) {
 			shootingTimer++;
 		} else {
@@ -77,7 +76,9 @@ public class Player extends BlockingEntity {
 				shootingTimer = 0;
 			}
 		}
+	}
 
+	private void updateHealthRegeneration() {
 		if (healthRegenerationTimer < healthRegenerationDelay) {
 			healthRegenerationTimer++;
 		} else {
@@ -87,18 +88,28 @@ public class Player extends BlockingEntity {
 			}
 			healthRegenerationTimer = 0;
 		}
+	}
 
-		// cut object
+	private void updateHarvest() {
 		if (InputUtility.instance.isMouseRightDown()) {
 			int x = TileManager.getMouseTileX();
 			int y = TileManager.getMouseTileY();
 			if (!TileManager.isOutOfBound(x, y)) {
-				TileObject object=TileManager.instance.tileArray[x][y].getTileObject();
+				TileObject object = TileManager.instance.tileArray[x][y].getTileObject();
 				if (object != null) {
 					object.reduceHP(harvestPower);
 				}
 			}
 		}
+	}
+
+	@Override
+	public void update() {
+		updateVelocity();
+		super.update();
+		updateShoot();
+		updateHealthRegeneration();
+		updateHarvest();
 	}
 
 	public static void setHealthRegenerationRate(int rate) {

@@ -46,7 +46,7 @@ public class GameManager {
 	}
 
 	public void update() {
-		synchronized (RenderableHolder.getInstance().getEntities()) {
+		synchronized (RenderableHolder.instance.getEntities()) {
 			if (isGameEnded()) {
 				return;
 			}
@@ -92,8 +92,8 @@ public class GameManager {
 	}
 
 	private void updateEntity() {
-		for (int i = 0; i < RenderableHolder.getInstance().getEntities().size(); i++) {
-			IRenderable ir = RenderableHolder.getInstance().getEntities().get(i);
+		for (int i = 0; i < RenderableHolder.instance.getEntities().size(); i++) {
+			IRenderable ir = RenderableHolder.instance.getEntities().get(i);
 			if (ir instanceof Entity) {
 				((Entity) ir).update();
 			}

@@ -13,7 +13,6 @@ public class RenderableHolder {
 
 	public static Image volume_img;
 	public static Image tile_ground_img;
-	public static Image tile_stone_img;
 	public static Image tile_spawner_img;
 
 	public static Image tileObject_tree_img;
@@ -90,7 +89,6 @@ public class RenderableHolder {
 		volume_img = getRes("img/ui/volume.png");
 
 		tile_ground_img = getRes("img/tile/ground.png");
-		tile_stone_img = getRes("img/tile/mountain.png");
 		tile_spawner_img = getRes("img/tile/spawner.png");
 
 		resource_img = new Image[5];
@@ -102,7 +100,7 @@ public class RenderableHolder {
 
 		tileObject_tree_img = getRes("img/tileObject/tree.png");
 		tileObject_stone_img = getRes("img/tileObject/stone.png");
-
+		
 		player_img = getRes("img/entity/player.png");
 		enemy_basic_img = getRes("img/entity/enemy.png");
 		enemy_boss_img = getRes("img/entity/enemy_boss.png");
@@ -148,10 +146,6 @@ public class RenderableHolder {
 
 	public void remove(int index) {
 		instance.entities.remove(index);
-	}
-
-	public static RenderableHolder getInstance() {
-		return instance;
 	}
 
 	public List<IRenderable> getEntities() {
