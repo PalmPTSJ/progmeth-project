@@ -92,7 +92,7 @@ public class Player extends BlockingEntity {
 		if (InputUtility.instance.isMouseRightDown()) {
 			int x = GameManager.getMouseTileX();
 			int y = GameManager.getMouseTileY();
-			if (!(x >= TileManager.tileCountX || x < 0 || y >= TileManager.tileCountY || y < 0)) {
+			if (!GameManager.isOutOfBound(x, y)) {
 				TileObject object=TileManager.instance.tileArray[x][y].getTileObject();
 				if (object != null) {
 					object.reduceHP(harvestPower);

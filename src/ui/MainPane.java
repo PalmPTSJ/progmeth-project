@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
@@ -21,17 +22,18 @@ public class MainPane extends VBox implements IStoppable {
 	private static String playerName = "ProgMeth";
 	Thread joiner;
 
-	public MainPane() {
+	public MainPane(int screenWidth,int screenHeight) {
 		Button start = new Button("Start");
 		Label nameLabel = new Label("Your name");
 		TextField name = new TextField(playerName);
 		Button exit = new Button("Exit");
 		Button highscore = new Button("High score");
 		VolumePane volume = new VolumePane();
-		getChildren().addAll(nameLabel, name, start, exit, highscore, volume);
+		Slider scale = new Slider(0.5,2,1);
+		getChildren().addAll(nameLabel, name, start, exit, highscore, volume,scale);
 
 		setAlignment(Pos.BOTTOM_RIGHT);
-		setPrefSize(Main.screenWidth + 300, Main.screenHeight);
+		setPrefSize(screenWidth, screenHeight);
 
 		Image img = new Image(ClassLoader.getSystemResource("img/ui/background.png").toString());
 		BackgroundImage bgi = new BackgroundImage(img, null, null, null, null);
@@ -92,6 +94,10 @@ public class MainPane extends VBox implements IStoppable {
 		highscore.setPrefSize(200, 80);
 		highscore.setStyle("-fx-cursor: hand;");
 		setMargin(highscore, new Insets(20, 100, 20, 0));
+		
+		scale.setOnMouseClicked(e->{
+			Main.setScale(scale.getValue());
+		});
 	}
 
 	public void stop() {
