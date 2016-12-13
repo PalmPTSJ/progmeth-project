@@ -65,7 +65,7 @@ public abstract class Projectile extends MovingEntity {
 
 	@Override
 	public void onCollision(ICollidable collider) {
-		if (this.destroyed)
+		if (this.isDestroyed)
 			return;
 		else if (collider instanceof Projectile)
 			return; // projectiles are not suppose to hit each other

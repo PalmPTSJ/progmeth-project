@@ -15,12 +15,15 @@ import logic.IRenderable;
 public abstract class Entity implements IRenderable, ICollidable {
 	protected double x, y;
 	protected double width, height;
-	protected boolean destroyed;
+	protected boolean isDestroyed;
 	protected int hp;
 	protected int maxHp;
-
+	
+	private static final double healthBarWidth = 20;
+	private static final double healthBarHeight = 3;
+	
 	public Entity(double x, double y, double width, double height, int hp) {
-		this.destroyed = false;
+		this.isDestroyed = false;
 		this.x = x;
 		this.y = y;
 		this.width = width;
@@ -29,9 +32,9 @@ public abstract class Entity implements IRenderable, ICollidable {
 	}
 
 	public void destroy() {
-		if (this.destroyed)
+		if (this.isDestroyed)
 			return;
-		this.destroyed = true;
+		this.isDestroyed = true;
 		this.onDestroy();
 	}
 
@@ -40,8 +43,8 @@ public abstract class Entity implements IRenderable, ICollidable {
 	}
 
 	public void update() {
-		if (this.hp <= 0 && !this.destroyed) {
-			this.destroyed = true;
+		if (this.hp <= 0 && !this.isDestroyed) {
+			this.isDestroyed = true;
 			this.onDestroy();
 		}
 	}
@@ -52,7 +55,7 @@ public abstract class Entity implements IRenderable, ICollidable {
 	
 	@Override
 	public boolean isDestroy() {
-		return destroyed;
+		return isDestroyed;
 	}
 
 	public void setHp(int hp) {
@@ -95,16 +98,6 @@ public abstract class Entity implements IRenderable, ICollidable {
 		this.height = height;
 	}
 
-	protected void drawHitbox(GraphicsContext gc) { // for debugging
-		gc.setFill(Color.YELLOW);
-		gc.setGlobalAlpha(0.5);
-		gc.fillRect(x, y, width, height);
-		gc.setGlobalAlpha(1);
-	}
-
-	private static final double healthBarWidth = 20;
-	private static final double healthBarHeight = 3;
-
 	public void drawHealthBar(GraphicsContext gc) {
 		if(this.hp == this.maxHp) return; // don't draw when at full hp
 		gc.setFill(Color.RED);
@@ -116,8 +109,6 @@ public abstract class Entity implements IRenderable, ICollidable {
 	// default draw function for all entity
 	protected void draw(GraphicsContext gc, Image img) {
 		gc.drawImage(img, x, y, width, height);
-		//drawHitbox(gc);
-		//drawHealthBar(gc);
 	}
 
 	public void reduceHP(int damage) {

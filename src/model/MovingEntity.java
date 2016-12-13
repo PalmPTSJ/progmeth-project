@@ -15,7 +15,7 @@ public abstract class MovingEntity extends Entity implements IMovable {
 	@Override
 	public void update() {
 		super.update();
-		if (!this.destroyed)
+		if (!this.isDestroyed)
 			move();
 	}
 
