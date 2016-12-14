@@ -111,5 +111,6 @@ public class MainPane extends VBox implements IStoppable {
 		if (name.contains(" ")) {
 			throw new InvalidNameException();
 		}
+		playerName = name;
 	}
 }

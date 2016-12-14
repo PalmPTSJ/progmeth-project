@@ -13,6 +13,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
 import model.*;
+import model.projectile.Projectile;
+import model.projectile.ProjectilePlayerBullet;
 import thread.ThreadGameManager;
 import thread.ThreadNewScore;
 import ui.MainPane;
@@ -42,6 +44,8 @@ public class GameManager {
 		TileManager.instance = new TileManager();
 		TileManager.instance.generateMap(globalRNG.nextInt(99999));
 		EnemyManager.instance = new EnemyManager();
+		
+		ProjectilePlayerBullet.addDamage(-ProjectilePlayerBullet.getDamage()+15);
 	}
 
 	public static void addEntity(IRenderable entity) {
