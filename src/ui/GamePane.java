@@ -27,8 +27,8 @@ public class GamePane extends HBox implements IStoppable {
 				if (start == 0l)
 					start = now;
 				long diff = now - start;
-				if (diff > 0)
-					GameManager.instance.setFps((int) (1000000000l / (diff)));
+//				if (diff > 0)
+//					GameManager.instance.setFps((int) (1000000000l / (diff)));
 
 				if (diff >= 10000000l) {
 					//GameManager.instance.update();

@@ -13,7 +13,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
 import model.*;
-import model.projectile.Projectile;
 import model.projectile.ProjectilePlayerBullet;
 import thread.ThreadGameManager;
 import thread.ThreadNewScore;

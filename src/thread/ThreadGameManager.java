@@ -18,11 +18,11 @@ public class ThreadGameManager extends Thread {
 		try {
 			while (!interrupted() && Main.getScene().getRoot() instanceof GamePane) {
 				long now = System.nanoTime();
-				//System.out.println("" + (now-lastTime));
 				if(now-lastTime < 16*1000000) Thread.sleep((long)(16 - (now-lastTime)/1000000));
 				lastTime = System.nanoTime();
-				//Thread.sleep(16);
 				GameManager.instance.update();
+				double spf=System.nanoTime()-now;
+				GameManager.instance.setFps((int)Math.floor(1000000000/spf));
 			}
 		} catch (InterruptedException e) {
 			
